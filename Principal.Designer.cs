@@ -84,6 +84,7 @@
             this.seguridadSocialToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salarioYSeguridadSocialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fichaTrabajadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
             this.horasTrabajadasPorDíasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.salarioYComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -144,7 +145,6 @@
             this.tableAdapterManager = new Promowork.Promowork_dataDataSetTableAdapters.TableAdapterManager();
             this.usuariosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.UsuariosTableAdapter();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -457,7 +457,7 @@
             // 
             this.toolStripMenuItem15.Name = "toolStripMenuItem15";
             this.toolStripMenuItem15.Size = new System.Drawing.Size(218, 22);
-            this.toolStripMenuItem15.Text = "Horas con Materiales";
+            this.toolStripMenuItem15.Text = "Partes Trabajadores";
             this.toolStripMenuItem15.Click += new System.EventHandler(this.toolStripMenuItem15_Click);
             // 
             // toolStripMenuItem2
@@ -615,6 +615,13 @@
             this.fichaTrabajadorToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
             this.fichaTrabajadorToolStripMenuItem.Text = "Ficha Trabajador";
             this.fichaTrabajadorToolStripMenuItem.Click += new System.EventHandler(this.fichaTrabajadorToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem17
+            // 
+            this.toolStripMenuItem17.Name = "toolStripMenuItem17";
+            this.toolStripMenuItem17.Size = new System.Drawing.Size(257, 22);
+            this.toolStripMenuItem17.Text = "Horas Trabajadas por Obras";
+            this.toolStripMenuItem17.Click += new System.EventHandler(this.toolStripMenuItem17_Click);
             // 
             // horasTrabajadasPorDíasToolStripMenuItem
             // 
@@ -1198,13 +1205,6 @@
             // 
             this.usuariosBindingSource.DataMember = "Usuarios";
             this.usuariosBindingSource.DataSource = this.promowork_dataDataSet;
-            // 
-            // toolStripMenuItem17
-            // 
-            this.toolStripMenuItem17.Name = "toolStripMenuItem17";
-            this.toolStripMenuItem17.Size = new System.Drawing.Size(257, 22);
-            this.toolStripMenuItem17.Text = "Horas Trabajadas por Obras";
-            this.toolStripMenuItem17.Click += new System.EventHandler(this.toolStripMenuItem17_Click);
             // 
             // Principal
             // 

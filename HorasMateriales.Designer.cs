@@ -1053,7 +1053,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Horas Trabajadas y Materiales Utilizados";
+            this.Text = "Partes de Trabajadores";
             this.Load += new System.EventHandler(this.HorasMateriales_Load);
             this.Resize += new System.EventHandler(this.HorasMateriales_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasGridControl)).EndInit();

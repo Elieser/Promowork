@@ -8,14 +8,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Gestion.exe.manifest" size="15133">
+    <dependentAssembly dependencyType="install" codebase="Gestion.exe.manifest" size="16139">
       <assemblyIdentity name="Gestion.exe" version="1.0.0.13" publicKeyToken="0000000000000000" language="es-ES" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>eGJmmI4th8FKY9sq62Dukh9NVSM=</dsig:DigestValue>
+        <dsig:DigestValue>VcTuXecMQt120HH/HNkZFiMrs0A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

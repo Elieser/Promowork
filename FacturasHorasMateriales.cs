@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace Promowork
 {
@@ -63,6 +64,7 @@ namespace Promowork
             // TODO: This line of code loads data into the 'promowork_dataDataSet.FacturasCab' table. You can move, or remove it, as needed.
             this.facturasCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.FacturasCab,VariablesGlobales.nIdEmpresaActual,false);
             this.empresasActualTableAdapter.FillByEmpresa(this.promowork_dataDataSet.EmpresasActual, VariablesGlobales.nIdEmpresaActual);
+            this.productosTableAdapter.Fill(promowork_dataDataSet.Productos, VariablesGlobales.nIdEmpresaActual);
             this.facturasCabBindingSource.MoveLast();
 
         }
@@ -305,6 +307,76 @@ namespace Promowork
        {
            gridView1.SetFocusedRowCellValue("IdFactCab", facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value);
            this.horasTrabajadasTableAdapter.FillByFacturado(this.promowork_dataDataSet.HorasTrabajadas, Convert.ToInt32(idPresupComboBox.SelectedValue));
+       }
+
+      
+      
+       private void gridView1_FocusedRowChanged_1(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+       {
+           try
+           {
+               this.productosUtilizadosTableAdapter.FillbyHoras(promowork_dataDataSet.ProductosUtilizados, Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdHoras")));
+           }
+           catch { }
+           toolStripButton8.Enabled = gridView4.RowCount == 0 ? false : true;
+       }
+
+      
+       private void toolStripButton2_Click(object sender, EventArgs e)
+       {
+           //MessageBox.Show(Convert.ToString(gridView1.GetFocusedRowCellValue("IdFactDetHoras")));
+           queriesTableAdapter1.BorraDetalleFactura(Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdFactDetHoras")));
+           this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
+           this.vHorasTrabajadasTableAdapter.Fill(promowork_dataDataSet.vHorasTrabajadas, Convert.ToInt32(idPresupComboBox.SelectedValue));
+           this.productosUtilizadosTableAdapter.FillbyHoras(promowork_dataDataSet.ProductosUtilizados, Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdHoras")));
+           toolStripButton8.Enabled = gridView4.RowCount == 0 ? false : true;
+       }
+
+       private void toolStripButton8_Click(object sender, EventArgs e)
+       {
+           queriesTableAdapter1.InsertaDetalleFactura(Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value), Convert.ToInt32(gridView4.GetFocusedRowCellValue("IdHoras")));
+
+           this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
+           this.vHorasTrabajadasTableAdapter.Fill(promowork_dataDataSet.vHorasTrabajadas, Convert.ToInt32(idPresupComboBox.SelectedValue));
+           this.productosUtilizadosTableAdapter.FillbyHoras(promowork_dataDataSet.ProductosUtilizados, Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdHoras")));
+           toolStripButton8.Enabled = gridView4.RowCount == 0 ? false : true;
+       }
+
+       private void toolStripButton7_Click_2(object sender, EventArgs e)
+       {
+           gridView1.SelectAll();
+
+           gridView1.CloseEditor();
+           ArrayList rows = new ArrayList();
+           DataTable SelRows = new DataTable();
+           SelRows.Columns.Add("IdFactDetHoras", System.Type.GetType("System.Int32"));
+           SelRows.Columns.Add("CantAdmin", System.Type.GetType("System.Decimal"));
+           SelRows.Columns.Add("SalarioVenta", System.Type.GetType("System.Decimal"));
+           // Add the selected rows to the list.
+           for (int i = 0; i < gridView1.SelectedRowsCount; i++)
+           {
+               if (gridView1.GetSelectedRows()[i] >= 0)
+                   rows.Add(gridView1.GetDataRow(gridView1.GetSelectedRows()[i]));
+
+           }
+           try
+           {
+               gridView1.BeginUpdate();
+               for (int i = 0; i < rows.Count; i++)
+               {
+                   DataRow row = rows[i] as DataRow;
+                   // Change the field value.
+                   // row["ColorHoras"] = toolStripButton1.BackColor.ToArgb();
+                   SelRows.Rows.Add(row["IdFactDetHoras"], row["CantAdmin"], row["SalarioVenta"]);
+               }
+           }
+           finally
+           {
+               gridView1.EndUpdate();
+           }
+
+           //queriesTableAdapter1.ColorHoras(SelRows);
+           gridView1.ClearSelection();
        }
 
     }
