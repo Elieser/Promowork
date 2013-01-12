@@ -23,7 +23,8 @@ namespace Promowork
             {
             this.Validate();
             this.tiposBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.promowork_dataDataSet);
+            this.tiposTableAdapter.Update(promowork_dataDataSet.Tipos);
+           // this.tableAdapterManager.UpdateAll(this.promowork_dataDataSet);
             }
                 catch (DBConcurrencyException)
                 {

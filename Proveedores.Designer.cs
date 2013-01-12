@@ -425,6 +425,8 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccesosEmpresasTableAdapter = null;
+            this.tableAdapterManager.AdjuntosObrasTableAdapter = null;
             this.tableAdapterManager.AnticiposTableAdapter = null;
             this.tableAdapterManager.AnticiposTrabajadoresTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -445,6 +447,7 @@
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
             this.tableAdapterManager.FacturasCabTableAdapter = null;
+            this.tableAdapterManager.FacturasDetHorasTableAdapter = null;
             this.tableAdapterManager.FacturasDetTableAdapter = null;
             this.tableAdapterManager.FestivosEmpresasTableAdapter = null;
             this.tableAdapterManager.FestivosObrasTableAdapter = null;
@@ -466,6 +469,8 @@
             this.tableAdapterManager.PresupCapTableAdapter = null;
             this.tableAdapterManager.PresupDetTableAdapter = null;
             this.tableAdapterManager.PresupSubTableAdapter = null;
+            this.tableAdapterManager.ProductosTableAdapter = null;
+            this.tableAdapterManager.ProductosUtilizadosTableAdapter = null;
             this.tableAdapterManager.ProveedoresTableAdapter = this.proveedoresTableAdapter;
             this.tableAdapterManager.Provincias1TableAdapter = null;
             this.tableAdapterManager.ProvinciasTableAdapter = null;
@@ -477,6 +482,7 @@
             this.tableAdapterManager.TiposTableAdapter = null;
             this.tableAdapterManager.TrabajadoresListaTableAdapter = null;
             this.tableAdapterManager.TrabajadoresTableAdapter = null;
+            this.tableAdapterManager.UMedidasTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Promowork.Promowork_dataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = null;
             // 

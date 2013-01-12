@@ -18,7 +18,7 @@
         </Field>
         <Field Name="NumObra">
           <DataField>NumObra</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="DesObra">
           <DataField>DesObra</DataField>
@@ -60,13 +60,17 @@
           <DataField>Salario</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="IdTipo">
+          <DataField>IdTipo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="DesTipo">
           <DataField>DesTipo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Festivo">
           <DataField>Festivo</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="CantFest">
           <DataField>CantFest</DataField>
@@ -76,8 +80,8 @@
           <DataField>SalFest</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="ImpSegSocila">
-          <DataField>ImpSegSocila</DataField>
+        <Field Name="ImpSS">
+          <DataField>ImpSS</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="ImpIRPF">
@@ -322,7 +326,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSegSocila.Value)+Sum(Fields!ImpIRPF.Value)+Sum(Fields!ImpBase.Value)+Sum(Fields!ImpIVA.Value)</Value>
+                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSS.Value)+Sum(Fields!ImpIRPF.Value)+Sum(Fields!ImpBase.Value)+Sum(Fields!ImpIVA.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -620,14 +624,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ImpSegSocila8">
+                    <Textbox Name="ImpSS8">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ImpSegSocila.Value)</Value>
+                              <Value>=Sum(Fields!ImpSS.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -641,7 +645,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ImpSegSocila</rd:DefaultName>
+                      <rd:DefaultName>ImpSS</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -703,7 +707,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSegSocila.Value)+Sum(Fields!ImpIRPF.Value)</Value>
+                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSS.Value)+Sum(Fields!ImpIRPF.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -1006,14 +1010,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ImpSegSocila9">
+                    <Textbox Name="ImpSS9">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ImpSegSocila.Value)</Value>
+                              <Value>=Sum(Fields!ImpSS.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -1027,7 +1031,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ImpSegSocila</rd:DefaultName>
+                      <rd:DefaultName>ImpSS</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1089,7 +1093,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSegSocila.Value)+Sum(Fields!ImpIRPF.Value)</Value>
+                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSS.Value)+Sum(Fields!ImpIRPF.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -1378,14 +1382,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ImpSegSocila14">
+                    <Textbox Name="ImpSS14">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ImpSegSocila.Value)</Value>
+                              <Value>=Sum(Fields!ImpSS.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -1398,7 +1402,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ImpSegSocila</rd:DefaultName>
+                      <rd:DefaultName>ImpSS</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1457,7 +1461,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSegSocila.Value)+Sum(Fields!ImpIRPF.Value)</Value>
+                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSS.Value)+Sum(Fields!ImpIRPF.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -1744,14 +1748,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ImpSegSocila10">
+                    <Textbox Name="ImpSS10">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ImpSegSocila.Value)</Value>
+                              <Value>=Sum(Fields!ImpSS.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -1764,7 +1768,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ImpSegSocila</rd:DefaultName>
+                      <rd:DefaultName>ImpSS</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1823,7 +1827,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSegSocila.Value)+Sum(Fields!ImpIRPF.Value)</Value>
+                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSS.Value)+Sum(Fields!ImpIRPF.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -2107,14 +2111,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ImpSegSocila">
+                    <Textbox Name="ImpSS">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ImpSegSocila.Value)</Value>
+                              <Value>=Sum(Fields!ImpSS.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -2127,7 +2131,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ImpSegSocila</rd:DefaultName>
+                      <rd:DefaultName>ImpSS</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -2186,7 +2190,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSegSocila.Value)+Sum(Fields!ImpIRPF.Value)</Value>
+                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSS.Value)+Sum(Fields!ImpIRPF.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -2411,7 +2415,6 @@
                       </Style>
                     </Textbox>
                     <ColSpan>7</ColSpan>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -3616,14 +3619,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ImpSegSocila16">
+                    <Textbox Name="ImpSS16">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ImpSegSocila.Value)</Value>
+                              <Value>=Sum(Fields!ImpSS.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -3637,7 +3640,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ImpSegSocila</rd:DefaultName>
+                      <rd:DefaultName>ImpSS</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -3697,7 +3700,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSegSocila.Value)+Sum(Fields!ImpIRPF.Value)</Value>
+                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSS.Value)+Sum(Fields!ImpIRPF.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -3985,14 +3988,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ImpSegSocila17">
+                    <Textbox Name="ImpSS17">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ImpSegSocila.Value)</Value>
+                              <Value>=Sum(Fields!ImpSS.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -4005,7 +4008,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ImpSegSocila</rd:DefaultName>
+                      <rd:DefaultName>ImpSS</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -4064,7 +4067,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSegSocila.Value)+Sum(Fields!ImpIRPF.Value)</Value>
+                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSS.Value)+Sum(Fields!ImpIRPF.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -4353,14 +4356,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ImpSegSocila22">
+                    <Textbox Name="ImpSS22">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!ImpSegSocila.Value)</Value>
+                              <Value>=Sum(Fields!ImpSS.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -4374,7 +4377,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ImpSegSocila</rd:DefaultName>
+                      <rd:DefaultName>ImpSS</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -4434,7 +4437,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSegSocila.Value)+Sum(Fields!ImpIRPF.Value)</Value>
+                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSS.Value)+Sum(Fields!ImpIRPF.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -5007,7 +5010,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSegSocila.Value)+Sum(Fields!ImpIRPF.Value)+Sum(Fields!ImpBase.Value)+Sum(Fields!ImpIVA.Value)</Value>
+                              <Value>=Sum(Fields!CantFest.Value*Fields!SalFest.Value)+Sum(Fields!Cantidad.Value*Fields!Salario.Value)+Sum(Fields!ImpSS.Value)+Sum(Fields!ImpIRPF.Value)+Sum(Fields!ImpBase.Value)+Sum(Fields!ImpIVA.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -5138,6 +5141,9 @@
                       </Textbox>
                     </CellContents>
                   </TablixHeader>
+                  <Visibility>
+                    <Hidden>=Parameters!Compras.Value="False" and Avg(Fields!IdTipo.Value)=Fields!IdTipo.Value</Hidden>
+                  </Visibility>
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Tipo">
@@ -5229,7 +5235,7 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!DesTipo.Value</Value>
+                                                <Value>=iif(Parameters!Compras.Value="False", Fields!NumObra.Value+" "+Fields!DesObra.Value+" ("+Fields!DesTipo.Value+")", Fields!DesTipo.Value)</Value>
                                                 <Style>
                                                   <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                                   <FontSize>8pt</FontSize>

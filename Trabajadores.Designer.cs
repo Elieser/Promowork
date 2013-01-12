@@ -55,9 +55,9 @@
             System.Windows.Forms.Label idPuestoTrabLabel;
             System.Windows.Forms.Label extTrabajadorLabel;
             System.Windows.Forms.Label idCuentaLabel;
+            System.Windows.Forms.Label salMesLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Trabajadores));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.Label salMesLabel;
             this.promowork_dataDataSet = new Promowork.Promowork_dataDataSet();
             this.trabajadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trabajadoresTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.TrabajadoresTableAdapter();
@@ -472,6 +472,15 @@
             idCuentaLabel.TabIndex = 74;
             idCuentaLabel.Text = "Cuenta:";
             // 
+            // salMesLabel
+            // 
+            salMesLabel.AutoSize = true;
+            salMesLabel.Location = new System.Drawing.Point(992, 238);
+            salMesLabel.Name = "salMesLabel";
+            salMesLabel.Size = new System.Drawing.Size(85, 13);
+            salMesLabel.TabIndex = 76;
+            salMesLabel.Text = "Salario Mensual:";
+            // 
             // promowork_dataDataSet
             // 
             this.promowork_dataDataSet.DataSetName = "Promowork_dataDataSet";
@@ -488,6 +497,8 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccesosEmpresasTableAdapter = null;
+            this.tableAdapterManager.AdjuntosObrasTableAdapter = null;
             this.tableAdapterManager.AnticiposTableAdapter = null;
             this.tableAdapterManager.AnticiposTrabajadoresTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -508,6 +519,7 @@
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
             this.tableAdapterManager.FacturasCabTableAdapter = null;
+            this.tableAdapterManager.FacturasDetHorasTableAdapter = null;
             this.tableAdapterManager.FacturasDetTableAdapter = null;
             this.tableAdapterManager.FestivosEmpresasTableAdapter = null;
             this.tableAdapterManager.FestivosObrasTableAdapter = null;
@@ -529,6 +541,8 @@
             this.tableAdapterManager.PresupCapTableAdapter = null;
             this.tableAdapterManager.PresupDetTableAdapter = null;
             this.tableAdapterManager.PresupSubTableAdapter = null;
+            this.tableAdapterManager.ProductosTableAdapter = null;
+            this.tableAdapterManager.ProductosUtilizadosTableAdapter = null;
             this.tableAdapterManager.ProveedoresTableAdapter = null;
             this.tableAdapterManager.Provincias1TableAdapter = null;
             this.tableAdapterManager.ProvinciasTableAdapter = null;
@@ -540,6 +554,7 @@
             this.tableAdapterManager.TiposTableAdapter = null;
             this.tableAdapterManager.TrabajadoresListaTableAdapter = null;
             this.tableAdapterManager.TrabajadoresTableAdapter = this.trabajadoresTableAdapter;
+            this.tableAdapterManager.UMedidasTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Promowork.Promowork_dataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = null;
             // 
@@ -1539,15 +1554,6 @@
             // 
             this.cuentasBancosTableAdapter.ClearBeforeFill = true;
             // 
-            // salMesLabel
-            // 
-            salMesLabel.AutoSize = true;
-            salMesLabel.Location = new System.Drawing.Point(992, 238);
-            salMesLabel.Name = "salMesLabel";
-            salMesLabel.Size = new System.Drawing.Size(85, 13);
-            salMesLabel.TabIndex = 76;
-            salMesLabel.Text = "Salario Mensual:";
-            // 
             // salMesCheckBox
             // 
             this.salMesCheckBox.AutoSize = true;
@@ -1647,6 +1653,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trabajadores";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Trabajadores_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresBindingSource)).EndInit();

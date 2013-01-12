@@ -515,5 +515,10 @@ namespace Promowork
             frm.Show();
         }
 
+        private void Trabajadores_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.promowork_dataDataSet.Clear();
+        }
+
     }
 }

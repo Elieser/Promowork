@@ -71,7 +71,7 @@ namespace Promowork
             int AnoEmpresa = Convert.ToInt32(EmpresaActual["AnoEmpresa"]);
             DateTime fechaini = new DateTime(AnoEmpresa, 1, 1);
             toolStripTextBox3.Text = fechaini.ToShortDateString();
-            
+            radioButton4.Checked = !previsionRadioButton.Checked;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -691,6 +691,8 @@ namespace Promowork
                }
                 
             }
+            promowork_dataDataSet.Clear();
+           // this.Close();
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -700,6 +702,11 @@ namespace Promowork
                 comprasCabBindingSource.RemoveCurrent();
                 
             }
+        }
+
+        private void previsionRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            radioButton4.Checked = !previsionRadioButton.Checked;
         }
 
        

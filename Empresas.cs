@@ -33,7 +33,8 @@ namespace Promowork
 
                 this.Validate();
                 this.empresasBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.promowork_dataDataSet);
+                this.empresasTableAdapter.Update(promowork_dataDataSet.Empresas);
+                //this.tableAdapterManager.UpdateAll(this.promowork_dataDataSet);
                 
                     
                 int IdEmpresaActual = Convert.ToByte(promowork_dataDataSet.Tables["Empresas"].Rows[empresasDataGridView.CurrentRow.Index]["IdEmpresa"]);
@@ -58,13 +59,13 @@ namespace Promowork
             {
 
                 MessageBox.Show("No se Pudo Salvar la Información. El Registro fue modificado por otro Usuario.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                this.empresasTableAdapter.Fill(this.promowork_dataDataSet.Empresas);
+                this.empresasTableAdapter.FillByAccesoUsuario(this.promowork_dataDataSet.Empresas, VariablesGlobales.nIdUsuarioActual);
             }
                 catch (SqlException ex)
                 {
                     if (ErroresSQLServer.ManipulaErrorSQL(ex, this.Text))
                     {
-                        this.empresasTableAdapter.Fill(this.promowork_dataDataSet.Empresas);
+                        this.empresasTableAdapter.FillByAccesoUsuario(this.promowork_dataDataSet.Empresas, VariablesGlobales.nIdUsuarioActual);
                     }
                     
                 }
@@ -82,8 +83,8 @@ namespace Promowork
             // TODO: This line of code loads data into the 'promowork_dataDataSet1.Clientes' table. You can move, or remove it, as needed.
             this.clientesTableAdapter.Fill(this.promowork_dataDataSet1.Clientes);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.Presupuestos' table. You can move, or remove it, as needed.
-            
-            this.empresasTableAdapter.Fill(this.promowork_dataDataSet.Empresas);
+
+            this.empresasTableAdapter.FillByAccesoUsuario(this.promowork_dataDataSet.Empresas, VariablesGlobales.nIdUsuarioActual);
 
             //Compruebo que el final del Dataset y que esten definidos el mes y el año de trabajo de la empresa
             if ((empresasDataGridView.CurrentRow.Index < promowork_dataDataSet.Empresas.Count) &&
@@ -357,6 +358,7 @@ namespace Promowork
             }
         }
 
+     
       
     }
 }

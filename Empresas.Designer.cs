@@ -49,9 +49,10 @@
             System.Windows.Forms.Label trabEmpresaLabel;
             System.Windows.Forms.Label clieEmpresaLabel;
             System.Windows.Forms.Label provEmpresaLabel;
+            System.Windows.Forms.Label digCompNumLabel;
+            System.Windows.Forms.Label factEmpresaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empresas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.Label digCompNumLabel;
             this.empresasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -147,6 +148,7 @@
             this.clieEmpresaTextBox = new System.Windows.Forms.TextBox();
             this.provEmpresaTextBox = new System.Windows.Forms.TextBox();
             this.digCompNumSpinEdit = new DevExpress.XtraEditors.SpinEdit();
+            this.factEmpresaTextBox = new System.Windows.Forms.TextBox();
             desEmpresaLabel = new System.Windows.Forms.Label();
             dirEmpresaLabel = new System.Windows.Forms.Label();
             telEmpresaLabel = new System.Windows.Forms.Label();
@@ -168,6 +170,7 @@
             clieEmpresaLabel = new System.Windows.Forms.Label();
             provEmpresaLabel = new System.Windows.Forms.Label();
             digCompNumLabel = new System.Windows.Forms.Label();
+            factEmpresaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingNavigator)).BeginInit();
             this.empresasBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
@@ -287,7 +290,7 @@
             // activoEmpresaLabel
             // 
             activoEmpresaLabel.AutoSize = true;
-            activoEmpresaLabel.Location = new System.Drawing.Point(993, 262);
+            activoEmpresaLabel.Location = new System.Drawing.Point(993, 287);
             activoEmpresaLabel.Name = "activoEmpresaLabel";
             activoEmpresaLabel.Size = new System.Drawing.Size(40, 13);
             activoEmpresaLabel.TabIndex = 32;
@@ -364,6 +367,24 @@
             provEmpresaLabel.Size = new System.Drawing.Size(85, 13);
             provEmpresaLabel.TabIndex = 66;
             provEmpresaLabel.Text = "Nº Proveedores:";
+            // 
+            // digCompNumLabel
+            // 
+            digCompNumLabel.AutoSize = true;
+            digCompNumLabel.Location = new System.Drawing.Point(895, 263);
+            digCompNumLabel.Name = "digCompNumLabel";
+            digCompNumLabel.Size = new System.Drawing.Size(135, 13);
+            digCompNumLabel.TabIndex = 66;
+            digCompNumLabel.Text = "Cantidad Dígitos en Obras:";
+            // 
+            // factEmpresaLabel
+            // 
+            factEmpresaLabel.AutoSize = true;
+            factEmpresaLabel.Location = new System.Drawing.Point(968, 237);
+            factEmpresaLabel.Name = "factEmpresaLabel";
+            factEmpresaLabel.Size = new System.Drawing.Size(64, 13);
+            factEmpresaLabel.TabIndex = 68;
+            factEmpresaLabel.Text = "Nº. Factura:";
             // 
             // empresasBindingNavigator
             // 
@@ -869,6 +890,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccesosEmpresasTableAdapter = null;
             this.tableAdapterManager.AdjuntosObrasTableAdapter = null;
             this.tableAdapterManager.AnticiposTableAdapter = null;
             this.tableAdapterManager.AnticiposTrabajadoresTableAdapter = null;
@@ -890,6 +912,7 @@
             this.tableAdapterManager.EmpresasTableAdapter = this.empresasTableAdapter;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
             this.tableAdapterManager.FacturasCabTableAdapter = null;
+            this.tableAdapterManager.FacturasDetHorasTableAdapter = null;
             this.tableAdapterManager.FacturasDetTableAdapter = null;
             this.tableAdapterManager.FestivosEmpresasTableAdapter = this.festivosEmpresasTableAdapter;
             this.tableAdapterManager.FestivosObrasTableAdapter = null;
@@ -1031,7 +1054,7 @@
             // 
             this.activoEmpresaCheckBox.AutoSize = true;
             this.activoEmpresaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.empresasBindingSource, "ActivoEmpresa", true));
-            this.activoEmpresaCheckBox.Location = new System.Drawing.Point(1036, 261);
+            this.activoEmpresaCheckBox.Location = new System.Drawing.Point(1036, 286);
             this.activoEmpresaCheckBox.Name = "activoEmpresaCheckBox";
             this.activoEmpresaCheckBox.Size = new System.Drawing.Size(15, 14);
             this.activoEmpresaCheckBox.TabIndex = 19;
@@ -1182,15 +1205,6 @@
             this.provEmpresaTextBox.Size = new System.Drawing.Size(73, 20);
             this.provEmpresaTextBox.TabIndex = 18;
             // 
-            // digCompNumLabel
-            // 
-            digCompNumLabel.AutoSize = true;
-            digCompNumLabel.Location = new System.Drawing.Point(895, 238);
-            digCompNumLabel.Name = "digCompNumLabel";
-            digCompNumLabel.Size = new System.Drawing.Size(135, 13);
-            digCompNumLabel.TabIndex = 66;
-            digCompNumLabel.Text = "Cantidad Dígitos en Obras:";
-            // 
             // digCompNumSpinEdit
             // 
             this.digCompNumSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.empresasBindingSource, "DigCompNum", true));
@@ -1199,7 +1213,7 @@
             0,
             0,
             0});
-            this.digCompNumSpinEdit.Location = new System.Drawing.Point(1036, 235);
+            this.digCompNumSpinEdit.Location = new System.Drawing.Point(1036, 260);
             this.digCompNumSpinEdit.Name = "digCompNumSpinEdit";
             this.digCompNumSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
@@ -1212,11 +1226,21 @@
             this.digCompNumSpinEdit.Size = new System.Drawing.Size(73, 20);
             this.digCompNumSpinEdit.TabIndex = 68;
             // 
+            // factEmpresaTextBox
+            // 
+            this.factEmpresaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresasBindingSource, "FactEmpresa", true));
+            this.factEmpresaTextBox.Location = new System.Drawing.Point(1036, 234);
+            this.factEmpresaTextBox.Name = "factEmpresaTextBox";
+            this.factEmpresaTextBox.Size = new System.Drawing.Size(73, 20);
+            this.factEmpresaTextBox.TabIndex = 69;
+            // 
             // Empresas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1211, 523);
+            this.Controls.Add(factEmpresaLabel);
+            this.Controls.Add(this.factEmpresaTextBox);
             this.Controls.Add(this.digCompNumSpinEdit);
             this.Controls.Add(digCompNumLabel);
             this.Controls.Add(provEmpresaLabel);
@@ -1390,5 +1414,6 @@
         private System.Windows.Forms.TextBox clieEmpresaTextBox;
         private System.Windows.Forms.TextBox provEmpresaTextBox;
         private DevExpress.XtraEditors.SpinEdit digCompNumSpinEdit;
+        private System.Windows.Forms.TextBox factEmpresaTextBox;
     }
 }

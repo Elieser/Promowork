@@ -279,9 +279,11 @@ namespace Promowork
         private void horasTrabajadasDiasDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
 
-          
-            this.horasAdminTableAdapter.FillByObs(this.promowork_dataDataSet.HorasAdmin, Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(dataGridView1.CurrentRow.Cells["IdTrabajador"].Value), Convert.ToByte(horasTrabajadasDiasDataGridView.CurrentCell.ColumnIndex + 1), nMesActual, nAnoActual);
-           
+            try
+            {
+                this.horasAdminTableAdapter.FillByObs(this.promowork_dataDataSet.HorasAdmin, Convert.ToInt32(comboBox1.SelectedValue), Convert.ToInt32(dataGridView1.CurrentRow.Cells["IdTrabajador"].Value), Convert.ToByte(horasTrabajadasDiasDataGridView.CurrentCell.ColumnIndex + 1), nMesActual, nAnoActual);
+            }
+            catch { }
         }
 
        

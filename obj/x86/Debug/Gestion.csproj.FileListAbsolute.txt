@@ -179,3 +179,6 @@ C:\Promowork\Promowork\obj\x86\Debug\Promowork.HorasMateriales.resources
 C:\Promowork\Promowork\obj\x86\Debug\Promowork.Accesos.resources
 C:\Promowork\Promowork\obj\x86\Debug\Promowork.ObraCompletaAdminColores.resources
 C:\Promowork\Promowork\obj\x86\Debug\Promowork.FacturasHorasMateriales.resources
+C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptFacturasHorasImp.resources
+C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptFacturasHorasImpParte.resources
+C:\Promowork\Promowork\obj\x86\Debug\Promowork.OperacionesBanco.resources

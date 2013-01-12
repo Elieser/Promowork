@@ -130,11 +130,11 @@
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.queriesTableAdapter2 = new Promowork.masterDataSetTableAdapters.QueriesTableAdapter();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cambiarImagenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -145,6 +145,7 @@
             this.tableAdapterManager = new Promowork.Promowork_dataDataSetTableAdapters.TableAdapterManager();
             this.usuariosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.UsuariosTableAdapter();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bancoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -163,7 +164,7 @@
             this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1171, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1272, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -432,7 +433,8 @@
             this.toolStripMenuItem12,
             this.toolStripMenuItem16,
             this.cobrosToolStripMenuItem,
-            this.combustiblesToolStripMenuItem1});
+            this.combustiblesToolStripMenuItem1,
+            this.bancoToolStripMenuItem});
             this.operacionesToolStripMenuItem.Name = "operacionesToolStripMenuItem";
             this.operacionesToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.operacionesToolStripMenuItem.Text = "Operaciones";
@@ -441,7 +443,7 @@
             // 
             this.horasTrabajadasToolStripMenuItem.Image = global::Promowork.Properties.Resources.reloj1;
             this.horasTrabajadasToolStripMenuItem.Name = "horasTrabajadasToolStripMenuItem";
-            this.horasTrabajadasToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.horasTrabajadasToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.horasTrabajadasToolStripMenuItem.Text = "Horas Trabajadas";
             this.horasTrabajadasToolStripMenuItem.Click += new System.EventHandler(this.horasTrabajadasToolStripMenuItem_Click);
             // 
@@ -449,14 +451,14 @@
             // 
             this.toolStripMenuItem9.Image = global::Promowork.Properties.Resources.relojadmin;
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(218, 22);
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(224, 22);
             this.toolStripMenuItem9.Text = "Horas Administración";
             this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
             // 
             // toolStripMenuItem15
             // 
             this.toolStripMenuItem15.Name = "toolStripMenuItem15";
-            this.toolStripMenuItem15.Size = new System.Drawing.Size(218, 22);
+            this.toolStripMenuItem15.Size = new System.Drawing.Size(224, 22);
             this.toolStripMenuItem15.Text = "Partes Trabajadores";
             this.toolStripMenuItem15.Click += new System.EventHandler(this.toolStripMenuItem15_Click);
             // 
@@ -464,7 +466,7 @@
             // 
             this.toolStripMenuItem2.Image = global::Promowork.Properties.Resources.Anticipos;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(218, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 22);
             this.toolStripMenuItem2.Text = "Anticipos a Trabajadores";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -472,7 +474,7 @@
             // 
             this.toolStripMenuItem3.Image = global::Promowork.Properties.Resources.logo_seguridad_social;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(218, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(224, 22);
             this.toolStripMenuItem3.Text = "Seguridad Social";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
@@ -480,7 +482,7 @@
             // 
             this.toolStripMenuItem7.Image = global::Promowork.Properties.Resources.cruz_roja32;
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(218, 22);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(224, 22);
             this.toolStripMenuItem7.Text = "Baja Médica";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
@@ -488,7 +490,7 @@
             // 
             this.comprasToolStripMenuItem.Image = global::Promowork.Properties.Resources.Buy;
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.comprasToolStripMenuItem.Text = "Compras";
             this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
             // 
@@ -496,7 +498,7 @@
             // 
             this.presupuestosToolStripMenuItem.Image = global::Promowork.Properties.Resources.Presupuesto32;
             this.presupuestosToolStripMenuItem.Name = "presupuestosToolStripMenuItem";
-            this.presupuestosToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.presupuestosToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.presupuestosToolStripMenuItem.Text = "Presupuestos";
             this.presupuestosToolStripMenuItem.Click += new System.EventHandler(this.presupuestosToolStripMenuItem_Click);
             // 
@@ -504,29 +506,29 @@
             // 
             this.facturasPresupuestoToolStripMenuItem.Image = global::Promowork.Properties.Resources.Factura;
             this.facturasPresupuestoToolStripMenuItem.Name = "facturasPresupuestoToolStripMenuItem";
-            this.facturasPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.facturasPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.facturasPresupuestoToolStripMenuItem.Text = "Facturas Presupuesto";
             this.facturasPresupuestoToolStripMenuItem.Click += new System.EventHandler(this.facturasPresupuestoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(218, 22);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(224, 22);
             this.toolStripMenuItem12.Text = "Facturas Manuales";
             this.toolStripMenuItem12.Click += new System.EventHandler(this.toolStripMenuItem12_Click);
             // 
             // toolStripMenuItem16
             // 
             this.toolStripMenuItem16.Name = "toolStripMenuItem16";
-            this.toolStripMenuItem16.Size = new System.Drawing.Size(218, 22);
-            this.toolStripMenuItem16.Text = "Facturas Horas y Materiales";
+            this.toolStripMenuItem16.Size = new System.Drawing.Size(224, 22);
+            this.toolStripMenuItem16.Text = "Facturas Partes Trabajadores";
             this.toolStripMenuItem16.Click += new System.EventHandler(this.toolStripMenuItem16_Click);
             // 
             // cobrosToolStripMenuItem
             // 
             this.cobrosToolStripMenuItem.Image = global::Promowork.Properties.Resources.money2;
             this.cobrosToolStripMenuItem.Name = "cobrosToolStripMenuItem";
-            this.cobrosToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.cobrosToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.cobrosToolStripMenuItem.Text = "Cobros";
             this.cobrosToolStripMenuItem.Click += new System.EventHandler(this.cobrosToolStripMenuItem_Click);
             // 
@@ -537,7 +539,7 @@
             this.toolStripMenuItem11,
             this.consumosToolStripMenuItem});
             this.combustiblesToolStripMenuItem1.Name = "combustiblesToolStripMenuItem1";
-            this.combustiblesToolStripMenuItem1.Size = new System.Drawing.Size(218, 22);
+            this.combustiblesToolStripMenuItem1.Size = new System.Drawing.Size(224, 22);
             this.combustiblesToolStripMenuItem1.Text = "Servicios a Vehiculos";
             // 
             // entradasToolStripMenuItem
@@ -783,12 +785,10 @@
             this.toolStripLabel1,
             this.toolStripTextBox2,
             this.toolStripLabel2,
-            this.toolStripTextBox3,
-            this.toolStripLabel4,
-            this.toolStripTextBox4});
+            this.toolStripTextBox3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1171, 35);
+            this.toolStrip1.Size = new System.Drawing.Size(1272, 35);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
@@ -1062,38 +1062,25 @@
             this.toolStripTextBox3.ReadOnly = true;
             this.toolStripTextBox3.Size = new System.Drawing.Size(40, 35);
             // 
-            // toolStripLabel4
-            // 
-            this.toolStripLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.toolStripLabel4.Margin = new System.Windows.Forms.Padding(10, 1, 0, 2);
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(61, 17);
-            this.toolStripLabel4.Text = "Usuario:";
-            // 
-            // toolStripTextBox4
-            // 
-            this.toolStripTextBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.toolStripTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.toolStripTextBox4.Name = "toolStripTextBox4";
-            this.toolStripTextBox4.ReadOnly = true;
-            this.toolStripTextBox4.Size = new System.Drawing.Size(100, 23);
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar1,
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel4,
+            this.toolStripStatusLabel3});
             this.statusStrip1.Location = new System.Drawing.Point(0, 687);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.statusStrip1.Size = new System.Drawing.Size(1171, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(1272, 24);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripProgressBar1
+            // toolStripStatusLabel2
             // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 18);
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(19, 19);
+            this.toolStripStatusLabel2.Text = "    ";
             // 
             // toolStripStatusLabel1
             // 
@@ -1101,6 +1088,20 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(143, 19);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(19, 19);
+            this.toolStripStatusLabel4.Text = "    ";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(152, 19);
+            this.toolStripStatusLabel3.Text = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // contextMenuStrip1
             // 
@@ -1148,6 +1149,7 @@
             this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CopiasHorasTableAdapter = null;
             this.tableAdapterManager.CrucesTrabajadoresTableAdapter = null;
@@ -1168,6 +1170,7 @@
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;
@@ -1206,12 +1209,19 @@
             this.usuariosBindingSource.DataMember = "Usuarios";
             this.usuariosBindingSource.DataSource = this.promowork_dataDataSet;
             // 
+            // bancoToolStripMenuItem
+            // 
+            this.bancoToolStripMenuItem.Name = "bancoToolStripMenuItem";
+            this.bancoToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.bancoToolStripMenuItem.Text = "Banco";
+            this.bancoToolStripMenuItem.Click += new System.EventHandler(this.bancoToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1171, 711);
+            this.ClientSize = new System.Drawing.Size(1272, 711);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -1272,7 +1282,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripButton toolStripButton9;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private Promowork_dataDataSet promowork_dataDataSet;
@@ -1285,8 +1294,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox3;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox4;
         private Promowork_dataDataSetTableAdapters.UsuariosTableAdapter usuariosTableAdapter;
         private System.Windows.Forms.BindingSource usuariosBindingSource;
         private System.Windows.Forms.ToolStripMenuItem otrasDefinicionesToolStripMenuItem;
@@ -1358,5 +1365,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem15;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem16;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem17;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripMenuItem bancoToolStripMenuItem;
     }
 }

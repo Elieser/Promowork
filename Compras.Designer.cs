@@ -36,7 +36,6 @@
             System.Windows.Forms.Label fechaVctoLabel;
             System.Windows.Forms.Label idFormaPagoLabel;
             System.Windows.Forms.Label idCuentaLabel;
-            System.Windows.Forms.Label fechaPagoLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
@@ -45,16 +44,17 @@
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label observLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Compras));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label fechaPagoLabel;
             this.comprasCabBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.comprasCabBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -106,7 +106,6 @@
             this.formasPagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idCuentaComboBox = new System.Windows.Forms.ComboBox();
             this.cuentasBancosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fechaPagoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.pagosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pagosDataGridView = new System.Windows.Forms.DataGridView();
             this.IdFormaPago = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -177,6 +176,10 @@
             this.pagosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.PagosTableAdapter();
             this.empresasActualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empresasActualTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.EmpresasActualTableAdapter();
+            this.previsionRadioButton = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.fechaPagoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             idProveedorLabel = new System.Windows.Forms.Label();
             facturaLabel = new System.Windows.Forms.Label();
             fechaFacturaLabel = new System.Windows.Forms.Label();
@@ -184,7 +187,6 @@
             fechaVctoLabel = new System.Windows.Forms.Label();
             idFormaPagoLabel = new System.Windows.Forms.Label();
             idCuentaLabel = new System.Windows.Forms.Label();
-            fechaPagoLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -192,6 +194,7 @@
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             observLabel = new System.Windows.Forms.Label();
+            fechaPagoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.comprasCabBindingNavigator)).BeginInit();
             this.comprasCabBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comprasCabBindingSource)).BeginInit();
@@ -213,6 +216,7 @@
             this.bindingNavigator2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empresasActualBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // idProveedorLabel
@@ -263,7 +267,7 @@
             // idFormaPagoLabel
             // 
             idFormaPagoLabel.AutoSize = true;
-            idFormaPagoLabel.Location = new System.Drawing.Point(762, 193);
+            idFormaPagoLabel.Location = new System.Drawing.Point(762, 221);
             idFormaPagoLabel.Name = "idFormaPagoLabel";
             idFormaPagoLabel.Size = new System.Drawing.Size(67, 13);
             idFormaPagoLabel.TabIndex = 17;
@@ -272,20 +276,11 @@
             // idCuentaLabel
             // 
             idCuentaLabel.AutoSize = true;
-            idCuentaLabel.Location = new System.Drawing.Point(785, 220);
+            idCuentaLabel.Location = new System.Drawing.Point(785, 248);
             idCuentaLabel.Name = "idCuentaLabel";
             idCuentaLabel.Size = new System.Drawing.Size(44, 13);
             idCuentaLabel.TabIndex = 19;
             idCuentaLabel.Text = "Cuenta:";
-            // 
-            // fechaPagoLabel
-            // 
-            fechaPagoLabel.AutoSize = true;
-            fechaPagoLabel.Location = new System.Drawing.Point(748, 247);
-            fechaPagoLabel.Name = "fechaPagoLabel";
-            fechaPagoLabel.Size = new System.Drawing.Size(81, 13);
-            fechaPagoLabel.TabIndex = 21;
-            fechaPagoLabel.Text = "Previsión Pago:";
             // 
             // label1
             // 
@@ -582,10 +577,10 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ImpBase";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle41.Format = "N2";
+            dataGridViewCellStyle41.NullValue = null;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle41;
             this.dataGridViewTextBoxColumn1.HeaderText = "Importe Base";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -594,10 +589,10 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "ImpIVA";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle42.Format = "N2";
+            dataGridViewCellStyle42.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle42;
             this.dataGridViewTextBoxColumn4.HeaderText = "Importe IVA";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -606,10 +601,10 @@
             // Importe
             // 
             this.Importe.DataPropertyName = "Importe";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Importe.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle43.Format = "N2";
+            dataGridViewCellStyle43.NullValue = null;
+            this.Importe.DefaultCellStyle = dataGridViewCellStyle43;
             this.Importe.HeaderText = "Total Factura";
             this.Importe.Name = "Importe";
             this.Importe.ReadOnly = true;
@@ -701,9 +696,9 @@
             // ImpBase
             // 
             this.ImpBase.DataPropertyName = "ImpBase";
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.ImpBase.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle44.Format = "N2";
+            dataGridViewCellStyle44.NullValue = null;
+            this.ImpBase.DefaultCellStyle = dataGridViewCellStyle44;
             this.ImpBase.HeaderText = "Imp. Base";
             this.ImpBase.Name = "ImpBase";
             this.ImpBase.Width = 80;
@@ -711,9 +706,9 @@
             // ImpIva
             // 
             this.ImpIva.DataPropertyName = "ImpIva";
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.ImpIva.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle45.Format = "N2";
+            dataGridViewCellStyle45.NullValue = null;
+            this.ImpIva.DefaultCellStyle = dataGridViewCellStyle45;
             this.ImpIva.HeaderText = "Imp.IVA";
             this.ImpIva.Name = "ImpIva";
             this.ImpIva.Width = 70;
@@ -721,9 +716,9 @@
             // IVA
             // 
             this.IVA.DataPropertyName = "IVA";
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = null;
-            this.IVA.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle46.Format = "N0";
+            dataGridViewCellStyle46.NullValue = null;
+            this.IVA.DefaultCellStyle = dataGridViewCellStyle46;
             this.IVA.HeaderText = "IVA";
             this.IVA.Name = "IVA";
             this.IVA.ReadOnly = true;
@@ -732,9 +727,9 @@
             // Total
             // 
             this.Total.DataPropertyName = "Total";
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.Total.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle47.Format = "N2";
+            dataGridViewCellStyle47.NullValue = null;
+            this.Total.DefaultCellStyle = dataGridViewCellStyle47;
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
             this.Total.Width = 80;
@@ -817,7 +812,7 @@
             this.idFormaPagoComboBox.DataSource = this.formasPagoBindingSource;
             this.idFormaPagoComboBox.DisplayMember = "DesFormaPago";
             this.idFormaPagoComboBox.FormattingEnabled = true;
-            this.idFormaPagoComboBox.Location = new System.Drawing.Point(833, 189);
+            this.idFormaPagoComboBox.Location = new System.Drawing.Point(833, 217);
             this.idFormaPagoComboBox.Name = "idFormaPagoComboBox";
             this.idFormaPagoComboBox.Size = new System.Drawing.Size(262, 21);
             this.idFormaPagoComboBox.TabIndex = 6;
@@ -834,7 +829,7 @@
             this.idCuentaComboBox.DataSource = this.cuentasBancosBindingSource;
             this.idCuentaComboBox.DisplayMember = "CuentaBanco";
             this.idCuentaComboBox.FormattingEnabled = true;
-            this.idCuentaComboBox.Location = new System.Drawing.Point(833, 216);
+            this.idCuentaComboBox.Location = new System.Drawing.Point(833, 244);
             this.idCuentaComboBox.Name = "idCuentaComboBox";
             this.idCuentaComboBox.Size = new System.Drawing.Size(262, 21);
             this.idCuentaComboBox.TabIndex = 7;
@@ -844,15 +839,6 @@
             // 
             this.cuentasBancosBindingSource.DataMember = "CuentasBancos";
             this.cuentasBancosBindingSource.DataSource = this.promowork_dataDataSet;
-            // 
-            // fechaPagoDateTimePicker
-            // 
-            this.fechaPagoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.comprasCabBindingSource, "FechaPago", true));
-            this.fechaPagoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaPagoDateTimePicker.Location = new System.Drawing.Point(833, 243);
-            this.fechaPagoDateTimePicker.Name = "fechaPagoDateTimePicker";
-            this.fechaPagoDateTimePicker.Size = new System.Drawing.Size(96, 20);
-            this.fechaPagoDateTimePicker.TabIndex = 8;
             // 
             // pagosBindingSource
             // 
@@ -923,9 +909,9 @@
             // FechaVcto
             // 
             this.FechaVcto.DataPropertyName = "FechaVcto";
-            dataGridViewCellStyle8.Format = "d";
-            dataGridViewCellStyle8.NullValue = null;
-            this.FechaVcto.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle48.Format = "d";
+            dataGridViewCellStyle48.NullValue = null;
+            this.FechaVcto.DefaultCellStyle = dataGridViewCellStyle48;
             this.FechaVcto.HeaderText = "F. Vcto";
             this.FechaVcto.Name = "FechaVcto";
             this.FechaVcto.Width = 70;
@@ -940,9 +926,9 @@
             // FechaPago
             // 
             this.FechaPago.DataPropertyName = "FechaPago";
-            dataGridViewCellStyle9.Format = "d";
-            dataGridViewCellStyle9.NullValue = null;
-            this.FechaPago.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle49.Format = "d";
+            dataGridViewCellStyle49.NullValue = null;
+            this.FechaPago.DefaultCellStyle = dataGridViewCellStyle49;
             this.FechaPago.HeaderText = "Fecha";
             this.FechaPago.Name = "FechaPago";
             this.FechaPago.Width = 70;
@@ -958,9 +944,9 @@
             // ImpPago
             // 
             this.ImpPago.DataPropertyName = "ImpPago";
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.ImpPago.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle50.Format = "N2";
+            dataGridViewCellStyle50.NullValue = null;
+            this.ImpPago.DefaultCellStyle = dataGridViewCellStyle50;
             this.ImpPago.HeaderText = "Importe";
             this.ImpPago.Name = "ImpPago";
             this.ImpPago.Width = 70;
@@ -1308,7 +1294,7 @@
             // button5
             // 
             this.button5.Image = global::Promowork.Properties.Resources.bindingNavigatorAddNewItem_Image;
-            this.button5.Location = new System.Drawing.Point(1101, 215);
+            this.button5.Location = new System.Drawing.Point(1101, 243);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(22, 21);
             this.button5.TabIndex = 79;
@@ -1318,7 +1304,7 @@
             // button2
             // 
             this.button2.Image = global::Promowork.Properties.Resources.bindingNavigatorAddNewItem_Image;
-            this.button2.Location = new System.Drawing.Point(1101, 188);
+            this.button2.Location = new System.Drawing.Point(1101, 216);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(22, 21);
             this.button2.TabIndex = 78;
@@ -1446,6 +1432,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccesosEmpresasTableAdapter = null;
             this.tableAdapterManager.AdjuntosObrasTableAdapter = null;
             this.tableAdapterManager.AnticiposTableAdapter = null;
             this.tableAdapterManager.AnticiposTrabajadoresTableAdapter = null;
@@ -1467,6 +1454,7 @@
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
             this.tableAdapterManager.FacturasCabTableAdapter = null;
+            this.tableAdapterManager.FacturasDetHorasTableAdapter = null;
             this.tableAdapterManager.FacturasDetTableAdapter = null;
             this.tableAdapterManager.FestivosEmpresasTableAdapter = null;
             this.tableAdapterManager.FestivosObrasTableAdapter = null;
@@ -1538,11 +1526,65 @@
             // 
             this.empresasActualTableAdapter.ClearBeforeFill = true;
             // 
+            // previsionRadioButton
+            // 
+            this.previsionRadioButton.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.comprasCabBindingSource, "Prevision", true));
+            this.previsionRadioButton.Location = new System.Drawing.Point(6, 39);
+            this.previsionRadioButton.Name = "previsionRadioButton";
+            this.previsionRadioButton.Size = new System.Drawing.Size(69, 24);
+            this.previsionRadioButton.TabIndex = 92;
+            this.previsionRadioButton.TabStop = true;
+            this.previsionRadioButton.Text = "Previsión";
+            this.previsionRadioButton.UseVisualStyleBackColor = true;
+            this.previsionRadioButton.CheckedChanged += new System.EventHandler(this.previsionRadioButton_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton4);
+            this.groupBox1.Controls.Add(this.previsionRadioButton);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.groupBox1.Location = new System.Drawing.Point(935, 148);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(104, 65);
+            this.groupBox1.TabIndex = 93;
+            this.groupBox1.TabStop = false;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.Location = new System.Drawing.Point(6, 12);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(84, 24);
+            this.radioButton4.TabIndex = 93;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Vencimiento";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // fechaPagoLabel
+            // 
+            fechaPagoLabel.AutoSize = true;
+            fechaPagoLabel.Location = new System.Drawing.Point(748, 193);
+            fechaPagoLabel.Name = "fechaPagoLabel";
+            fechaPagoLabel.Size = new System.Drawing.Size(81, 13);
+            fechaPagoLabel.TabIndex = 95;
+            fechaPagoLabel.Text = "Previsión Pago:";
+            // 
+            // fechaPagoDateTimePicker
+            // 
+            this.fechaPagoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.comprasCabBindingSource, "FechaPago", true));
+            this.fechaPagoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechaPagoDateTimePicker.Location = new System.Drawing.Point(833, 189);
+            this.fechaPagoDateTimePicker.Name = "fechaPagoDateTimePicker";
+            this.fechaPagoDateTimePicker.Size = new System.Drawing.Size(96, 20);
+            this.fechaPagoDateTimePicker.TabIndex = 94;
+            // 
             // Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1140, 612);
+            this.ClientSize = new System.Drawing.Size(1172, 621);
+            this.Controls.Add(fechaPagoLabel);
+            this.Controls.Add(this.fechaPagoDateTimePicker);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(observLabel);
             this.Controls.Add(this.observTextBox);
@@ -1570,8 +1612,6 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pagosDataGridView);
-            this.Controls.Add(fechaPagoLabel);
-            this.Controls.Add(this.fechaPagoDateTimePicker);
             this.Controls.Add(idCuentaLabel);
             this.Controls.Add(this.idCuentaComboBox);
             this.Controls.Add(idFormaPagoLabel);
@@ -1623,6 +1663,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empresasActualBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1668,7 +1709,6 @@
         private System.Windows.Forms.DateTimePicker fechaVctoDateTimePicker;
         private System.Windows.Forms.ComboBox idFormaPagoComboBox;
         private System.Windows.Forms.ComboBox idCuentaComboBox;
-        private System.Windows.Forms.DateTimePicker fechaPagoDateTimePicker;
         private System.Windows.Forms.BindingSource pagosBindingSource;
         private Promowork_dataDataSetTableAdapters.PagosTableAdapter pagosTableAdapter;
         private System.Windows.Forms.DataGridView pagosDataGridView;
@@ -1752,5 +1792,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IVA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCompra;
+        private System.Windows.Forms.RadioButton previsionRadioButton;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.DateTimePicker fechaPagoDateTimePicker;
     }
 }

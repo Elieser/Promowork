@@ -177,6 +177,12 @@
   <metadata name="provEmpresaLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <metadata name="digCompNumLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="factEmpresaLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <metadata name="empresasBindingNavigator.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
@@ -273,9 +279,9 @@
         36e3bPzvm7fkv17IpAVYDcnt3qaVWLemGCZZM3mXbvPMvefSmjb+t42d/l/bp/u/tl/vf62A/v9aPr3T
         MAyJr18lkQm0JaF2TU1577bAhhn7/vvnL/mv5Nz6X9S64q2KY2OLuktLr6Zvz38t767/MiG9nCiGWISs
         5AwrWfwjtXH9/6T6df8dEmf/l7Zt+K/i2LRCy61XCKZY06/vnpZn5389125uFAOskubweqbM+uicNu+/
-        ZuDE/wrO9f80XFuy0J2qEzxhr6ZN/R8ML5hFT+QziZz2X9O397+Ke8d/kC1aHm3l6AqNw6bcUnNpXo5h
+        ZuDE/wrO9f80XFuy0J2qEzxhr6ZV/R8ML5hFT+QziZz2X9O397+Ke8d/kC1aHm3l6AqNw6bcUnNpXo5h
         gFboFB4l95anGi71n7Rg2ANsEDxg7bOm8OgF9NzQdGlSxRIT/xnV/Tp5kTHI79ouHZowxUbh0zI1PDsn
-        kpwWQBrk4+dzaPr01uh6dMiQZYC6X58JCJOl2d6+nkXLq0uCLM0QTf8ZKdCMXysA4JOUZSAkEnMAAAAA
+        kpwWQBrk4+dzaPr01uh6dMiQZYC6X58JCJOl2d6+nkXLq0uCLM0QTf8ZKdCMXysA3G2UYyLRZpcAAAAA
         SUVORK5CYII=
 </value>
   </data>
@@ -338,9 +344,6 @@
   </metadata>
   <metadata name="poblacionesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>458, 173</value>
-  </metadata>
-  <metadata name="digCompNumLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>69</value>

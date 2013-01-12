@@ -54,14 +54,13 @@
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturasHorasMateriales));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.facturasCabBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.facturasCabBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.promowork_dataDataSet = new Promowork.Promowork_dataDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -70,8 +69,10 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.facturasCabBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.facturasCabDataGridView = new System.Windows.Forms.DataGridView();
@@ -96,6 +97,8 @@
             this.iVAFacturaTextBox = new System.Windows.Forms.TextBox();
             this.descFacuraTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.importeTextBox = new System.Windows.Forms.TextBox();
+            this.importeFacturaHorasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.copiaFacturaTextBox = new System.Windows.Forms.TextBox();
@@ -168,8 +171,8 @@
             this.colDesTipo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDesCategoria = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCantidad = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFestivo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSalario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFestivo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -211,18 +214,20 @@
             this.productosUtilizadosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.ProductosUtilizadosTableAdapter();
             this.productosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.ProductosTableAdapter();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.productosUtilizadosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.promowork_dataDataSet1 = new Promowork.Promowork_dataDataSet();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.productosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.productosUtilizadosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.productosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.importeFacturaHorasTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.ImporteFacturaHorasTableAdapter();
             idClienteLabel = new System.Windows.Forms.Label();
             idPresupLabel = new System.Windows.Forms.Label();
             numFacturaLabel = new System.Windows.Forms.Label();
@@ -258,6 +263,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuentasBancosBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.importeFacturaHorasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obsFacturaTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasBindingSource)).BeginInit();
@@ -277,9 +283,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.vHorasTrabajadasGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosUtilizadosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosUtilizadosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -528,7 +535,7 @@
             this.facturasCabBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.facturasCabBindingNavigator.BindingSource = this.facturasCabBindingSource;
             this.facturasCabBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.facturasCabBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.facturasCabBindingNavigator.DeleteItem = null;
             this.facturasCabBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
             this.facturasCabBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -544,6 +551,7 @@
             this.bindingNavigatorAddNewItem,
             this.facturasCabBindingNavigatorSaveItem,
             this.toolStripSeparator7,
+            this.toolStripButton1,
             this.printToolStripButton,
             this.toolStripSeparator});
             this.facturasCabBindingNavigator.Location = new System.Drawing.Point(3, 9);
@@ -553,7 +561,7 @@
             this.facturasCabBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.facturasCabBindingNavigator.Name = "facturasCabBindingNavigator";
             this.facturasCabBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.facturasCabBindingNavigator.Size = new System.Drawing.Size(313, 25);
+            this.facturasCabBindingNavigator.Size = new System.Drawing.Size(453, 25);
             this.facturasCabBindingNavigator.TabIndex = 0;
             this.facturasCabBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -583,16 +591,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -654,6 +652,16 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
             // facturasCabBindingNavigatorSaveItem
             // 
             this.facturasCabBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -668,15 +676,24 @@
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(66, 22);
+            this.toolStripButton1.Text = "Factura";
+            this.toolStripButton1.ToolTipText = "Imprimir Factura";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            // 
             // printToolStripButton
             // 
-            this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
             this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.printToolStripButton.Text = "&Print";
-            this.printToolStripButton.ToolTipText = "Imprimir Factura";
+            this.printToolStripButton.Size = new System.Drawing.Size(97, 22);
+            this.printToolStripButton.Text = "Parte Trabajo";
+            this.printToolStripButton.ToolTipText = "Imprimir Parte Trabajo";
             this.printToolStripButton.Click += new System.EventHandler(this.printToolStripButton_Click);
             // 
             // toolStripSeparator
@@ -706,7 +723,6 @@
             this.facturasCabDataGridView.Size = new System.Drawing.Size(434, 234);
             this.facturasCabDataGridView.TabIndex = 0;
             this.facturasCabDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.facturasCabDataGridView_CellEnter);
-            this.facturasCabDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.facturasCabDataGridView_CellFormatting);
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -747,9 +763,9 @@
             // Importe
             // 
             this.Importe.DataPropertyName = "Importe";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Importe.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Importe.DefaultCellStyle = dataGridViewCellStyle1;
             this.Importe.HeaderText = "Importe";
             this.Importe.Name = "Importe";
             this.Importe.ReadOnly = true;
@@ -889,6 +905,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.importeTextBox);
             this.groupBox3.Controls.Add(copiaFacturaLabel);
             this.groupBox3.Controls.Add(label1);
             this.groupBox3.Controls.Add(this.comboBox1);
@@ -942,9 +959,24 @@
             this.groupBox3.Controls.Add(this.obsFacturaTextEdit);
             this.groupBox3.Location = new System.Drawing.Point(5, -1);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1186, 281);
+            this.groupBox3.Size = new System.Drawing.Size(1191, 277);
             this.groupBox3.TabIndex = 81;
             this.groupBox3.TabStop = false;
+            // 
+            // importeTextBox
+            // 
+            this.importeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.importeFacturaHorasBindingSource, "Importe", true));
+            this.importeTextBox.Location = new System.Drawing.Point(862, 55);
+            this.importeTextBox.Name = "importeTextBox";
+            this.importeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.importeTextBox.TabIndex = 108;
+            this.importeTextBox.Visible = false;
+            this.importeTextBox.TextChanged += new System.EventHandler(this.importeTextBox_TextChanged);
+            // 
+            // importeFacturaHorasBindingSource
+            // 
+            this.importeFacturaHorasBindingSource.DataMember = "ImporteFacturaHoras";
+            this.importeFacturaHorasBindingSource.DataSource = this.promowork_dataDataSet;
             // 
             // comboBox1
             // 
@@ -995,7 +1027,6 @@
             // 
             // textBox23
             // 
-            this.textBox23.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "Importe", true));
             this.textBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox23.Location = new System.Drawing.Point(1084, 146);
             this.textBox23.Name = "textBox23";
@@ -1015,7 +1046,6 @@
             // 
             // textBox22
             // 
-            this.textBox22.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "Importe", true));
             this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox22.Location = new System.Drawing.Point(1084, 102);
             this.textBox22.Name = "textBox22";
@@ -1131,6 +1161,7 @@
             this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CopiasHorasTableAdapter = null;
@@ -1152,6 +1183,7 @@
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;
@@ -1299,6 +1331,7 @@
             this.gridView3.GridControl = this.vProductosUtilizadosGridControl;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsView.ShowGroupPanel = false;
+            this.gridView3.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanging);
             // 
             // colIdProdUtiliza
             // 
@@ -1423,12 +1456,15 @@
             this.colDesTipo,
             this.colDesCategoria,
             this.colCantidad,
-            this.colFestivo,
-            this.colSalario});
+            this.colSalario,
+            this.colFestivo});
             this.gridView1.GridControl = this.vFacturaDetHorasGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged_1);
+            this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
+            this.gridView1.GotFocus += new System.EventHandler(this.gridView1_GotFocus);
             // 
             // IdFactDetHoras
             // 
@@ -1477,7 +1513,7 @@
             this.colFecha.OptionsColumn.ReadOnly = true;
             this.colFecha.Visible = true;
             this.colFecha.VisibleIndex = 0;
-            this.colFecha.Width = 73;
+            this.colFecha.Width = 63;
             // 
             // colNumTrabajador
             // 
@@ -1485,8 +1521,6 @@
             this.colNumTrabajador.FieldName = "NumTrabajador";
             this.colNumTrabajador.Name = "colNumTrabajador";
             this.colNumTrabajador.OptionsColumn.AllowEdit = false;
-            this.colNumTrabajador.Visible = true;
-            this.colNumTrabajador.VisibleIndex = 1;
             this.colNumTrabajador.Width = 26;
             // 
             // colNomTrabajador
@@ -1496,8 +1530,8 @@
             this.colNomTrabajador.Name = "colNomTrabajador";
             this.colNomTrabajador.OptionsColumn.AllowEdit = false;
             this.colNomTrabajador.Visible = true;
-            this.colNomTrabajador.VisibleIndex = 2;
-            this.colNomTrabajador.Width = 90;
+            this.colNomTrabajador.VisibleIndex = 1;
+            this.colNomTrabajador.Width = 91;
             // 
             // colApeTrabajador
             // 
@@ -1505,31 +1539,29 @@
             this.colApeTrabajador.FieldName = "ApeTrabajador";
             this.colApeTrabajador.Name = "colApeTrabajador";
             this.colApeTrabajador.OptionsColumn.AllowEdit = false;
-            this.colApeTrabajador.Visible = true;
-            this.colApeTrabajador.VisibleIndex = 3;
             this.colApeTrabajador.Width = 93;
             // 
             // colCantAdmin
             // 
             this.colCantAdmin.AppearanceHeader.Options.UseTextOptions = true;
             this.colCantAdmin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colCantAdmin.Caption = "Cant. Admin";
+            this.colCantAdmin.Caption = "Admin";
             this.colCantAdmin.FieldName = "CantAdmin";
             this.colCantAdmin.Name = "colCantAdmin";
             this.colCantAdmin.Visible = true;
-            this.colCantAdmin.VisibleIndex = 6;
-            this.colCantAdmin.Width = 85;
+            this.colCantAdmin.VisibleIndex = 4;
+            this.colCantAdmin.Width = 63;
             // 
             // colSalarioVenta
             // 
             this.colSalarioVenta.AppearanceHeader.Options.UseTextOptions = true;
             this.colSalarioVenta.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colSalarioVenta.Caption = "Salario";
+            this.colSalarioVenta.Caption = "Sal. Admin";
             this.colSalarioVenta.FieldName = "SalarioVenta";
             this.colSalarioVenta.Name = "colSalarioVenta";
             this.colSalarioVenta.Visible = true;
-            this.colSalarioVenta.VisibleIndex = 7;
-            this.colSalarioVenta.Width = 73;
+            this.colSalarioVenta.VisibleIndex = 5;
+            this.colSalarioVenta.Width = 65;
             // 
             // colDesTrabajo
             // 
@@ -1538,8 +1570,8 @@
             this.colDesTrabajo.Name = "colDesTrabajo";
             this.colDesTrabajo.OptionsColumn.AllowEdit = false;
             this.colDesTrabajo.Visible = true;
-            this.colDesTrabajo.VisibleIndex = 4;
-            this.colDesTrabajo.Width = 268;
+            this.colDesTrabajo.VisibleIndex = 2;
+            this.colDesTrabajo.Width = 166;
             // 
             // colDirTrabajo
             // 
@@ -1548,8 +1580,8 @@
             this.colDirTrabajo.Name = "colDirTrabajo";
             this.colDirTrabajo.OptionsColumn.AllowEdit = false;
             this.colDirTrabajo.Visible = true;
-            this.colDirTrabajo.VisibleIndex = 5;
-            this.colDirTrabajo.Width = 201;
+            this.colDirTrabajo.VisibleIndex = 3;
+            this.colDirTrabajo.Width = 92;
             // 
             // colFacturado
             // 
@@ -1582,20 +1614,8 @@
             this.colCantidad.Name = "colCantidad";
             this.colCantidad.OptionsColumn.AllowEdit = false;
             this.colCantidad.Visible = true;
-            this.colCantidad.VisibleIndex = 8;
-            this.colCantidad.Width = 88;
-            // 
-            // colFestivo
-            // 
-            this.colFestivo.AppearanceHeader.Options.UseTextOptions = true;
-            this.colFestivo.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colFestivo.Caption = "Extra Laboral";
-            this.colFestivo.FieldName = "Festivo";
-            this.colFestivo.Name = "colFestivo";
-            this.colFestivo.OptionsColumn.AllowEdit = false;
-            this.colFestivo.Visible = true;
-            this.colFestivo.VisibleIndex = 10;
-            this.colFestivo.Width = 66;
+            this.colCantidad.VisibleIndex = 6;
+            this.colCantidad.Width = 63;
             // 
             // colSalario
             // 
@@ -1606,8 +1626,14 @@
             this.colSalario.Name = "colSalario";
             this.colSalario.OptionsColumn.AllowEdit = false;
             this.colSalario.Visible = true;
-            this.colSalario.VisibleIndex = 9;
-            this.colSalario.Width = 70;
+            this.colSalario.VisibleIndex = 7;
+            this.colSalario.Width = 56;
+            // 
+            // colFestivo
+            // 
+            this.colFestivo.FieldName = "Festivo";
+            this.colFestivo.Name = "colFestivo";
+            this.colFestivo.OptionsColumn.AllowEdit = false;
             // 
             // bindingNavigator1
             // 
@@ -1732,6 +1758,7 @@
             // toolStripButton7
             // 
             this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton7.Enabled = false;
             this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
@@ -1788,12 +1815,8 @@
             this.gridView4.Appearance.FilterPanel.Options.UseForeColor = true;
             this.gridView4.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(153)))), ((int)(((byte)(73)))));
             this.gridView4.Appearance.FixedLine.Options.UseBackColor = true;
-            this.gridView4.Appearance.FocusedCell.BackColor = System.Drawing.Color.White;
-            this.gridView4.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
-            this.gridView4.Appearance.FocusedCell.Options.UseBackColor = true;
-            this.gridView4.Appearance.FocusedCell.Options.UseForeColor = true;
-            this.gridView4.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(154)))), ((int)(((byte)(91)))));
-            this.gridView4.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
+            this.gridView4.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(167)))), ((int)(((byte)(103)))));
+            this.gridView4.Appearance.FocusedRow.ForeColor = System.Drawing.Color.Black;
             this.gridView4.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridView4.Appearance.FocusedRow.Options.UseForeColor = true;
             this.gridView4.Appearance.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
@@ -1829,8 +1852,8 @@
             this.gridView4.Appearance.HeaderPanel.Options.UseBackColor = true;
             this.gridView4.Appearance.HeaderPanel.Options.UseBorderColor = true;
             this.gridView4.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.gridView4.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(183)))), ((int)(((byte)(125)))));
-            this.gridView4.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(244)))), ((int)(((byte)(232)))));
+            this.gridView4.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(167)))), ((int)(((byte)(103)))));
+            this.gridView4.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.Black;
             this.gridView4.Appearance.HideSelectionRow.Options.UseBackColor = true;
             this.gridView4.Appearance.HideSelectionRow.Options.UseForeColor = true;
             this.gridView4.Appearance.HorzLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
@@ -1855,7 +1878,9 @@
             this.gridView4.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
             this.gridView4.Appearance.RowSeparator.Options.UseBackColor = true;
             this.gridView4.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(167)))), ((int)(((byte)(103)))));
+            this.gridView4.Appearance.SelectedRow.ForeColor = System.Drawing.Color.Black;
             this.gridView4.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.gridView4.Appearance.SelectedRow.Options.UseForeColor = true;
             this.gridView4.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
             this.gridView4.Appearance.TopNewRow.Options.UseBackColor = true;
             this.gridView4.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
@@ -1884,143 +1909,196 @@
             this.colSalario1});
             this.gridView4.GridControl = this.vHorasTrabajadasGridControl;
             this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsBehavior.Editable = false;
             this.gridView4.OptionsView.EnableAppearanceEvenRow = true;
             this.gridView4.OptionsView.EnableAppearanceOddRow = true;
             this.gridView4.OptionsView.ShowGroupPanel = false;
+            this.gridView4.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView4_FocusedRowChanged);
             // 
             // colDiaTrab1
             // 
             this.colDiaTrab1.FieldName = "DiaTrab";
             this.colDiaTrab1.Name = "colDiaTrab1";
+            this.colDiaTrab1.OptionsColumn.AllowEdit = false;
+            this.colDiaTrab1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             // 
             // colMesTrab1
             // 
             this.colMesTrab1.FieldName = "MesTrab";
             this.colMesTrab1.Name = "colMesTrab1";
+            this.colMesTrab1.OptionsColumn.AllowEdit = false;
+            this.colMesTrab1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             // 
             // colAnoTrab1
             // 
             this.colAnoTrab1.FieldName = "AnoTrab";
             this.colAnoTrab1.Name = "colAnoTrab1";
+            this.colAnoTrab1.OptionsColumn.AllowEdit = false;
+            this.colAnoTrab1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             // 
             // colFecha1
             // 
             this.colFecha1.Caption = "Fecha";
             this.colFecha1.FieldName = "Fecha";
             this.colFecha1.Name = "colFecha1";
+            this.colFecha1.OptionsColumn.AllowEdit = false;
+            this.colFecha1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             this.colFecha1.OptionsColumn.ReadOnly = true;
             this.colFecha1.Visible = true;
             this.colFecha1.VisibleIndex = 0;
+            this.colFecha1.Width = 63;
             // 
             // colCantAdmin1
             // 
             this.colCantAdmin1.AppearanceHeader.Options.UseTextOptions = true;
             this.colCantAdmin1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colCantAdmin1.Caption = "Cantidad";
+            this.colCantAdmin1.Caption = "Admin";
             this.colCantAdmin1.FieldName = "CantAdmin";
             this.colCantAdmin1.Name = "colCantAdmin1";
+            this.colCantAdmin1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             this.colCantAdmin1.Visible = true;
             this.colCantAdmin1.VisibleIndex = 4;
-            this.colCantAdmin1.Width = 90;
+            this.colCantAdmin1.Width = 67;
             // 
             // colSalarioVenta1
             // 
             this.colSalarioVenta1.AppearanceHeader.Options.UseTextOptions = true;
             this.colSalarioVenta1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colSalarioVenta1.Caption = "Salario";
+            this.colSalarioVenta1.Caption = "Sal. Admin";
             this.colSalarioVenta1.FieldName = "SalarioVenta";
             this.colSalarioVenta1.Name = "colSalarioVenta1";
+            this.colSalarioVenta1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             this.colSalarioVenta1.Visible = true;
             this.colSalarioVenta1.VisibleIndex = 5;
-            this.colSalarioVenta1.Width = 52;
+            this.colSalarioVenta1.Width = 60;
             // 
             // colDesTrabajo1
             // 
             this.colDesTrabajo1.Caption = "Trabajo Realizado";
             this.colDesTrabajo1.FieldName = "DesTrabajo";
             this.colDesTrabajo1.Name = "colDesTrabajo1";
+            this.colDesTrabajo1.OptionsColumn.AllowEdit = false;
+            this.colDesTrabajo1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             this.colDesTrabajo1.Visible = true;
             this.colDesTrabajo1.VisibleIndex = 2;
-            this.colDesTrabajo1.Width = 165;
+            this.colDesTrabajo1.Width = 172;
             // 
             // colDirTrabajo1
             // 
             this.colDirTrabajo1.Caption = "Dirección";
             this.colDirTrabajo1.FieldName = "DirTrabajo";
             this.colDirTrabajo1.Name = "colDirTrabajo1";
+            this.colDirTrabajo1.OptionsColumn.AllowEdit = false;
+            this.colDirTrabajo1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             this.colDirTrabajo1.Visible = true;
             this.colDirTrabajo1.VisibleIndex = 3;
-            this.colDirTrabajo1.Width = 81;
+            this.colDirTrabajo1.Width = 93;
             // 
             // colFacturado1
             // 
             this.colFacturado1.FieldName = "Facturado";
             this.colFacturado1.Name = "colFacturado1";
+            this.colFacturado1.OptionsColumn.AllowEdit = false;
+            this.colFacturado1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             // 
             // colDesTipo1
             // 
             this.colDesTipo1.FieldName = "DesTipo";
             this.colDesTipo1.Name = "colDesTipo1";
+            this.colDesTipo1.OptionsColumn.AllowEdit = false;
+            this.colDesTipo1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             // 
             // colDesCategoria1
             // 
             this.colDesCategoria1.FieldName = "DesCategoria";
             this.colDesCategoria1.Name = "colDesCategoria1";
+            this.colDesCategoria1.OptionsColumn.AllowEdit = false;
+            this.colDesCategoria1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             // 
             // colNumTrabajador1
             // 
             this.colNumTrabajador1.FieldName = "NumTrabajador";
             this.colNumTrabajador1.Name = "colNumTrabajador1";
+            this.colNumTrabajador1.OptionsColumn.AllowEdit = false;
+            this.colNumTrabajador1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             // 
             // colNomTrabajador1
             // 
             this.colNomTrabajador1.Caption = "Trabajador";
             this.colNomTrabajador1.FieldName = "NomTrabajador";
             this.colNomTrabajador1.Name = "colNomTrabajador1";
+            this.colNomTrabajador1.OptionsColumn.AllowEdit = false;
+            this.colNomTrabajador1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             this.colNomTrabajador1.Visible = true;
             this.colNomTrabajador1.VisibleIndex = 1;
-            this.colNomTrabajador1.Width = 106;
+            this.colNomTrabajador1.Width = 83;
             // 
             // colApeTrabajador1
             // 
             this.colApeTrabajador1.FieldName = "ApeTrabajador";
             this.colApeTrabajador1.Name = "colApeTrabajador1";
+            this.colApeTrabajador1.OptionsColumn.AllowEdit = false;
+            this.colApeTrabajador1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             // 
             // colIdHoras3
             // 
             this.colIdHoras3.FieldName = "IdHoras";
             this.colIdHoras3.Name = "colIdHoras3";
+            this.colIdHoras3.OptionsColumn.AllowEdit = false;
+            this.colIdHoras3.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             // 
             // colIdEmpresa1
             // 
             this.colIdEmpresa1.FieldName = "IdEmpresa";
             this.colIdEmpresa1.Name = "colIdEmpresa1";
+            this.colIdEmpresa1.OptionsColumn.AllowEdit = false;
+            this.colIdEmpresa1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             // 
             // colIdObra1
             // 
             this.colIdObra1.FieldName = "IdObra";
             this.colIdObra1.Name = "colIdObra1";
+            this.colIdObra1.OptionsColumn.AllowEdit = false;
+            this.colIdObra1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             // 
             // colIdTrabajador1
             // 
             this.colIdTrabajador1.FieldName = "IdTrabajador";
             this.colIdTrabajador1.Name = "colIdTrabajador1";
+            this.colIdTrabajador1.OptionsColumn.AllowEdit = false;
+            this.colIdTrabajador1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             // 
             // colFestivo1
             // 
             this.colFestivo1.FieldName = "Festivo";
             this.colFestivo1.Name = "colFestivo1";
+            this.colFestivo1.OptionsColumn.AllowEdit = false;
+            this.colFestivo1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             // 
             // colCantidad3
             // 
+            this.colCantidad3.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCantidad3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colCantidad3.Caption = "Cantidad";
             this.colCantidad3.FieldName = "Cantidad";
             this.colCantidad3.Name = "colCantidad3";
+            this.colCantidad3.OptionsColumn.AllowEdit = false;
+            this.colCantidad3.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.colCantidad3.Visible = true;
+            this.colCantidad3.VisibleIndex = 6;
+            this.colCantidad3.Width = 63;
             // 
             // colSalario1
             // 
+            this.colSalario1.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSalario1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colSalario1.Caption = "Coste";
             this.colSalario1.FieldName = "Salario";
             this.colSalario1.Name = "colSalario1";
+            this.colSalario1.OptionsColumn.AllowEdit = false;
+            this.colSalario1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.colSalario1.Visible = true;
+            this.colSalario1.VisibleIndex = 7;
+            this.colSalario1.Width = 57;
             // 
             // productosUtilizadosTableAdapter
             // 
@@ -2043,8 +2121,122 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
             // 
+            // productosUtilizadosBindingSource1
+            // 
+            this.productosUtilizadosBindingSource1.DataMember = "ProductosUtilizados";
+            this.productosUtilizadosBindingSource1.DataSource = this.promowork_dataDataSet1;
+            // 
+            // promowork_dataDataSet1
+            // 
+            this.promowork_dataDataSet1.DataSetName = "Promowork_dataDataSet";
+            this.promowork_dataDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridView5
             // 
+            this.gridView5.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
+            this.gridView5.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
+            this.gridView5.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.Black;
+            this.gridView5.Appearance.ColumnFilterButton.Options.UseBackColor = true;
+            this.gridView5.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
+            this.gridView5.Appearance.ColumnFilterButton.Options.UseForeColor = true;
+            this.gridView5.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
+            this.gridView5.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
+            this.gridView5.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Black;
+            this.gridView5.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
+            this.gridView5.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
+            this.gridView5.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
+            this.gridView5.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(244)))), ((int)(((byte)(232)))));
+            this.gridView5.Appearance.Empty.BackColor2 = System.Drawing.Color.White;
+            this.gridView5.Appearance.Empty.Options.UseBackColor = true;
+            this.gridView5.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(248)))), ((int)(((byte)(236)))));
+            this.gridView5.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
+            this.gridView5.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gridView5.Appearance.EvenRow.Options.UseForeColor = true;
+            this.gridView5.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
+            this.gridView5.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
+            this.gridView5.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.Black;
+            this.gridView5.Appearance.FilterCloseButton.Options.UseBackColor = true;
+            this.gridView5.Appearance.FilterCloseButton.Options.UseBorderColor = true;
+            this.gridView5.Appearance.FilterCloseButton.Options.UseForeColor = true;
+            this.gridView5.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(244)))), ((int)(((byte)(232)))));
+            this.gridView5.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.White;
+            this.gridView5.Appearance.FilterPanel.ForeColor = System.Drawing.Color.Black;
+            this.gridView5.Appearance.FilterPanel.Options.UseBackColor = true;
+            this.gridView5.Appearance.FilterPanel.Options.UseForeColor = true;
+            this.gridView5.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(153)))), ((int)(((byte)(73)))));
+            this.gridView5.Appearance.FixedLine.Options.UseBackColor = true;
+            this.gridView5.Appearance.FocusedCell.BackColor = System.Drawing.Color.White;
+            this.gridView5.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
+            this.gridView5.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gridView5.Appearance.FocusedCell.Options.UseForeColor = true;
+            this.gridView5.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(154)))), ((int)(((byte)(91)))));
+            this.gridView5.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
+            this.gridView5.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gridView5.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.gridView5.Appearance.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
+            this.gridView5.Appearance.FooterPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
+            this.gridView5.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
+            this.gridView5.Appearance.FooterPanel.Options.UseBackColor = true;
+            this.gridView5.Appearance.FooterPanel.Options.UseBorderColor = true;
+            this.gridView5.Appearance.FooterPanel.Options.UseForeColor = true;
+            this.gridView5.Appearance.GroupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
+            this.gridView5.Appearance.GroupButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
+            this.gridView5.Appearance.GroupButton.Options.UseBackColor = true;
+            this.gridView5.Appearance.GroupButton.Options.UseBorderColor = true;
+            this.gridView5.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
+            this.gridView5.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
+            this.gridView5.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
+            this.gridView5.Appearance.GroupFooter.Options.UseBackColor = true;
+            this.gridView5.Appearance.GroupFooter.Options.UseBorderColor = true;
+            this.gridView5.Appearance.GroupFooter.Options.UseForeColor = true;
+            this.gridView5.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(244)))), ((int)(((byte)(232)))));
+            this.gridView5.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
+            this.gridView5.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
+            this.gridView5.Appearance.GroupPanel.Options.UseBackColor = true;
+            this.gridView5.Appearance.GroupPanel.Options.UseForeColor = true;
+            this.gridView5.Appearance.GroupRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
+            this.gridView5.Appearance.GroupRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
+            this.gridView5.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
+            this.gridView5.Appearance.GroupRow.Options.UseBackColor = true;
+            this.gridView5.Appearance.GroupRow.Options.UseBorderColor = true;
+            this.gridView5.Appearance.GroupRow.Options.UseForeColor = true;
+            this.gridView5.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
+            this.gridView5.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
+            this.gridView5.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.gridView5.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gridView5.Appearance.HeaderPanel.Options.UseBorderColor = true;
+            this.gridView5.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gridView5.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(183)))), ((int)(((byte)(125)))));
+            this.gridView5.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(244)))), ((int)(((byte)(232)))));
+            this.gridView5.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.gridView5.Appearance.HideSelectionRow.Options.UseForeColor = true;
+            this.gridView5.Appearance.HorzLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
+            this.gridView5.Appearance.HorzLine.Options.UseBackColor = true;
+            this.gridView5.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(236)))), ((int)(((byte)(208)))));
+            this.gridView5.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
+            this.gridView5.Appearance.OddRow.Options.UseBackColor = true;
+            this.gridView5.Appearance.OddRow.Options.UseForeColor = true;
+            this.gridView5.Appearance.Preview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(254)))), ((int)(((byte)(249)))));
+            this.gridView5.Appearance.Preview.Font = new System.Drawing.Font("Verdana", 7.5F);
+            this.gridView5.Appearance.Preview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(146)))), ((int)(((byte)(78)))));
+            this.gridView5.Appearance.Preview.Options.UseBackColor = true;
+            this.gridView5.Appearance.Preview.Options.UseFont = true;
+            this.gridView5.Appearance.Preview.Options.UseForeColor = true;
+            this.gridView5.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(248)))), ((int)(((byte)(236)))));
+            this.gridView5.Appearance.Row.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(248)))), ((int)(((byte)(236)))));
+            this.gridView5.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.gridView5.Appearance.Row.Options.UseBackColor = true;
+            this.gridView5.Appearance.Row.Options.UseBorderColor = true;
+            this.gridView5.Appearance.Row.Options.UseForeColor = true;
+            this.gridView5.Appearance.RowSeparator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(244)))), ((int)(((byte)(232)))));
+            this.gridView5.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
+            this.gridView5.Appearance.RowSeparator.Options.UseBackColor = true;
+            this.gridView5.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(167)))), ((int)(((byte)(103)))));
+            this.gridView5.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.gridView5.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
+            this.gridView5.Appearance.TopNewRow.Options.UseBackColor = true;
+            this.gridView5.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
+            this.gridView5.Appearance.VertLine.Options.UseBackColor = true;
             this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
@@ -2056,6 +2248,8 @@
             this.gridColumn8});
             this.gridView5.GridControl = this.gridControl1;
             this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridView5.OptionsView.EnableAppearanceOddRow = true;
             this.gridView5.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
@@ -2100,6 +2294,11 @@
             this.repositoryItemLookUpEdit3.Name = "repositoryItemLookUpEdit3";
             this.repositoryItemLookUpEdit3.ValueMember = "IdProducto";
             // 
+            // productosBindingSource1
+            // 
+            this.productosBindingSource1.DataMember = "Productos";
+            this.productosBindingSource1.DataSource = this.promowork_dataDataSet;
+            // 
             // gridColumn5
             // 
             this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
@@ -2140,26 +2339,21 @@
             this.gridColumn8.Caption = "Cantidad";
             this.gridColumn8.FieldName = "Cantidad";
             this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 1;
             this.gridColumn8.Width = 68;
             // 
-            // productosUtilizadosBindingSource1
+            // importeFacturaHorasTableAdapter
             // 
-            this.productosUtilizadosBindingSource1.DataMember = "ProductosUtilizados";
-            this.productosUtilizadosBindingSource1.DataSource = this.promowork_dataDataSet;
-            // 
-            // productosBindingSource1
-            // 
-            this.productosBindingSource1.DataMember = "Productos";
-            this.productosBindingSource1.DataSource = this.promowork_dataDataSet;
+            this.importeFacturaHorasTableAdapter.ClearBeforeFill = true;
             // 
             // FacturasHorasMateriales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1203, 594);
+            this.ClientSize = new System.Drawing.Size(1208, 594);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(label2);
             this.Controls.Add(this.vHorasTrabajadasGridControl);
@@ -2186,6 +2380,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cuentasBancosBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.importeFacturaHorasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.obsFacturaTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasBindingSource)).EndInit();
@@ -2206,9 +2401,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.vHorasTrabajadasGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosUtilizadosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productosUtilizadosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2319,7 +2515,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDesTipo;
         private DevExpress.XtraGrid.Columns.GridColumn colDesCategoria;
         private DevExpress.XtraGrid.Columns.GridColumn colCantidad;
-        private DevExpress.XtraGrid.Columns.GridColumn colFestivo;
         private DevExpress.XtraGrid.Columns.GridColumn colSalario;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
@@ -2383,7 +2578,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private System.Windows.Forms.BindingSource productosUtilizadosBindingSource1;
         private System.Windows.Forms.BindingSource productosBindingSource1;
+        private Promowork_dataDataSet promowork_dataDataSet1;
+        private System.Windows.Forms.BindingSource productosUtilizadosBindingSource1;
+        private DevExpress.XtraGrid.Columns.GridColumn colFestivo;
+        private System.Windows.Forms.BindingSource importeFacturaHorasBindingSource;
+        private Promowork_dataDataSetTableAdapters.ImporteFacturaHorasTableAdapter importeFacturaHorasTableAdapter;
+        private System.Windows.Forms.TextBox importeTextBox;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

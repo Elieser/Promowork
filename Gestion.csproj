@@ -282,6 +282,12 @@
     <Compile Include="Obras.Designer.cs">
       <DependentUpon>Obras.cs</DependentUpon>
     </Compile>
+    <Compile Include="OperacionesBanco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperacionesBanco.Designer.cs">
+      <DependentUpon>OperacionesBanco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Poblaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,6 +358,18 @@
     </Compile>
     <Compile Include="RptDiferenciasLitros.Designer.cs">
       <DependentUpon>RptDiferenciasLitros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptFacturasHorasImp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptFacturasHorasImp.Designer.cs">
+      <DependentUpon>RptFacturasHorasImp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptFacturasHorasImpParte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptFacturasHorasImpParte.Designer.cs">
+      <DependentUpon>RptFacturasHorasImpParte.cs</DependentUpon>
     </Compile>
     <Compile Include="RptFacturasManualImp.cs">
       <SubType>Form</SubType>
@@ -673,6 +691,8 @@
     <EmbeddedResource Include="ConsumosServiciosVehiculos.resx">
       <DependentUpon>ConsumosServiciosVehiculos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FacturaHorasImpParte.rdlc" />
+    <EmbeddedResource Include="FacturaHorasImp.rdlc" />
     <EmbeddedResource Include="DiferenciasLitros.rdlc" />
     <EmbeddedResource Include="EntradasCombustible.resx">
       <DependentUpon>EntradasCombustible.cs</DependentUpon>
@@ -737,6 +757,9 @@
     <EmbeddedResource Include="Obras.resx">
       <DependentUpon>Obras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OperacionesBanco.resx">
+      <DependentUpon>OperacionesBanco.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Poblaciones.resx">
       <DependentUpon>Poblaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -780,6 +803,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RptDiferenciasLitros.resx">
       <DependentUpon>RptDiferenciasLitros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptFacturasHorasImp.resx">
+      <DependentUpon>RptFacturasHorasImp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptFacturasHorasImpParte.resx">
+      <DependentUpon>RptFacturasHorasImpParte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RptFacturasManualImp.resx">
       <DependentUpon>RptFacturasManualImp.cs</DependentUpon>

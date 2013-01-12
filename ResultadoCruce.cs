@@ -26,7 +26,7 @@ namespace Promowork
             dataGridView1.Width = (this.Width -resultadoCruceTrabajadoresDataGridView.Width- 25);
             label2.Left = dataGridView1.Left + 12;*/
             
-            resultadoCruceTrabajadoresTableAdapter.FillByEmpresa(promowork_dataDataSet.ResultadoCruceTrabajadores, VariablesGlobales.nIdEmpresaActual);
+            resultadoCruceTrabajadoresTableAdapter.FillByEmpresa(promowork_dataDataSet.ResultadoCruceTrabajadores,VariablesGlobales.nMesActual,VariablesGlobales.nAnoActual,VariablesGlobales.nIdEmpresaActual);
             this.reportViewer1.RefreshReport();
         }
 

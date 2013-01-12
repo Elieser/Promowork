@@ -41,7 +41,8 @@ namespace Promowork
             toolStrip1.Items["toolStripTextbox1"].Text = Convert.ToString(promowork_dataDataSet.Tables["Empresas"].Rows[0]["DesEmpresa"]);
             toolStrip1.Items["toolStripTextbox2"].Text = Convert.ToString(VariablesGlobales.nMesActual);
             toolStrip1.Items["toolStripTextbox3"].Text = Convert.ToString(VariablesGlobales.nAnoActual);
-            toolStrip1.Items["toolStripTextbox4"].Text = Convert.ToString(promowork_dataDataSet.Tables["Usuarios"].Rows[0]["NomUsuario"]);
+           // toolStrip1.Items["toolStripTextbox4"].Text = Convert.ToString(promowork_dataDataSet.Tables["Usuarios"].Rows[0]["NomUsuario"]);
+            statusStrip1.Items["toolStripStatusLabel3"].Text = "Usuario: "+Convert.ToString(promowork_dataDataSet.Tables["Usuarios"].Rows[0]["NomUsuario"]);
 
             this.Text =Convert.ToString(promowork_dataDataSet.Tables["Empresas"].Rows[0]["DesEmpresa"]) +" - Gestión de Obras";
 
@@ -191,7 +192,8 @@ namespace Promowork
 
         private void Principal_Activated(object sender, EventArgs e)
         {
-            statusStrip1.Items["toolStripStatusLabel1"].Text = Convert.ToString(DateTime.Now.ToShortDateString());
+            statusStrip1.Items["toolStripStatusLabel1"].Text = "Fecha: "+Convert.ToString(DateTime.Now.ToShortDateString());
+            
         }
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -950,6 +952,20 @@ namespace Promowork
             else
             {
                 RptParametrosObrasVenta frm = new RptParametrosObrasVenta();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void bancoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["OperacionesBanco"] != null)
+            {
+                Application.OpenForms["OperacionesBanco"].Activate();
+            }
+            else
+            {
+                OperacionesBanco frm = new OperacionesBanco();
                 frm.MdiParent = this;
                 frm.Show();
             }
