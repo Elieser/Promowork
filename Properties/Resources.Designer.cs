@@ -242,6 +242,13 @@ namespace Promowork.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Partes {
+            get {
+                object obj = ResourceManager.GetObject("Partes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Presupuesto32 {
             get {
                 object obj = ResourceManager.GetObject("Presupuesto32", resourceCulture);

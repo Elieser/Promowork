@@ -89,6 +89,8 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccesosEmpresasTableAdapter = null;
+            this.tableAdapterManager.AdjuntosObrasTableAdapter = null;
             this.tableAdapterManager.AnticiposTableAdapter = null;
             this.tableAdapterManager.AnticiposTrabajadoresTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -99,6 +101,7 @@
             this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CopiasHorasTableAdapter = null;
             this.tableAdapterManager.CrucesTrabajadoresTableAdapter = null;
@@ -109,6 +112,7 @@
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
             this.tableAdapterManager.FacturasCabTableAdapter = null;
+            this.tableAdapterManager.FacturasDetHorasTableAdapter = null;
             this.tableAdapterManager.FacturasDetTableAdapter = null;
             this.tableAdapterManager.FestivosEmpresasTableAdapter = null;
             this.tableAdapterManager.FestivosObrasTableAdapter = null;
@@ -118,6 +122,7 @@
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;
@@ -329,7 +334,7 @@
             this.CodProducto.Name = "CodProducto";
             this.CodProducto.Visible = true;
             this.CodProducto.VisibleIndex = 0;
-            this.CodProducto.Width = 125;
+            this.CodProducto.Width = 202;
             // 
             // colDesProducto
             // 
@@ -339,7 +344,7 @@
             this.colDesProducto.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.colDesProducto.Visible = true;
             this.colDesProducto.VisibleIndex = 1;
-            this.colDesProducto.Width = 463;
+            this.colDesProducto.Width = 426;
             // 
             // colIdUMedida
             // 
@@ -349,7 +354,7 @@
             this.colIdUMedida.Name = "colIdUMedida";
             this.colIdUMedida.Visible = true;
             this.colIdUMedida.VisibleIndex = 2;
-            this.colIdUMedida.Width = 60;
+            this.colIdUMedida.Width = 55;
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -380,7 +385,7 @@
             this.colPVP.Name = "colPVP";
             this.colPVP.Visible = true;
             this.colPVP.VisibleIndex = 3;
-            this.colPVP.Width = 91;
+            this.colPVP.Width = 83;
             // 
             // colDescuento
             // 
@@ -392,7 +397,7 @@
             this.colDescuento.Name = "colDescuento";
             this.colDescuento.Visible = true;
             this.colDescuento.VisibleIndex = 4;
-            this.colDescuento.Width = 91;
+            this.colDescuento.Width = 83;
             // 
             // colPorciento
             // 
@@ -404,7 +409,6 @@
             this.colPorciento.Name = "colPorciento";
             this.colPorciento.Visible = true;
             this.colPorciento.VisibleIndex = 5;
-            this.colPorciento.Width = 82;
             // 
             // PC
             // 
@@ -422,7 +426,7 @@
             this.PC.OptionsColumn.ReadOnly = true;
             this.PC.Visible = true;
             this.PC.VisibleIndex = 6;
-            this.PC.Width = 86;
+            this.PC.Width = 87;
             // 
             // PV
             // 
@@ -440,7 +444,7 @@
             this.PV.OptionsColumn.ReadOnly = true;
             this.PV.Visible = true;
             this.PV.VisibleIndex = 7;
-            this.PV.Width = 105;
+            this.PV.Width = 92;
             // 
             // colProducto
             // 

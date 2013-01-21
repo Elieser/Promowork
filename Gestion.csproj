@@ -134,6 +134,7 @@
     <Compile Include="Cobros.Designer.cs">
       <DependentUpon>Cobros.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadImage.cs" />
     <Compile Include="ConsumosCombustibleVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1062,6 +1063,7 @@
   <ItemGroup>
     <Content Include="Gestion.ico" />
     <Content Include="Pendiente.txt" />
+    <None Include="Resources\Partes.png" />
     <None Include="Resources\relojadmin.png" />
     <None Include="Resources\money2.gif" />
     <None Include="Resources\backup.gif" />

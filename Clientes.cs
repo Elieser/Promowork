@@ -297,6 +297,14 @@ namespace Promowork
             copiaFacturaTextBox.Text = "";
         }
 
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma que desea Eliminar?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.clientesBindingSource.RemoveCurrent();
+            }
+        }
+
        
        
     }

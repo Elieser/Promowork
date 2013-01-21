@@ -19,6 +19,10 @@ namespace Promowork
 
         private void facturasCabBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            if (idCuentaComboBox.Text == "")
+            {
+                facturasCabDataGridView.CurrentRow.Cells["IdCuenta"].Value = DBNull.Value;
+            }
             try
             {
                 if (Convert.ToBoolean(facturasCabDataGridView.CurrentRow.Cells["FacturaPresup"].Value) == true)

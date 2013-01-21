@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Categorias));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.promowork_dataDataSet = new Promowork.Promowork_dataDataSet();
             this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriasTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.CategoriasTableAdapter();
@@ -72,11 +72,11 @@
             this.salariosVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.salariosVentaTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.SalariosVentaTableAdapter();
             this.salariosVentaDataGridView = new System.Windows.Forms.DataGridView();
-            this.tiposBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tiposTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.TiposTableAdapter();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tiposBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tiposTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.TiposTableAdapter();
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -122,15 +122,21 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccesosEmpresasTableAdapter = null;
+            this.tableAdapterManager.AdjuntosObrasTableAdapter = null;
             this.tableAdapterManager.AnticiposTableAdapter = null;
             this.tableAdapterManager.AnticiposTrabajadoresTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BajasMedicaTableAdapter = null;
             this.tableAdapterManager.BancosTableAdapter = null;
             this.tableAdapterManager.CategoriasTableAdapter = this.categoriasTableAdapter;
             this.tableAdapterManager.ClientesTableAdapter = null;
+            this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
+            this.tableAdapterManager.CopiasHorasTableAdapter = null;
             this.tableAdapterManager.CrucesTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CuentasTableAdapter = null;
             this.tableAdapterManager.CursosTableAdapter = null;
@@ -138,13 +144,18 @@
             this.tableAdapterManager.EmpresasActualTableAdapter = null;
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
+            this.tableAdapterManager.FacturasCabTableAdapter = null;
+            this.tableAdapterManager.FacturasDetHorasTableAdapter = null;
+            this.tableAdapterManager.FacturasDetTableAdapter = null;
             this.tableAdapterManager.FestivosEmpresasTableAdapter = null;
             this.tableAdapterManager.FestivosObrasTableAdapter = null;
             this.tableAdapterManager.FormasPagoTableAdapter = null;
             this.tableAdapterManager.HijosTrabajadoresTableAdapter = null;
+            this.tableAdapterManager.HorasAdminTableAdapter = null;
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;
@@ -153,15 +164,24 @@
             this.tableAdapterManager.PoblacionesProvincias1TableAdapter = null;
             this.tableAdapterManager.PoblacionesProvinciasTableAdapter = null;
             this.tableAdapterManager.PoblacionesTableAdapter = null;
+            this.tableAdapterManager.PresupCabTableAdapter = null;
+            this.tableAdapterManager.PresupCapTableAdapter = null;
+            this.tableAdapterManager.PresupDetTableAdapter = null;
+            this.tableAdapterManager.PresupSubTableAdapter = null;
+            this.tableAdapterManager.ProductosTableAdapter = null;
+            this.tableAdapterManager.ProductosUtilizadosTableAdapter = null;
             this.tableAdapterManager.ProveedoresTableAdapter = null;
             this.tableAdapterManager.Provincias1TableAdapter = null;
             this.tableAdapterManager.ProvinciasTableAdapter = null;
             this.tableAdapterManager.PuestosTrabajoTableAdapter = null;
             this.tableAdapterManager.SalariosTiposTableAdapter = null;
+            this.tableAdapterManager.SalariosVentaAdminTableAdapter = null;
             this.tableAdapterManager.SalariosVentaTableAdapter = null;
+            this.tableAdapterManager.SeguridadSocialTableAdapter = null;
             this.tableAdapterManager.TiposTableAdapter = null;
             this.tableAdapterManager.TrabajadoresListaTableAdapter = null;
             this.tableAdapterManager.TrabajadoresTableAdapter = null;
+            this.tableAdapterManager.UMedidasTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Promowork.Promowork_dataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = null;
             // 
@@ -170,7 +190,7 @@
             this.categoriasBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.categoriasBindingNavigator.BindingSource = this.categoriasBindingSource;
             this.categoriasBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.categoriasBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.categoriasBindingNavigator.DeleteItem = null;
             this.categoriasBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
             this.categoriasBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -182,8 +202,8 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
+            this.bindingNavigatorAddNewItem,
             this.categoriasBindingNavigatorSaveItem});
             this.categoriasBindingNavigator.Location = new System.Drawing.Point(9, 0);
             this.categoriasBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -221,6 +241,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -361,7 +382,7 @@
             this.bindingNavigator1.AddNewItem = this.toolStripButton1;
             this.bindingNavigator1.BindingSource = this.puestosTrabajoBindingSource;
             this.bindingNavigator1.CountItem = this.toolStripLabel1;
-            this.bindingNavigator1.DeleteItem = this.toolStripButton2;
+            this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton3,
@@ -373,8 +394,8 @@
             this.toolStripButton5,
             this.toolStripButton6,
             this.toolStripSeparator3,
-            this.toolStripButton1,
             this.toolStripButton2,
+            this.toolStripButton1,
             this.toolStripButton7});
             this.bindingNavigator1.Location = new System.Drawing.Point(323, 0);
             this.bindingNavigator1.MoveFirstItem = this.toolStripButton3;
@@ -412,6 +433,7 @@
             this.toolStripButton2.RightToLeftAutoMirrorImage = true;
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton2.Text = "Delete";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -506,15 +528,6 @@
             this.salariosVentaDataGridView.Size = new System.Drawing.Size(295, 105);
             this.salariosVentaDataGridView.TabIndex = 4;
             // 
-            // tiposBindingSource
-            // 
-            this.tiposBindingSource.DataMember = "Tipos";
-            this.tiposBindingSource.DataSource = this.promowork_dataDataSet;
-            // 
-            // tiposTableAdapter
-            // 
-            this.tiposTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "IdTipo";
@@ -529,12 +542,17 @@
             this.dataGridViewTextBoxColumn6.ValueMember = "IdTipo";
             this.dataGridViewTextBoxColumn6.Width = 150;
             // 
+            // tiposBindingSource
+            // 
+            this.tiposBindingSource.DataMember = "Tipos";
+            this.tiposBindingSource.DataSource = this.promowork_dataDataSet;
+            // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "SalVenta";
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn7.HeaderText = "Salario Venta";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -545,6 +563,10 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "IdCategoria";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Visible = false;
+            // 
+            // tiposTableAdapter
+            // 
+            this.tiposTableAdapter.ClearBeforeFill = true;
             // 
             // bindingNavigator2
             // 
@@ -563,8 +585,8 @@
             this.toolStripButton12,
             this.toolStripButton13,
             this.toolStripSeparator6,
-            this.toolStripButton8,
             this.toolStripButton9,
+            this.toolStripButton8,
             this.toolStripButton14});
             this.bindingNavigator2.Location = new System.Drawing.Point(323, 199);
             this.bindingNavigator2.MoveFirstItem = this.toolStripButton10;
@@ -573,7 +595,7 @@
             this.bindingNavigator2.MovePreviousItem = this.toolStripButton11;
             this.bindingNavigator2.Name = "bindingNavigator2";
             this.bindingNavigator2.PositionItem = this.toolStripTextBox2;
-            this.bindingNavigator2.Size = new System.Drawing.Size(309, 25);
+            this.bindingNavigator2.Size = new System.Drawing.Size(278, 25);
             this.bindingNavigator2.TabIndex = 5;
             this.bindingNavigator2.Text = "bindingNavigator2";
             // 

@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="company" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\company.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Presupuesto32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Presupuesto32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="backup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backup.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,8 +148,8 @@
   <data name="icono_Curso-Construccion-Tabiques2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono_Curso-Construccion-Tabiques2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Accesos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Accesos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cruz-roja" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cruz-roja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="construction_worker" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\construction_worker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,11 +157,11 @@
   <data name="Anticipos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Anticipos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Accesos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Accesos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bindingNavigatorDeleteItem.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bindingNavigatorDeleteItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Presupuesto32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Presupuesto32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Anticipos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Anticipos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,14 +190,17 @@
   <data name="icono_Curso-Construccion-Tabiques" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono_Curso-Construccion-Tabiques.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="combustiblesTiposBindingNavigatorSaveItem.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\combustiblesTiposBindingNavigatorSaveItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="money2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\money2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cruz-roja" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cruz-roja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="exit16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exit16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clientes32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clientes32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Suppiers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Suppiers.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,8 +208,8 @@
   <data name="relojadmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\relojadmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clientes32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clientes32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="company" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\company.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="print11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\print11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,7 +223,7 @@
   <data name="user-account" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="combustiblesTiposBindingNavigatorSaveItem.Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\combustiblesTiposBindingNavigatorSaveItem.Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Partes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Partes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

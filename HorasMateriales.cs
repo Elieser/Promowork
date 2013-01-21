@@ -32,17 +32,20 @@ namespace Promowork
             // TODO: This line of code loads data into the 'promowork_dataDataSet.Tipos' table. You can move, or remove it, as needed.
             this.tiposTableAdapter.Fill(this.promowork_dataDataSet.Tipos);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.Obras' table. You can move, or remove it, as needed.
-            this.obrasTableAdapter.FillByListaObras(this.promowork_dataDataSet.Obras,VariablesGlobales.nIdEmpresaActual);
+            this.obrasTableAdapter.FillByEmpresa(this.promowork_dataDataSet.Obras,VariablesGlobales.nIdEmpresaActual);
             this.trabajadoresTableAdapter.Fill(promowork_dataDataSet.Trabajadores, VariablesGlobales.nIdEmpresaActual);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.ProductosUtilizados' table. You can move, or remove it, as needed.
           
             this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual,VariablesGlobales.nAnoActual,VariablesGlobales.nMesActual);
+            this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual);
             this.productosTableAdapter.Fill(promowork_dataDataSet.Productos, VariablesGlobales.nIdEmpresaActual);
-
+                       
             gridView1.OptionsBehavior.ReadOnly = true;
             gridView1.Appearance.Row.BackColor = Color.Silver;
             gridView2.OptionsBehavior.ReadOnly = true;
             gridView2.Appearance.Row.BackColor = Color.Silver;
+
+            this.horasTrabajadasBindingSource.MoveLast();
         }
 
         private void horasTrabajadasBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
@@ -66,17 +69,18 @@ namespace Promowork
 
                     MessageBox.Show("No se Pudo Salvar la Información. El Registro fue modificado por otro Usuario.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual,VariablesGlobales.nAnoActual,VariablesGlobales.nMesActual);
-                    
+                    this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual);
                 }
                 catch (SqlException ex)
                 {
                     if (ErroresSQLServer.ManipulaErrorSQL(ex, this.Text))
                     {
                         this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual,VariablesGlobales.nAnoActual,VariablesGlobales.nMesActual);
-
+                        this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual);
                     }
 
                 }
+           this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual);
 
         }
 
@@ -110,11 +114,13 @@ namespace Promowork
         private void HorasMateriales_Resize(object sender, EventArgs e)
         {
             horasTrabajadasGridControl.Width = this.Width - 16;
-            horasTrabajadasGridControl.Height = this.Height - 235;
+            horasTrabajadasGridControl.Height = this.Height - 280;
            // productosUtilizadosGridControl.Width = this.Width - 16;
-            productosUtilizadosGridControl.Location =new Point(0, this.Height - 168);
-            bindingNavigator1.Location = new Point(0, this.Height - 195);
-            groupBox1.Location = new Point(680, this.Height - 168);
+            productosUtilizadosGridControl.Location = new Point(0, this.Height-220);
+            horasTrabajadasTotalTrabajadorGridControl.Location = new Point(680, this.Height - 220);
+            horasTrabajadasTotalTrabajadorGridControl.Width = horasTrabajadasGridControl.Width - 680;
+            bindingNavigator1.Location = new Point(0, this.Height - 245);
+            groupBox1.Location = new Point(0, this.Height - 90);
         }
 
         private void toolStripButton7_Click(object sender, EventArgs e)
@@ -124,6 +130,7 @@ namespace Promowork
             this.Validate();
             this.productosUtilizadosBindingSource.EndEdit();
             this.productosUtilizadosTableAdapter.Update(promowork_dataDataSet.ProductosUtilizados);
+            this.productosTableAdapter.Fill(promowork_dataDataSet.Productos, VariablesGlobales.nIdEmpresaActual);
             }
                 catch (DBConcurrencyException)
                 {
@@ -216,6 +223,29 @@ namespace Promowork
             copiaFacturaTextBox.Text = "";
         }
 
-       
+        private void gridView2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+         
+            if (e.Column.Name == "codigo" || e.Column.Name == "descripcion")
+            {
+                DataRow Producto = promowork_dataDataSet.Productos.FindByIdProducto(int.Parse(gridView2.GetFocusedRowCellValue("IdProducto").ToString()));
+              //  DataRowView Producto = (DataRowView)productosBindingSource.Current;
+              //  MessageBox.Show(Producto["Descuento"].ToString());
+                gridView2.SetFocusedRowCellValue("PVP", Producto["PVP"]);
+                gridView2.SetFocusedRowCellValue("Descuento", Producto["Descuento"]);
+                gridView2.SetFocusedRowCellValue("Porciento", Producto["Porciento"]);
+
+                
+            }
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma que desea Eliminar?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.horasTrabajadasBindingSource.RemoveCurrent();
+            }
+        }
+
     }
 }

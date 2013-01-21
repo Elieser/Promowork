@@ -78,6 +78,7 @@
             this.entradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
             this.consumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bancoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.salarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -116,6 +117,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton19 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
@@ -124,7 +126,6 @@
             this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
@@ -145,7 +146,6 @@
             this.tableAdapterManager = new Promowork.Promowork_dataDataSetTableAdapters.TableAdapterManager();
             this.usuariosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.UsuariosTableAdapter();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bancoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -457,6 +457,7 @@
             // 
             // toolStripMenuItem15
             // 
+            this.toolStripMenuItem15.Image = global::Promowork.Properties.Resources.Partes;
             this.toolStripMenuItem15.Name = "toolStripMenuItem15";
             this.toolStripMenuItem15.Size = new System.Drawing.Size(224, 22);
             this.toolStripMenuItem15.Text = "Partes Trabajadores";
@@ -562,6 +563,13 @@
             this.consumosToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.consumosToolStripMenuItem.Text = "Consumos Servicios";
             this.consumosToolStripMenuItem.Click += new System.EventHandler(this.consumosToolStripMenuItem_Click);
+            // 
+            // bancoToolStripMenuItem
+            // 
+            this.bancoToolStripMenuItem.Name = "bancoToolStripMenuItem";
+            this.bancoToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.bancoToolStripMenuItem.Text = "Banco";
+            this.bancoToolStripMenuItem.Click += new System.EventHandler(this.bancoToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -772,6 +780,7 @@
             this.toolStripSeparator2,
             this.toolStripButton7,
             this.toolStripButton18,
+            this.toolStripButton19,
             this.toolStripButton12,
             this.toolStripButton13,
             this.toolStripButton15,
@@ -780,7 +789,6 @@
             this.toolStripButton14,
             this.toolStripButton17,
             this.toolStripSeparator3,
-            this.toolStripLabel3,
             this.toolStripTextBox1,
             this.toolStripLabel1,
             this.toolStripTextBox2,
@@ -930,6 +938,17 @@
             this.toolStripButton18.Text = "Horas Administración";
             this.toolStripButton18.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
             // 
+            // toolStripButton19
+            // 
+            this.toolStripButton19.AutoSize = false;
+            this.toolStripButton19.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton19.Image = global::Promowork.Properties.Resources.Partes;
+            this.toolStripButton19.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton19.Name = "toolStripButton19";
+            this.toolStripButton19.Size = new System.Drawing.Size(32, 32);
+            this.toolStripButton19.Text = "Partes Trabajadores";
+            this.toolStripButton19.Click += new System.EventHandler(this.toolStripMenuItem15_Click);
+            // 
             // toolStripButton12
             // 
             this.toolStripButton12.AutoSize = false;
@@ -1012,14 +1031,6 @@
             this.toolStripSeparator3.AutoSize = false;
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(20, 35);
-            // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.toolStripLabel3.Margin = new System.Windows.Forms.Padding(20, 1, 0, 2);
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(68, 32);
-            this.toolStripLabel3.Text = "Empresa:";
             // 
             // toolStripTextBox1
             // 
@@ -1209,13 +1220,6 @@
             this.usuariosBindingSource.DataMember = "Usuarios";
             this.usuariosBindingSource.DataSource = this.promowork_dataDataSet;
             // 
-            // bancoToolStripMenuItem
-            // 
-            this.bancoToolStripMenuItem.Name = "bancoToolStripMenuItem";
-            this.bancoToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.bancoToolStripMenuItem.Text = "Banco";
-            this.bancoToolStripMenuItem.Click += new System.EventHandler(this.bancoToolStripMenuItem_Click);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1293,7 +1297,6 @@
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox3;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private Promowork_dataDataSetTableAdapters.UsuariosTableAdapter usuariosTableAdapter;
         private System.Windows.Forms.BindingSource usuariosBindingSource;
         private System.Windows.Forms.ToolStripMenuItem otrasDefinicionesToolStripMenuItem;
@@ -1369,5 +1372,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripMenuItem bancoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton19;
     }
 }

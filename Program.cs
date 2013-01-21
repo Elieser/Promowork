@@ -32,7 +32,7 @@ namespace Promowork
                {
                     Application.Run(new Principal());
                 }
-             }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Errores sin Gestionar");

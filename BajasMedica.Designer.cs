@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BajasMedica));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.promowork_dataDataSet = new Promowork.Promowork_dataDataSet();
             this.bajasMedicaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bajasMedicaTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.BajasMedicaTableAdapter();
@@ -50,21 +50,21 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bajasMedicaBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.bajasMedicaDataGridView = new System.Windows.Forms.DataGridView();
-            this.empresasActualBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.empresasActualTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.EmpresasActualTableAdapter();
-            this.trabajadoresListaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.trabajadoresListaTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.TrabajadoresListaTableAdapter();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.trabajadoresListaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empresasActualBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empresasActualTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.EmpresasActualTableAdapter();
+            this.trabajadoresListaTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.TrabajadoresListaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bajasMedicaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bajasMedicaBindingNavigator)).BeginInit();
             this.bajasMedicaBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bajasMedicaDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empresasActualBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresListaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresasActualBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // promowork_dataDataSet
@@ -83,6 +83,8 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccesosEmpresasTableAdapter = null;
+            this.tableAdapterManager.AdjuntosObrasTableAdapter = null;
             this.tableAdapterManager.AnticiposTableAdapter = null;
             this.tableAdapterManager.AnticiposTrabajadoresTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -93,6 +95,7 @@
             this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CopiasHorasTableAdapter = null;
             this.tableAdapterManager.CrucesTrabajadoresTableAdapter = null;
@@ -103,14 +106,17 @@
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
             this.tableAdapterManager.FacturasCabTableAdapter = null;
+            this.tableAdapterManager.FacturasDetHorasTableAdapter = null;
             this.tableAdapterManager.FacturasDetTableAdapter = null;
             this.tableAdapterManager.FestivosEmpresasTableAdapter = null;
             this.tableAdapterManager.FestivosObrasTableAdapter = null;
             this.tableAdapterManager.FormasPagoTableAdapter = null;
             this.tableAdapterManager.HijosTrabajadoresTableAdapter = null;
+            this.tableAdapterManager.HorasAdminTableAdapter = null;
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;
@@ -123,16 +129,20 @@
             this.tableAdapterManager.PresupCapTableAdapter = null;
             this.tableAdapterManager.PresupDetTableAdapter = null;
             this.tableAdapterManager.PresupSubTableAdapter = null;
+            this.tableAdapterManager.ProductosTableAdapter = null;
+            this.tableAdapterManager.ProductosUtilizadosTableAdapter = null;
             this.tableAdapterManager.ProveedoresTableAdapter = null;
             this.tableAdapterManager.Provincias1TableAdapter = null;
             this.tableAdapterManager.ProvinciasTableAdapter = null;
             this.tableAdapterManager.PuestosTrabajoTableAdapter = null;
             this.tableAdapterManager.SalariosTiposTableAdapter = null;
+            this.tableAdapterManager.SalariosVentaAdminTableAdapter = null;
             this.tableAdapterManager.SalariosVentaTableAdapter = null;
             this.tableAdapterManager.SeguridadSocialTableAdapter = null;
             this.tableAdapterManager.TiposTableAdapter = null;
             this.tableAdapterManager.TrabajadoresListaTableAdapter = null;
             this.tableAdapterManager.TrabajadoresTableAdapter = null;
+            this.tableAdapterManager.UMedidasTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Promowork.Promowork_dataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = null;
             // 
@@ -141,7 +151,7 @@
             this.bajasMedicaBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.bajasMedicaBindingNavigator.BindingSource = this.bajasMedicaBindingSource;
             this.bajasMedicaBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.bajasMedicaBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bajasMedicaBindingNavigator.DeleteItem = null;
             this.bajasMedicaBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -152,8 +162,8 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
+            this.bindingNavigatorAddNewItem,
             this.bajasMedicaBindingNavigatorSaveItem});
             this.bajasMedicaBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.bajasMedicaBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -191,6 +201,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -278,24 +289,6 @@
             this.bajasMedicaDataGridView.TabIndex = 2;
             this.bajasMedicaDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.bajasMedicaDataGridView_DataError);
             // 
-            // empresasActualBindingSource
-            // 
-            this.empresasActualBindingSource.DataMember = "EmpresasActual";
-            this.empresasActualBindingSource.DataSource = this.promowork_dataDataSet;
-            // 
-            // empresasActualTableAdapter
-            // 
-            this.empresasActualTableAdapter.ClearBeforeFill = true;
-            // 
-            // trabajadoresListaBindingSource
-            // 
-            this.trabajadoresListaBindingSource.DataMember = "TrabajadoresLista";
-            this.trabajadoresListaBindingSource.DataSource = this.promowork_dataDataSet;
-            // 
-            // trabajadoresListaTableAdapter
-            // 
-            this.trabajadoresListaTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "IdTrabajdor";
@@ -310,12 +303,17 @@
             this.dataGridViewTextBoxColumn3.ValueMember = "IdTrabajador";
             this.dataGridViewTextBoxColumn3.Width = 250;
             // 
+            // trabajadoresListaBindingSource
+            // 
+            this.trabajadoresListaBindingSource.DataMember = "TrabajadoresLista";
+            this.trabajadoresListaBindingSource.DataSource = this.promowork_dataDataSet;
+            // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "DiasBaja";
-            dataGridViewCellStyle5.Format = "N0";
-            dataGridViewCellStyle5.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn4.HeaderText = "Dias Baja";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Width = 80;
@@ -323,9 +321,9 @@
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "ImpBaja";
-            dataGridViewCellStyle6.Format = "N2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn7.HeaderText = "Importe";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Width = 80;
@@ -336,6 +334,19 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Observaciones";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 350;
+            // 
+            // empresasActualBindingSource
+            // 
+            this.empresasActualBindingSource.DataMember = "EmpresasActual";
+            this.empresasActualBindingSource.DataSource = this.promowork_dataDataSet;
+            // 
+            // empresasActualTableAdapter
+            // 
+            this.empresasActualTableAdapter.ClearBeforeFill = true;
+            // 
+            // trabajadoresListaTableAdapter
+            // 
+            this.trabajadoresListaTableAdapter.ClearBeforeFill = true;
             // 
             // BajasMedica
             // 
@@ -357,8 +368,8 @@
             this.bajasMedicaBindingNavigator.ResumeLayout(false);
             this.bajasMedicaBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bajasMedicaDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empresasActualBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabajadoresListaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresasActualBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

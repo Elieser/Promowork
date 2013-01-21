@@ -52,6 +52,11 @@
             this.cuentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuentasTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.CuentasTableAdapter();
             this.cuentasDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CtaEmpresa = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IdEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -65,11 +70,6 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CtaEmpresa = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.IdEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bancosBindingNavigator)).BeginInit();
@@ -97,6 +97,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccesosEmpresasTableAdapter = null;
             this.tableAdapterManager.AdjuntosObrasTableAdapter = null;
             this.tableAdapterManager.AnticiposTableAdapter = null;
             this.tableAdapterManager.AnticiposTrabajadoresTableAdapter = null;
@@ -108,6 +109,7 @@
             this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CopiasHorasTableAdapter = null;
             this.tableAdapterManager.CrucesTrabajadoresTableAdapter = null;
@@ -118,6 +120,7 @@
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
             this.tableAdapterManager.FacturasCabTableAdapter = null;
+            this.tableAdapterManager.FacturasDetHorasTableAdapter = null;
             this.tableAdapterManager.FacturasDetTableAdapter = null;
             this.tableAdapterManager.FestivosEmpresasTableAdapter = null;
             this.tableAdapterManager.FestivosObrasTableAdapter = null;
@@ -127,6 +130,7 @@
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;
@@ -161,7 +165,7 @@
             this.bancosBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.bancosBindingNavigator.BindingSource = this.bancosBindingSource;
             this.bancosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.bancosBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bancosBindingNavigator.DeleteItem = null;
             this.bancosBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
             this.bancosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -173,8 +177,8 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
+            this.bindingNavigatorAddNewItem,
             this.bancosBindingNavigatorSaveItem});
             this.bancosBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.bancosBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -212,6 +216,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -328,12 +333,47 @@
             this.cuentasDataGridView.Size = new System.Drawing.Size(496, 314);
             this.cuentasDataGridView.TabIndex = 3;
             // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "NumCuenta";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Cuenta";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "DesCuenta";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Descripción";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "IdBanco";
+            this.dataGridViewTextBoxColumn10.HeaderText = "IdBanco";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Visible = false;
+            // 
+            // CtaEmpresa
+            // 
+            this.CtaEmpresa.DataPropertyName = "CtaEmpresa";
+            this.CtaEmpresa.HeaderText = "Empresa";
+            this.CtaEmpresa.Name = "CtaEmpresa";
+            this.CtaEmpresa.Width = 50;
+            // 
+            // IdEmpresa
+            // 
+            this.IdEmpresa.DataPropertyName = "IdEmpresa";
+            this.IdEmpresa.HeaderText = "IdEmpresa";
+            this.IdEmpresa.Name = "IdEmpresa";
+            this.IdEmpresa.Visible = false;
+            // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.toolStripButton1;
             this.bindingNavigator1.BindingSource = this.cuentasBindingSource;
             this.bindingNavigator1.CountItem = this.toolStripLabel1;
-            this.bindingNavigator1.DeleteItem = this.toolStripButton2;
+            this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton3,
@@ -345,8 +385,8 @@
             this.toolStripButton5,
             this.toolStripButton6,
             this.toolStripSeparator3,
-            this.toolStripButton1,
             this.toolStripButton2,
+            this.toolStripButton1,
             this.toolStripButton7});
             this.bindingNavigator1.Location = new System.Drawing.Point(296, 0);
             this.bindingNavigator1.MoveFirstItem = this.toolStripButton3;
@@ -384,6 +424,7 @@
             this.toolStripButton2.RightToLeftAutoMirrorImage = true;
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton2.Text = "Delete";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -453,41 +494,6 @@
             this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton7.Text = "Save Data";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "NumCuenta";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Cuenta";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "DesCuenta";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Descripción";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "IdBanco";
-            this.dataGridViewTextBoxColumn10.HeaderText = "IdBanco";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Visible = false;
-            // 
-            // CtaEmpresa
-            // 
-            this.CtaEmpresa.DataPropertyName = "CtaEmpresa";
-            this.CtaEmpresa.HeaderText = "Empresa";
-            this.CtaEmpresa.Name = "CtaEmpresa";
-            this.CtaEmpresa.Width = 50;
-            // 
-            // IdEmpresa
-            // 
-            this.IdEmpresa.DataPropertyName = "IdEmpresa";
-            this.IdEmpresa.HeaderText = "IdEmpresa";
-            this.IdEmpresa.Name = "IdEmpresa";
-            this.IdEmpresa.Visible = false;
             // 
             // BancosCuentas
             // 

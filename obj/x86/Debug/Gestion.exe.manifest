@@ -174,14 +174,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Gestion.exe" size="11724800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Gestion.exe" size="11666432">
       <assemblyIdentity name="Gestion" version="1.0.0.5" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>qryfnzkV72C2Plm7buaMC4aO5Mk=</dsig:DigestValue>
+        <dsig:DigestValue>sDBM6qyz7hjDqpS+7gjgeoaDzZo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -193,7 +193,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>848fWtASd5URtdI+UpBbh/Iodlk=</dsig:DigestValue>
+        <dsig:DigestValue>+RJEb4+nQ3TviscnJBij1/7HmmI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -257,13 +257,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Gestion.exe.config" size="715">
+  <file name="Gestion.exe.config" size="793">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>JCrseoj0fz+/OesYlsz0v+pEAVg=</dsig:DigestValue>
+      <dsig:DigestValue>si/bjKbCCp+LT+876/S+VT1wfpE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Gestion.ico" size="15086">

@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label bancoCuentaLabel;
             System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label saldoAnteriorLabel;
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label3;
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
             this.colPrevision = new DevExpress.XtraGrid.Columns.GridColumn();
             this.promowork_dataDataSet = new Promowork.Promowork_dataDataSet();
@@ -38,18 +41,20 @@
             this.operacionesBancoTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.OperacionesBancoTableAdapter();
             this.tableAdapterManager = new Promowork.Promowork_dataDataSetTableAdapters.TableAdapterManager();
             this.operacionesBancoGridControl = new DevExpress.XtraGrid.GridControl();
+            this.vOperacionesBancoAgrupadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colIdOpeBanco = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIdEmpresa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFechaOpe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFecha = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIdConBanco = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIdCompra = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIdCobro = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDesOperacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdFormaPago1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIdCuenta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImporte = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colEnCuenta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSaldoAnterior = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDesOperacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDesFormaPago = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdEmpresa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDebe1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHaber1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSaldo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.vPrevisionesGridControl = new DevExpress.XtraGrid.GridControl();
             this.vPrevisionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -64,6 +69,11 @@
             this.colTipo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDebe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHaber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdCobro1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdCompra1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdFormaPago = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdOpeBanco1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.formasPagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuentasBancosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuentasBancosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.CuentasBancosTableAdapter();
             this.bancoCuentaComboBox = new System.Windows.Forms.ComboBox();
@@ -74,21 +84,25 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.pagosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pagosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.PagosTableAdapter();
-            this.colIdCobro1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIdCompra1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIdFormaPago = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIdOpeBanco1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIdFormaPago1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.button2 = new System.Windows.Forms.Button();
+            this.saldoAnteriorTextBox = new System.Windows.Forms.TextBox();
+            this.formasPagoTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.FormasPagoTableAdapter();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.vOperacionesBancoAgrupadasTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.vOperacionesBancoAgrupadasTableAdapter();
             bancoCuentaLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
+            saldoAnteriorLabel = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.operacionesBancoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.operacionesBancoGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vOperacionesBancoAgrupadasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vPrevisionesGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vPrevisionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formasPagoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuentasBancosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -110,6 +124,33 @@
             label1.Size = new System.Drawing.Size(95, 13);
             label1.TabIndex = 10;
             label1.Text = "Mostrar a partir de:";
+            // 
+            // saldoAnteriorLabel
+            // 
+            saldoAnteriorLabel.AutoSize = true;
+            saldoAnteriorLabel.Location = new System.Drawing.Point(874, 15);
+            saldoAnteriorLabel.Name = "saldoAnteriorLabel";
+            saldoAnteriorLabel.Size = new System.Drawing.Size(76, 13);
+            saldoAnteriorLabel.TabIndex = 11;
+            saldoAnteriorLabel.Text = "Saldo Anterior:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(4, 254);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(74, 13);
+            label2.TabIndex = 13;
+            label2.Text = "Fecha Banco:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(206, 254);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(67, 13);
+            label3.TabIndex = 15;
+            label3.Text = "Forma Pago:";
             // 
             // colPrevision
             // 
@@ -198,7 +239,7 @@
             // 
             // operacionesBancoGridControl
             // 
-            this.operacionesBancoGridControl.DataSource = this.operacionesBancoBindingSource;
+            this.operacionesBancoGridControl.DataSource = this.vOperacionesBancoAgrupadasBindingSource;
             this.operacionesBancoGridControl.Location = new System.Drawing.Point(0, 36);
             this.operacionesBancoGridControl.MainView = this.gridView1;
             this.operacionesBancoGridControl.Name = "operacionesBancoGridControl";
@@ -207,110 +248,121 @@
             this.operacionesBancoGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // vOperacionesBancoAgrupadasBindingSource
+            // 
+            this.vOperacionesBancoAgrupadasBindingSource.DataMember = "vOperacionesBancoAgrupadas";
+            this.vOperacionesBancoAgrupadasBindingSource.DataSource = this.promowork_dataDataSet;
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colIdOpeBanco,
-            this.colIdEmpresa,
+            this.colFechaOpe,
             this.colFecha,
-            this.colIdConBanco,
-            this.colIdCompra,
-            this.colIdCobro,
-            this.colDesOperacion,
+            this.colIdFormaPago1,
             this.colIdCuenta,
             this.colImporte,
-            this.colEnCuenta,
             this.colSaldoAnterior,
-            this.colIdFormaPago1});
+            this.colDesOperacion,
+            this.colDesFormaPago,
+            this.colIdEmpresa,
+            this.colDebe1,
+            this.colHaber1,
+            this.colSaldo});
             this.gridView1.GridControl = this.operacionesBancoGridControl;
+            this.gridView1.GroupRowHeight = 0;
+            this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Importe", this.colImporte, "")});
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // colIdOpeBanco
+            // colFechaOpe
             // 
-            this.colIdOpeBanco.FieldName = "IdOpeBanco";
-            this.colIdOpeBanco.Name = "colIdOpeBanco";
-            this.colIdOpeBanco.OptionsColumn.ReadOnly = true;
-            this.colIdOpeBanco.Visible = true;
-            this.colIdOpeBanco.VisibleIndex = 0;
-            this.colIdOpeBanco.Width = 78;
-            // 
-            // colIdEmpresa
-            // 
-            this.colIdEmpresa.FieldName = "IdEmpresa";
-            this.colIdEmpresa.Name = "colIdEmpresa";
+            this.colFechaOpe.FieldName = "FechaOpe";
+            this.colFechaOpe.Name = "colFechaOpe";
             // 
             // colFecha
             // 
+            this.colFecha.Caption = "Fecha";
             this.colFecha.FieldName = "Fecha";
             this.colFecha.Name = "colFecha";
             this.colFecha.Visible = true;
-            this.colFecha.VisibleIndex = 1;
-            this.colFecha.Width = 89;
+            this.colFecha.VisibleIndex = 0;
+            this.colFecha.Width = 87;
             // 
-            // colIdConBanco
+            // colIdFormaPago1
             // 
-            this.colIdConBanco.FieldName = "IdConBanco";
-            this.colIdConBanco.Name = "colIdConBanco";
-            this.colIdConBanco.Visible = true;
-            this.colIdConBanco.VisibleIndex = 2;
-            this.colIdConBanco.Width = 70;
-            // 
-            // colIdCompra
-            // 
-            this.colIdCompra.FieldName = "IdCompra";
-            this.colIdCompra.Name = "colIdCompra";
-            this.colIdCompra.Visible = true;
-            this.colIdCompra.VisibleIndex = 3;
-            this.colIdCompra.Width = 66;
-            // 
-            // colIdCobro
-            // 
-            this.colIdCobro.FieldName = "IdCobro";
-            this.colIdCobro.Name = "colIdCobro";
-            this.colIdCobro.Visible = true;
-            this.colIdCobro.VisibleIndex = 4;
-            this.colIdCobro.Width = 54;
-            // 
-            // colDesOperacion
-            // 
-            this.colDesOperacion.FieldName = "DesOperacion";
-            this.colDesOperacion.Name = "colDesOperacion";
-            this.colDesOperacion.Visible = true;
-            this.colDesOperacion.VisibleIndex = 5;
-            this.colDesOperacion.Width = 418;
+            this.colIdFormaPago1.FieldName = "IdFormaPago";
+            this.colIdFormaPago1.Name = "colIdFormaPago1";
             // 
             // colIdCuenta
             // 
+            this.colIdCuenta.Caption = "Cuenta";
             this.colIdCuenta.FieldName = "IdCuenta";
             this.colIdCuenta.Name = "colIdCuenta";
             this.colIdCuenta.Visible = true;
-            this.colIdCuenta.VisibleIndex = 6;
-            this.colIdCuenta.Width = 94;
+            this.colIdCuenta.VisibleIndex = 1;
+            this.colIdCuenta.Width = 331;
             // 
             // colImporte
             // 
+            this.colImporte.Caption = "Importe";
             this.colImporte.FieldName = "Importe";
             this.colImporte.Name = "colImporte";
-            this.colImporte.Visible = true;
-            this.colImporte.VisibleIndex = 7;
-            this.colImporte.Width = 108;
-            // 
-            // colEnCuenta
-            // 
-            this.colEnCuenta.FieldName = "EnCuenta";
-            this.colEnCuenta.Name = "colEnCuenta";
-            this.colEnCuenta.Visible = true;
-            this.colEnCuenta.VisibleIndex = 8;
-            this.colEnCuenta.Width = 96;
+            this.colImporte.Width = 272;
             // 
             // colSaldoAnterior
             // 
             this.colSaldoAnterior.FieldName = "SaldoAnterior";
             this.colSaldoAnterior.Name = "colSaldoAnterior";
             this.colSaldoAnterior.Visible = true;
-            this.colSaldoAnterior.VisibleIndex = 9;
-            this.colSaldoAnterior.Width = 147;
+            this.colSaldoAnterior.VisibleIndex = 7;
+            // 
+            // colDesOperacion
+            // 
+            this.colDesOperacion.Caption = "Descripción";
+            this.colDesOperacion.FieldName = "DesOperacion";
+            this.colDesOperacion.Name = "colDesOperacion";
+            this.colDesOperacion.Visible = true;
+            this.colDesOperacion.VisibleIndex = 2;
+            this.colDesOperacion.Width = 282;
+            // 
+            // colDesFormaPago
+            // 
+            this.colDesFormaPago.Caption = "Forma Pago";
+            this.colDesFormaPago.FieldName = "DesFormaPago";
+            this.colDesFormaPago.Name = "colDesFormaPago";
+            this.colDesFormaPago.Visible = true;
+            this.colDesFormaPago.VisibleIndex = 3;
+            this.colDesFormaPago.Width = 243;
+            // 
+            // colIdEmpresa
+            // 
+            this.colIdEmpresa.FieldName = "IdEmpresa";
+            this.colIdEmpresa.Name = "colIdEmpresa";
+            // 
+            // colDebe1
+            // 
+            this.colDebe1.FieldName = "Debe";
+            this.colDebe1.Name = "colDebe1";
+            this.colDebe1.Visible = true;
+            this.colDebe1.VisibleIndex = 4;
+            this.colDebe1.Width = 90;
+            // 
+            // colHaber1
+            // 
+            this.colHaber1.FieldName = "Haber";
+            this.colHaber1.Name = "colHaber1";
+            this.colHaber1.Visible = true;
+            this.colHaber1.VisibleIndex = 5;
+            this.colHaber1.Width = 90;
+            // 
+            // colSaldo
+            // 
+            this.colSaldo.FieldName = "Saldo";
+            this.colSaldo.Name = "colSaldo";
+            this.colSaldo.Visible = true;
+            this.colSaldo.VisibleIndex = 6;
+            this.colSaldo.Width = 97;
             // 
             // vPrevisionesGridControl
             // 
@@ -364,6 +416,7 @@
             styleFormatCondition2});
             this.gridView2.GridControl = this.vPrevisionesGridControl;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.MultiSelect = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView2_FocusedRowChanged);
             // 
@@ -373,7 +426,7 @@
             this.colFecha1.Name = "colFecha1";
             this.colFecha1.Visible = true;
             this.colFecha1.VisibleIndex = 0;
-            this.colFecha1.Width = 124;
+            this.colFecha1.Width = 99;
             // 
             // colDesProveedor
             // 
@@ -382,7 +435,7 @@
             this.colDesProveedor.Name = "colDesProveedor";
             this.colDesProveedor.Visible = true;
             this.colDesProveedor.VisibleIndex = 2;
-            this.colDesProveedor.Width = 380;
+            this.colDesProveedor.Width = 305;
             // 
             // colFactura
             // 
@@ -390,12 +443,14 @@
             this.colFactura.Name = "colFactura";
             this.colFactura.Visible = true;
             this.colFactura.VisibleIndex = 3;
-            this.colFactura.Width = 213;
+            this.colFactura.Width = 170;
             // 
             // colImporte1
             // 
             this.colImporte1.FieldName = "Importe";
             this.colImporte1.Name = "colImporte1";
+            this.colImporte1.Visible = true;
+            this.colImporte1.VisibleIndex = 11;
             // 
             // colmarca
             // 
@@ -404,7 +459,7 @@
             this.colmarca.Name = "colmarca";
             this.colmarca.Visible = true;
             this.colmarca.VisibleIndex = 6;
-            this.colmarca.Width = 69;
+            this.colmarca.Width = 55;
             // 
             // colIdEmpresa1
             // 
@@ -427,7 +482,7 @@
             this.colTipo.Name = "colTipo";
             this.colTipo.Visible = true;
             this.colTipo.VisibleIndex = 1;
-            this.colTipo.Width = 170;
+            this.colTipo.Width = 136;
             // 
             // colDebe
             // 
@@ -435,7 +490,7 @@
             this.colDebe.Name = "colDebe";
             this.colDebe.Visible = true;
             this.colDebe.VisibleIndex = 4;
-            this.colDebe.Width = 140;
+            this.colDebe.Width = 112;
             // 
             // colHaber
             // 
@@ -443,7 +498,44 @@
             this.colHaber.Name = "colHaber";
             this.colHaber.Visible = true;
             this.colHaber.VisibleIndex = 5;
-            this.colHaber.Width = 124;
+            this.colHaber.Width = 99;
+            // 
+            // colIdCobro1
+            // 
+            this.colIdCobro1.FieldName = "IdCobro";
+            this.colIdCobro1.Name = "colIdCobro1";
+            this.colIdCobro1.Visible = true;
+            this.colIdCobro1.VisibleIndex = 8;
+            this.colIdCobro1.Width = 36;
+            // 
+            // colIdCompra1
+            // 
+            this.colIdCompra1.FieldName = "IdCompra";
+            this.colIdCompra1.Name = "colIdCompra1";
+            this.colIdCompra1.Visible = true;
+            this.colIdCompra1.VisibleIndex = 9;
+            this.colIdCompra1.Width = 34;
+            // 
+            // colIdFormaPago
+            // 
+            this.colIdFormaPago.FieldName = "IdFormaPago";
+            this.colIdFormaPago.Name = "colIdFormaPago";
+            this.colIdFormaPago.Visible = true;
+            this.colIdFormaPago.VisibleIndex = 10;
+            this.colIdFormaPago.Width = 139;
+            // 
+            // colIdOpeBanco1
+            // 
+            this.colIdOpeBanco1.FieldName = "IdOpeBanco";
+            this.colIdOpeBanco1.Name = "colIdOpeBanco1";
+            this.colIdOpeBanco1.Visible = true;
+            this.colIdOpeBanco1.VisibleIndex = 7;
+            this.colIdOpeBanco1.Width = 35;
+            // 
+            // formasPagoBindingSource
+            // 
+            this.formasPagoBindingSource.DataMember = "FormasPago";
+            this.formasPagoBindingSource.DataSource = this.promowork_dataDataSet;
             // 
             // cuentasBancosBindingSource
             // 
@@ -472,7 +564,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1163, 249);
+            this.button1.Location = new System.Drawing.Point(480, 249);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -483,7 +575,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(1052, 252);
+            this.dateTimePicker1.Location = new System.Drawing.Point(84, 252);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(96, 20);
             this.dateTimePicker1.TabIndex = 8;
@@ -506,33 +598,6 @@
             // 
             this.pagosTableAdapter.ClearBeforeFill = true;
             // 
-            // colIdCobro1
-            // 
-            this.colIdCobro1.FieldName = "IdCobro";
-            this.colIdCobro1.Name = "colIdCobro1";
-            // 
-            // colIdCompra1
-            // 
-            this.colIdCompra1.FieldName = "IdCompra";
-            this.colIdCompra1.Name = "colIdCompra1";
-            // 
-            // colIdFormaPago
-            // 
-            this.colIdFormaPago.FieldName = "IdFormaPago";
-            this.colIdFormaPago.Name = "colIdFormaPago";
-            // 
-            // colIdOpeBanco1
-            // 
-            this.colIdOpeBanco1.FieldName = "IdOpeBanco";
-            this.colIdOpeBanco1.Name = "colIdOpeBanco1";
-            // 
-            // colIdFormaPago1
-            // 
-            this.colIdFormaPago1.FieldName = "IdFormaPago";
-            this.colIdFormaPago1.Name = "colIdFormaPago1";
-            this.colIdFormaPago1.Visible = true;
-            this.colIdFormaPago1.VisibleIndex = 10;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(748, 6);
@@ -543,12 +608,47 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // saldoAnteriorTextBox
+            // 
+            this.saldoAnteriorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vOperacionesBancoAgrupadasBindingSource, "SaldoAnterior", true));
+            this.saldoAnteriorTextBox.Location = new System.Drawing.Point(956, 12);
+            this.saldoAnteriorTextBox.Name = "saldoAnteriorTextBox";
+            this.saldoAnteriorTextBox.Size = new System.Drawing.Size(100, 20);
+            this.saldoAnteriorTextBox.TabIndex = 12;
+            // 
+            // formasPagoTableAdapter
+            // 
+            this.formasPagoTableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.vPrevisionesBindingSource, "IdFormaPago", true));
+            this.comboBox1.DataSource = this.formasPagoBindingSource;
+            this.comboBox1.DisplayMember = "DesFormaPago";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(279, 253);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(181, 21);
+            this.comboBox1.TabIndex = 14;
+            this.comboBox1.ValueMember = "IdFormaPago";
+            // 
+            // vOperacionesBancoAgrupadasTableAdapter
+            // 
+            this.vOperacionesBancoAgrupadasTableAdapter.ClearBeforeFill = true;
+            // 
             // OperacionesBanco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1370, 450);
+            this.ClientSize = new System.Drawing.Size(1249, 421);
+            this.Controls.Add(label3);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(label2);
+            this.Controls.Add(saldoAnteriorLabel);
+            this.Controls.Add(this.saldoAnteriorTextBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(label1);
             this.Controls.Add(this.dateTimePicker2);
@@ -567,10 +667,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.operacionesBancoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.operacionesBancoGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vOperacionesBancoAgrupadasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vPrevisionesGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vPrevisionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formasPagoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuentasBancosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -607,26 +709,32 @@
         private Promowork_dataDataSetTableAdapters.vPrevisionesTableAdapter vPrevisionesTableAdapter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private DevExpress.XtraGrid.Columns.GridColumn colIdOpeBanco;
-        private DevExpress.XtraGrid.Columns.GridColumn colIdEmpresa;
-        private DevExpress.XtraGrid.Columns.GridColumn colFecha;
-        private DevExpress.XtraGrid.Columns.GridColumn colIdConBanco;
-        private DevExpress.XtraGrid.Columns.GridColumn colIdCompra;
-        private DevExpress.XtraGrid.Columns.GridColumn colIdCobro;
-        private DevExpress.XtraGrid.Columns.GridColumn colDesOperacion;
-        private DevExpress.XtraGrid.Columns.GridColumn colIdCuenta;
-        private DevExpress.XtraGrid.Columns.GridColumn colImporte;
-        private DevExpress.XtraGrid.Columns.GridColumn colEnCuenta;
-        private DevExpress.XtraGrid.Columns.GridColumn colSaldoAnterior;
         private Promowork_dataDataSetTableAdapters.QueriesTableAdapter queriesTableAdapter1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.BindingSource pagosBindingSource;
         private Promowork_dataDataSetTableAdapters.PagosTableAdapter pagosTableAdapter;
-        private DevExpress.XtraGrid.Columns.GridColumn colIdFormaPago1;
         private DevExpress.XtraGrid.Columns.GridColumn colIdCobro1;
         private DevExpress.XtraGrid.Columns.GridColumn colIdCompra1;
         private DevExpress.XtraGrid.Columns.GridColumn colIdFormaPago;
         private DevExpress.XtraGrid.Columns.GridColumn colIdOpeBanco1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox saldoAnteriorTextBox;
+        private System.Windows.Forms.BindingSource formasPagoBindingSource;
+        private Promowork_dataDataSetTableAdapters.FormasPagoTableAdapter formasPagoTableAdapter;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource vOperacionesBancoAgrupadasBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colFechaOpe;
+        private DevExpress.XtraGrid.Columns.GridColumn colFecha;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdFormaPago1;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdCuenta;
+        private DevExpress.XtraGrid.Columns.GridColumn colImporte;
+        private DevExpress.XtraGrid.Columns.GridColumn colSaldoAnterior;
+        private DevExpress.XtraGrid.Columns.GridColumn colDesOperacion;
+        private DevExpress.XtraGrid.Columns.GridColumn colDesFormaPago;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdEmpresa;
+        private Promowork_dataDataSetTableAdapters.vOperacionesBancoAgrupadasTableAdapter vOperacionesBancoAgrupadasTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colDebe1;
+        private DevExpress.XtraGrid.Columns.GridColumn colHaber1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSaldo;
     }
 }

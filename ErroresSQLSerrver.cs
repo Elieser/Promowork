@@ -4,6 +4,7 @@ using System.Linq;
 using System.Globalization;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Promowork
 {
@@ -32,5 +33,7 @@ namespace Promowork
             return fill;
                    
         }
+
+        
     }
 }

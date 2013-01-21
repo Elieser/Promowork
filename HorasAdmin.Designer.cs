@@ -181,6 +181,7 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button8 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             apeTrabajadorLabel = new System.Windows.Forms.Label();
             idTipoLabel = new System.Windows.Forms.Label();
             festivoLabel = new System.Windows.Forms.Label();
@@ -279,7 +280,7 @@
             // nomPresupLabel
             // 
             nomPresupLabel.AutoSize = true;
-            nomPresupLabel.Location = new System.Drawing.Point(747, 6);
+            nomPresupLabel.Location = new System.Drawing.Point(870, 3);
             nomPresupLabel.Name = "nomPresupLabel";
             nomPresupLabel.Size = new System.Drawing.Size(69, 13);
             nomPresupLabel.TabIndex = 51;
@@ -867,7 +868,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(655, 1);
+            this.button2.Location = new System.Drawing.Point(778, -2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 48;
@@ -902,7 +903,7 @@
             this.nomPresupComboBox.DataSource = this.presupCabBindingSource;
             this.nomPresupComboBox.DisplayMember = "NomPresup";
             this.nomPresupComboBox.FormattingEnabled = true;
-            this.nomPresupComboBox.Location = new System.Drawing.Point(821, 3);
+            this.nomPresupComboBox.Location = new System.Drawing.Point(944, 0);
             this.nomPresupComboBox.Name = "nomPresupComboBox";
             this.nomPresupComboBox.Size = new System.Drawing.Size(318, 21);
             this.nomPresupComboBox.TabIndex = 52;
@@ -1028,7 +1029,7 @@
             this.nomMesComboBox.DisplayMember = "NomMes";
             this.nomMesComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomMesComboBox.FormattingEnabled = true;
-            this.nomMesComboBox.Location = new System.Drawing.Point(526, 2);
+            this.nomMesComboBox.Location = new System.Drawing.Point(649, -1);
             this.nomMesComboBox.Name = "nomMesComboBox";
             this.nomMesComboBox.Size = new System.Drawing.Size(121, 21);
             this.nomMesComboBox.TabIndex = 63;
@@ -1053,7 +1054,7 @@
             this.anoTrabComboBox.DisplayMember = "AnoTrab";
             this.anoTrabComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.anoTrabComboBox.FormattingEnabled = true;
-            this.anoTrabComboBox.Location = new System.Drawing.Point(412, 2);
+            this.anoTrabComboBox.Location = new System.Drawing.Point(535, -1);
             this.anoTrabComboBox.Name = "anoTrabComboBox";
             this.anoTrabComboBox.Size = new System.Drawing.Size(70, 21);
             this.anoTrabComboBox.TabIndex = 62;
@@ -1063,7 +1064,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(383, 6);
+            this.label6.Location = new System.Drawing.Point(506, 3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 13);
             this.label6.TabIndex = 61;
@@ -1072,7 +1073,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(496, 6);
+            this.label7.Location = new System.Drawing.Point(619, 3);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(30, 13);
             this.label7.TabIndex = 60;
@@ -1092,6 +1093,7 @@
             this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CopiasHorasTableAdapter = null;
@@ -1113,6 +1115,7 @@
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;
@@ -1310,12 +1313,24 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(385, 3);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(89, 17);
+            this.checkBox1.TabIndex = 66;
+            this.checkBox1.Text = "Motrar Todas";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // HorasAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1331, 552);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.totalHorasAdminDataGridView);
             this.Controls.Add(this.nomMesComboBox);
@@ -1489,5 +1504,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

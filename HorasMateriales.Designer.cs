@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label copiaFacturaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HorasMateriales));
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            this.colNumTrabajador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNomTrabajador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSalario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.horasTrabajadasGridControl = new DevExpress.XtraGrid.GridControl();
             this.horasTrabajadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -61,12 +64,12 @@
             this.colCantAdmin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDirTrabajo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFacturado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAlbaran = new DevExpress.XtraGrid.Columns.GridColumn();
             this.promoworkdataDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.horasTrabajadasTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.HorasTrabajadasTableAdapter();
             this.tableAdapterManager = new Promowork.Promowork_dataDataSetTableAdapters.TableAdapterManager();
             this.horasTrabajadasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -75,6 +78,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.horasTrabajadasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -105,10 +109,10 @@
             this.colIdProdUtiliza = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIdHoras1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIdHorasAdmin = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.codigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colIdProducto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.descripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colCantidad1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPVP = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -122,6 +126,17 @@
             this.copiaFacturaTextBox = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.horasTrabajadasTotalTrabajadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.horasTrabajadasTotalTrabajadorTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.HorasTrabajadasTotalTrabajadorTableAdapter();
+            this.horasTrabajadasTotalTrabajadorGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colApeTrabajador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDesTipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCantidad2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCantidadAdmin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colImporte = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colImporteAdmin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.chkcobrado = new DevExpress.XtraEditors.CheckEdit();
             copiaFacturaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasBindingSource)).BeginInit();
@@ -146,16 +161,40 @@
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit5)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasTotalTrabajadorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasTotalTrabajadorGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkcobrado.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // copiaFacturaLabel
             // 
             copiaFacturaLabel.AutoSize = true;
-            copiaFacturaLabel.Location = new System.Drawing.Point(10, 24);
+            copiaFacturaLabel.Location = new System.Drawing.Point(10, 13);
             copiaFacturaLabel.Name = "copiaFacturaLabel";
             copiaFacturaLabel.Size = new System.Drawing.Size(65, 13);
             copiaFacturaLabel.TabIndex = 35;
             copiaFacturaLabel.Text = "Copia Parte:";
+            // 
+            // colNumTrabajador
+            // 
+            this.colNumTrabajador.Caption = "No";
+            this.colNumTrabajador.FieldName = "NumTrabajador";
+            this.colNumTrabajador.Name = "colNumTrabajador";
+            this.colNumTrabajador.OptionsColumn.ReadOnly = true;
+            this.colNumTrabajador.Visible = true;
+            this.colNumTrabajador.VisibleIndex = 0;
+            this.colNumTrabajador.Width = 31;
+            // 
+            // colNomTrabajador
+            // 
+            this.colNomTrabajador.Caption = "Nombre";
+            this.colNomTrabajador.FieldName = "NomTrabajador";
+            this.colNomTrabajador.Name = "colNomTrabajador";
+            this.colNomTrabajador.OptionsColumn.ReadOnly = true;
+            this.colNomTrabajador.Visible = true;
+            this.colNomTrabajador.VisibleIndex = 1;
+            this.colNomTrabajador.Width = 90;
             // 
             // colSalario
             // 
@@ -166,7 +205,7 @@
             this.colSalario.Name = "colSalario";
             this.colSalario.Visible = true;
             this.colSalario.VisibleIndex = 6;
-            this.colSalario.Width = 55;
+            this.colSalario.Width = 49;
             // 
             // horasTrabajadasGridControl
             // 
@@ -180,7 +219,7 @@
             this.repositoryItemLookUpEdit2,
             this.repositoryItemLookUpEdit3,
             this.repositoryItemMemoEdit1});
-            this.horasTrabajadasGridControl.Size = new System.Drawing.Size(1251, 221);
+            this.horasTrabajadasGridControl.Size = new System.Drawing.Size(1251, 231);
             this.horasTrabajadasGridControl.TabIndex = 1;
             this.horasTrabajadasGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -218,12 +257,15 @@
             this.colIdEmpresa,
             this.colCantAdmin,
             this.colDirTrabajo,
-            this.colFacturado});
+            this.colFacturado,
+            this.colAlbaran});
             this.gridView1.GridControl = this.horasTrabajadasGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDiaTrab, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView1_ShowingEditor);
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
@@ -241,7 +283,7 @@
             this.colDiaTrab.Name = "colDiaTrab";
             this.colDiaTrab.Visible = true;
             this.colDiaTrab.VisibleIndex = 0;
-            this.colDiaTrab.Width = 34;
+            this.colDiaTrab.Width = 42;
             // 
             // colIdObra
             // 
@@ -251,7 +293,7 @@
             this.colIdObra.Name = "colIdObra";
             this.colIdObra.Visible = true;
             this.colIdObra.VisibleIndex = 1;
-            this.colIdObra.Width = 147;
+            this.colIdObra.Width = 143;
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -281,7 +323,7 @@
             this.colIdTrabajador.Name = "colIdTrabajador";
             this.colIdTrabajador.Visible = true;
             this.colIdTrabajador.VisibleIndex = 2;
-            this.colIdTrabajador.Width = 145;
+            this.colIdTrabajador.Width = 141;
             // 
             // repositoryItemLookUpEdit2
             // 
@@ -311,7 +353,7 @@
             this.colIdTipo.Name = "colIdTipo";
             this.colIdTipo.Visible = true;
             this.colIdTipo.VisibleIndex = 3;
-            this.colIdTipo.Width = 87;
+            this.colIdTipo.Width = 69;
             // 
             // repositoryItemLookUpEdit3
             // 
@@ -334,12 +376,12 @@
             // 
             this.Festivo.AppearanceHeader.Options.UseTextOptions = true;
             this.Festivo.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Festivo.Caption = "Extra";
+            this.Festivo.Caption = "Hora Extra";
             this.Festivo.FieldName = "Festivo";
             this.Festivo.Name = "Festivo";
             this.Festivo.Visible = true;
-            this.Festivo.VisibleIndex = 5;
-            this.Festivo.Width = 40;
+            this.Festivo.VisibleIndex = 11;
+            this.Festivo.Width = 61;
             // 
             // colCantidad
             // 
@@ -349,8 +391,8 @@
             this.colCantidad.FieldName = "Cantidad";
             this.colCantidad.Name = "colCantidad";
             this.colCantidad.Visible = true;
-            this.colCantidad.VisibleIndex = 4;
-            this.colCantidad.Width = 55;
+            this.colCantidad.VisibleIndex = 5;
+            this.colCantidad.Width = 54;
             // 
             // colIdUsuario
             // 
@@ -372,12 +414,14 @@
             // 
             // colSalarioVenta
             // 
-            this.colSalarioVenta.Caption = "Sal. Admin";
+            this.colSalarioVenta.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSalarioVenta.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colSalarioVenta.Caption = "Sal. Ad.";
             this.colSalarioVenta.FieldName = "SalarioVenta";
             this.colSalarioVenta.Name = "colSalarioVenta";
             this.colSalarioVenta.Visible = true;
             this.colSalarioVenta.VisibleIndex = 8;
-            this.colSalarioVenta.Width = 57;
+            this.colSalarioVenta.Width = 54;
             // 
             // colColor
             // 
@@ -400,7 +444,7 @@
             this.colDesTrabajo.Name = "colDesTrabajo";
             this.colDesTrabajo.Visible = true;
             this.colDesTrabajo.VisibleIndex = 9;
-            this.colDesTrabajo.Width = 281;
+            this.colDesTrabajo.Width = 273;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -416,12 +460,12 @@
             // 
             this.colCantAdmin.AppearanceHeader.Options.UseTextOptions = true;
             this.colCantAdmin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colCantAdmin.Caption = "Admin.";
+            this.colCantAdmin.Caption = "Trab. Extra";
             this.colCantAdmin.FieldName = "CantAdmin";
             this.colCantAdmin.Name = "colCantAdmin";
             this.colCantAdmin.Visible = true;
             this.colCantAdmin.VisibleIndex = 7;
-            this.colCantAdmin.Width = 61;
+            this.colCantAdmin.Width = 64;
             // 
             // colDirTrabajo
             // 
@@ -430,7 +474,7 @@
             this.colDirTrabajo.Name = "colDirTrabajo";
             this.colDirTrabajo.Visible = true;
             this.colDirTrabajo.VisibleIndex = 10;
-            this.colDirTrabajo.Width = 211;
+            this.colDirTrabajo.Width = 231;
             // 
             // colFacturado
             // 
@@ -438,9 +482,15 @@
             this.colFacturado.FieldName = "Facturado";
             this.colFacturado.Name = "colFacturado";
             this.colFacturado.OptionsColumn.AllowEdit = false;
-            this.colFacturado.Visible = true;
-            this.colFacturado.VisibleIndex = 11;
             this.colFacturado.Width = 60;
+            // 
+            // colAlbaran
+            // 
+            this.colAlbaran.FieldName = "Albaran";
+            this.colAlbaran.Name = "colAlbaran";
+            this.colAlbaran.Visible = true;
+            this.colAlbaran.VisibleIndex = 4;
+            this.colAlbaran.Width = 52;
             // 
             // promoworkdataDataSetBindingSource
             // 
@@ -465,6 +515,7 @@
             this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CopiasHorasTableAdapter = null;
             this.tableAdapterManager.CrucesTrabajadoresTableAdapter = null;
@@ -485,6 +536,7 @@
             this.tableAdapterManager.HorasTrabajadasTableAdapter = this.horasTrabajadasTableAdapter;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;
@@ -519,7 +571,7 @@
             this.horasTrabajadasBindingNavigator.AddNewItem = null;
             this.horasTrabajadasBindingNavigator.BindingSource = this.horasTrabajadasBindingSource;
             this.horasTrabajadasBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.horasTrabajadasBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.horasTrabajadasBindingNavigator.DeleteItem = null;
             this.horasTrabajadasBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -543,7 +595,7 @@
             this.horasTrabajadasBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.horasTrabajadasBindingNavigator.Name = "horasTrabajadasBindingNavigator";
             this.horasTrabajadasBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.horasTrabajadasBindingNavigator.Size = new System.Drawing.Size(1261, 25);
+            this.horasTrabajadasBindingNavigator.Size = new System.Drawing.Size(1271, 25);
             this.horasTrabajadasBindingNavigator.TabIndex = 0;
             this.horasTrabajadasBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -553,15 +605,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -622,6 +665,16 @@
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -843,8 +896,8 @@
             this.colIdProdUtiliza,
             this.colIdHoras1,
             this.colIdHorasAdmin,
-            this.gridColumn1,
-            this.colIdProducto,
+            this.codigo,
+            this.descripcion,
             this.colCantidad1,
             this.colPVP,
             this.colDescuento,
@@ -852,6 +905,7 @@
             this.gridView2.GridControl = this.productosUtilizadosGridControl;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView2_CellValueChanged);
             // 
             // colIdProdUtiliza
             // 
@@ -869,15 +923,15 @@
             this.colIdHorasAdmin.FieldName = "IdHorasAdmin";
             this.colIdHorasAdmin.Name = "colIdHorasAdmin";
             // 
-            // gridColumn1
+            // codigo
             // 
-            this.gridColumn1.Caption = "Código";
-            this.gridColumn1.ColumnEdit = this.repositoryItemLookUpEdit4;
-            this.gridColumn1.FieldName = "IdProducto";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 86;
+            this.codigo.Caption = "Código";
+            this.codigo.ColumnEdit = this.repositoryItemLookUpEdit4;
+            this.codigo.FieldName = "IdProducto";
+            this.codigo.Name = "codigo";
+            this.codigo.Visible = true;
+            this.codigo.VisibleIndex = 0;
+            this.codigo.Width = 131;
             // 
             // repositoryItemLookUpEdit4
             // 
@@ -900,15 +954,15 @@
             this.productosBindingSource.DataMember = "Productos";
             this.productosBindingSource.DataSource = this.promowork_dataDataSet;
             // 
-            // colIdProducto
+            // descripcion
             // 
-            this.colIdProducto.Caption = "Descripción";
-            this.colIdProducto.ColumnEdit = this.repositoryItemLookUpEdit5;
-            this.colIdProducto.FieldName = "IdProducto";
-            this.colIdProducto.Name = "colIdProducto";
-            this.colIdProducto.Visible = true;
-            this.colIdProducto.VisibleIndex = 1;
-            this.colIdProducto.Width = 246;
+            this.descripcion.Caption = "Descripción";
+            this.descripcion.ColumnEdit = this.repositoryItemLookUpEdit5;
+            this.descripcion.FieldName = "IdProducto";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.Visible = true;
+            this.descripcion.VisibleIndex = 1;
+            this.descripcion.Width = 244;
             // 
             // repositoryItemLookUpEdit5
             // 
@@ -938,7 +992,7 @@
             this.colCantidad1.Name = "colCantidad1";
             this.colCantidad1.Visible = true;
             this.colCantidad1.VisibleIndex = 2;
-            this.colCantidad1.Width = 67;
+            this.colCantidad1.Width = 61;
             // 
             // colPVP
             // 
@@ -951,7 +1005,7 @@
             this.colPVP.Name = "colPVP";
             this.colPVP.Visible = true;
             this.colPVP.VisibleIndex = 3;
-            this.colPVP.Width = 71;
+            this.colPVP.Width = 54;
             // 
             // colDescuento
             // 
@@ -964,7 +1018,7 @@
             this.colDescuento.Name = "colDescuento";
             this.colDescuento.Visible = true;
             this.colDescuento.VisibleIndex = 4;
-            this.colDescuento.Width = 90;
+            this.colDescuento.Width = 81;
             // 
             // colPorciento
             // 
@@ -977,7 +1031,7 @@
             this.colPorciento.Name = "colPorciento";
             this.colPorciento.Visible = true;
             this.colPorciento.VisibleIndex = 5;
-            this.colPorciento.Width = 96;
+            this.colPorciento.Width = 85;
             // 
             // productosTableAdapter
             // 
@@ -985,7 +1039,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(172, 47);
+            this.button4.Location = new System.Drawing.Point(438, 8);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(34, 23);
             this.button4.TabIndex = 14;
@@ -996,7 +1050,7 @@
             // button3
             // 
             this.button3.Image = global::Promowork.Properties.Resources.bindingNavigatorDeleteItem_Image;
-            this.button3.Location = new System.Drawing.Point(212, 47);
+            this.button3.Location = new System.Drawing.Point(478, 8);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(22, 23);
             this.button3.TabIndex = 15;
@@ -1005,7 +1059,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(81, 47);
+            this.button1.Location = new System.Drawing.Point(347, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 23);
             this.button1.TabIndex = 13;
@@ -1016,7 +1070,7 @@
             // copiaFacturaTextBox
             // 
             this.copiaFacturaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.horasTrabajadasBindingSource, "CopiaParte", true));
-            this.copiaFacturaTextBox.Location = new System.Drawing.Point(81, 21);
+            this.copiaFacturaTextBox.Location = new System.Drawing.Point(81, 10);
             this.copiaFacturaTextBox.Name = "copiaFacturaTextBox";
             this.copiaFacturaTextBox.Size = new System.Drawing.Size(260, 20);
             this.copiaFacturaTextBox.TabIndex = 34;
@@ -1032,18 +1086,144 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.copiaFacturaTextBox);
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Location = new System.Drawing.Point(680, 294);
+            this.groupBox1.Location = new System.Drawing.Point(0, 427);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(355, 82);
+            this.groupBox1.Size = new System.Drawing.Size(505, 32);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
+            // 
+            // horasTrabajadasTotalTrabajadorBindingSource
+            // 
+            this.horasTrabajadasTotalTrabajadorBindingSource.DataMember = "HorasTrabajadasTotalTrabajador";
+            this.horasTrabajadasTotalTrabajadorBindingSource.DataSource = this.promowork_dataDataSet;
+            // 
+            // horasTrabajadasTotalTrabajadorTableAdapter
+            // 
+            this.horasTrabajadasTotalTrabajadorTableAdapter.ClearBeforeFill = true;
+            // 
+            // horasTrabajadasTotalTrabajadorGridControl
+            // 
+            this.horasTrabajadasTotalTrabajadorGridControl.DataSource = this.horasTrabajadasTotalTrabajadorBindingSource;
+            this.horasTrabajadasTotalTrabajadorGridControl.Location = new System.Drawing.Point(680, 294);
+            this.horasTrabajadasTotalTrabajadorGridControl.MainView = this.gridView3;
+            this.horasTrabajadasTotalTrabajadorGridControl.Name = "horasTrabajadasTotalTrabajadorGridControl";
+            this.horasTrabajadasTotalTrabajadorGridControl.Size = new System.Drawing.Size(571, 175);
+            this.horasTrabajadasTotalTrabajadorGridControl.TabIndex = 37;
+            this.horasTrabajadasTotalTrabajadorGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colNumTrabajador,
+            this.colNomTrabajador,
+            this.colApeTrabajador,
+            this.colDesTipo,
+            this.colCantidad2,
+            this.colCantidadAdmin,
+            this.colImporte,
+            this.colImporteAdmin});
+            styleFormatCondition1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            styleFormatCondition1.Appearance.Options.UseFont = true;
+            styleFormatCondition1.ApplyToRow = true;
+            styleFormatCondition1.Column = this.colNumTrabajador;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
+            this.gridView3.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            styleFormatCondition1});
+            this.gridView3.GridControl = this.horasTrabajadasTotalTrabajadorGridControl;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.Editable = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // colApeTrabajador
+            // 
+            this.colApeTrabajador.Caption = "Apellidos";
+            this.colApeTrabajador.FieldName = "ApeTrabajador";
+            this.colApeTrabajador.Name = "colApeTrabajador";
+            this.colApeTrabajador.OptionsColumn.ReadOnly = true;
+            this.colApeTrabajador.Visible = true;
+            this.colApeTrabajador.VisibleIndex = 2;
+            this.colApeTrabajador.Width = 91;
+            // 
+            // colDesTipo
+            // 
+            this.colDesTipo.Caption = "Tipo";
+            this.colDesTipo.FieldName = "DesTipo";
+            this.colDesTipo.Name = "colDesTipo";
+            this.colDesTipo.OptionsColumn.ReadOnly = true;
+            this.colDesTipo.Visible = true;
+            this.colDesTipo.VisibleIndex = 3;
+            this.colDesTipo.Width = 67;
+            // 
+            // colCantidad2
+            // 
+            this.colCantidad2.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCantidad2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colCantidad2.Caption = "Cantidad";
+            this.colCantidad2.FieldName = "Cantidad";
+            this.colCantidad2.Name = "colCantidad2";
+            this.colCantidad2.OptionsColumn.ReadOnly = true;
+            this.colCantidad2.Visible = true;
+            this.colCantidad2.VisibleIndex = 4;
+            this.colCantidad2.Width = 67;
+            // 
+            // colCantidadAdmin
+            // 
+            this.colCantidadAdmin.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCantidadAdmin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colCantidadAdmin.Caption = "Cant. Admin";
+            this.colCantidadAdmin.FieldName = "CantidadAdmin";
+            this.colCantidadAdmin.Name = "colCantidadAdmin";
+            this.colCantidadAdmin.OptionsColumn.ReadOnly = true;
+            this.colCantidadAdmin.Visible = true;
+            this.colCantidadAdmin.VisibleIndex = 6;
+            this.colCantidadAdmin.Width = 67;
+            // 
+            // colImporte
+            // 
+            this.colImporte.AppearanceHeader.Options.UseTextOptions = true;
+            this.colImporte.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colImporte.Caption = "Importe";
+            this.colImporte.DisplayFormat.FormatString = "N2";
+            this.colImporte.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.colImporte.FieldName = "Importe";
+            this.colImporte.Name = "colImporte";
+            this.colImporte.OptionsColumn.ReadOnly = true;
+            this.colImporte.Visible = true;
+            this.colImporte.VisibleIndex = 5;
+            this.colImporte.Width = 67;
+            // 
+            // colImporteAdmin
+            // 
+            this.colImporteAdmin.AppearanceHeader.Options.UseTextOptions = true;
+            this.colImporteAdmin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colImporteAdmin.Caption = "Imp. Admin";
+            this.colImporteAdmin.DisplayFormat.FormatString = "N2";
+            this.colImporteAdmin.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colImporteAdmin.FieldName = "ImporteAdmin";
+            this.colImporteAdmin.Name = "colImporteAdmin";
+            this.colImporteAdmin.OptionsColumn.ReadOnly = true;
+            this.colImporteAdmin.Visible = true;
+            this.colImporteAdmin.VisibleIndex = 7;
+            this.colImporteAdmin.Width = 73;
+            // 
+            // chkcobrado
+            // 
+            this.chkcobrado.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.horasTrabajadasBindingSource, "Facturado", true));
+            this.chkcobrado.Location = new System.Drawing.Point(599, 437);
+            this.chkcobrado.Name = "chkcobrado";
+            this.chkcobrado.Properties.Caption = "Cobrado";
+            this.chkcobrado.Size = new System.Drawing.Size(75, 19);
+            this.chkcobrado.TabIndex = 38;
             // 
             // HorasMateriales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1261, 434);
+            this.ClientSize = new System.Drawing.Size(1271, 489);
+            this.Controls.Add(this.chkcobrado);
+            this.Controls.Add(this.horasTrabajadasTotalTrabajadorGridControl);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.productosUtilizadosGridControl);
             this.Controls.Add(this.bindingNavigator1);
@@ -1082,6 +1262,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit5)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasTotalTrabajadorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasTotalTrabajadorGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkcobrado.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1155,7 +1339,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colIdProdUtiliza;
         private DevExpress.XtraGrid.Columns.GridColumn colIdHoras1;
         private DevExpress.XtraGrid.Columns.GridColumn colIdHorasAdmin;
-        private DevExpress.XtraGrid.Columns.GridColumn colIdProducto;
+        private DevExpress.XtraGrid.Columns.GridColumn descripcion;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit4;
         private System.Windows.Forms.BindingSource productosBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colCantidad1;
@@ -1167,7 +1351,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton toolStripButton8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn codigo;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit5;
         private DevExpress.XtraGrid.Columns.GridColumn colCantAdmin;
         private DevExpress.XtraGrid.Columns.GridColumn colDirTrabajo;
@@ -1180,6 +1364,20 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraGrid.Columns.GridColumn colFacturado;
+        private DevExpress.XtraGrid.Columns.GridColumn colAlbaran;
+        private System.Windows.Forms.BindingSource horasTrabajadasTotalTrabajadorBindingSource;
+        private Promowork_dataDataSetTableAdapters.HorasTrabajadasTotalTrabajadorTableAdapter horasTrabajadasTotalTrabajadorTableAdapter;
+        private DevExpress.XtraGrid.GridControl horasTrabajadasTotalTrabajadorGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Columns.GridColumn colNumTrabajador;
+        private DevExpress.XtraGrid.Columns.GridColumn colNomTrabajador;
+        private DevExpress.XtraGrid.Columns.GridColumn colApeTrabajador;
+        private DevExpress.XtraGrid.Columns.GridColumn colDesTipo;
+        private DevExpress.XtraGrid.Columns.GridColumn colCantidad2;
+        private DevExpress.XtraGrid.Columns.GridColumn colCantidadAdmin;
+        private DevExpress.XtraGrid.Columns.GridColumn colImporte;
+        private DevExpress.XtraGrid.Columns.GridColumn colImporteAdmin;
+        private DevExpress.XtraEditors.CheckEdit chkcobrado;
 
     }
 }

@@ -520,51 +520,59 @@ namespace Promowork
         private void anoTrabComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            nAnoActual = Convert.ToInt32(anoTrabComboBox.SelectedValue) == 0 ? VariablesGlobales.nAnoActual : Convert.ToInt32(anoTrabComboBox.SelectedValue);
-            horasAdminDiasTableAdapter.FillByHorasTrabObra(promowork_dataDataSet.HorasAdminDias, Convert.ToInt32(comboBox1.SelectedValue), nAnoActual, nMesActual);
-            totalHorasAdminTableAdapter.FillbyObra(promowork_dataDataSet.TotalHorasAdmin, Convert.ToInt32(comboBox1.SelectedValue), nAnoActual, nMesActual);
-            
-            int NumDiasMes = DateTime.DaysInMonth(nAnoActual, nMesActual);
-
-            //Fecha del Primer dia del mes de tarbajo
-            DateTime FechaPrimero = new DateTime(nAnoActual, nMesActual, NumDiasMes);
-            //Fecha del Ultimo dia del mes de tarbajo
-            DateTime FechaUltimo = new DateTime(nAnoActual, nMesActual, 1);
-
-
-            for (int i = 0; i < horasTrabajadasDiasDataGridView.ColumnCount; i++)
+            try
             {
+                nAnoActual = Convert.ToInt32(anoTrabComboBox.SelectedValue) == 0 ? VariablesGlobales.nAnoActual : Convert.ToInt32(anoTrabComboBox.SelectedValue);
+                int nObraActual = Convert.IsDBNull(comboBox1.SelectedValue) ? 0 : Convert.ToInt32(comboBox1.SelectedValue);
+                horasAdminDiasTableAdapter.FillByHorasTrabObra(promowork_dataDataSet.HorasAdminDias, nObraActual, nAnoActual, nMesActual);
+                totalHorasAdminTableAdapter.FillbyObra(promowork_dataDataSet.TotalHorasAdmin, nObraActual, nAnoActual, nMesActual);
 
-                if (i < NumDiasMes)
+                int NumDiasMes = DateTime.DaysInMonth(nAnoActual, nMesActual);
+
+                //Fecha del Primer dia del mes de tarbajo
+                DateTime FechaPrimero = new DateTime(nAnoActual, nMesActual, NumDiasMes);
+                //Fecha del Ultimo dia del mes de tarbajo
+                DateTime FechaUltimo = new DateTime(nAnoActual, nMesActual, 1);
+
+
+                for (int i = 0; i < horasTrabajadasDiasDataGridView.ColumnCount; i++)
                 {
 
-                    horasTrabajadasDiasDataGridView.Columns[i].Visible = true;
-
-
-
-                    //Se calcula la fecha del dia (i+1)
-                    DateTime dateValue = new DateTime(nAnoActual, nMesActual, (i + 1));
-
-
-                    this.horasTrabajadasDiasDataGridView.Columns[i].HeaderText = dateValue.ToString("ddd", new CultureInfo("es-ES")).ToUpper().Substring(0, 2) + "\r\n" + (i + 1).ToString();
-                    if ((this.horasTrabajadasDiasDataGridView.Width - 40) / NumDiasMes < 35)
+                    if (i < NumDiasMes)
                     {
-                        this.horasTrabajadasDiasDataGridView.Columns[i].Width = 35;
+
+                        horasTrabajadasDiasDataGridView.Columns[i].Visible = true;
+
+
+
+                        //Se calcula la fecha del dia (i+1)
+                        DateTime dateValue = new DateTime(nAnoActual, nMesActual, (i + 1));
+
+
+                        this.horasTrabajadasDiasDataGridView.Columns[i].HeaderText = dateValue.ToString("ddd", new CultureInfo("es-ES")).ToUpper().Substring(0, 2) + "\r\n" + (i + 1).ToString();
+                        if ((this.horasTrabajadasDiasDataGridView.Width - 40) / NumDiasMes < 35)
+                        {
+                            this.horasTrabajadasDiasDataGridView.Columns[i].Width = 35;
+                        }
+                        else
+                        {
+                            this.horasTrabajadasDiasDataGridView.Columns[i].Width = (this.horasTrabajadasDiasDataGridView.Width - 40) / NumDiasMes;
+                        }
                     }
                     else
                     {
-                        this.horasTrabajadasDiasDataGridView.Columns[i].Width = (this.horasTrabajadasDiasDataGridView.Width - 40) / NumDiasMes;
+                        horasTrabajadasDiasDataGridView.Columns[i].Visible = false;
                     }
                 }
-                else
-                {
-                    horasTrabajadasDiasDataGridView.Columns[i].Visible = false;
-                }
-            }
 
-            horasTrabajadasDiasDataGridView.DefaultCellStyle.BackColor = Color.WhiteSmoke;
-            horasTrabajadasDiasDataGridView.ReadOnly = true;
-            obsHorasAdminTextBox.ReadOnly = true;
+                horasTrabajadasDiasDataGridView.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+                horasTrabajadasDiasDataGridView.ReadOnly = true;
+                obsHorasAdminTextBox.ReadOnly = true;
+            }
+            catch
+            { }
+
+
         }
 
         private void nomMesComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -667,6 +675,43 @@ namespace Promowork
                 horasTrabajadasDiasDataGridView.ReadOnly = true;
                 obsHorasAdminTextBox.ReadOnly = true;
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                this.obrasTableAdapter.FillByEmpresa(this.promowork_dataDataSet.Obras, VariablesGlobales.nIdEmpresaActual);
+                //marcaAnoTableAdapter.FillByObra(promowork_dataDataSet.MarcaAno, VariablesGlobales.nIdEmpresaActual, Convert.ToInt32(comboBox1.SelectedValue));
+                //marcaMesTableAdapter.FillByObra(promowork_dataDataSet.MarcaMes, VariablesGlobales.nIdEmpresaActual, Convert.ToInt32(comboBox1.SelectedValue));
+                //anoTrabComboBox.SelectedValue = VariablesGlobales.nAnoActual;
+                //nomMesComboBox.SelectedValue = VariablesGlobales.nMesActual;
+                //nAnoActual = VariablesGlobales.nAnoActual;
+                //nMesActual = VariablesGlobales.nMesActual;
+                //horasAdminDiasTableAdapter.FillByHorasTrabObra(promowork_dataDataSet.HorasAdminDias, Convert.ToInt32(comboBox1.SelectedValue), VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual);
+                //totalHorasAdminTableAdapter.FillbyObra(promowork_dataDataSet.TotalHorasAdmin, Convert.ToInt32(comboBox1.SelectedValue), VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual);
+
+                //horasTrabajadasDiasDataGridView.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+                //horasTrabajadasDiasDataGridView.ReadOnly = true;
+                //obsHorasAdminTextBox.ReadOnly = true;
+            }
+            else
+            {
+                this.obrasTableAdapter.FillByHorasTrab(this.promowork_dataDataSet.Obras, nMesActual, nAnoActual, VariablesGlobales.nIdEmpresaActual);
+                //marcaAnoTableAdapter.FillByObra(promowork_dataDataSet.MarcaAno, VariablesGlobales.nIdEmpresaActual, Convert.ToInt32(comboBox1.SelectedValue));
+                //marcaMesTableAdapter.FillByObra(promowork_dataDataSet.MarcaMes, VariablesGlobales.nIdEmpresaActual, Convert.ToInt32(comboBox1.SelectedValue));
+                //anoTrabComboBox.SelectedValue = VariablesGlobales.nAnoActual;
+                //nomMesComboBox.SelectedValue = VariablesGlobales.nMesActual;
+                //nAnoActual = VariablesGlobales.nAnoActual;
+                //nMesActual = VariablesGlobales.nMesActual;
+                //horasAdminDiasTableAdapter.FillByHorasTrabObra(promowork_dataDataSet.HorasAdminDias, Convert.ToInt32(comboBox1.SelectedValue), VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual);
+                //totalHorasAdminTableAdapter.FillbyObra(promowork_dataDataSet.TotalHorasAdmin, Convert.ToInt32(comboBox1.SelectedValue), VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual);
+
+                //horasTrabajadasDiasDataGridView.DefaultCellStyle.BackColor = Color.WhiteSmoke;
+                //horasTrabajadasDiasDataGridView.ReadOnly = true;
+                //obsHorasAdminTextBox.ReadOnly = true;
+            }
+
         }
 
                

@@ -84,6 +84,7 @@
             this.Cobrada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.IdFactCab = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FacturaPresup = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IdCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obrasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idClienteComboBox = new System.Windows.Forms.ComboBox();
@@ -713,7 +714,8 @@
             this.Importe,
             this.Cobrada,
             this.IdFactCab,
-            this.FacturaPresup});
+            this.FacturaPresup,
+            this.IdCuenta});
             this.facturasCabDataGridView.DataSource = this.facturasCabBindingSource;
             this.facturasCabDataGridView.Location = new System.Drawing.Point(4, 37);
             this.facturasCabDataGridView.Name = "facturasCabDataGridView";
@@ -794,6 +796,14 @@
             this.FacturaPresup.Name = "FacturaPresup";
             this.FacturaPresup.ReadOnly = true;
             this.FacturaPresup.Visible = false;
+            // 
+            // IdCuenta
+            // 
+            this.IdCuenta.DataPropertyName = "IdCuenta";
+            this.IdCuenta.HeaderText = "IdCuenta";
+            this.IdCuenta.Name = "IdCuenta";
+            this.IdCuenta.ReadOnly = true;
+            this.IdCuenta.Visible = false;
             // 
             // obrasBindingSource
             // 
@@ -2473,14 +2483,7 @@
         private Promowork_dataDataSetTableAdapters.HorasTrabajadasTableAdapter horasTrabajadasTableAdapter;
         private System.Windows.Forms.BindingSource empresasActualBindingSource;
         private Promowork_dataDataSetTableAdapters.EmpresasActualTableAdapter empresasActualTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Obra;
         private System.Windows.Forms.BindingSource obrasBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Cobrada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdFactCab;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn FacturaPresup;
         private System.Windows.Forms.BindingSource vFacturaDetHorasBindingSource;
         private Promowork_dataDataSetTableAdapters.vFacturaDetHorasTableAdapter vFacturaDetHorasTableAdapter;
         private System.Windows.Forms.BindingSource vHorasTrabajadasBindingSource;
@@ -2586,5 +2589,13 @@
         private Promowork_dataDataSetTableAdapters.ImporteFacturaHorasTableAdapter importeFacturaHorasTableAdapter;
         private System.Windows.Forms.TextBox importeTextBox;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Obra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Cobrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdFactCab;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn FacturaPresup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCuenta;
     }
 }
