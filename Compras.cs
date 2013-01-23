@@ -50,7 +50,7 @@ namespace Promowork
             fechaRecibDateTimePicker.MaxDate = DateTime.Today;
 
             // TODO: This line of code loads data into the 'promowork_dataDataSet.Pagos' table. You can move, or remove it, as needed.
-            this.pagosTableAdapter.Fill(this.promowork_dataDataSet.Pagos);
+           
             // TODO: This line of code loads data into the 'promowork_dataDataSet.Obras' table. You can move, or remove it, as needed.
             this.obrasTableAdapter.FillByListaObras(this.promowork_dataDataSet.Obras,VariablesGlobales.nIdEmpresaActual);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.CuentasBancos' table. You can move, or remove it, as needed.
@@ -60,7 +60,7 @@ namespace Promowork
             // TODO: This line of code loads data into the 'promowork_dataDataSet.FormasPago' table. You can move, or remove it, as needed.
             this.formasPagoTableAdapter.Fill(this.promowork_dataDataSet.FormasPago);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.ComprasDet' table. You can move, or remove it, as needed.
-            this.comprasDetTableAdapter.Fill(this.promowork_dataDataSet.ComprasDet);
+            
             // TODO: This line of code loads data into the 'promowork_dataDataSet.ComprasCab' table. You can move, or remove it, as needed.
             this.comprasCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.ComprasCab, VariablesGlobales.nIdEmpresaActual);
             this.proveedoresTableAdapter.FillByActivoEmpresa(promowork_dataDataSet.Proveedores, VariablesGlobales.nIdEmpresaActual);
@@ -104,10 +104,12 @@ namespace Promowork
         private void comprasCabDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             DataRowView CompraActual = (DataRowView)comprasCabBindingSource.Current;
+            this.comprasDetTableAdapter.FillbyCompra(this.promowork_dataDataSet.ComprasDet, Convert.ToInt32(CompraActual["IdCompra"]));
+            this.pagosTableAdapter.FillCompra(this.promowork_dataDataSet.Pagos, Convert.ToInt32(CompraActual["IdCompra"]));
 
             object ImpBase = promowork_dataDataSet.ComprasDet.Compute("Sum(ImpBase)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
             object ImpIVA = promowork_dataDataSet.ComprasDet.Compute("Sum(ImpIVA)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
-            object TotalPagado = promowork_dataDataSet.Pagos.Compute("Sum(ImpPago)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
+            object TotalPagado = promowork_dataDataSet.Pagos.Compute("Sum(Importe)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
 
             if (Convert.IsDBNull(ImpBase))
             {
@@ -195,15 +197,17 @@ namespace Promowork
 
        private void toolStripButton7_Click(object sender, EventArgs e)
        {
+           DataRowView CompraActual = (DataRowView)comprasCabBindingSource.Current;
+           
            try
            {
            this.Validate();
            this.pagosBindingSource.EndEdit();
-           DataRowView CompraActual = (DataRowView)comprasCabBindingSource.Current;
+           
 
            object ImpBase = promowork_dataDataSet.ComprasDet.Compute("Sum(ImpBase)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
            object ImpIVA = promowork_dataDataSet.ComprasDet.Compute("Sum(ImpIVA)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
-           object TotalPagado = promowork_dataDataSet.Pagos.Compute("Sum(ImpPago)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
+           object TotalPagado = promowork_dataDataSet.Pagos.Compute("Sum(Importe)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
 
            if (Convert.IsDBNull(ImpBase))
            {
@@ -266,6 +270,10 @@ namespace Promowork
            {*/
                
                this.pagosTableAdapter.Update(promowork_dataDataSet.Pagos);
+
+               DataRowView PagoActual = (DataRowView)pagosBindingSource.Current;
+               // MessageBox.Show(Convert.ToString(opebanco2["IdOpeBanco"]));
+               queriesTableAdapter1.ActualizaSaldoAnterior(Convert.ToInt32(PagoActual["IdOpeBanco"]));
           /* }
            else
            {
@@ -276,14 +284,14 @@ namespace Promowork
            {
 
                MessageBox.Show("No se Pudo Salvar la Información. El Registro fue modificado por otro Usuario.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-               this.comprasDetTableAdapter.Fill(this.promowork_dataDataSet.ComprasDet);
+               this.pagosTableAdapter.FillCompra(this.promowork_dataDataSet.Pagos, Convert.ToInt32(CompraActual["IdCompra"]));
 
            }
            catch (SqlException ex)
            {
                if (ErroresSQLServer.ManipulaErrorSQL(ex, this.Text))
                {
-                   this.comprasDetTableAdapter.Fill(this.promowork_dataDataSet.ComprasDet);
+                   this.pagosTableAdapter.FillCompra(this.promowork_dataDataSet.Pagos, Convert.ToInt32(CompraActual["IdCompra"]));
                }
 
            }
@@ -292,12 +300,13 @@ namespace Promowork
 
        private void toolStripButton14_Click(object sender, EventArgs e)
        {
+           DataRowView CompraActual = (DataRowView)comprasCabBindingSource.Current;
            try
            {
            this.Validate();
            this.comprasDetBindingSource.EndEdit();
 
-           DataRowView CompraActual = (DataRowView)comprasCabBindingSource.Current;
+           
 
            object ImpBase = promowork_dataDataSet.ComprasDet.Compute("Sum(ImpBase)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
            object ImpIVA = promowork_dataDataSet.ComprasDet.Compute("Sum(ImpIVA)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
@@ -374,14 +383,14 @@ namespace Promowork
            {
 
                MessageBox.Show("No se Pudo Salvar la Información. El Registro fue modificado por otro Usuario.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-               this.pagosTableAdapter.Fill(this.promowork_dataDataSet.Pagos);
+               this.comprasDetTableAdapter.FillbyCompra(this.promowork_dataDataSet.ComprasDet, Convert.ToInt32(CompraActual["IdCompra"]));
               
            }
            catch (SqlException ex)
            {
                if (ErroresSQLServer.ManipulaErrorSQL(ex, this.Text))
                {
-                   this.pagosTableAdapter.Fill(this.promowork_dataDataSet.Pagos);
+                   this.comprasDetTableAdapter.FillbyCompra(this.promowork_dataDataSet.ComprasDet, Convert.ToInt32(CompraActual["IdCompra"]));
                }
 
            }
@@ -395,10 +404,8 @@ namespace Promowork
 
            object ImpBase = promowork_dataDataSet.ComprasDet.Compute("Sum(ImpBase)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
            object ImpIVA = promowork_dataDataSet.ComprasDet.Compute("Sum(ImpIVA)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
-           object TotalPagado = promowork_dataDataSet.Pagos.Compute("Sum(ImpPago)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
-           object formaPago = CompraActual["IdFormaPago"];
-           object Cuenta = CompraActual["IdCuenta"];
-
+           object TotalPagado = promowork_dataDataSet.Pagos.Compute("Sum(Importe)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
+          
            if (Convert.IsDBNull(ImpBase))
            {
                ImpBase = 0;
@@ -416,17 +423,20 @@ namespace Promowork
 
            decimal TotalFactura = Convert.ToDecimal(ImpBase) + Convert.ToDecimal(ImpIVA);
 
-            pagosDataGridView.CurrentRow.Cells["FechaPago"].Value = DateTime.Today;
-            pagosDataGridView.CurrentRow.Cells["ImpPago"].Value = TotalFactura - Convert.ToDecimal(TotalPagado);
-            if (!Convert.IsDBNull(formaPago))
-            {
-                pagosDataGridView.CurrentRow.Cells["IdFormaPago"].Value = Convert.ToInt32(formaPago);
-            }
-            if (!Convert.IsDBNull(Cuenta))
-            {
-                pagosDataGridView.CurrentRow.Cells["IdCuenta"].Value = Convert.ToInt32(Cuenta);
-            }
-            pagosDataGridView.CurrentRow.Cells["IdUsuario"].Value = VariablesGlobales.nIdUsuarioActual;
+           
+           // pagosBindingSource.AddNew();
+            DataRowView opebanco = (DataRowView)pagosBindingSource.Current;
+            opebanco["IdEmpresa"] = VariablesGlobales.nIdEmpresaActual;
+            opebanco["fecha"] = DateTime.Today;
+            opebanco["DesOperacion"] = idProveedorComboBox.Text + " Fra: " + facturaTextBox.Text;
+            opebanco["IdCuenta"] = CompraActual["IdCuenta"];
+            opebanco["IdCompra"] = CompraActual["IdCompra"];
+            opebanco["IdFormaPago"] = CompraActual["IdFormaPago"];
+            opebanco["Importe"] = TotalFactura - Convert.ToDecimal(TotalPagado);
+            opebanco["EnCuenta"] = true;
+            opebanco["FechaOpe"] = DateTime.Now;
+            opebanco["IdUsuario"] = VariablesGlobales.nIdUsuarioActual;
+
             pagosDataGridView.Focus();
        }
 
@@ -471,7 +481,9 @@ namespace Promowork
         private void toolStripButton8_Click(object sender, EventArgs e)
         {
             DataRowView obra = (DataRowView)obrasBindingSource.Current;
+            DataRowView EmpresaActual = (DataRowView)empresasActualBindingSource.Current;
             comprasDetDataGridView.CurrentRow.Cells["IdObra"].Value = Convert.ToInt32(obra["IdObra"]);
+            comprasDetDataGridView.CurrentRow.Cells["IdCompra"].Value = Convert.ToInt32(EmpresaActual["IdCompra"]);
             comprasDetDataGridView.Focus();
         }
 

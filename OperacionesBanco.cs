@@ -31,6 +31,8 @@ namespace Promowork
             this.operacionesBancoTableAdapter.FillEmpCuenta(promowork_dataDataSet.OperacionesBanco, VariablesGlobales.nIdEmpresaActual, Convert.ToInt32(bancoCuentaComboBox.SelectedValue),dateTimePicker2.Value);
             this.vOperacionesBancoAgrupadasTableAdapter.FillbyCuenta(promowork_dataDataSet.vOperacionesBancoAgrupadas, Convert.ToInt32(bancoCuentaComboBox.SelectedValue), dateTimePicker2.Value);
             this.vPrevisionesTableAdapter.FillByCuenta(promowork_dataDataSet.vPrevisiones, Convert.ToInt32(bancoCuentaComboBox.SelectedValue));
+            DataRowView opebanco = (DataRowView)vOperacionesBancoAgrupadasBindingSource.Current;
+            saldoAnteriorTextBox.Text = (-(decimal) opebanco["SaldoAnterior"]).ToString();
             vOperacionesBancoAgrupadasBindingSource.MoveLast();
         }
 
@@ -80,12 +82,13 @@ namespace Promowork
                                // MessageBox.Show(Convert.ToString(gridView2.GetRowCellValue(i, "marca")));
                                 if (Convert.ToBoolean(gridView2.GetRowCellValue(i, "marca")) == true)
                                 {
-                                     if (Convert.IsDBNull(gridView2.GetFocusedRowCellValue("IdOpeBanco")))
+                                    if (Convert.IsDBNull(gridView2.GetRowCellValue(i, "IdOpeBanco")))
                                       {
                                           factura = factura + Convert.ToString(gridView2.GetRowCellValue(i, "Factura"))+"  ";
                                     operacionesBancoBindingSource.AddNew();
                                     DataRowView opebanco = (DataRowView)operacionesBancoBindingSource.Current;
                                     opebanco["IdEmpresa"] = VariablesGlobales.nIdEmpresaActual;
+                                    opebanco["IdUsuario"] = VariablesGlobales.nIdUsuarioActual;
                                     opebanco["fecha"] = dateTimePicker1.Value;
                                     opebanco["DesOperacion"] = Convert.ToString(gridView2.GetRowCellValue(i, "DesProveedor")) + " Fra: " + factura;
                                     opebanco["IdCuenta"] = gridView2.GetRowCellValue(i, "IdCuenta");
@@ -112,7 +115,7 @@ namespace Promowork
 
                                     if (!Convert.IsDBNull(gridView2.GetFocusedRowCellValue("IdCompra")))
                                     {
-                                        pagosTableAdapter.Insert(Convert.ToInt32(gridView2.GetRowCellValue(i, "IdCompra")), VariablesGlobales.nIdUsuarioActual, Convert.ToInt32(gridView2.GetRowCellValue(i, "IdFormaPago")), dateTimePicker1.Value, "BANCO", Convert.ToDecimal(gridView2.GetRowCellValue(i, "Importe")), "", Convert.ToInt32(gridView2.GetRowCellValue(i, "IdCuenta")), dateTimePicker1.Value);
+                                       // pagosTableAdapter.Insert(Convert.ToInt32(gridView2.GetRowCellValue(i, "IdCompra")), VariablesGlobales.nIdUsuarioActual, Convert.ToInt32(gridView2.GetRowCellValue(i, "IdFormaPago")), dateTimePicker1.Value, "BANCO", Convert.ToDecimal(gridView2.GetRowCellValue(i, "Importe")), "", Convert.ToInt32(gridView2.GetRowCellValue(i, "IdCuenta")), dateTimePicker1.Value);
                                         queriesTableAdapter1.UpdateCompraPagada(Convert.ToInt32(gridView2.GetRowCellValue(i, "IdCompra")));
                                     }
 
@@ -129,7 +132,7 @@ namespace Promowork
                             this.operacionesBancoTableAdapter.FillEmpCuenta(promowork_dataDataSet.OperacionesBanco, VariablesGlobales.nIdEmpresaActual, Convert.ToInt32(bancoCuentaComboBox.SelectedValue), dateTimePicker2.Value);
                             this.vOperacionesBancoAgrupadasTableAdapter.FillbyCuenta(promowork_dataDataSet.vOperacionesBancoAgrupadas, Convert.ToInt32(bancoCuentaComboBox.SelectedValue), dateTimePicker2.Value);
                             this.vPrevisionesTableAdapter.FillByCuenta(promowork_dataDataSet.vPrevisiones, Convert.ToInt32(bancoCuentaComboBox.SelectedValue));
-                            operacionesBancoBindingSource.MoveLast();
+                            vOperacionesBancoAgrupadasBindingSource.MoveLast();
                     }
 
                 }
@@ -149,7 +152,29 @@ namespace Promowork
         {
             this.operacionesBancoTableAdapter.FillEmpCuenta(promowork_dataDataSet.OperacionesBanco, VariablesGlobales.nIdEmpresaActual, Convert.ToInt32(bancoCuentaComboBox.SelectedValue), dateTimePicker2.Value);
             this.vOperacionesBancoAgrupadasTableAdapter.FillbyCuenta(promowork_dataDataSet.vOperacionesBancoAgrupadas, Convert.ToInt32(bancoCuentaComboBox.SelectedValue), dateTimePicker2.Value);
+            saldoAnteriorTextBox.Text = gridView1.RowCount != 0 ? (-(decimal)gridView1.GetRowCellValue(0, "SaldoAnterior")).ToString() : "0,00";
             vOperacionesBancoAgrupadasBindingSource.MoveLast();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            queriesTableAdapter1.ActualizaSaldoAnteriorFecha(dateTimePicker2.Value,(int)bancoCuentaComboBox.SelectedValue);
+            this.vOperacionesBancoAgrupadasTableAdapter.FillbyCuenta(promowork_dataDataSet.vOperacionesBancoAgrupadas, Convert.ToInt32(bancoCuentaComboBox.SelectedValue), dateTimePicker2.Value);
+            saldoAnteriorTextBox.Text = gridView1.RowCount != 0 ? (-(decimal)gridView1.GetRowCellValue(0, "SaldoAnterior")).ToString() : "0,00";
+            vOperacionesBancoAgrupadasBindingSource.MoveLast();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DataRowView opebanco = (DataRowView)vOperacionesBancoAgrupadasBindingSource.Current;
+            DateTime aaa = (DateTime)opebanco["FechaOpe"];
+            queriesTableAdapter1.EliminaOpeBanco((DateTime)opebanco["FechaOpe"], (int)bancoCuentaComboBox.SelectedValue);
+            this.operacionesBancoTableAdapter.FillEmpCuenta(promowork_dataDataSet.OperacionesBanco, VariablesGlobales.nIdEmpresaActual, Convert.ToInt32(bancoCuentaComboBox.SelectedValue), dateTimePicker2.Value);
+            this.vOperacionesBancoAgrupadasTableAdapter.FillbyCuenta(promowork_dataDataSet.vOperacionesBancoAgrupadas, Convert.ToInt32(bancoCuentaComboBox.SelectedValue), dateTimePicker2.Value);
+            this.vPrevisionesTableAdapter.FillByCuenta(promowork_dataDataSet.vPrevisiones, Convert.ToInt32(bancoCuentaComboBox.SelectedValue));
+            saldoAnteriorTextBox.Text = gridView1.RowCount != 0 ? (-(decimal)gridView1.GetRowCellValue(0, "SaldoAnterior")).ToString() : "0,00";
+            vOperacionesBancoAgrupadasBindingSource.MoveLast();
+
         }
 
             

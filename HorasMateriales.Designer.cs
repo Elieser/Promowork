@@ -385,6 +385,8 @@
             // 
             // colCantidad
             // 
+            this.colCantidad.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.colCantidad.AppearanceCell.Options.UseBackColor = true;
             this.colCantidad.AppearanceHeader.Options.UseTextOptions = true;
             this.colCantidad.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colCantidad.Caption = "Cantidad";
@@ -458,6 +460,8 @@
             // 
             // colCantAdmin
             // 
+            this.colCantAdmin.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.colCantAdmin.AppearanceCell.Options.UseBackColor = true;
             this.colCantAdmin.AppearanceHeader.Options.UseTextOptions = true;
             this.colCantAdmin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colCantAdmin.Caption = "Trab. Extra";
@@ -1210,7 +1214,7 @@
             // chkcobrado
             // 
             this.chkcobrado.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.horasTrabajadasBindingSource, "Facturado", true));
-            this.chkcobrado.Location = new System.Drawing.Point(599, 437);
+            this.chkcobrado.Location = new System.Drawing.Point(600, 437);
             this.chkcobrado.Name = "chkcobrado";
             this.chkcobrado.Properties.Caption = "Cobrado";
             this.chkcobrado.Size = new System.Drawing.Size(75, 19);

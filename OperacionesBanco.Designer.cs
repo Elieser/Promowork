@@ -34,7 +34,7 @@
             System.Windows.Forms.Label saldoAnteriorLabel;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
             this.colPrevision = new DevExpress.XtraGrid.Columns.GridColumn();
             this.promowork_dataDataSet = new Promowork.Promowork_dataDataSet();
             this.operacionesBancoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -55,6 +55,7 @@
             this.colDebe1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHaber1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSaldo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdOpebanco = new DevExpress.XtraGrid.Columns.GridColumn();
             this.vPrevisionesGridControl = new DevExpress.XtraGrid.GridControl();
             this.vPrevisionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -89,6 +90,8 @@
             this.formasPagoTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.FormasPagoTableAdapter();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.vOperacionesBancoAgrupadasTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.vOperacionesBancoAgrupadasTableAdapter();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             bancoCuentaLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             saldoAnteriorLabel = new System.Windows.Forms.Label();
@@ -119,7 +122,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(531, 9);
+            label1.Location = new System.Drawing.Point(465, 9);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(95, 13);
             label1.TabIndex = 10;
@@ -128,7 +131,7 @@
             // saldoAnteriorLabel
             // 
             saldoAnteriorLabel.AutoSize = true;
-            saldoAnteriorLabel.Location = new System.Drawing.Point(874, 15);
+            saldoAnteriorLabel.Location = new System.Drawing.Point(889, 9);
             saldoAnteriorLabel.Name = "saldoAnteriorLabel";
             saldoAnteriorLabel.Size = new System.Drawing.Size(76, 13);
             saldoAnteriorLabel.TabIndex = 11;
@@ -267,18 +270,22 @@
             this.colIdEmpresa,
             this.colDebe1,
             this.colHaber1,
-            this.colSaldo});
+            this.colSaldo,
+            this.colIdOpebanco});
             this.gridView1.GridControl = this.operacionesBancoGridControl;
             this.gridView1.GroupRowHeight = 0;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Importe", this.colImporte, "")});
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colFechaOpe
             // 
             this.colFechaOpe.FieldName = "FechaOpe";
             this.colFechaOpe.Name = "colFechaOpe";
+            this.colFechaOpe.Visible = true;
+            this.colFechaOpe.VisibleIndex = 9;
             // 
             // colFecha
             // 
@@ -364,6 +371,13 @@
             this.colSaldo.VisibleIndex = 6;
             this.colSaldo.Width = 97;
             // 
+            // colIdOpebanco
+            // 
+            this.colIdOpebanco.FieldName = "IdOpebanco";
+            this.colIdOpebanco.Name = "colIdOpebanco";
+            this.colIdOpebanco.Visible = true;
+            this.colIdOpebanco.VisibleIndex = 8;
+            // 
             // vPrevisionesGridControl
             // 
             this.vPrevisionesGridControl.DataSource = this.vPrevisionesBindingSource;
@@ -405,17 +419,18 @@
             this.colIdCompra1,
             this.colIdFormaPago,
             this.colIdOpeBanco1});
-            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.LightGreen;
-            styleFormatCondition2.Appearance.BackColor2 = System.Drawing.Color.LightGreen;
-            styleFormatCondition2.Appearance.Options.UseBackColor = true;
-            styleFormatCondition2.ApplyToRow = true;
-            styleFormatCondition2.Column = this.colPrevision;
-            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
-            styleFormatCondition2.Value1 = "1";
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.LightGreen;
+            styleFormatCondition1.Appearance.BackColor2 = System.Drawing.Color.LightGreen;
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
+            styleFormatCondition1.ApplyToRow = true;
+            styleFormatCondition1.Column = this.colPrevision;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
+            styleFormatCondition1.Value1 = "1";
             this.gridView2.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition2});
+            styleFormatCondition1});
             this.gridView2.GridControl = this.vPrevisionesGridControl;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsSelection.MultiSelect = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView2_FocusedRowChanged);
@@ -551,7 +566,7 @@
             this.bancoCuentaComboBox.DataSource = this.cuentasBancosBindingSource;
             this.bancoCuentaComboBox.DisplayMember = "BancoCuenta";
             this.bancoCuentaComboBox.FormattingEnabled = true;
-            this.bancoCuentaComboBox.Location = new System.Drawing.Point(62, 6);
+            this.bancoCuentaComboBox.Location = new System.Drawing.Point(62, 5);
             this.bancoCuentaComboBox.Name = "bancoCuentaComboBox";
             this.bancoCuentaComboBox.Size = new System.Drawing.Size(398, 21);
             this.bancoCuentaComboBox.TabIndex = 6;
@@ -583,7 +598,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(632, 6);
+            this.dateTimePicker2.Location = new System.Drawing.Point(566, 5);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(96, 20);
             this.dateTimePicker2.TabIndex = 9;
@@ -600,7 +615,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(748, 6);
+            this.button2.Location = new System.Drawing.Point(669, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 11;
@@ -610,10 +625,10 @@
             // 
             // saldoAnteriorTextBox
             // 
-            this.saldoAnteriorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vOperacionesBancoAgrupadasBindingSource, "SaldoAnterior", true));
-            this.saldoAnteriorTextBox.Location = new System.Drawing.Point(956, 12);
+            this.saldoAnteriorTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saldoAnteriorTextBox.Location = new System.Drawing.Point(971, 5);
             this.saldoAnteriorTextBox.Name = "saldoAnteriorTextBox";
-            this.saldoAnteriorTextBox.Size = new System.Drawing.Size(100, 20);
+            this.saldoAnteriorTextBox.Size = new System.Drawing.Size(113, 21);
             this.saldoAnteriorTextBox.TabIndex = 12;
             // 
             // formasPagoTableAdapter
@@ -638,12 +653,34 @@
             // 
             this.vOperacionesBancoAgrupadasTableAdapter.ClearBeforeFill = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(750, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(100, 23);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Recalcular Saldo";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1124, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(100, 23);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "Eliminar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // OperacionesBanco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1249, 421);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(label3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(label2);
@@ -736,5 +773,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDebe1;
         private DevExpress.XtraGrid.Columns.GridColumn colHaber1;
         private DevExpress.XtraGrid.Columns.GridColumn colSaldo;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdOpebanco;
     }
 }

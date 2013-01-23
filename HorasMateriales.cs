@@ -121,6 +121,7 @@ namespace Promowork
             horasTrabajadasTotalTrabajadorGridControl.Width = horasTrabajadasGridControl.Width - 680;
             bindingNavigator1.Location = new Point(0, this.Height - 245);
             groupBox1.Location = new Point(0, this.Height - 90);
+            chkcobrado.Location = new Point(600, this.Height - 90);
         }
 
         private void toolStripButton7_Click(object sender, EventArgs e)
