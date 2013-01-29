@@ -48,6 +48,17 @@ namespace Promowork
                   this.Validate();
                   this.cobrosBindingSource.EndEdit();
                   cobrosTableAdapter.Update(promowork_dataDataSet.Cobros);
+
+
+                  DataRowView FacturaActual = (DataRowView)facturasCabListaBindingSource.Current;
+                  if ((decimal)FacturaActual["ImpBase"] <= (decimal)CobroActual["ImpBase"])
+                  {
+                      queriesTableAdapter1.UpdateFacturasCabCobrada(true, (int)FacturaActual["IdFactCab"]);
+                  }
+                  else
+                  {
+                      queriesTableAdapter1.UpdateFacturasCabCobrada(false, (int)FacturaActual["IdFactCab"]);
+                  }
               }
            }
             catch (DBConcurrencyException)
@@ -70,7 +81,7 @@ namespace Promowork
         private void Cobros_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'promowork_dataDataSet.FacturasCabLista' table. You can move, or remove it, as needed.
-            this.facturasCabListaTableAdapter.Fill(this.promowork_dataDataSet.FacturasCabLista,VariablesGlobales.nIdEmpresaActual);
+         
             // TODO: This line of code loads data into the 'promowork_dataDataSet.FacturasCab' table. You can move, or remove it, as needed.
             this.obrasTableAdapter.FillByListaObras(this.promowork_dataDataSet.Obras,VariablesGlobales.nIdEmpresaActual);
             // TODO: This line of code loads data into the 'promowork_dataDataSet1.Clientes' table. You can move, or remove it, as needed.
@@ -82,7 +93,7 @@ namespace Promowork
             this.formasPagoTableAdapter.Fill(this.promowork_dataDataSet.FormasPago);
             // TODO: This line of code loads data into the 'promowork_dataDataSet1.FacturasCab' table. You can move, or remove it, as needed.
             this.cobrosTableAdapter.FillByEmpresa(this.promowork_dataDataSet.Cobros,VariablesGlobales.nIdEmpresaActual);
-
+            cobrosBindingSource.MoveLast();
            
         }
 
@@ -117,6 +128,12 @@ namespace Promowork
             {
                 facturasCabListaBindingSource.Filter = "1=2";
             }
+          // MessageBox.Show(idObraComboBox.SelectedValue.ToString());
+            try
+            {
+                facturasCabListaTableAdapter.Fill(promowork_dataDataSet.FacturasCabLista, (int)idClienteComboBox.SelectedValue);
+            }
+            catch { }
         }
 
         
@@ -252,10 +269,38 @@ namespace Promowork
 
         private void button2_Click(object sender, EventArgs e)
         {
+            DataRowView FacturaActual = (DataRowView)facturasCabListaBindingSource.Current;
+            if (Convert.IsDBNull(FacturaActual["FacturaPresup"])==false)
+            {
             RptFacturasManualImp frm = new RptFacturasManualImp();
             frm.LoadFiltro(Convert.ToInt32(idFactCabComboBox.SelectedValue));
             frm.MdiParent = this.MdiParent;
             frm.Show();
+            }
+            else
+            {
+                if ((Boolean)FacturaActual["EsFactura"] == true)
+           {
+
+               int Factura = Convert.ToInt32(FacturaActual["IdFactCab"]);
+
+
+               RptFacturasHorasImp frm = new RptFacturasHorasImp();
+               frm.LoadFiltro(Factura);
+               frm.MdiParent = this.MdiParent;
+               frm.Show();
+           }
+           else 
+           {
+               int Factura = Convert.ToInt32(FacturaActual["IdFactCab"]);
+
+
+               RptFacturasHorasImpParte frm = new RptFacturasHorasImpParte();
+               frm.LoadFiltro(Factura);
+               frm.MdiParent = this.MdiParent;
+               frm.Show();
+           }
+            }
         }
     }
 }

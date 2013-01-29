@@ -156,10 +156,17 @@ namespace Promowork
 
         private void toolStripButton14_Click(object sender, EventArgs e)
         {
+            this.Validate();
+            this.presupDetBindingSource.EndEdit();
             try
             {
-                this.Validate();
-                this.presupDetBindingSource.EndEdit();
+                presupDetDataGridView.CurrentRow.Cells["CantExtra"].Value = (decimal)presupDetDataGridView.CurrentRow.Cells["CantReal"].Value - (decimal)presupDetDataGridView.CurrentRow.Cells["Cantidad"].Value;
+            }
+            catch { }
+            try
+            {
+                
+                
                 presupDetTableAdapter.Update(promowork_dataDataSet.PresupDet);
 
                 int pos = presupCabBindingSource.Position;
@@ -270,10 +277,16 @@ namespace Promowork
 
         private void toolStripButton29_Click(object sender, EventArgs e)
         {
+             this.Validate();
+             this.presupSubBindingSource.EndEdit();
             try
             {
-                this.Validate();
-                this.presupSubBindingSource.EndEdit();
+                presupSubDataGridView.CurrentRow.Cells["CantExtraSub"].Value = (decimal)presupSubDataGridView.CurrentRow.Cells["CantRealSub"].Value - (decimal)presupSubDataGridView.CurrentRow.Cells["CantidadSub"].Value;
+            }
+            catch { }
+            try
+            {
+               
                 presupSubTableAdapter.Update(promowork_dataDataSet.PresupSub);
 
                 int pos = presupCabBindingSource.Position;
@@ -468,6 +481,28 @@ namespace Promowork
         {
             this.presupSubDataGridView.CurrentRow.Cells["ColorSub"].Value = toolStripButton42.BackColor.ToArgb();
             this.presupSubDataGridView.CurrentRow.DefaultCellStyle.ForeColor = toolStripButton42.BackColor;
+        }
+
+        private void presupDetDataGridView_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Validate();
+            this.presupDetBindingSource.EndEdit();
+            try
+            {
+                presupDetDataGridView.CurrentRow.Cells["CantExtra"].Value = (decimal)presupDetDataGridView.CurrentRow.Cells["CantReal"].Value - (decimal)presupDetDataGridView.CurrentRow.Cells["Cantidad"].Value;
+            }
+            catch { }
+        }
+
+        private void presupSubDataGridView_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Validate();
+            this.presupSubBindingSource.EndEdit();
+            try
+            {
+                presupSubDataGridView.CurrentRow.Cells["CantExtraSub"].Value = (decimal)presupSubDataGridView.CurrentRow.Cells["CantRealSub"].Value - (decimal)presupSubDataGridView.CurrentRow.Cells["CantidadSub"].Value;
+            }
+            catch { }
         }
 
               

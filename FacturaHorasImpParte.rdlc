@@ -1687,7 +1687,7 @@
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value>=CStr(First(Fields!NumFactura.Value, "DataSet3"))+"/"+CStr(Year(First(Fields!FechaFactura.Value, "DataSet3")))</Value>
+                  <Value>=CStr(First(Fields!NumFactura.Value, "DataSet3"))+"N/"+CStr(Year(First(Fields!FechaFactura.Value, "DataSet3")))</Value>
                   <Style>
                     <FontSize>11pt</FontSize>
                     <FontWeight>Bold</FontWeight>

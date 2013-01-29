@@ -25,39 +25,103 @@ namespace Promowork
                facturasCabDataGridView.CurrentRow.Cells["IdCuenta"].Value =  DBNull.Value;
             }
 
+
+            decimal importe = 0;
             try
             {
-            this.Validate();
-            this.facturasCabBindingSource.EndEdit();
-            facturasCabTableAdapter.Update(promowork_dataDataSet.FacturasCab);
-          //  toolStripButton1.Enabled = true;
-           // toolStripButton12.Enabled = true;
-            facturasCabDataGridView.Enabled = true;
-            facturasCabDataGridView_CellEnter(null,null);
+                importe = decimal.Parse(importeTextBox1.Text);
             }
-           catch (DBConcurrencyException)
-           {
+            catch { }
 
-               MessageBox.Show("No se Pudo Salvar la Información. El Registro fue modificado por otro Usuario.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-               this.facturasCabTableAdapter.FillByFactHoras(this.promowork_dataDataSet.FacturasCab, VariablesGlobales.nIdEmpresaActual);
+            decimal impBase = 0;
+            try
+            {
+                impBase = decimal.Parse(impBaseTextBox.Text);
+            }
+            catch { }
 
-              
-           }
-           catch (SqlException ex)
-           {
-               if (ErroresSQLServer.ManipulaErrorSQL(ex, this.Text))
-               {
-                   this.facturasCabTableAdapter.FillByFactHoras(this.promowork_dataDataSet.FacturasCab, VariablesGlobales.nIdEmpresaActual);
-               }
+            decimal impIVA = 0;
+            try
+            {
+                impIVA = decimal.Parse(impIVATextBox.Text);
+            }
+            catch { }
 
-           }
-           // this.facturasCabTableAdapter.FillByFactHoras(this.promowork_dataDataSet.FacturasCab, VariablesGlobales.nIdEmpresaActual);
-            // this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
+            facturasCabDataGridView.CurrentRow.Cells["Cobrada"].Value = importe <= impBase ? true : false;
+
+            try
+            {
+                this.Validate();
+                this.facturasCabBindingSource.EndEdit();
+                facturasCabTableAdapter.Update(promowork_dataDataSet.FacturasCab);
+                //  toolStripButton1.Enabled = true;
+                // toolStripButton12.Enabled = true;
+                facturasCabDataGridView.Enabled = true;
+
+
+
+                this.Validate();
+                this.cobrosBindingSource.EndEdit();
+
+
+                if (impBase != 0)
+                {
+
+                    if (cobrosBindingSource.Count == 0)
+                    {
+                        cobrosTableAdapter.Insert(VariablesGlobales.nIdUsuarioActual, VariablesGlobales.nIdEmpresaActual, (int)idClienteComboBox.SelectedValue,
+                                                    (int)idPresupComboBox.SelectedValue, fechaExpDateTimePicker.Value, fechaExpDateTimePicker.Value, fechaExpDateTimePicker.Value,
+                                                    fechaExpDateTimePicker.Value, (int)facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value, null, (int)desFormaPagoComboBox.SelectedValue,
+                                                    (int)comboBox2.SelectedValue, impBase, impIVA, null, null, null, null,false,false);
+
+                    }
+                }
+                else
+                {
+                    if (cobrosBindingSource.Count != 0)
+                    {
+                        cobrosBindingSource.RemoveCurrent();
+                    }
+                }
+
+
+                this.cobrosTableAdapter.Update(promowork_dataDataSet.Cobros);
+
+
+                facturasCabDataGridView_CellEnter(null, null);
+
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Debe completar los datos del Cobro.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            catch (DBConcurrencyException)
+            {
+
+                MessageBox.Show("No se Pudo Salvar la Información. El Registro fue modificado por otro Usuario.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                this.facturasCabTableAdapter.FillByFactHoras(this.promowork_dataDataSet.FacturasCab, VariablesGlobales.nIdEmpresaActual);
+
+
+            }
+            catch (SqlException ex)
+            {
+                if (ErroresSQLServer.ManipulaErrorSQL(ex, this.Text))
+                {
+                    this.facturasCabTableAdapter.FillByFactHoras(this.promowork_dataDataSet.FacturasCab, VariablesGlobales.nIdEmpresaActual);
+                }
+
+            }
+        //    this.facturasCabTableAdapter.FillByFactHoras(this.promowork_dataDataSet.FacturasCab, VariablesGlobales.nIdEmpresaActual);
+             this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
 
         }
 
         private void FacturasPresup_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'promowork_dataDataSet.Cobros' table. You can move, or remove it, as needed.
+           
+            // TODO: This line of code loads data into the 'promowork_dataDataSet.FormasPago' table. You can move, or remove it, as needed.
+            this.formasPagoTableAdapter.Fill(this.promowork_dataDataSet.FormasPago);
        
             // TODO: This line of code loads data into the 'promowork_dataDataSet.Obras' table. You can move, or remove it, as needed.
             
@@ -72,10 +136,12 @@ namespace Promowork
             this.facturasCabTableAdapter.FillByFactHoras(this.promowork_dataDataSet.FacturasCab,VariablesGlobales.nIdEmpresaActual);
             this.empresasActualTableAdapter.FillByEmpresa(this.promowork_dataDataSet.EmpresasActual, VariablesGlobales.nIdEmpresaActual);
             this.productosTableAdapter.Fill(promowork_dataDataSet.Productos, VariablesGlobales.nIdEmpresaActual);
+            this.obrasTableAdapter.FillByEmpresa(promowork_dataDataSet1.Obras, VariablesGlobales.nIdEmpresaActual);
             //this.obrasTableAdapter.FillByListaObras(this.promowork_dataDataSet.Obras, VariablesGlobales.nIdEmpresaActual);
             this.facturasCabBindingSource.MoveLast();
             toolStripButton8.Enabled = gridView4.RowCount == 0 ? false : true;
             toolStripButton2.Enabled = gridView1.RowCount == 0 ? false : true;
+            radioButton1.Checked = !facturaRadioButton.Checked;
 
         }
 
@@ -87,12 +153,14 @@ namespace Promowork
             DataRowView empresa = (DataRowView)empresasActualBindingSource.Current;
             numFacturaTextBox.Text = Convert.ToString(empresa["FactEmpresa"]);
             empresa["FactEmpresa"] = Convert.ToInt32(empresa["FactEmpresa"]) + 1;
+            this.Validate();
             this.empresasActualBindingSource.EndEdit();
             empresasActualTableAdapter.Update(promowork_dataDataSet.EmpresasActual);
 
             DataRowView factura = (DataRowView)facturasCabBindingSource.Current;
             factura["IdEmpresa"] = VariablesGlobales.nIdEmpresaActual;
             factura["IdUsuario"] = VariablesGlobales.nIdUsuarioActual;
+            factura["Factura"] = true;
             factura["Cobrada"] = false;
           //  factura["FacturaPresup"] = null;
 
@@ -129,12 +197,18 @@ namespace Promowork
       private void facturasCabDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
        {
          //  MessageBox.Show("cellenter");
+           this.cobrosTableAdapter.FillByFactura(this.promowork_dataDataSet.Cobros,(int)facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value);
            this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
             this.vHorasTrabajadasTableAdapter.Fill(promowork_dataDataSet.vHorasTrabajadas, Convert.ToInt32(idPresupComboBox.SelectedValue));
             this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
             toolStripButton8.Enabled = gridView4.RowCount == 0 ? false : true;
             toolStripButton2.Enabled = gridView1.RowCount == 0 ? false : true;
-         
+            fechaExpDateTimePicker.Value = cobrosBindingSource.Count == 0 ? fechaFacturaDateTimePicker.Value : fechaExpDateTimePicker.Value;
+            try
+            {
+                comboBox2.SelectedValue = cobrosBindingSource.Count == 0 ? idCuentaComboBox.SelectedValue : comboBox2.SelectedValue;
+            }
+            catch { }
            try
            {
                textBox16.Text = Convert.ToString(Math.Round(Convert.ToDecimal(importeTextBox1.Text) * Convert.ToDecimal(descFacuraTextBox.Text) / 100, 2));
@@ -200,21 +274,7 @@ namespace Promowork
           
        }
 
-      
-       private void printToolStripButton_Click(object sender, EventArgs e)
-       {
-           DataRowView FacturaAct = (DataRowView)facturasCabBindingSource.Current;
-
-           int Factura = Convert.ToInt32(FacturaAct["IdFactCab"]);
-
-
-           RptFacturasHorasImpParte frm = new RptFacturasHorasImpParte();
-           frm.LoadFiltro(Factura);
-           frm.MdiParent = this.MdiParent;
-           frm.Show();
-       }
-
-
+   
        private void importeTextBox1_TextChanged(object sender, EventArgs e)
        {
             try {importeTextBox1.Text = Convert.ToString(Math.Round(Convert.ToDecimal(importeTextBox1.Text), 2));}
@@ -465,15 +525,36 @@ namespace Promowork
 
        private void toolStripButton1_Click_1(object sender, EventArgs e)
        {
-           DataRowView FacturaAct = (DataRowView)facturasCabBindingSource.Current;
 
-           int Factura = Convert.ToInt32(FacturaAct["IdFactCab"]);
+           if (facturaRadioButton.Checked == true)
+           {
+               DataRowView FacturaAct = (DataRowView)facturasCabBindingSource.Current;
+
+               int Factura = Convert.ToInt32(FacturaAct["IdFactCab"]);
 
 
-           RptFacturasHorasImp frm = new RptFacturasHorasImp();
-           frm.LoadFiltro(Factura);
-           frm.MdiParent = this.MdiParent;
-           frm.Show();
+               RptFacturasHorasImp frm = new RptFacturasHorasImp();
+               frm.LoadFiltro(Factura);
+               frm.MdiParent = this.MdiParent;
+               frm.Show();
+           }
+           else 
+           {
+               DataRowView FacturaAct = (DataRowView)facturasCabBindingSource.Current;
+
+               int Factura = Convert.ToInt32(FacturaAct["IdFactCab"]);
+
+
+               RptFacturasHorasImpParte frm = new RptFacturasHorasImpParte();
+               frm.LoadFiltro(Factura);
+               frm.MdiParent = this.MdiParent;
+               frm.Show();
+           }
+       }
+
+       private void facturaRadioButton_CheckedChanged(object sender, EventArgs e)
+       {
+           radioButton1.Checked = !facturaRadioButton.Checked;
        }
 
       

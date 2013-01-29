@@ -47,7 +47,7 @@
             System.Windows.Forms.Label totalLabel;
             System.Windows.Forms.Label copiaFacturaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cobros));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.promowork_dataDataSet = new Promowork.Promowork_dataDataSet();
             this.cobrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cobrosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.CobrosTableAdapter();
@@ -110,6 +110,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button2 = new System.Windows.Forms.Button();
+            this.queriesTableAdapter1 = new Promowork.Promowork_dataDataSetTableAdapters.QueriesTableAdapter();
+            this.previsionCheckEdit = new DevExpress.XtraEditors.CheckEdit();
             idFormaPagoLabel = new System.Windows.Forms.Label();
             idCuentaLabel = new System.Windows.Forms.Label();
             idClienteLabel = new System.Windows.Forms.Label();
@@ -141,6 +143,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturasCabListaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.previsionCheckEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // idFormaPagoLabel
@@ -245,7 +248,7 @@
             // observLabel
             // 
             observLabel.AutoSize = true;
-            observLabel.Location = new System.Drawing.Point(743, 405);
+            observLabel.Location = new System.Drawing.Point(743, 431);
             observLabel.Name = "observLabel";
             observLabel.Size = new System.Drawing.Size(81, 13);
             observLabel.TabIndex = 24;
@@ -312,6 +315,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccesosEmpresasTableAdapter = null;
             this.tableAdapterManager.AdjuntosObrasTableAdapter = null;
             this.tableAdapterManager.AnticiposTableAdapter = null;
             this.tableAdapterManager.AnticiposTrabajadoresTableAdapter = null;
@@ -323,6 +327,7 @@
             this.tableAdapterManager.CobrosTableAdapter = this.cobrosTableAdapter;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CopiasHorasTableAdapter = null;
             this.tableAdapterManager.CrucesTrabajadoresTableAdapter = null;
@@ -333,6 +338,7 @@
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
             this.tableAdapterManager.FacturasCabTableAdapter = null;
+            this.tableAdapterManager.FacturasDetHorasTableAdapter = null;
             this.tableAdapterManager.FacturasDetTableAdapter = null;
             this.tableAdapterManager.FestivosEmpresasTableAdapter = null;
             this.tableAdapterManager.FestivosObrasTableAdapter = null;
@@ -342,6 +348,7 @@
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;
@@ -397,7 +404,7 @@
             this.cobrosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.cobrosBindingNavigator.Name = "cobrosBindingNavigator";
             this.cobrosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.cobrosBindingNavigator.Size = new System.Drawing.Size(1059, 25);
+            this.cobrosBindingNavigator.Size = new System.Drawing.Size(1066, 25);
             this.cobrosBindingNavigator.TabIndex = 0;
             this.cobrosBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -614,10 +621,10 @@
             // Total
             // 
             this.Total.DataPropertyName = "Total";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Total.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Total.DefaultCellStyle = dataGridViewCellStyle2;
             this.Total.HeaderText = "Importe Total";
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
@@ -787,7 +794,7 @@
             // observTextBox
             // 
             this.observTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cobrosBindingSource, "Observ", true));
-            this.observTextBox.Location = new System.Drawing.Point(828, 409);
+            this.observTextBox.Location = new System.Drawing.Point(828, 435);
             this.observTextBox.Multiline = true;
             this.observTextBox.Name = "observTextBox";
             this.observTextBox.Size = new System.Drawing.Size(218, 48);
@@ -895,11 +902,21 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // previsionCheckEdit
+            // 
+            this.previsionCheckEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cobrosBindingSource, "Prevision", true));
+            this.previsionCheckEdit.Location = new System.Drawing.Point(944, 407);
+            this.previsionCheckEdit.Name = "previsionCheckEdit";
+            this.previsionCheckEdit.Properties.Caption = "Previsión";
+            this.previsionCheckEdit.Size = new System.Drawing.Size(75, 19);
+            this.previsionCheckEdit.TabIndex = 41;
+            // 
             // Cobros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1059, 525);
+            this.ClientSize = new System.Drawing.Size(1066, 530);
+            this.Controls.Add(this.previsionCheckEdit);
             this.Controls.Add(this.button2);
             this.Controls.Add(copiaFacturaLabel);
             this.Controls.Add(this.copiaFacturaTextBox);
@@ -961,6 +978,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturasCabListaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.previsionCheckEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1030,5 +1048,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button2;
+        private Promowork_dataDataSetTableAdapters.QueriesTableAdapter queriesTableAdapter1;
+        private DevExpress.XtraEditors.CheckEdit previsionCheckEdit;
     }
 }

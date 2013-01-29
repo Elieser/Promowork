@@ -19,7 +19,7 @@ namespace Promowork
             InitializeComponent();
         }
 
-        internal void LoadParametros(DateTime fechaini, DateTime fechafin, DataTable tmpClientes, Boolean Agrupado)
+        internal void LoadParametros(DateTime fechaini, DateTime fechafin, DataTable tmpClientes, Boolean Agrupado, Boolean Prevision)
         {
             this.WindowState = FormWindowState.Maximized;
             // TODO: This line of code loads data into the 'Promowork_dataDataSet.EmpresasActual' table. You can move, or remove it, as needed.
@@ -28,6 +28,10 @@ namespace Promowork
             try
            {
                this.ResumenCobrosClientesTableAdapter.Fill(this.Promowork_dataDataSet.ResumenCobrosClientes, tmpClientes, fechaini, fechafin);
+               if (Prevision == false)
+               {
+                   ResumenCobrosClientesBindingSource.Filter = "Prevision=0";
+               }
             }
             catch (SqlException ex)
             {

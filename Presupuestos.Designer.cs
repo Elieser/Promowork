@@ -57,6 +57,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             this.promowork_dataDataSet = new Promowork.Promowork_dataDataSet();
             this.presupCabBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.presupCabTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.PresupCabTableAdapter();
@@ -109,16 +111,6 @@
             this.ColorCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.presupDetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.presupDetDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColorDet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -204,16 +196,6 @@
             this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton39 = new System.Windows.Forms.ToolStripButton();
             this.presupSubDataGridView = new System.Windows.Forms.DataGridView();
-            this.numPresupSubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomPresupSubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desPresupSubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPresupDetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColorSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton34 = new System.Windows.Forms.ToolStripButton();
@@ -228,6 +210,28 @@
             this.toolStripButton32 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton33 = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantReal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColorDet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numPresupSubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomPresupSubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desPresupSubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantExtraSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantRealSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPresupDetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColorSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
             idObraLabel = new System.Windows.Forms.Label();
             idClienteLabel = new System.Windows.Forms.Label();
             numPresupLabel = new System.Windows.Forms.Label();
@@ -348,6 +352,8 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccesosEmpresasTableAdapter = null;
+            this.tableAdapterManager.AdjuntosObrasTableAdapter = null;
             this.tableAdapterManager.AnticiposTableAdapter = null;
             this.tableAdapterManager.AnticiposTrabajadoresTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -358,6 +364,7 @@
             this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CopiasHorasTableAdapter = null;
             this.tableAdapterManager.CrucesTrabajadoresTableAdapter = null;
@@ -368,6 +375,7 @@
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
             this.tableAdapterManager.FacturasCabTableAdapter = null;
+            this.tableAdapterManager.FacturasDetHorasTableAdapter = null;
             this.tableAdapterManager.FacturasDetTableAdapter = null;
             this.tableAdapterManager.FestivosEmpresasTableAdapter = null;
             this.tableAdapterManager.FestivosObrasTableAdapter = null;
@@ -377,6 +385,7 @@
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;
@@ -844,6 +853,7 @@
             this.Precio,
             this.Importe,
             this.CantExtra,
+            this.CantReal,
             this.dataGridViewTextBoxColumn21,
             this.ColorDet});
             this.presupDetDataGridView.DataSource = this.presupDetBindingSource;
@@ -854,110 +864,8 @@
             this.presupDetDataGridView.TabIndex = 10;
             this.presupDetDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.presupDetDataGridView_CellEnter);
             this.presupDetDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.presupDetDataGridView_CellFormatting);
+            this.presupDetDataGridView.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.presupDetDataGridView_CellLeave);
             this.presupDetDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.presupDetDataGridView_DataError);
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "NumPresupDet";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.dataGridViewTextBoxColumn22.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn22.HeaderText = "Nº";
-            this.dataGridViewTextBoxColumn22.MaxInputLength = 2;
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.Width = 25;
-            // 
-            // IdUM
-            // 
-            this.IdUM.DataPropertyName = "UM";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.IdUM.DefaultCellStyle = dataGridViewCellStyle6;
-            this.IdUM.HeaderText = "UM";
-            this.IdUM.MaxInputLength = 3;
-            this.IdUM.Name = "IdUM";
-            this.IdUM.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IdUM.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.IdUM.Width = 30;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "NomPresupDet";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn24.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewTextBoxColumn24.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn24.MaxInputLength = 100;
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "DesPresupDet";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn25.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewTextBoxColumn25.HeaderText = "Descripción";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.Width = 240;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle9.Format = "N2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MaxInputLength = 10;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Width = 60;
-            // 
-            // Precio
-            // 
-            this.Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.Precio.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MaxInputLength = 10;
-            this.Precio.Name = "Precio";
-            this.Precio.Width = 50;
-            // 
-            // Importe
-            // 
-            this.Importe.DataPropertyName = "Importe";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle11.Format = "N2";
-            dataGridViewCellStyle11.NullValue = null;
-            this.Importe.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Importe.HeaderText = "Importe";
-            this.Importe.MaxInputLength = 10;
-            this.Importe.Name = "Importe";
-            this.Importe.ReadOnly = true;
-            this.Importe.Width = 65;
-            // 
-            // CantExtra
-            // 
-            this.CantExtra.DataPropertyName = "CantExtra";
-            dataGridViewCellStyle12.Format = "N2";
-            this.CantExtra.DefaultCellStyle = dataGridViewCellStyle12;
-            this.CantExtra.HeaderText = "Diferencia";
-            this.CantExtra.Name = "CantExtra";
-            this.CantExtra.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "IdPresupCap";
-            this.dataGridViewTextBoxColumn21.HeaderText = "IdPresupCap";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.Visible = false;
-            // 
-            // ColorDet
-            // 
-            this.ColorDet.DataPropertyName = "Color";
-            this.ColorDet.HeaderText = "Color";
-            this.ColorDet.Name = "ColorDet";
-            this.ColorDet.Visible = false;
             // 
             // bindingNavigator1
             // 
@@ -1766,10 +1674,11 @@
             this.uMDataGridViewTextBoxColumn,
             this.nomPresupSubDataGridViewTextBoxColumn,
             this.desPresupSubDataGridViewTextBoxColumn,
-            this.cantidadDataGridViewTextBoxColumn,
+            this.CantidadSub,
             this.precioDataGridViewTextBoxColumn,
             this.importeDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn5,
+            this.CantExtraSub,
+            this.CantRealSub,
             this.idPresupDetDataGridViewTextBoxColumn,
             this.ColorSub});
             this.presupSubDataGridView.DataSource = this.presupSubBindingSource;
@@ -1779,108 +1688,8 @@
             this.presupSubDataGridView.Size = new System.Drawing.Size(728, 134);
             this.presupSubDataGridView.TabIndex = 29;
             this.presupSubDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.presupSubDataGridView_CellFormatting);
+            this.presupSubDataGridView.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.presupSubDataGridView_CellLeave);
             this.presupSubDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.presupSubDataGridView_DataError);
-            // 
-            // numPresupSubDataGridViewTextBoxColumn
-            // 
-            this.numPresupSubDataGridViewTextBoxColumn.DataPropertyName = "NumPresupSub";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.numPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
-            this.numPresupSubDataGridViewTextBoxColumn.HeaderText = "Nº";
-            this.numPresupSubDataGridViewTextBoxColumn.MaxInputLength = 2;
-            this.numPresupSubDataGridViewTextBoxColumn.Name = "numPresupSubDataGridViewTextBoxColumn";
-            this.numPresupSubDataGridViewTextBoxColumn.Width = 25;
-            // 
-            // uMDataGridViewTextBoxColumn
-            // 
-            this.uMDataGridViewTextBoxColumn.DataPropertyName = "UM";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.uMDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
-            this.uMDataGridViewTextBoxColumn.HeaderText = "UM";
-            this.uMDataGridViewTextBoxColumn.MaxInputLength = 3;
-            this.uMDataGridViewTextBoxColumn.Name = "uMDataGridViewTextBoxColumn";
-            this.uMDataGridViewTextBoxColumn.Width = 30;
-            // 
-            // nomPresupSubDataGridViewTextBoxColumn
-            // 
-            this.nomPresupSubDataGridViewTextBoxColumn.DataPropertyName = "NomPresupSub";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.nomPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
-            this.nomPresupSubDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nomPresupSubDataGridViewTextBoxColumn.MaxInputLength = 100;
-            this.nomPresupSubDataGridViewTextBoxColumn.Name = "nomPresupSubDataGridViewTextBoxColumn";
-            this.nomPresupSubDataGridViewTextBoxColumn.Width = 180;
-            // 
-            // desPresupSubDataGridViewTextBoxColumn
-            // 
-            this.desPresupSubDataGridViewTextBoxColumn.DataPropertyName = "DesPresupSub";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.desPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
-            this.desPresupSubDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.desPresupSubDataGridViewTextBoxColumn.Name = "desPresupSubDataGridViewTextBoxColumn";
-            this.desPresupSubDataGridViewTextBoxColumn.Width = 240;
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle17.Format = "N2";
-            dataGridViewCellStyle17.NullValue = null;
-            this.cantidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.MaxInputLength = 10;
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle18.Format = "N2";
-            dataGridViewCellStyle18.NullValue = null;
-            this.precioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
-            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            this.precioDataGridViewTextBoxColumn.MaxInputLength = 10;
-            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            this.precioDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // importeDataGridViewTextBoxColumn
-            // 
-            this.importeDataGridViewTextBoxColumn.DataPropertyName = "Importe";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle19.Format = "N2";
-            dataGridViewCellStyle19.NullValue = null;
-            this.importeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
-            this.importeDataGridViewTextBoxColumn.HeaderText = "Importe";
-            this.importeDataGridViewTextBoxColumn.MaxInputLength = 10;
-            this.importeDataGridViewTextBoxColumn.Name = "importeDataGridViewTextBoxColumn";
-            this.importeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.importeDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "CantExtra";
-            dataGridViewCellStyle20.Format = "N2";
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle20;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Diferencia";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 60;
-            // 
-            // idPresupDetDataGridViewTextBoxColumn
-            // 
-            this.idPresupDetDataGridViewTextBoxColumn.DataPropertyName = "IdPresupDet";
-            this.idPresupDetDataGridViewTextBoxColumn.HeaderText = "IdPresupDet";
-            this.idPresupDetDataGridViewTextBoxColumn.Name = "idPresupDetDataGridViewTextBoxColumn";
-            this.idPresupDetDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // ColorSub
-            // 
-            this.ColorSub.DataPropertyName = "Color";
-            this.ColorSub.HeaderText = "Color";
-            this.ColorSub.Name = "ColorSub";
-            this.ColorSub.Visible = false;
             // 
             // groupBox2
             // 
@@ -2022,6 +1831,235 @@
             this.toolStripButton33.Size = new System.Drawing.Size(16, 16);
             this.toolStripButton33.Text = "Color 3";
             this.toolStripButton33.Click += new System.EventHandler(this.toolStripButton33_Click);
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "NumPresupDet";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.dataGridViewTextBoxColumn22.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn22.HeaderText = "Nº";
+            this.dataGridViewTextBoxColumn22.MaxInputLength = 2;
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.Width = 25;
+            // 
+            // IdUM
+            // 
+            this.IdUM.DataPropertyName = "UM";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.IdUM.DefaultCellStyle = dataGridViewCellStyle6;
+            this.IdUM.HeaderText = "UM";
+            this.IdUM.MaxInputLength = 3;
+            this.IdUM.Name = "IdUM";
+            this.IdUM.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.IdUM.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.IdUM.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "NomPresupDet";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn24.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewTextBoxColumn24.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn24.MaxInputLength = 100;
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "DesPresupDet";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn25.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn25.HeaderText = "Descripción";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.Width = 230;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "Cantidad";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MaxInputLength = 10;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 60;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "Precio";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle10.Format = "N2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MaxInputLength = 10;
+            this.Precio.Name = "Precio";
+            this.Precio.Width = 50;
+            // 
+            // Importe
+            // 
+            this.Importe.DataPropertyName = "Importe";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.Importe.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Importe.HeaderText = "Importe";
+            this.Importe.MaxInputLength = 10;
+            this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
+            this.Importe.Width = 65;
+            // 
+            // CantExtra
+            // 
+            this.CantExtra.DataPropertyName = "CantExtra";
+            dataGridViewCellStyle12.Format = "N6";
+            dataGridViewCellStyle12.NullValue = null;
+            this.CantExtra.DefaultCellStyle = dataGridViewCellStyle12;
+            this.CantExtra.HeaderText = "Diferencia";
+            this.CantExtra.Name = "CantExtra";
+            this.CantExtra.Visible = false;
+            this.CantExtra.Width = 60;
+            // 
+            // CantReal
+            // 
+            this.CantReal.DataPropertyName = "CantReal";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle13.Format = "N6";
+            dataGridViewCellStyle13.NullValue = null;
+            this.CantReal.DefaultCellStyle = dataGridViewCellStyle13;
+            this.CantReal.HeaderText = "Real";
+            this.CantReal.Name = "CantReal";
+            this.CantReal.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "IdPresupCap";
+            this.dataGridViewTextBoxColumn21.HeaderText = "IdPresupCap";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.Visible = false;
+            // 
+            // ColorDet
+            // 
+            this.ColorDet.DataPropertyName = "Color";
+            this.ColorDet.HeaderText = "Color";
+            this.ColorDet.Name = "ColorDet";
+            this.ColorDet.Visible = false;
+            // 
+            // numPresupSubDataGridViewTextBoxColumn
+            // 
+            this.numPresupSubDataGridViewTextBoxColumn.DataPropertyName = "NumPresupSub";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.numPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            this.numPresupSubDataGridViewTextBoxColumn.HeaderText = "Nº";
+            this.numPresupSubDataGridViewTextBoxColumn.MaxInputLength = 2;
+            this.numPresupSubDataGridViewTextBoxColumn.Name = "numPresupSubDataGridViewTextBoxColumn";
+            this.numPresupSubDataGridViewTextBoxColumn.Width = 25;
+            // 
+            // uMDataGridViewTextBoxColumn
+            // 
+            this.uMDataGridViewTextBoxColumn.DataPropertyName = "UM";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.uMDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            this.uMDataGridViewTextBoxColumn.HeaderText = "UM";
+            this.uMDataGridViewTextBoxColumn.MaxInputLength = 3;
+            this.uMDataGridViewTextBoxColumn.Name = "uMDataGridViewTextBoxColumn";
+            this.uMDataGridViewTextBoxColumn.Width = 30;
+            // 
+            // nomPresupSubDataGridViewTextBoxColumn
+            // 
+            this.nomPresupSubDataGridViewTextBoxColumn.DataPropertyName = "NomPresupSub";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.nomPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            this.nomPresupSubDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nomPresupSubDataGridViewTextBoxColumn.MaxInputLength = 100;
+            this.nomPresupSubDataGridViewTextBoxColumn.Name = "nomPresupSubDataGridViewTextBoxColumn";
+            this.nomPresupSubDataGridViewTextBoxColumn.Width = 160;
+            // 
+            // desPresupSubDataGridViewTextBoxColumn
+            // 
+            this.desPresupSubDataGridViewTextBoxColumn.DataPropertyName = "DesPresupSub";
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.desPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
+            this.desPresupSubDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.desPresupSubDataGridViewTextBoxColumn.Name = "desPresupSubDataGridViewTextBoxColumn";
+            this.desPresupSubDataGridViewTextBoxColumn.Width = 230;
+            // 
+            // CantidadSub
+            // 
+            this.CantidadSub.DataPropertyName = "Cantidad";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle18.Format = "N2";
+            dataGridViewCellStyle18.NullValue = null;
+            this.CantidadSub.DefaultCellStyle = dataGridViewCellStyle18;
+            this.CantidadSub.HeaderText = "Cantidad";
+            this.CantidadSub.MaxInputLength = 10;
+            this.CantidadSub.Name = "CantidadSub";
+            this.CantidadSub.Width = 60;
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle19.Format = "N2";
+            dataGridViewCellStyle19.NullValue = null;
+            this.precioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.MaxInputLength = 10;
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // importeDataGridViewTextBoxColumn
+            // 
+            this.importeDataGridViewTextBoxColumn.DataPropertyName = "Importe";
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle20.Format = "N2";
+            dataGridViewCellStyle20.NullValue = null;
+            this.importeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
+            this.importeDataGridViewTextBoxColumn.HeaderText = "Importe";
+            this.importeDataGridViewTextBoxColumn.MaxInputLength = 10;
+            this.importeDataGridViewTextBoxColumn.Name = "importeDataGridViewTextBoxColumn";
+            this.importeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.importeDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // CantExtraSub
+            // 
+            this.CantExtraSub.DataPropertyName = "CantExtra";
+            dataGridViewCellStyle21.Format = "N2";
+            this.CantExtraSub.DefaultCellStyle = dataGridViewCellStyle21;
+            this.CantExtraSub.HeaderText = "Diferencia";
+            this.CantExtraSub.Name = "CantExtraSub";
+            this.CantExtraSub.Visible = false;
+            this.CantExtraSub.Width = 60;
+            // 
+            // CantRealSub
+            // 
+            this.CantRealSub.DataPropertyName = "CantReal";
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle22.Format = "N2";
+            dataGridViewCellStyle22.NullValue = null;
+            this.CantRealSub.DefaultCellStyle = dataGridViewCellStyle22;
+            this.CantRealSub.HeaderText = "Real";
+            this.CantRealSub.Name = "CantRealSub";
+            this.CantRealSub.Width = 90;
+            // 
+            // idPresupDetDataGridViewTextBoxColumn
+            // 
+            this.idPresupDetDataGridViewTextBoxColumn.DataPropertyName = "IdPresupDet";
+            this.idPresupDetDataGridViewTextBoxColumn.HeaderText = "IdPresupDet";
+            this.idPresupDetDataGridViewTextBoxColumn.Name = "idPresupDetDataGridViewTextBoxColumn";
+            this.idPresupDetDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ColorSub
+            // 
+            this.ColorSub.DataPropertyName = "Color";
+            this.ColorSub.HeaderText = "Color";
+            this.ColorSub.Name = "ColorSub";
+            this.ColorSub.Visible = false;
             // 
             // Presupuestos
             // 
@@ -2266,16 +2304,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantExtra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantReal;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColorDet;
         private System.Windows.Forms.DataGridViewTextBoxColumn numPresupSubDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uMDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomPresupSubDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn desPresupSubDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadSub;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn importeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantExtraSub;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantRealSub;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPresupDetDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColorSub;
     }

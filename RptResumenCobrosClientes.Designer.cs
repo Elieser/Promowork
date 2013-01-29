@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.ResumenCobrosClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Promowork_dataDataSet = new Promowork.Promowork_dataDataSet();
             this.EmpresasActualBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -60,12 +60,14 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = this.ResumenCobrosClientesBindingSource;
-            reportDataSource4.Name = "DataSet2";
-            reportDataSource4.Value = this.EmpresasActualBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
+            this.reportViewer1.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.reportViewer1.IsDocumentMapWidthFixed = true;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.ResumenCobrosClientesBindingSource;
+            reportDataSource2.Name = "DataSet2";
+            reportDataSource2.Value = this.EmpresasActualBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Promowork.ResumenCobrosClientes.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";

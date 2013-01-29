@@ -932,7 +932,9 @@
             this.codigo.Caption = "Código";
             this.codigo.ColumnEdit = this.repositoryItemLookUpEdit4;
             this.codigo.FieldName = "IdProducto";
+            this.codigo.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.codigo.Name = "codigo";
+            this.codigo.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.codigo.Visible = true;
             this.codigo.VisibleIndex = 0;
             this.codigo.Width = 131;
@@ -940,7 +942,7 @@
             // repositoryItemLookUpEdit4
             // 
             this.repositoryItemLookUpEdit4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.DropDown)});
             this.repositoryItemLookUpEdit4.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodProducto", "Código", 100, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DesProducto", "Descripción", 250, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
@@ -950,6 +952,7 @@
             this.repositoryItemLookUpEdit4.DataSource = this.productosBindingSource;
             this.repositoryItemLookUpEdit4.DisplayMember = "CodProducto";
             this.repositoryItemLookUpEdit4.Name = "repositoryItemLookUpEdit4";
+            this.repositoryItemLookUpEdit4.NullText = "";
             this.repositoryItemLookUpEdit4.PopupWidth = 450;
             this.repositoryItemLookUpEdit4.ValueMember = "IdProducto";
             // 
@@ -963,7 +966,9 @@
             this.descripcion.Caption = "Descripción";
             this.descripcion.ColumnEdit = this.repositoryItemLookUpEdit5;
             this.descripcion.FieldName = "IdProducto";
+            this.descripcion.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.descripcion.Name = "descripcion";
+            this.descripcion.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.descripcion.Visible = true;
             this.descripcion.VisibleIndex = 1;
             this.descripcion.Width = 244;
@@ -982,6 +987,7 @@
             this.repositoryItemLookUpEdit5.DataSource = this.productosBindingSource;
             this.repositoryItemLookUpEdit5.DisplayMember = "DesProducto";
             this.repositoryItemLookUpEdit5.Name = "repositoryItemLookUpEdit5";
+            this.repositoryItemLookUpEdit5.NullText = "";
             this.repositoryItemLookUpEdit5.PopupWidth = 450;
             this.repositoryItemLookUpEdit5.ValueMember = "IdProducto";
             // 

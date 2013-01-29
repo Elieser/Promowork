@@ -4763,6 +4763,7 @@
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <Format>#,0.00'€';(#,0.00'€');''</Format>
+                                <Color>=iif(Fields!Festivo.Value=True,"Red","Black")</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -4783,6 +4784,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -4799,6 +4801,7 @@
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <Format>#,0.00'€';(#,0.00'€');''</Format>
+                                <Color>=iif(Fields!Festivo.Value=True,"Red","Black")</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -4819,6 +4822,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -4835,6 +4839,7 @@
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <Format>#,0.00'€';(#,0.00'€');''</Format>
+                                <Color>=iif(Fields!Festivo.Value=True,"Red","Black")</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -4855,6 +4860,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -4870,6 +4876,7 @@
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
+                                <Color>=iif(Fields!Festivo.Value=True,"Red","Black")</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -4890,6 +4897,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -8302,6 +8310,7 @@
                                       <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <Format>d</Format>
+                                      <Color>=iif(Fields!Festivo.Value=True,"Red","Black")</Color>
                                     </Style>
                                   </TextRun>
                                   <TextRun>
@@ -8311,6 +8320,7 @@
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                       <Format>d</Format>
+                                      <Color>=iif(Fields!Festivo.Value=True,"Red","Black")</Color>
                                     </Style>
                                   </TextRun>
                                   <TextRun>
@@ -8319,6 +8329,7 @@
                                       <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <Format>d</Format>
+                                      <Color>=iif(Fields!Festivo.Value=True,"Red","Black")</Color>
                                     </Style>
                                   </TextRun>
                                   <TextRun>
@@ -8327,6 +8338,7 @@
                                       <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
+                                      <Color>=iif(Fields!Festivo.Value=True,"Red","Black")</Color>
                                     </Style>
                                   </TextRun>
                                   <TextRun>
@@ -8334,6 +8346,7 @@
                                     <Style>
                                       <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                       <FontSize>8pt</FontSize>
+                                      <Color>=iif(Fields!Festivo.Value=True,"Red","Black")</Color>
                                     </Style>
                                   </TextRun>
                                   <TextRun>
@@ -8342,6 +8355,7 @@
                                       <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
+                                      <Color>=iif(Fields!Festivo.Value=True,"Red","Black")</Color>
                                     </Style>
                                   </TextRun>
                                   <TextRun>
@@ -8349,6 +8363,7 @@
                                     <Style>
                                       <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                       <FontSize>8pt</FontSize>
+                                      <Color>=iif(Fields!Festivo.Value=True,"Red","Black")</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -8362,6 +8377,7 @@
                                       <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                       <FontSize>8pt</FontSize>
                                       <Format>d</Format>
+                                      <Color>=iif(Fields!Festivo.Value=True,"Red","Black")</Color>
                                     </Style>
                                   </TextRun>
                                   <TextRun>
@@ -8371,6 +8387,7 @@
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                       <Format>d</Format>
+                                      <Color>=iif(Fields!Festivo.Value=True,"Red","Black")</Color>
                                     </Style>
                                   </TextRun>
                                   <TextRun>
@@ -8380,6 +8397,7 @@
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                       <Format>d</Format>
+                                      <Color>=iif(Fields!Festivo.Value=True,"Red","Black")</Color>
                                     </Style>
                                   </TextRun>
                                   <TextRun>
@@ -8389,6 +8407,7 @@
                                       <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                       <Format>d</Format>
+                                      <Color>=iif(Fields!Festivo.Value=True,"Red","Black")</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -8407,6 +8426,7 @@
                               <PaddingBottom>2pt</PaddingBottom>
                             </Style>
                           </Textbox>
+                          <rd:Selected>true</rd:Selected>
                         </CellContents>
                       </TablixHeader>
                     </TablixMember>
@@ -9099,7 +9119,7 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
-  <Width>12.72846in</Width>
+  <Width>10.75996in</Width>
   <Page>
     <PageHeader>
       <Height>1.98437cm</Height>

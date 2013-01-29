@@ -54,7 +54,7 @@ namespace Promowork
                 DataTable tmpClientes = promowork_dataDataSet.MarcaClientes.Select("Marca= true").CopyToDataTable();
 
                 RptResumenFacturasClientes frm = new RptResumenFacturasClientes();
-                frm.LoadParametros(dateTimePicker1.Value, dateTimePicker2.Value, tmpClientes, Convert.ToBoolean(checkBox1.CheckState));
+                frm.LoadParametros(dateTimePicker1.Value, dateTimePicker2.Value, tmpClientes, Convert.ToBoolean(checkBox1.CheckState), Convert.ToBoolean(checkBox3.CheckState));
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
 

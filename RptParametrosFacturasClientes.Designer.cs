@@ -39,13 +39,14 @@
             this.empresasActualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empresasActualTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.EmpresasActualTableAdapter();
             this.marcaProveedoresDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.NumCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DesCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.marcaClientesTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.MarcaClientesTableAdapter();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.NumCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DesCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasActualBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaProveedoresDataGridView)).BeginInit();
@@ -104,6 +105,8 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccesosEmpresasTableAdapter = null;
+            this.tableAdapterManager.AdjuntosObrasTableAdapter = null;
             this.tableAdapterManager.AnticiposTableAdapter = null;
             this.tableAdapterManager.AnticiposTrabajadoresTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -114,6 +117,7 @@
             this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CopiasHorasTableAdapter = null;
@@ -125,6 +129,7 @@
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
             this.tableAdapterManager.FacturasCabTableAdapter = null;
+            this.tableAdapterManager.FacturasDetHorasTableAdapter = null;
             this.tableAdapterManager.FacturasDetTableAdapter = null;
             this.tableAdapterManager.FestivosEmpresasTableAdapter = null;
             this.tableAdapterManager.FestivosObrasTableAdapter = null;
@@ -134,6 +139,7 @@
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;
@@ -189,6 +195,29 @@
             this.marcaProveedoresDataGridView.Size = new System.Drawing.Size(492, 319);
             this.marcaProveedoresDataGridView.TabIndex = 26;
             // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "Marca";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.Width = 20;
+            // 
+            // NumCliente
+            // 
+            this.NumCliente.DataPropertyName = "NumCliente";
+            this.NumCliente.HeaderText = "Nº";
+            this.NumCliente.Name = "NumCliente";
+            this.NumCliente.ReadOnly = true;
+            this.NumCliente.Width = 50;
+            // 
+            // DesCliente
+            // 
+            this.DesCliente.DataPropertyName = "DesCliente";
+            this.DesCliente.HeaderText = "Cliente";
+            this.DesCliente.Name = "DesCliente";
+            this.DesCliente.ReadOnly = true;
+            this.DesCliente.Width = 400;
+            // 
             // marcaClientesBindingSource
             // 
             this.marcaClientesBindingSource.DataMember = "MarcaClientes";
@@ -222,34 +251,24 @@
             this.checkBox1.Text = "Mostrar Agrupado por Clientes y Obras";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewCheckBoxColumn2
+            // checkBox3
             // 
-            this.dataGridViewCheckBoxColumn2.DataPropertyName = "Marca";
-            this.dataGridViewCheckBoxColumn2.HeaderText = "";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.Width = 20;
-            // 
-            // NumCliente
-            // 
-            this.NumCliente.DataPropertyName = "NumCliente";
-            this.NumCliente.HeaderText = "Nº";
-            this.NumCliente.Name = "NumCliente";
-            this.NumCliente.ReadOnly = true;
-            this.NumCliente.Width = 50;
-            // 
-            // DesCliente
-            // 
-            this.DesCliente.DataPropertyName = "DesCliente";
-            this.DesCliente.HeaderText = "Cliente";
-            this.DesCliente.Name = "DesCliente";
-            this.DesCliente.ReadOnly = true;
-            this.DesCliente.Width = 400;
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Checked = true;
+            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox3.Location = new System.Drawing.Point(225, 41);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(118, 17);
+            this.checkBox3.TabIndex = 29;
+            this.checkBox3.Text = "Mostrar Previsiones";
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // RptParametrosFacturasClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(516, 394);
+            this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.marcaProveedoresDataGridView);
@@ -292,5 +311,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn DesCliente;
+        private System.Windows.Forms.CheckBox checkBox3;
     }
 }

@@ -331,15 +331,18 @@
             // 
             this.CodProducto.Caption = "Código";
             this.CodProducto.FieldName = "CodProducto";
+            this.CodProducto.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.CodProducto.Name = "CodProducto";
+            this.CodProducto.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.CodProducto.Visible = true;
             this.CodProducto.VisibleIndex = 0;
-            this.CodProducto.Width = 202;
+            this.CodProducto.Width = 286;
             // 
             // colDesProducto
             // 
             this.colDesProducto.Caption = "Descripción";
             this.colDesProducto.FieldName = "DesProducto";
+            this.colDesProducto.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.colDesProducto.Name = "colDesProducto";
             this.colDesProducto.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.colDesProducto.Visible = true;
@@ -354,7 +357,7 @@
             this.colIdUMedida.Name = "colIdUMedida";
             this.colIdUMedida.Visible = true;
             this.colIdUMedida.VisibleIndex = 2;
-            this.colIdUMedida.Width = 55;
+            this.colIdUMedida.Width = 45;
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -367,6 +370,7 @@
             this.repositoryItemLookUpEdit1.DataSource = this.uMedidasBindingSource;
             this.repositoryItemLookUpEdit1.DisplayMember = "CodUmedida";
             this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
+            this.repositoryItemLookUpEdit1.NullText = "";
             this.repositoryItemLookUpEdit1.ValueMember = "IdUmedida";
             // 
             // uMedidasBindingSource
@@ -385,7 +389,7 @@
             this.colPVP.Name = "colPVP";
             this.colPVP.Visible = true;
             this.colPVP.VisibleIndex = 3;
-            this.colPVP.Width = 83;
+            this.colPVP.Width = 67;
             // 
             // colDescuento
             // 
@@ -397,7 +401,7 @@
             this.colDescuento.Name = "colDescuento";
             this.colDescuento.Visible = true;
             this.colDescuento.VisibleIndex = 4;
-            this.colDescuento.Width = 83;
+            this.colDescuento.Width = 67;
             // 
             // colPorciento
             // 
@@ -409,6 +413,7 @@
             this.colPorciento.Name = "colPorciento";
             this.colPorciento.Visible = true;
             this.colPorciento.VisibleIndex = 5;
+            this.colPorciento.Width = 61;
             // 
             // PC
             // 
@@ -426,7 +431,7 @@
             this.PC.OptionsColumn.ReadOnly = true;
             this.PC.Visible = true;
             this.PC.VisibleIndex = 6;
-            this.PC.Width = 87;
+            this.PC.Width = 71;
             // 
             // PV
             // 
@@ -444,7 +449,7 @@
             this.PV.OptionsColumn.ReadOnly = true;
             this.PV.Visible = true;
             this.PV.VisibleIndex = 7;
-            this.PV.Width = 92;
+            this.PV.Width = 80;
             // 
             // colProducto
             // 

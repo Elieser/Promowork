@@ -229,13 +229,17 @@ namespace Promowork
          
             if (e.Column.Name == "codigo" || e.Column.Name == "descripcion")
             {
+               try
+               {
+
                 DataRow Producto = promowork_dataDataSet.Productos.FindByIdProducto(int.Parse(gridView2.GetFocusedRowCellValue("IdProducto").ToString()));
               //  DataRowView Producto = (DataRowView)productosBindingSource.Current;
               //  MessageBox.Show(Producto["Descuento"].ToString());
                 gridView2.SetFocusedRowCellValue("PVP", Producto["PVP"]);
                 gridView2.SetFocusedRowCellValue("Descuento", Producto["Descuento"]);
                 gridView2.SetFocusedRowCellValue("Porciento", Producto["Porciento"]);
-
+               }
+                catch{}
                 
             }
         }
