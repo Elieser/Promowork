@@ -57,9 +57,9 @@
             System.Windows.Forms.Label obsFacturaLabel;
             System.Windows.Forms.Label copiaFacturaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturasManuales));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.facturasCabBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.facturasCabBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -80,6 +80,7 @@
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.facturasCabDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Obra = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.obrasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -126,6 +127,12 @@
             this.empresasActualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facturasDetTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.FacturasDetTableAdapter();
             this.facturasDetDataGridView = new System.Windows.Forms.DataGridView();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obrasTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.ObrasTableAdapter();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -146,12 +153,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.printToolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             idClienteLabel = new System.Windows.Forms.Label();
             idPresupLabel = new System.Windows.Forms.Label();
             numFacturaLabel = new System.Windows.Forms.Label();
@@ -464,7 +467,9 @@
             this.facturasCabBindingNavigatorSaveItem,
             this.toolStripSeparator7,
             this.printToolStripButton,
-            this.toolStripSeparator});
+            this.toolStripSeparator,
+            this.printToolStripButton1,
+            this.toolStripSeparator5});
             this.facturasCabBindingNavigator.Location = new System.Drawing.Point(2, 9);
             this.facturasCabBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.facturasCabBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -472,7 +477,7 @@
             this.facturasCabBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.facturasCabBindingNavigator.Name = "facturasCabBindingNavigator";
             this.facturasCabBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.facturasCabBindingNavigator.Size = new System.Drawing.Size(313, 25);
+            this.facturasCabBindingNavigator.Size = new System.Drawing.Size(373, 25);
             this.facturasCabBindingNavigator.TabIndex = 0;
             this.facturasCabBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -594,8 +599,8 @@
             this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripButton.Name = "printToolStripButton";
             this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.printToolStripButton.Text = "&Print";
-            this.printToolStripButton.ToolTipText = "Imprimir Factura";
+            this.printToolStripButton.Text = "Modelo 1";
+            this.printToolStripButton.ToolTipText = "Imprimir Factura Modelo 1";
             this.printToolStripButton.Click += new System.EventHandler(this.printToolStripButton_Click);
             // 
             // toolStripSeparator
@@ -610,6 +615,7 @@
             this.facturasCabDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.facturasCabDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
+            this.IdCuenta,
             this.dataGridViewTextBoxColumn7,
             this.Obra,
             this.Importe,
@@ -634,6 +640,14 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 50;
+            // 
+            // IdCuenta
+            // 
+            this.IdCuenta.DataPropertyName = "IdCuenta";
+            this.IdCuenta.HeaderText = "IdCuenta";
+            this.IdCuenta.Name = "IdCuenta";
+            this.IdCuenta.ReadOnly = true;
+            this.IdCuenta.Visible = false;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -666,9 +680,9 @@
             // Importe
             // 
             this.Importe.DataPropertyName = "Importe";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Importe.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Importe.DefaultCellStyle = dataGridViewCellStyle4;
             this.Importe.HeaderText = "Importe";
             this.Importe.Name = "Importe";
             this.Importe.ReadOnly = true;
@@ -1035,6 +1049,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccesosEmpresasTableAdapter = null;
             this.tableAdapterManager.AdjuntosObrasTableAdapter = null;
             this.tableAdapterManager.AnticiposTableAdapter = null;
             this.tableAdapterManager.AnticiposTrabajadoresTableAdapter = null;
@@ -1046,6 +1061,7 @@
             this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CopiasHorasTableAdapter = null;
@@ -1057,6 +1073,7 @@
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
             this.tableAdapterManager.FacturasCabTableAdapter = null;
+            this.tableAdapterManager.FacturasDetHorasTableAdapter = null;
             this.tableAdapterManager.FacturasDetTableAdapter = null;
             this.tableAdapterManager.FestivosEmpresasTableAdapter = null;
             this.tableAdapterManager.FestivosObrasTableAdapter = null;
@@ -1066,6 +1083,7 @@
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;
@@ -1133,6 +1151,53 @@
             this.facturasDetDataGridView.Name = "facturasDetDataGridView";
             this.facturasDetDataGridView.Size = new System.Drawing.Size(1133, 129);
             this.facturasDetDataGridView.TabIndex = 81;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 720;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Um";
+            this.dataGridViewTextBoxColumn11.HeaderText = "UM";
+            this.dataGridViewTextBoxColumn11.MaxInputLength = 3;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Cantidad";
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Cantidad";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Precio";
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Precio";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "IdFactCab";
+            this.dataGridViewTextBoxColumn2.HeaderText = "IdFactCab";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Importe";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Importe";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // obrasTableAdapter
             // 
@@ -1311,52 +1376,21 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // Descripcion
+            // printToolStripButton1
             // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 720;
+            this.printToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.printToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton1.Image")));
+            this.printToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printToolStripButton1.Name = "printToolStripButton1";
+            this.printToolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.printToolStripButton1.Text = "Modelo 2";
+            this.printToolStripButton1.ToolTipText = "Imprimir Factura Modelo 2";
+            this.printToolStripButton1.Click += new System.EventHandler(this.printToolStripButton1_Click);
             // 
-            // dataGridViewTextBoxColumn11
+            // toolStripSeparator5
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Um";
-            this.dataGridViewTextBoxColumn11.HeaderText = "UM";
-            this.dataGridViewTextBoxColumn11.MaxInputLength = 3;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn8.HeaderText = "Cantidad";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Precio";
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn9.HeaderText = "Precio";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "IdFactCab";
-            this.dataGridViewTextBoxColumn2.HeaderText = "IdFactCab";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Importe";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Importe";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
             // FacturasManuales
             // 
@@ -1478,13 +1512,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Obra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Cobrada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdFactCab;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn FacturaPresup;
         private System.Windows.Forms.TextBox copiaFacturaTextBox;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
@@ -1496,5 +1523,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCuenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Obra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Cobrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdFactCab;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn FacturaPresup;
+        private System.Windows.Forms.ToolStripButton printToolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }

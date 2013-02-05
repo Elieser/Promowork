@@ -92,10 +92,11 @@ namespace Promowork
            // this.formasPagoTableAdapter.Fill(this.promowork_dataDataSet.FormasPago);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.Cobros' table. You can move, or remove it, as needed.
            // this.cobrosTableAdapter.Fill(this.promowork_dataDataSet.Cobros);
-            
-            this.presupSubTableAdapter.FillByNumDes(this.promowork_dataDataSet.PresupSub);
-            // TODO: This line of code loads data into the 'promowork_dataDataSet.PresupDet' table. You can move, or remove it, as needed.
             this.presupDetTableAdapter.FillByNumDes(this.promowork_dataDataSet.PresupDet);
+            this.presupSubTableAdapter.FillByNumDes(this.promowork_dataDataSet.PresupSub);
+            
+            // TODO: This line of code loads data into the 'promowork_dataDataSet.PresupDet' table. You can move, or remove it, as needed.
+            
             // TODO: This line of code loads data into the 'promowork_dataDataSet.PresupCap' table. You can move, or remove it, as needed.
             this.presupCapTableAdapter.FillByNumDes(this.promowork_dataDataSet.PresupCap);
             presupSubBindingSource1.Filter = "Pendiente>0";
@@ -112,6 +113,7 @@ namespace Promowork
            // this.facturasDetTableAdapter.Fill(this.promowork_dataDataSet.FacturasDet);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.FacturasCab' table. You can move, or remove it, as needed.
             this.facturasCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.FacturasCab,VariablesGlobales.nIdEmpresaActual,true);
+           // MessageBox.Show(facturasCabBindingSource.Count.ToString());
             this.empresasActualTableAdapter.FillByEmpresa(this.promowork_dataDataSet.EmpresasActual, VariablesGlobales.nIdEmpresaActual);
             this.facturasCabBindingSource.MoveLast();
         }

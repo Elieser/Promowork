@@ -34,13 +34,14 @@
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label4;
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition5 = new DevExpress.XtraGrid.StyleFormatCondition();
             System.Windows.Forms.Label fechaLabel;
             System.Windows.Forms.Label idConBancoLabel;
             System.Windows.Forms.Label importeLabel;
             System.Windows.Forms.Label idFormaPagoLabel;
+            System.Windows.Forms.Label label5;
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition3 = new DevExpress.XtraGrid.StyleFormatCondition();
             this.colSaldo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrevision = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Saldo = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,8 +63,9 @@
             this.colIdEmpresa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDebe1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHaber1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIdOpebanco = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdOpebanco = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTipoOpe = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colObsBanco = new DevExpress.XtraGrid.Columns.GridColumn();
             this.vPrevisionesGridControl = new DevExpress.XtraGrid.GridControl();
             this.vPrevisionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -81,7 +83,8 @@
             this.colIdCobro1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIdCompra1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIdFormaPago = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIdOpeBanco1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdOpeBanco1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colObsBanco1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.formasPagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuentasBancosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuentasBancosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.CuentasBancosTableAdapter();
@@ -104,13 +107,20 @@
             this.txtsaldofinal = new System.Windows.Forms.TextBox();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.cbxconcepto = new System.Windows.Forms.ComboBox();
+            this.conceptosBancosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.importeTextBox = new System.Windows.Forms.TextBox();
             this.idFormaPagoComboBox = new System.Windows.Forms.ComboBox();
-            this.conceptosBancosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.conceptosBancosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.ConceptosBancosTableAdapter();
             this.formasPagoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.conceptosBancosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.ConceptosBancosTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.chkdebito = new System.Windows.Forms.CheckBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             bancoCuentaLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -120,6 +130,7 @@
             idConBancoLabel = new System.Windows.Forms.Label();
             importeLabel = new System.Windows.Forms.Label();
             idFormaPagoLabel = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.operacionesBancoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.operacionesBancoGridControl)).BeginInit();
@@ -175,11 +186,56 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(622, 307);
+            label4.Location = new System.Drawing.Point(738, 307);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(113, 13);
             label4.TabIndex = 18;
             label4.Text = "Importe Seleccionado:";
+            // 
+            // fechaLabel
+            // 
+            fechaLabel.AutoSize = true;
+            fechaLabel.Location = new System.Drawing.Point(6, 17);
+            fechaLabel.Name = "fechaLabel";
+            fechaLabel.Size = new System.Drawing.Size(40, 13);
+            fechaLabel.TabIndex = 21;
+            fechaLabel.Text = "Fecha:";
+            // 
+            // idConBancoLabel
+            // 
+            idConBancoLabel.AutoSize = true;
+            idConBancoLabel.Location = new System.Drawing.Point(156, 17);
+            idConBancoLabel.Name = "idConBancoLabel";
+            idConBancoLabel.Size = new System.Drawing.Size(56, 13);
+            idConBancoLabel.TabIndex = 22;
+            idConBancoLabel.Text = "Concepto:";
+            // 
+            // importeLabel
+            // 
+            importeLabel.AutoSize = true;
+            importeLabel.Location = new System.Drawing.Point(936, 17);
+            importeLabel.Name = "importeLabel";
+            importeLabel.Size = new System.Drawing.Size(45, 13);
+            importeLabel.TabIndex = 24;
+            importeLabel.Text = "Importe:";
+            // 
+            // idFormaPagoLabel
+            // 
+            idFormaPagoLabel.AutoSize = true;
+            idFormaPagoLabel.Location = new System.Drawing.Point(722, 17);
+            idFormaPagoLabel.Name = "idFormaPagoLabel";
+            idFormaPagoLabel.Size = new System.Drawing.Size(67, 13);
+            idFormaPagoLabel.TabIndex = 26;
+            idFormaPagoLabel.Text = "Forma Pago:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(429, 17);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(69, 13);
+            label5.TabIndex = 31;
+            label5.Text = "Anotaciones:";
             // 
             // colSaldo
             // 
@@ -191,7 +247,7 @@
             this.colSaldo.Name = "colSaldo";
             this.colSaldo.Visible = true;
             this.colSaldo.VisibleIndex = 6;
-            this.colSaldo.Width = 100;
+            this.colSaldo.Width = 117;
             // 
             // colPrevision
             // 
@@ -208,9 +264,10 @@
             this.Saldo.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Saldo.FieldName = "Saldo";
             this.Saldo.Name = "Saldo";
+            this.Saldo.OptionsColumn.AllowEdit = false;
             this.Saldo.Visible = true;
-            this.Saldo.VisibleIndex = 7;
-            this.Saldo.Width = 100;
+            this.Saldo.VisibleIndex = 8;
+            this.Saldo.Width = 113;
             // 
             // promowork_dataDataSet
             // 
@@ -322,8 +379,9 @@
             this.colDebe1,
             this.colHaber1,
             this.colSaldo,
-            this.colIdOpebanco,
-            this.colTipoOpe});
+            this.IdOpebanco,
+            this.colTipoOpe,
+            this.colObsBanco});
             styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.Red;
             styleFormatCondition1.Appearance.Options.UseForeColor = true;
             styleFormatCondition1.Column = this.colSaldo;
@@ -352,7 +410,7 @@
             this.colFecha.Name = "colFecha";
             this.colFecha.Visible = true;
             this.colFecha.VisibleIndex = 0;
-            this.colFecha.Width = 100;
+            this.colFecha.Width = 117;
             // 
             // colIdFormaPago1
             // 
@@ -388,7 +446,7 @@
             this.colDesOperacion.Name = "colDesOperacion";
             this.colDesOperacion.Visible = true;
             this.colDesOperacion.VisibleIndex = 2;
-            this.colDesOperacion.Width = 400;
+            this.colDesOperacion.Width = 548;
             // 
             // colDesFormaPago
             // 
@@ -397,7 +455,7 @@
             this.colDesFormaPago.Name = "colDesFormaPago";
             this.colDesFormaPago.Visible = true;
             this.colDesFormaPago.VisibleIndex = 3;
-            this.colDesFormaPago.Width = 318;
+            this.colDesFormaPago.Width = 137;
             // 
             // colIdEmpresa
             // 
@@ -412,7 +470,7 @@
             this.colDebe1.Name = "colDebe1";
             this.colDebe1.Visible = true;
             this.colDebe1.VisibleIndex = 4;
-            this.colDebe1.Width = 100;
+            this.colDebe1.Width = 92;
             // 
             // colHaber1
             // 
@@ -422,13 +480,13 @@
             this.colHaber1.Name = "colHaber1";
             this.colHaber1.Visible = true;
             this.colHaber1.VisibleIndex = 5;
-            this.colHaber1.Width = 100;
+            this.colHaber1.Width = 92;
             // 
-            // colIdOpebanco
+            // IdOpebanco
             // 
-            this.colIdOpebanco.FieldName = "IdOpebanco";
-            this.colIdOpebanco.Name = "colIdOpebanco";
-            this.colIdOpebanco.Width = 54;
+            this.IdOpebanco.FieldName = "IdOpebanco";
+            this.IdOpebanco.Name = "IdOpebanco";
+            this.IdOpebanco.Width = 54;
             // 
             // colTipoOpe
             // 
@@ -437,7 +495,14 @@
             this.colTipoOpe.Name = "colTipoOpe";
             this.colTipoOpe.Visible = true;
             this.colTipoOpe.VisibleIndex = 1;
-            this.colTipoOpe.Width = 100;
+            this.colTipoOpe.Width = 117;
+            // 
+            // colObsBanco
+            // 
+            this.colObsBanco.Caption = "Anotaciones";
+            this.colObsBanco.FieldName = "ObsBanco";
+            this.colObsBanco.Name = "colObsBanco";
+            this.colObsBanco.Width = 247;
             // 
             // vPrevisionesGridControl
             // 
@@ -445,7 +510,7 @@
             this.vPrevisionesGridControl.Location = new System.Drawing.Point(0, 329);
             this.vPrevisionesGridControl.MainView = this.gridView2;
             this.vPrevisionesGridControl.Name = "vPrevisionesGridControl";
-            this.vPrevisionesGridControl.Size = new System.Drawing.Size(1238, 107);
+            this.vPrevisionesGridControl.Size = new System.Drawing.Size(1238, 127);
             this.vPrevisionesGridControl.TabIndex = 4;
             this.vPrevisionesGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -480,7 +545,8 @@
             this.colIdCompra1,
             this.colIdFormaPago,
             this.Saldo,
-            this.colIdOpeBanco1});
+            this.IdOpeBanco1,
+            this.colObsBanco1});
             styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.LightGreen;
             styleFormatCondition2.Appearance.BackColor2 = System.Drawing.Color.LightGreen;
             styleFormatCondition2.Appearance.Options.UseBackColor = true;
@@ -488,19 +554,18 @@
             styleFormatCondition2.Column = this.colPrevision;
             styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
             styleFormatCondition2.Value1 = "1";
-            styleFormatCondition5.Appearance.ForeColor = System.Drawing.Color.Black;
-            styleFormatCondition5.Appearance.Options.UseForeColor = true;
-            styleFormatCondition5.Column = this.Saldo;
-            styleFormatCondition5.Condition = DevExpress.XtraGrid.FormatConditionEnum.GreaterOrEqual;
-            styleFormatCondition5.Value1 = "0";
+            styleFormatCondition3.Appearance.ForeColor = System.Drawing.Color.Black;
+            styleFormatCondition3.Appearance.Options.UseForeColor = true;
+            styleFormatCondition3.Column = this.Saldo;
+            styleFormatCondition3.Condition = DevExpress.XtraGrid.FormatConditionEnum.GreaterOrEqual;
+            styleFormatCondition3.Value1 = "0";
             this.gridView2.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
             styleFormatCondition2,
-            styleFormatCondition5});
+            styleFormatCondition3});
             this.gridView2.GridControl = this.vPrevisionesGridControl;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView2_FocusedRowChanged);
-            this.gridView2.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView2_CellValueChanged);
             this.gridView2.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView2_CellValueChanging);
             // 
             // colFecha1
@@ -510,7 +575,7 @@
             this.colFecha1.OptionsColumn.AllowEdit = false;
             this.colFecha1.Visible = true;
             this.colFecha1.VisibleIndex = 0;
-            this.colFecha1.Width = 100;
+            this.colFecha1.Width = 95;
             // 
             // colDesProveedor
             // 
@@ -520,7 +585,7 @@
             this.colDesProveedor.OptionsColumn.AllowEdit = false;
             this.colDesProveedor.Visible = true;
             this.colDesProveedor.VisibleIndex = 2;
-            this.colDesProveedor.Width = 400;
+            this.colDesProveedor.Width = 302;
             // 
             // colFactura
             // 
@@ -529,7 +594,7 @@
             this.colFactura.OptionsColumn.AllowEdit = false;
             this.colFactura.Visible = true;
             this.colFactura.VisibleIndex = 3;
-            this.colFactura.Width = 222;
+            this.colFactura.Width = 101;
             // 
             // colImporte1
             // 
@@ -543,8 +608,8 @@
             this.marca.FieldName = "marca";
             this.marca.Name = "marca";
             this.marca.Visible = true;
-            this.marca.VisibleIndex = 4;
-            this.marca.Width = 76;
+            this.marca.VisibleIndex = 5;
+            this.marca.Width = 48;
             // 
             // colIdEmpresa1
             // 
@@ -571,7 +636,7 @@
             this.colTipo.OptionsColumn.AllowEdit = false;
             this.colTipo.Visible = true;
             this.colTipo.VisibleIndex = 1;
-            this.colTipo.Width = 100;
+            this.colTipo.Width = 95;
             // 
             // colDebe
             // 
@@ -581,8 +646,8 @@
             this.colDebe.Name = "colDebe";
             this.colDebe.OptionsColumn.AllowEdit = false;
             this.colDebe.Visible = true;
-            this.colDebe.VisibleIndex = 5;
-            this.colDebe.Width = 100;
+            this.colDebe.VisibleIndex = 6;
+            this.colDebe.Width = 92;
             // 
             // colHaber
             // 
@@ -592,8 +657,8 @@
             this.colHaber.Name = "colHaber";
             this.colHaber.OptionsColumn.AllowEdit = false;
             this.colHaber.Visible = true;
-            this.colHaber.VisibleIndex = 6;
-            this.colHaber.Width = 100;
+            this.colHaber.VisibleIndex = 7;
+            this.colHaber.Width = 92;
             // 
             // colIdCobro1
             // 
@@ -616,12 +681,21 @@
             this.colIdFormaPago.OptionsColumn.AllowEdit = false;
             this.colIdFormaPago.Width = 139;
             // 
-            // colIdOpeBanco1
+            // IdOpeBanco1
             // 
-            this.colIdOpeBanco1.FieldName = "IdOpeBanco";
-            this.colIdOpeBanco1.Name = "colIdOpeBanco1";
-            this.colIdOpeBanco1.OptionsColumn.AllowEdit = false;
-            this.colIdOpeBanco1.Width = 35;
+            this.IdOpeBanco1.FieldName = "IdOpeBanco";
+            this.IdOpeBanco1.Name = "IdOpeBanco1";
+            this.IdOpeBanco1.OptionsColumn.AllowEdit = false;
+            this.IdOpeBanco1.Width = 35;
+            // 
+            // colObsBanco1
+            // 
+            this.colObsBanco1.Caption = "Anotaciones";
+            this.colObsBanco1.FieldName = "ObsBanco";
+            this.colObsBanco1.Name = "colObsBanco1";
+            this.colObsBanco1.Visible = true;
+            this.colObsBanco1.VisibleIndex = 4;
+            this.colObsBanco1.Width = 282;
             // 
             // formasPagoBindingSource
             // 
@@ -744,7 +818,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(898, 5);
+            this.button4.Location = new System.Drawing.Point(1031, 5);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 23);
             this.button4.TabIndex = 17;
@@ -755,7 +829,7 @@
             // txtimportesel
             // 
             this.txtimportesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtimportesel.Location = new System.Drawing.Point(741, 303);
+            this.txtimportesel.Location = new System.Drawing.Point(857, 303);
             this.txtimportesel.Name = "txtimportesel";
             this.txtimportesel.ReadOnly = true;
             this.txtimportesel.Size = new System.Drawing.Size(81, 21);
@@ -772,15 +846,6 @@
             this.txtsaldofinal.TabIndex = 21;
             this.txtsaldofinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // fechaLabel
-            // 
-            fechaLabel.AutoSize = true;
-            fechaLabel.Location = new System.Drawing.Point(6, 17);
-            fechaLabel.Name = "fechaLabel";
-            fechaLabel.Size = new System.Drawing.Size(40, 13);
-            fechaLabel.TabIndex = 21;
-            fechaLabel.Text = "Fecha:";
-            // 
             // fechaDateTimePicker
             // 
             this.fechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -789,79 +854,57 @@
             this.fechaDateTimePicker.Size = new System.Drawing.Size(96, 20);
             this.fechaDateTimePicker.TabIndex = 22;
             // 
-            // idConBancoLabel
-            // 
-            idConBancoLabel.AutoSize = true;
-            idConBancoLabel.Location = new System.Drawing.Point(159, 17);
-            idConBancoLabel.Name = "idConBancoLabel";
-            idConBancoLabel.Size = new System.Drawing.Size(56, 13);
-            idConBancoLabel.TabIndex = 22;
-            idConBancoLabel.Text = "Concepto:";
-            // 
             // cbxconcepto
             // 
             this.cbxconcepto.DataSource = this.conceptosBancosBindingSource;
-            this.cbxconcepto.DisplayMember = "DesConBanco";
+            this.cbxconcepto.DisplayMember = "Concepto";
             this.cbxconcepto.FormattingEnabled = true;
-            this.cbxconcepto.Location = new System.Drawing.Point(221, 13);
+            this.cbxconcepto.Location = new System.Drawing.Point(218, 13);
             this.cbxconcepto.Name = "cbxconcepto";
-            this.cbxconcepto.Size = new System.Drawing.Size(202, 21);
+            this.cbxconcepto.Size = new System.Drawing.Size(174, 21);
             this.cbxconcepto.TabIndex = 24;
             this.cbxconcepto.ValueMember = "IdConBanco";
-            // 
-            // importeLabel
-            // 
-            importeLabel.AutoSize = true;
-            importeLabel.Location = new System.Drawing.Point(738, 18);
-            importeLabel.Name = "importeLabel";
-            importeLabel.Size = new System.Drawing.Size(45, 13);
-            importeLabel.TabIndex = 24;
-            importeLabel.Text = "Importe:";
-            // 
-            // importeTextBox
-            // 
-            this.importeTextBox.Location = new System.Drawing.Point(789, 14);
-            this.importeTextBox.Name = "importeTextBox";
-            this.importeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.importeTextBox.TabIndex = 25;
-            // 
-            // idFormaPagoLabel
-            // 
-            idFormaPagoLabel.AutoSize = true;
-            idFormaPagoLabel.Location = new System.Drawing.Point(452, 17);
-            idFormaPagoLabel.Name = "idFormaPagoLabel";
-            idFormaPagoLabel.Size = new System.Drawing.Size(67, 13);
-            idFormaPagoLabel.TabIndex = 26;
-            idFormaPagoLabel.Text = "Forma Pago:";
-            // 
-            // idFormaPagoComboBox
-            // 
-            this.idFormaPagoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.operacionesBancoBindingSource, "IdFormaPago", true));
-            this.idFormaPagoComboBox.DataSource = this.formasPagoBindingSource1;
-            this.idFormaPagoComboBox.DisplayMember = "DesFormaPago";
-            this.idFormaPagoComboBox.FormattingEnabled = true;
-            this.idFormaPagoComboBox.Location = new System.Drawing.Point(525, 13);
-            this.idFormaPagoComboBox.Name = "idFormaPagoComboBox";
-            this.idFormaPagoComboBox.Size = new System.Drawing.Size(164, 21);
-            this.idFormaPagoComboBox.TabIndex = 27;
-            this.idFormaPagoComboBox.ValueMember = "IdFormaPago";
             // 
             // conceptosBancosBindingSource
             // 
             this.conceptosBancosBindingSource.DataMember = "ConceptosBancos";
             this.conceptosBancosBindingSource.DataSource = this.promowork_dataDataSet;
             // 
-            // conceptosBancosTableAdapter
+            // importeTextBox
             // 
-            this.conceptosBancosTableAdapter.ClearBeforeFill = true;
+            this.importeTextBox.Location = new System.Drawing.Point(987, 13);
+            this.importeTextBox.Name = "importeTextBox";
+            this.importeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.importeTextBox.TabIndex = 25;
+            this.importeTextBox.TextChanged += new System.EventHandler(this.importeTextBox_TextChanged);
+            // 
+            // idFormaPagoComboBox
+            // 
+            this.idFormaPagoComboBox.DataSource = this.formasPagoBindingSource1;
+            this.idFormaPagoComboBox.DisplayMember = "DesFormaPago";
+            this.idFormaPagoComboBox.FormattingEnabled = true;
+            this.idFormaPagoComboBox.Location = new System.Drawing.Point(795, 13);
+            this.idFormaPagoComboBox.Name = "idFormaPagoComboBox";
+            this.idFormaPagoComboBox.Size = new System.Drawing.Size(128, 21);
+            this.idFormaPagoComboBox.TabIndex = 27;
+            this.idFormaPagoComboBox.ValueMember = "IdFormaPago";
             // 
             // formasPagoBindingSource1
             // 
             this.formasPagoBindingSource1.DataMember = "FormasPago";
             this.formasPagoBindingSource1.DataSource = this.promowork_dataDataSet;
             // 
+            // conceptosBancosTableAdapter
+            // 
+            this.conceptosBancosTableAdapter.ClearBeforeFill = true;
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button10);
+            this.groupBox1.Controls.Add(label5);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.chkdebito);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.importeTextBox);
             this.groupBox1.Controls.Add(this.cbxconcepto);
@@ -871,16 +914,53 @@
             this.groupBox1.Controls.Add(importeLabel);
             this.groupBox1.Controls.Add(this.fechaDateTimePicker);
             this.groupBox1.Controls.Add(this.idFormaPagoComboBox);
-            this.groupBox1.Location = new System.Drawing.Point(7, 442);
+            this.groupBox1.Location = new System.Drawing.Point(0, 455);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1011, 40);
+            this.groupBox1.Size = new System.Drawing.Size(1246, 40);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Otras Operaciones";
             // 
+            // button10
+            // 
+            this.button10.Image = global::Promowork.Properties.Resources.bindingNavigatorAddNewItem_Image;
+            this.button10.Location = new System.Drawing.Point(395, 13);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(22, 21);
+            this.button10.TabIndex = 69;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(505, 13);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(211, 20);
+            this.textBox1.TabIndex = 30;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(1165, 12);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(72, 23);
+            this.button6.TabIndex = 29;
+            this.button6.Text = "Eliminar";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // chkdebito
+            // 
+            this.chkdebito.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.conceptosBancosBindingSource, "Debito", true));
+            this.chkdebito.Location = new System.Drawing.Point(600, 11);
+            this.chkdebito.Name = "chkdebito";
+            this.chkdebito.Size = new System.Drawing.Size(19, 24);
+            this.chkdebito.TabIndex = 29;
+            this.chkdebito.UseVisualStyleBackColor = true;
+            // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(939, 12);
+            this.button5.Enabled = false;
+            this.button5.Location = new System.Drawing.Point(1093, 12);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(66, 23);
             this.button5.TabIndex = 28;
@@ -888,12 +968,46 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(577, 302);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(113, 23);
+            this.button7.TabIndex = 29;
+            this.button7.Text = "Salvar Anotaciones";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(962, 301);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(125, 23);
+            this.button8.TabIndex = 30;
+            this.button8.Text = "Agregar Detallado";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Visible = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(857, 5);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(100, 23);
+            this.button9.TabIndex = 31;
+            this.button9.Text = "Imprimir";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // OperacionesBanco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1258, 489);
+            this.ClientSize = new System.Drawing.Size(1258, 507);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtsaldofinal);
             this.Controls.Add(label4);
@@ -975,7 +1089,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colIdCobro1;
         private DevExpress.XtraGrid.Columns.GridColumn colIdCompra1;
         private DevExpress.XtraGrid.Columns.GridColumn colIdFormaPago;
-        private DevExpress.XtraGrid.Columns.GridColumn colIdOpeBanco1;
+        private DevExpress.XtraGrid.Columns.GridColumn IdOpeBanco1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox saldoAnteriorTextBox;
         private System.Windows.Forms.BindingSource formasPagoBindingSource;
@@ -997,7 +1111,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSaldo;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private DevExpress.XtraGrid.Columns.GridColumn colIdOpebanco;
+        private DevExpress.XtraGrid.Columns.GridColumn IdOpebanco;
         private DevExpress.XtraGrid.Columns.GridColumn colTipoOpe;
         private System.Windows.Forms.TextBox txtimportesel;
         private DevExpress.XtraGrid.Columns.GridColumn Saldo;
@@ -1011,5 +1125,14 @@
         private System.Windows.Forms.BindingSource formasPagoBindingSource1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.CheckBox chkdebito;
+        private System.Windows.Forms.Button button6;
+        private DevExpress.XtraGrid.Columns.GridColumn colObsBanco;
+        private DevExpress.XtraGrid.Columns.GridColumn colObsBanco1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }

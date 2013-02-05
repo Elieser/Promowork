@@ -57,6 +57,7 @@
             this.conceptosDeAnticiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nacionalidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unidadesDeMedidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conceptosOperacionesBancoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.combustiblesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.tiposDeCombustiblesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -146,6 +147,9 @@
             this.tableAdapterManager = new Promowork.Promowork_dataDataSetTableAdapters.TableAdapterManager();
             this.usuariosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.UsuariosTableAdapter();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bancoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.porConceptosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.porConceptosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -298,7 +302,8 @@
             this.poblacionesToolStripMenuItem,
             this.conceptosDeAnticiposToolStripMenuItem,
             this.nacionalidadesToolStripMenuItem,
-            this.unidadesDeMedidaToolStripMenuItem});
+            this.unidadesDeMedidaToolStripMenuItem,
+            this.conceptosOperacionesBancoToolStripMenuItem});
             this.otrasDefinicionesToolStripMenuItem.Name = "otrasDefinicionesToolStripMenuItem";
             this.otrasDefinicionesToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.otrasDefinicionesToolStripMenuItem.Text = "Otras definiciones";
@@ -386,6 +391,13 @@
             this.unidadesDeMedidaToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.unidadesDeMedidaToolStripMenuItem.Text = "Unidades de Medida";
             this.unidadesDeMedidaToolStripMenuItem.Click += new System.EventHandler(this.unidadesDeMedidaToolStripMenuItem_Click_1);
+            // 
+            // conceptosOperacionesBancoToolStripMenuItem
+            // 
+            this.conceptosOperacionesBancoToolStripMenuItem.Name = "conceptosOperacionesBancoToolStripMenuItem";
+            this.conceptosOperacionesBancoToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.conceptosOperacionesBancoToolStripMenuItem.Text = "Conceptos Operaciones Banco";
+            this.conceptosOperacionesBancoToolStripMenuItem.Click += new System.EventHandler(this.conceptosOperacionesBancoToolStripMenuItem_Click);
             // 
             // combustiblesToolStripMenuItem
             // 
@@ -579,7 +591,8 @@
             this.comprasToolStripMenuItem1,
             this.toolStripMenuItem13,
             this.parteDeObrasToolStripMenuItem,
-            this.vehículosToolStripMenuItem1});
+            this.vehículosToolStripMenuItem1,
+            this.bancoToolStripMenuItem1});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -1220,6 +1233,28 @@
             this.usuariosBindingSource.DataMember = "Usuarios";
             this.usuariosBindingSource.DataSource = this.promowork_dataDataSet;
             // 
+            // bancoToolStripMenuItem1
+            // 
+            this.bancoToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.porConceptosToolStripMenuItem,
+            this.porConceptosToolStripMenuItem1});
+            this.bancoToolStripMenuItem1.Name = "bancoToolStripMenuItem1";
+            this.bancoToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.bancoToolStripMenuItem1.Text = "Banco";
+            // 
+            // porConceptosToolStripMenuItem
+            // 
+            this.porConceptosToolStripMenuItem.Name = "porConceptosToolStripMenuItem";
+            this.porConceptosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.porConceptosToolStripMenuItem.Text = "Por Fechas";
+            // 
+            // porConceptosToolStripMenuItem1
+            // 
+            this.porConceptosToolStripMenuItem1.Name = "porConceptosToolStripMenuItem1";
+            this.porConceptosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.porConceptosToolStripMenuItem1.Text = "Por Conceptos";
+            this.porConceptosToolStripMenuItem1.Click += new System.EventHandler(this.porConceptosToolStripMenuItem1_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1373,5 +1408,9 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripMenuItem bancoToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton19;
+        private System.Windows.Forms.ToolStripMenuItem conceptosOperacionesBancoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bancoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem porConceptosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porConceptosToolStripMenuItem1;
     }
 }

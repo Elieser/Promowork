@@ -4784,7 +4784,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -4822,7 +4821,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -4860,7 +4858,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -4897,7 +4894,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -7689,6 +7685,26 @@
                                               <Color>=iif(Fields!ColorCompra.Value=-65536,"Red",iif(Fields!ColorCompra.Value=-16776961,"Blue","Black"))</Color>
                                             </Style>
                                           </TextRun>
+                                          <TextRun>
+                                            <Value xml:space="preserve">   </Value>
+                                            <Style>
+                                              <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                              <FontSize>8pt</FontSize>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Format>d</Format>
+                                              <Color>=iif(Fields!ColorCompra.Value=-65536,"Red",iif(Fields!ColorCompra.Value=-16776961,"Blue","Black"))</Color>
+                                            </Style>
+                                          </TextRun>
+                                          <TextRun>
+                                            <Value>=Fields!DesTrabajo.Value</Value>
+                                            <Style>
+                                              <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                              <FontSize>8pt</FontSize>
+                                              <FontWeight>Normal</FontWeight>
+                                              <Format>d</Format>
+                                              <Color>=iif(Fields!ColorCompra.Value=-65536,"Red",iif(Fields!ColorCompra.Value=-16776961,"Blue","Black"))</Color>
+                                            </Style>
+                                          </TextRun>
                                         </TextRuns>
                                         <Style />
                                       </Paragraph>
@@ -8426,7 +8442,6 @@
                               <PaddingBottom>2pt</PaddingBottom>
                             </Style>
                           </Textbox>
-                          <rd:Selected>true</rd:Selected>
                         </CellContents>
                       </TablixHeader>
                     </TablixMember>

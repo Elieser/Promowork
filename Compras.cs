@@ -66,12 +66,13 @@ namespace Promowork
             this.proveedoresTableAdapter.FillByActivoEmpresa(promowork_dataDataSet.Proveedores, VariablesGlobales.nIdEmpresaActual);
             this.empresasActualTableAdapter.FillByEmpresa(promowork_dataDataSet.EmpresasActual, VariablesGlobales.nIdEmpresaActual);
             comprasCabBindingSource.Filter = "Pagada=false";
-
+            comprasCabBindingSource.MoveLast();
             DataRowView EmpresaActual = (DataRowView)empresasActualBindingSource.Current;
             int AnoEmpresa = Convert.ToInt32(EmpresaActual["AnoEmpresa"]);
             DateTime fechaini = new DateTime(AnoEmpresa, 1, 1);
             toolStripTextBox3.Text = fechaini.ToShortDateString();
             radioButton4.Checked = !previsionRadioButton.Checked;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -310,7 +311,7 @@ namespace Promowork
 
            object ImpBase = promowork_dataDataSet.ComprasDet.Compute("Sum(ImpBase)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
            object ImpIVA = promowork_dataDataSet.ComprasDet.Compute("Sum(ImpIVA)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
-           object TotalPagado = promowork_dataDataSet.Pagos.Compute("Sum(ImpPago)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
+           object TotalPagado = promowork_dataDataSet.Pagos.Compute("Sum(Importe)", "IdCompra=" + Convert.ToString(CompraActual["IdCompra"]));
 
            if (Convert.IsDBNull(ImpBase))
            {
@@ -434,6 +435,7 @@ namespace Promowork
             opebanco["IdFormaPago"] = CompraActual["IdFormaPago"];
             opebanco["Importe"] = TotalFactura - Convert.ToDecimal(TotalPagado);
             opebanco["EnCuenta"] = true;
+            opebanco["TipoOpe"] = "Proveedores";
             opebanco["FechaOpe"] = DateTime.Now;
             opebanco["IdUsuario"] = VariablesGlobales.nIdUsuarioActual;
 
@@ -481,10 +483,11 @@ namespace Promowork
         private void toolStripButton8_Click(object sender, EventArgs e)
         {
             DataRowView obra = (DataRowView)obrasBindingSource.Current;
-            DataRowView EmpresaActual = (DataRowView)empresasActualBindingSource.Current;
+            DataRowView CompraActual = (DataRowView)comprasCabBindingSource.Current;
             comprasDetDataGridView.CurrentRow.Cells["IdObra"].Value = Convert.ToInt32(obra["IdObra"]);
-            comprasDetDataGridView.CurrentRow.Cells["IdCompra"].Value = Convert.ToInt32(EmpresaActual["IdCompra"]);
+            comprasDetDataGridView.CurrentRow.Cells["IdCompra"].Value = Convert.ToInt32(CompraActual["IdCompra"]);
             comprasDetDataGridView.Focus();
+
         }
 
        

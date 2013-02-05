@@ -182,3 +182,7 @@ C:\Promowork\Promowork\obj\x86\Debug\Promowork.FacturasHorasMateriales.resources
 C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptFacturasHorasImp.resources
 C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptFacturasHorasImpParte.resources
 C:\Promowork\Promowork\obj\x86\Debug\Promowork.OperacionesBanco.resources
+C:\Promowork\Promowork\obj\x86\Debug\Promowork.ConceptosBanco.resources
+C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptOperacionesBancoActual.resources
+C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptParametrosOperacionesBanco.resources
+C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptFacturasManualImp2.resources

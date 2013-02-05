@@ -20,12 +20,7 @@ namespace Promowork
 
         private void facturasCabBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            if (idCuentaComboBox.Text == "")
-            {
-               facturasCabDataGridView.CurrentRow.Cells["IdCuenta"].Value =  DBNull.Value;
-            }
-
-
+            
             decimal importe = 0;
             try
             {
@@ -46,11 +41,22 @@ namespace Promowork
                 impIVA = decimal.Parse(impIVATextBox.Text);
             }
             catch { }
-
-            facturasCabDataGridView.CurrentRow.Cells["Cobrada"].Value = importe <= impBase ? true : false;
-
+           
+  
             try
             {
+   
+                this.Validate();
+                this.facturasCabBindingSource.EndEdit();
+                facturasCabTableAdapter.Update(promowork_dataDataSet.FacturasCab);
+                DataRowView facturaActual = (DataRowView)facturasCabBindingSource.Current;
+                facturaActual["Cobrada"] = importe <= impBase && impBase != 0 ? true : false;
+
+
+                if (idCuentaComboBox.Text == "")
+                {
+                    facturaActual["IdCuenta"] = DBNull.Value;
+                }
                 this.Validate();
                 this.facturasCabBindingSource.EndEdit();
                 facturasCabTableAdapter.Update(promowork_dataDataSet.FacturasCab);
@@ -58,7 +64,11 @@ namespace Promowork
                 // toolStripButton12.Enabled = true;
                 facturasCabDataGridView.Enabled = true;
 
-
+                //DataRowView empresa = (DataRowView)empresasActualBindingSource.Current;
+                //empresa["FactEmpresa"] = Convert.ToInt32(numFacturaTextBox.Text) + 1;
+                //this.Validate();
+                //this.empresasActualBindingSource.EndEdit();
+                //empresasActualTableAdapter.Update(promowork_dataDataSet.EmpresasActual);
 
                 this.Validate();
                 this.cobrosBindingSource.EndEdit();
@@ -141,25 +151,30 @@ namespace Promowork
             this.facturasCabBindingSource.MoveLast();
             toolStripButton8.Enabled = gridView4.RowCount == 0 ? false : true;
             toolStripButton2.Enabled = gridView1.RowCount == 0 ? false : true;
-            radioButton1.Checked = !facturaRadioButton.Checked;
 
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            fechaFacturaDateTimePicker.Value = DateTime.Now;
-            fechaVctoFactDateTimePicker.Value = DateTime.Now;
+            fechaFacturaDateTimePicker.Value = DateTime.Today;
+            fechaVctoFactDateTimePicker.Value = DateTime.Today;
             mostrarVctoCheckBox.Checked = true;
-            DataRowView empresa = (DataRowView)empresasActualBindingSource.Current;
-            numFacturaTextBox.Text = Convert.ToString(empresa["FactEmpresa"]);
-            empresa["FactEmpresa"] = Convert.ToInt32(empresa["FactEmpresa"]) + 1;
-            this.Validate();
-            this.empresasActualBindingSource.EndEdit();
-            empresasActualTableAdapter.Update(promowork_dataDataSet.EmpresasActual);
-
+            facturasCabBindingSource.MoveLast();
+            int nuevaFactura = (int)facturasCabDataGridView.CurrentRow.Cells["NumFactura"].Value + 1;
+            
+            
+            //DataRowView empresa = (DataRowView)empresasActualBindingSource.Current;
+            //numFacturaTextBox.Text = Convert.ToString(empresa["FactEmpresa"]);
+            //empresa["FactEmpresa"] = Convert.ToInt32(empresa["FactEmpresa"]) + 1;
+            //this.Validate();
+            //this.empresasActualBindingSource.EndEdit();
+            //empresasActualTableAdapter.Update(promowork_dataDataSet.EmpresasActual);
+            facturasCabBindingSource.AddNew();
+            numFacturaTextBox.Text = nuevaFactura.ToString();
             DataRowView factura = (DataRowView)facturasCabBindingSource.Current;
             factura["IdEmpresa"] = VariablesGlobales.nIdEmpresaActual;
             factura["IdUsuario"] = VariablesGlobales.nIdUsuarioActual;
+            factura["FechaFactura"] = DateTime.Today;
             factura["Factura"] = true;
             factura["Cobrada"] = false;
           //  factura["FacturaPresup"] = null;
@@ -409,6 +424,24 @@ namespace Promowork
            toolStripButton2.Enabled = gridView1.RowCount == 0 ? false : true;
            this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
            facturasCabDataGridView_CellEnter(null, null);
+           decimal importe = 0;
+           try
+           {
+               importe = decimal.Parse(importeTextBox.Text);
+           }
+           catch { }
+
+           decimal impBase = 0;
+           try
+           {
+               impBase = decimal.Parse(impBaseTextBox.Text);
+           }
+           catch { }
+           facturasCabDataGridView.CurrentRow.Cells["Cobrada"].Value = importe <= impBase && impBase != 0 ? true : false;
+
+           this.Validate();
+           this.facturasCabBindingSource.EndEdit();
+           facturasCabTableAdapter.Update(promowork_dataDataSet.FacturasCab);
        }
        }
 
@@ -428,7 +461,8 @@ namespace Promowork
                nSalarioVenta=Convert.ToDecimal(gridView4.GetFocusedRowCellValue("SalarioVenta"));
            }
            catch{}
-
+           
+           
            queriesTableAdapter1.ActualizaCantHorasAdmin(Convert.ToInt32(gridView4.GetFocusedRowCellValue("IdHoras")), nCantAdmin, nSalarioVenta);
            this.Validate();
            productosUtilizadosBindingSource1.EndEdit();
@@ -442,6 +476,25 @@ namespace Promowork
            toolStripButton2.Enabled = gridView1.RowCount == 0 ? false : true;
            this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
            facturasCabDataGridView_CellEnter(null, null);
+          
+           decimal importe = 0;
+           try
+           {
+               importe = decimal.Parse(importeTextBox.Text);
+           }
+           catch { }
+
+           decimal impBase = 0;
+           try
+           {
+               impBase = decimal.Parse(impBaseTextBox.Text);
+           }
+           catch { }
+          
+           facturasCabDataGridView.CurrentRow.Cells["Cobrada"].Value = importe <= impBase && impBase != 0 ? true : false;
+           this.Validate();
+           this.facturasCabBindingSource.EndEdit();
+           facturasCabTableAdapter.Update(promowork_dataDataSet.FacturasCab);
        }
 
        private void toolStripButton7_Click_2(object sender, EventArgs e)
@@ -487,6 +540,23 @@ namespace Promowork
            this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
            facturasCabDataGridView_CellEnter(null, null);
            toolStripButton7.Enabled = false;
+           decimal importe = 0;
+           try
+           {
+               importe = decimal.Parse(importeTextBox.Text);
+           }
+           catch { }
+
+           decimal impBase = 0;
+           try
+           {
+               impBase = decimal.Parse(impBaseTextBox.Text);
+           }
+           catch { }
+           facturasCabDataGridView.CurrentRow.Cells["Cobrada"].Value = importe <= impBase && impBase != 0 ? true : false;
+           this.Validate();
+           this.facturasCabBindingSource.EndEdit();
+           facturasCabTableAdapter.Update(promowork_dataDataSet.FacturasCab);
        }
 
        private void gridView4_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -526,7 +596,7 @@ namespace Promowork
        private void toolStripButton1_Click_1(object sender, EventArgs e)
        {
 
-           if (facturaRadioButton.Checked == true)
+           if (facturaCheckBox.Checked == true)
            {
                DataRowView FacturaAct = (DataRowView)facturasCabBindingSource.Current;
 
@@ -552,11 +622,7 @@ namespace Promowork
            }
        }
 
-       private void facturaRadioButton_CheckedChanged(object sender, EventArgs e)
-       {
-           radioButton1.Checked = !facturaRadioButton.Checked;
-       }
-
+      
       
     }
 }

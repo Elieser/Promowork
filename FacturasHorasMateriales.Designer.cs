@@ -62,7 +62,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.facturasCabBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.facturasCabBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.promowork_dataDataSet = new Promowork.Promowork_dataDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -75,21 +74,14 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.facturasCabBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.facturasCabDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Obra = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.obrasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.promowork_dataDataSet1 = new Promowork.Promowork_dataDataSet();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cobrada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.IdFactCab = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FacturaPresup = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.IdCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obrasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idClienteComboBox = new System.Windows.Forms.ComboBox();
@@ -103,10 +95,7 @@
             this.iVAFacturaTextBox = new System.Windows.Forms.TextBox();
             this.descFacuraTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.facturaRadioButton = new System.Windows.Forms.RadioButton();
-            this.importeTextBox = new System.Windows.Forms.TextBox();
-            this.importeFacturaHorasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.facturaCheckBox = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.copiaFacturaTextBox = new System.Windows.Forms.TextBox();
@@ -125,6 +114,8 @@
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.importeTextBox1 = new System.Windows.Forms.TextBox();
             this.obsFacturaTextEdit = new DevExpress.XtraEditors.MemoEdit();
+            this.importeTextBox = new System.Windows.Forms.TextBox();
+            this.importeFacturaHorasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.facturasCabTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.FacturasCabTableAdapter();
             this.tableAdapterManager = new Promowork.Promowork_dataDataSetTableAdapters.TableAdapterManager();
@@ -245,6 +236,17 @@
             this.fechaExpDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.cuentasBancosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.entregadaCheckBox = new System.Windows.Forms.CheckBox();
+            this.NumFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Obra = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Factura = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Cobrada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Entregada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IdFactCab = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FacturaPresup = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IdCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             idClienteLabel = new System.Windows.Forms.Label();
             idPresupLabel = new System.Windows.Forms.Label();
             numFacturaLabel = new System.Windows.Forms.Label();
@@ -286,9 +288,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuentasBancosBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.importeFacturaHorasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obsFacturaTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.importeFacturaHorasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasActualBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vFacturaDetHorasBindingSource)).BeginInit();
@@ -318,7 +320,7 @@
             // idClienteLabel
             // 
             idClienteLabel.AutoSize = true;
-            idClienteLabel.Location = new System.Drawing.Point(503, 62);
+            idClienteLabel.Location = new System.Drawing.Point(546, 62);
             idClienteLabel.Name = "idClienteLabel";
             idClienteLabel.Size = new System.Drawing.Size(42, 13);
             idClienteLabel.TabIndex = 4;
@@ -327,7 +329,7 @@
             // idPresupLabel
             // 
             idPresupLabel.AutoSize = true;
-            idPresupLabel.Location = new System.Drawing.Point(512, 106);
+            idPresupLabel.Location = new System.Drawing.Point(555, 106);
             idPresupLabel.Name = "idPresupLabel";
             idPresupLabel.Size = new System.Drawing.Size(33, 13);
             idPresupLabel.TabIndex = 6;
@@ -336,7 +338,7 @@
             // numFacturaLabel
             // 
             numFacturaLabel.AutoSize = true;
-            numFacturaLabel.Location = new System.Drawing.Point(498, 41);
+            numFacturaLabel.Location = new System.Drawing.Point(541, 41);
             numFacturaLabel.Name = "numFacturaLabel";
             numFacturaLabel.Size = new System.Drawing.Size(47, 13);
             numFacturaLabel.TabIndex = 8;
@@ -345,7 +347,7 @@
             // fechaFacturaLabel
             // 
             fechaFacturaLabel.AutoSize = true;
-            fechaFacturaLabel.Location = new System.Drawing.Point(505, 150);
+            fechaFacturaLabel.Location = new System.Drawing.Point(548, 150);
             fechaFacturaLabel.Name = "fechaFacturaLabel";
             fechaFacturaLabel.Size = new System.Drawing.Size(40, 13);
             fechaFacturaLabel.TabIndex = 10;
@@ -354,7 +356,7 @@
             // fechaVctoFactLabel
             // 
             fechaVctoFactLabel.AutoSize = true;
-            fechaVctoFactLabel.Location = new System.Drawing.Point(663, 150);
+            fechaVctoFactLabel.Location = new System.Drawing.Point(706, 150);
             fechaVctoFactLabel.Name = "fechaVctoFactLabel";
             fechaVctoFactLabel.Size = new System.Drawing.Size(65, 13);
             fechaVctoFactLabel.TabIndex = 12;
@@ -363,7 +365,7 @@
             // idCuentaLabel
             // 
             idCuentaLabel.AutoSize = true;
-            idCuentaLabel.Location = new System.Drawing.Point(501, 128);
+            idCuentaLabel.Location = new System.Drawing.Point(544, 128);
             idCuentaLabel.Name = "idCuentaLabel";
             idCuentaLabel.Size = new System.Drawing.Size(44, 13);
             idCuentaLabel.TabIndex = 14;
@@ -372,7 +374,7 @@
             // certificacionLabel
             // 
             certificacionLabel.AutoSize = true;
-            certificacionLabel.Location = new System.Drawing.Point(530, 172);
+            certificacionLabel.Location = new System.Drawing.Point(573, 172);
             certificacionLabel.Name = "certificacionLabel";
             certificacionLabel.Size = new System.Drawing.Size(68, 13);
             certificacionLabel.TabIndex = 16;
@@ -381,7 +383,7 @@
             // iVAFacturaLabel
             // 
             iVAFacturaLabel.AutoSize = true;
-            iVAFacturaLabel.Location = new System.Drawing.Point(736, 194);
+            iVAFacturaLabel.Location = new System.Drawing.Point(779, 194);
             iVAFacturaLabel.Name = "iVAFacturaLabel";
             iVAFacturaLabel.Size = new System.Drawing.Size(41, 13);
             iVAFacturaLabel.TabIndex = 18;
@@ -390,7 +392,7 @@
             // descFacuraLabel
             // 
             descFacuraLabel.AutoSize = true;
-            descFacuraLabel.Location = new System.Drawing.Point(497, 194);
+            descFacuraLabel.Location = new System.Drawing.Point(540, 194);
             descFacuraLabel.Name = "descFacuraLabel";
             descFacuraLabel.Size = new System.Drawing.Size(101, 13);
             descFacuraLabel.TabIndex = 20;
@@ -435,7 +437,7 @@
             // descProntoLabel
             // 
             descProntoLabel.AutoSize = true;
-            descProntoLabel.Location = new System.Drawing.Point(484, 216);
+            descProntoLabel.Location = new System.Drawing.Point(527, 216);
             descProntoLabel.Name = "descProntoLabel";
             descProntoLabel.Size = new System.Drawing.Size(114, 13);
             descProntoLabel.TabIndex = 90;
@@ -444,7 +446,7 @@
             // retencionLabel
             // 
             retencionLabel.AutoSize = true;
-            retencionLabel.Location = new System.Drawing.Point(704, 216);
+            retencionLabel.Location = new System.Drawing.Point(747, 216);
             retencionLabel.Name = "retencionLabel";
             retencionLabel.Size = new System.Drawing.Size(73, 13);
             retencionLabel.TabIndex = 91;
@@ -471,7 +473,7 @@
             // mostrarVctoLabel
             // 
             mostrarVctoLabel.AutoSize = true;
-            mostrarVctoLabel.Location = new System.Drawing.Point(738, 172);
+            mostrarVctoLabel.Location = new System.Drawing.Point(781, 172);
             mostrarVctoLabel.Name = "mostrarVctoLabel";
             mostrarVctoLabel.Size = new System.Drawing.Size(70, 13);
             mostrarVctoLabel.TabIndex = 96;
@@ -498,16 +500,16 @@
             // obsFacturaLabel
             // 
             obsFacturaLabel.AutoSize = true;
-            obsFacturaLabel.Location = new System.Drawing.Point(859, 219);
+            obsFacturaLabel.Location = new System.Drawing.Point(901, 219);
             obsFacturaLabel.Name = "obsFacturaLabel";
-            obsFacturaLabel.Size = new System.Drawing.Size(81, 13);
+            obsFacturaLabel.Size = new System.Drawing.Size(44, 13);
             obsFacturaLabel.TabIndex = 101;
-            obsFacturaLabel.Text = "Observaciones:";
+            obsFacturaLabel.Text = "Observ:";
             // 
             // copiaFacturaLabel
             // 
             copiaFacturaLabel.AutoSize = true;
-            copiaFacturaLabel.Location = new System.Drawing.Point(453, 252);
+            copiaFacturaLabel.Location = new System.Drawing.Point(510, 252);
             copiaFacturaLabel.Name = "copiaFacturaLabel";
             copiaFacturaLabel.Size = new System.Drawing.Size(76, 13);
             copiaFacturaLabel.TabIndex = 107;
@@ -516,7 +518,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(464, 83);
+            label1.Location = new System.Drawing.Point(507, 83);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(81, 13);
             label1.TabIndex = 104;
@@ -602,7 +604,7 @@
             // 
             // facturasCabBindingNavigator
             // 
-            this.facturasCabBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.facturasCabBindingNavigator.AddNewItem = null;
             this.facturasCabBindingNavigator.BindingSource = this.facturasCabBindingSource;
             this.facturasCabBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.facturasCabBindingNavigator.DeleteItem = null;
@@ -623,6 +625,7 @@
             this.toolStripSeparator7,
             this.toolStripButton1,
             this.toolStripSeparator});
+            this.facturasCabBindingNavigator.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.facturasCabBindingNavigator.Location = new System.Drawing.Point(3, 9);
             this.facturasCabBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.facturasCabBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -633,16 +636,6 @@
             this.facturasCabBindingNavigator.Size = new System.Drawing.Size(313, 25);
             this.facturasCabBindingNavigator.TabIndex = 0;
             this.facturasCabBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // facturasCabBindingSource
             // 
@@ -731,6 +724,16 @@
             this.bindingNavigatorDeleteItem.Text = "Delete";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
             // facturasCabBindingNavigatorSaveItem
             // 
             this.facturasCabBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -767,11 +770,13 @@
             this.facturasCabDataGridView.AutoGenerateColumns = false;
             this.facturasCabDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.facturasCabDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6,
+            this.NumFactura,
             this.dataGridViewTextBoxColumn7,
             this.Obra,
             this.Importe,
+            this.Factura,
             this.Cobrada,
+            this.Entregada,
             this.IdFactCab,
             this.FacturaPresup,
             this.IdCuenta});
@@ -781,40 +786,9 @@
             this.facturasCabDataGridView.ReadOnly = true;
             this.facturasCabDataGridView.RowHeadersVisible = false;
             this.facturasCabDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.facturasCabDataGridView.Size = new System.Drawing.Size(434, 234);
+            this.facturasCabDataGridView.Size = new System.Drawing.Size(497, 234);
             this.facturasCabDataGridView.TabIndex = 0;
             this.facturasCabDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.facturasCabDataGridView_CellEnter);
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "NumFactura";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Número";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "FechaFactura";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Fecha";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 70;
-            // 
-            // Obra
-            // 
-            this.Obra.DataPropertyName = "IdObra";
-            this.Obra.DataSource = this.obrasBindingSource1;
-            this.Obra.DisplayMember = "Obra";
-            this.Obra.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Obra.DisplayStyleForCurrentCellOnly = true;
-            this.Obra.HeaderText = "Obra";
-            this.Obra.Name = "Obra";
-            this.Obra.ReadOnly = true;
-            this.Obra.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Obra.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Obra.ValueMember = "IdObra";
-            this.Obra.Width = 200;
             // 
             // obrasBindingSource1
             // 
@@ -825,49 +799,6 @@
             // 
             this.promowork_dataDataSet1.DataSetName = "Promowork_dataDataSet";
             this.promowork_dataDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // Importe
-            // 
-            this.Importe.DataPropertyName = "Importe";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Importe.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Importe.HeaderText = "Importe";
-            this.Importe.Name = "Importe";
-            this.Importe.ReadOnly = true;
-            this.Importe.Width = 65;
-            // 
-            // Cobrada
-            // 
-            this.Cobrada.DataPropertyName = "Cobrada";
-            this.Cobrada.HeaderText = "Cob";
-            this.Cobrada.Name = "Cobrada";
-            this.Cobrada.ReadOnly = true;
-            this.Cobrada.Width = 30;
-            // 
-            // IdFactCab
-            // 
-            this.IdFactCab.DataPropertyName = "IdFactCab";
-            this.IdFactCab.HeaderText = "IdFactCab";
-            this.IdFactCab.Name = "IdFactCab";
-            this.IdFactCab.ReadOnly = true;
-            this.IdFactCab.Visible = false;
-            // 
-            // FacturaPresup
-            // 
-            this.FacturaPresup.DataPropertyName = "FacturaPresup";
-            this.FacturaPresup.HeaderText = "FacturaPresup";
-            this.FacturaPresup.Name = "FacturaPresup";
-            this.FacturaPresup.ReadOnly = true;
-            this.FacturaPresup.Visible = false;
-            // 
-            // IdCuenta
-            // 
-            this.IdCuenta.DataPropertyName = "IdCuenta";
-            this.IdCuenta.HeaderText = "IdCuenta";
-            this.IdCuenta.Name = "IdCuenta";
-            this.IdCuenta.ReadOnly = true;
-            this.IdCuenta.Visible = false;
             // 
             // obrasBindingSource
             // 
@@ -887,7 +818,7 @@
             this.idClienteComboBox.DataSource = this.clientesBindingSource;
             this.idClienteComboBox.DisplayMember = "DesCliente";
             this.idClienteComboBox.FormattingEnabled = true;
-            this.idClienteComboBox.Location = new System.Drawing.Point(547, 58);
+            this.idClienteComboBox.Location = new System.Drawing.Point(590, 58);
             this.idClienteComboBox.Name = "idClienteComboBox";
             this.idClienteComboBox.Size = new System.Drawing.Size(282, 21);
             this.idClienteComboBox.TabIndex = 2;
@@ -902,7 +833,7 @@
             this.idPresupComboBox.DataSource = this.obrasBindingSource;
             this.idPresupComboBox.DisplayMember = "Obra";
             this.idPresupComboBox.FormattingEnabled = true;
-            this.idPresupComboBox.Location = new System.Drawing.Point(547, 102);
+            this.idPresupComboBox.Location = new System.Drawing.Point(590, 102);
             this.idPresupComboBox.Name = "idPresupComboBox";
             this.idPresupComboBox.Size = new System.Drawing.Size(282, 21);
             this.idPresupComboBox.TabIndex = 3;
@@ -911,7 +842,7 @@
             // numFacturaTextBox
             // 
             this.numFacturaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "NumFactura", true));
-            this.numFacturaTextBox.Location = new System.Drawing.Point(547, 37);
+            this.numFacturaTextBox.Location = new System.Drawing.Point(590, 37);
             this.numFacturaTextBox.Name = "numFacturaTextBox";
             this.numFacturaTextBox.Size = new System.Drawing.Size(81, 20);
             this.numFacturaTextBox.TabIndex = 1;
@@ -920,7 +851,7 @@
             // 
             this.fechaFacturaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.facturasCabBindingSource, "FechaFactura", true));
             this.fechaFacturaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaFacturaDateTimePicker.Location = new System.Drawing.Point(547, 146);
+            this.fechaFacturaDateTimePicker.Location = new System.Drawing.Point(590, 146);
             this.fechaFacturaDateTimePicker.Name = "fechaFacturaDateTimePicker";
             this.fechaFacturaDateTimePicker.Size = new System.Drawing.Size(103, 20);
             this.fechaFacturaDateTimePicker.TabIndex = 5;
@@ -929,7 +860,7 @@
             // 
             this.fechaVctoFactDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.facturasCabBindingSource, "FechaVctoFact", true));
             this.fechaVctoFactDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaVctoFactDateTimePicker.Location = new System.Drawing.Point(734, 146);
+            this.fechaVctoFactDateTimePicker.Location = new System.Drawing.Point(777, 146);
             this.fechaVctoFactDateTimePicker.Name = "fechaVctoFactDateTimePicker";
             this.fechaVctoFactDateTimePicker.Size = new System.Drawing.Size(95, 20);
             this.fechaVctoFactDateTimePicker.TabIndex = 6;
@@ -942,7 +873,7 @@
             this.idCuentaComboBox.DataSource = this.cuentasBancosBindingSource;
             this.idCuentaComboBox.DisplayMember = "CuentaBanco";
             this.idCuentaComboBox.FormattingEnabled = true;
-            this.idCuentaComboBox.Location = new System.Drawing.Point(547, 124);
+            this.idCuentaComboBox.Location = new System.Drawing.Point(590, 124);
             this.idCuentaComboBox.Name = "idCuentaComboBox";
             this.idCuentaComboBox.Size = new System.Drawing.Size(282, 21);
             this.idCuentaComboBox.TabIndex = 4;
@@ -956,7 +887,7 @@
             // certificacionTextBox
             // 
             this.certificacionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "Certificacion", true));
-            this.certificacionTextBox.Location = new System.Drawing.Point(601, 168);
+            this.certificacionTextBox.Location = new System.Drawing.Point(644, 168);
             this.certificacionTextBox.Name = "certificacionTextBox";
             this.certificacionTextBox.Size = new System.Drawing.Size(49, 20);
             this.certificacionTextBox.TabIndex = 7;
@@ -964,7 +895,7 @@
             // iVAFacturaTextBox
             // 
             this.iVAFacturaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "IVAFactura", true));
-            this.iVAFacturaTextBox.Location = new System.Drawing.Point(780, 190);
+            this.iVAFacturaTextBox.Location = new System.Drawing.Point(823, 190);
             this.iVAFacturaTextBox.Name = "iVAFacturaTextBox";
             this.iVAFacturaTextBox.Size = new System.Drawing.Size(49, 20);
             this.iVAFacturaTextBox.TabIndex = 10;
@@ -972,16 +903,15 @@
             // descFacuraTextBox
             // 
             this.descFacuraTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "DescFactura", true));
-            this.descFacuraTextBox.Location = new System.Drawing.Point(601, 190);
+            this.descFacuraTextBox.Location = new System.Drawing.Point(644, 190);
             this.descFacuraTextBox.Name = "descFacuraTextBox";
             this.descFacuraTextBox.Size = new System.Drawing.Size(49, 20);
             this.descFacuraTextBox.TabIndex = 8;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.Controls.Add(this.facturaRadioButton);
-            this.groupBox3.Controls.Add(this.importeTextBox);
+            this.groupBox3.Controls.Add(this.entregadaCheckBox);
+            this.groupBox3.Controls.Add(this.facturaCheckBox);
             this.groupBox3.Controls.Add(copiaFacturaLabel);
             this.groupBox3.Controls.Add(label1);
             this.groupBox3.Controls.Add(this.comboBox1);
@@ -1033,48 +963,22 @@
             this.groupBox3.Controls.Add(this.idClienteComboBox);
             this.groupBox3.Controls.Add(this.facturasCabDataGridView);
             this.groupBox3.Controls.Add(this.obsFacturaTextEdit);
+            this.groupBox3.Controls.Add(this.importeTextBox);
             this.groupBox3.Location = new System.Drawing.Point(5, -1);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1187, 276);
+            this.groupBox3.Size = new System.Drawing.Size(1189, 276);
             this.groupBox3.TabIndex = 81;
             this.groupBox3.TabStop = false;
             // 
-            // radioButton1
+            // facturaCheckBox
             // 
-            this.radioButton1.Location = new System.Drawing.Point(714, 37);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(106, 19);
-            this.radioButton1.TabIndex = 110;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Parte de Trabajo";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // facturaRadioButton
-            // 
-            this.facturaRadioButton.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.facturasCabBindingSource, "Factura", true));
-            this.facturaRadioButton.Location = new System.Drawing.Point(646, 37);
-            this.facturaRadioButton.Name = "facturaRadioButton";
-            this.facturaRadioButton.Size = new System.Drawing.Size(68, 19);
-            this.facturaRadioButton.TabIndex = 109;
-            this.facturaRadioButton.TabStop = true;
-            this.facturaRadioButton.Text = "Factura";
-            this.facturaRadioButton.UseVisualStyleBackColor = true;
-            this.facturaRadioButton.CheckedChanged += new System.EventHandler(this.facturaRadioButton_CheckedChanged);
-            // 
-            // importeTextBox
-            // 
-            this.importeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.importeFacturaHorasBindingSource, "Importe", true));
-            this.importeTextBox.Location = new System.Drawing.Point(862, 55);
-            this.importeTextBox.Name = "importeTextBox";
-            this.importeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.importeTextBox.TabIndex = 108;
-            this.importeTextBox.Visible = false;
-            this.importeTextBox.TextChanged += new System.EventHandler(this.importeTextBox_TextChanged);
-            // 
-            // importeFacturaHorasBindingSource
-            // 
-            this.importeFacturaHorasBindingSource.DataMember = "ImporteFacturaHoras";
-            this.importeFacturaHorasBindingSource.DataSource = this.promowork_dataDataSet;
+            this.facturaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.facturasCabBindingSource, "Factura", true));
+            this.facturaCheckBox.Location = new System.Drawing.Point(677, 36);
+            this.facturaCheckBox.Name = "facturaCheckBox";
+            this.facturaCheckBox.Size = new System.Drawing.Size(66, 22);
+            this.facturaCheckBox.TabIndex = 111;
+            this.facturaCheckBox.Text = "Factura";
+            this.facturaCheckBox.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -1084,7 +988,7 @@
             this.comboBox1.DataSource = this.clientesBindingSource1;
             this.comboBox1.DisplayMember = "DesCliente";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(547, 80);
+            this.comboBox1.Location = new System.Drawing.Point(590, 80);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(282, 21);
             this.comboBox1.TabIndex = 103;
@@ -1098,14 +1002,14 @@
             // copiaFacturaTextBox
             // 
             this.copiaFacturaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "CopiaFactura", true));
-            this.copiaFacturaTextBox.Location = new System.Drawing.Point(533, 248);
+            this.copiaFacturaTextBox.Location = new System.Drawing.Point(590, 248);
             this.copiaFacturaTextBox.Name = "copiaFacturaTextBox";
             this.copiaFacturaTextBox.Size = new System.Drawing.Size(169, 20);
             this.copiaFacturaTextBox.TabIndex = 103;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(800, 246);
+            this.button4.Location = new System.Drawing.Point(857, 246);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(31, 23);
             this.button4.TabIndex = 105;
@@ -1116,7 +1020,7 @@
             // button3
             // 
             this.button3.Image = global::Promowork.Properties.Resources.bindingNavigatorDeleteItem_Image;
-            this.button3.Location = new System.Drawing.Point(838, 246);
+            this.button3.Location = new System.Drawing.Point(895, 246);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(22, 23);
             this.button3.TabIndex = 106;
@@ -1134,7 +1038,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(709, 246);
+            this.button1.Location = new System.Drawing.Point(766, 246);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 23);
             this.button1.TabIndex = 104;
@@ -1155,7 +1059,7 @@
             // 
             this.mostrarVctoCheckBox.AutoSize = true;
             this.mostrarVctoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.facturasCabBindingSource, "MostrarVcto", true));
-            this.mostrarVctoCheckBox.Location = new System.Drawing.Point(811, 171);
+            this.mostrarVctoCheckBox.Location = new System.Drawing.Point(854, 171);
             this.mostrarVctoCheckBox.Name = "mostrarVctoCheckBox";
             this.mostrarVctoCheckBox.Size = new System.Drawing.Size(15, 14);
             this.mostrarVctoCheckBox.TabIndex = 97;
@@ -1180,7 +1084,7 @@
             // retencionTextBox
             // 
             this.retencionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "Retencion", true));
-            this.retencionTextBox.Location = new System.Drawing.Point(780, 212);
+            this.retencionTextBox.Location = new System.Drawing.Point(823, 212);
             this.retencionTextBox.Name = "retencionTextBox";
             this.retencionTextBox.Size = new System.Drawing.Size(49, 20);
             this.retencionTextBox.TabIndex = 11;
@@ -1188,7 +1092,7 @@
             // descProntoTextBox
             // 
             this.descProntoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "DescPronto", true));
-            this.descProntoTextBox.Location = new System.Drawing.Point(601, 212);
+            this.descProntoTextBox.Location = new System.Drawing.Point(644, 212);
             this.descProntoTextBox.Name = "descProntoTextBox";
             this.descProntoTextBox.Size = new System.Drawing.Size(49, 20);
             this.descProntoTextBox.TabIndex = 9;
@@ -1232,10 +1136,25 @@
             // obsFacturaTextEdit
             // 
             this.obsFacturaTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.facturasCabBindingSource, "ObsFactura", true));
-            this.obsFacturaTextEdit.Location = new System.Drawing.Point(946, 216);
+            this.obsFacturaTextEdit.Location = new System.Drawing.Point(969, 216);
             this.obsFacturaTextEdit.Name = "obsFacturaTextEdit";
-            this.obsFacturaTextEdit.Size = new System.Drawing.Size(234, 52);
+            this.obsFacturaTextEdit.Size = new System.Drawing.Size(211, 52);
             this.obsFacturaTextEdit.TabIndex = 102;
+            // 
+            // importeTextBox
+            // 
+            this.importeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.importeFacturaHorasBindingSource, "Importe", true));
+            this.importeTextBox.Location = new System.Drawing.Point(1084, 38);
+            this.importeTextBox.Name = "importeTextBox";
+            this.importeTextBox.ReadOnly = true;
+            this.importeTextBox.Size = new System.Drawing.Size(42, 20);
+            this.importeTextBox.TabIndex = 108;
+            this.importeTextBox.TextChanged += new System.EventHandler(this.importeTextBox_TextChanged);
+            // 
+            // importeFacturaHorasBindingSource
+            // 
+            this.importeFacturaHorasBindingSource.DataMember = "ImporteFacturaHoras";
+            this.importeFacturaHorasBindingSource.DataSource = this.promowork_dataDataSet;
             // 
             // openFileDialog1
             // 
@@ -2515,12 +2434,112 @@
             this.cuentasBancosBindingSource1.DataMember = "CuentasBancos";
             this.cuentasBancosBindingSource1.DataSource = this.promowork_dataDataSet;
             // 
+            // entregadaCheckBox
+            // 
+            this.entregadaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.facturasCabBindingSource, "Entregada", true));
+            this.entregadaCheckBox.Location = new System.Drawing.Point(802, 37);
+            this.entregadaCheckBox.Name = "entregadaCheckBox";
+            this.entregadaCheckBox.Size = new System.Drawing.Size(84, 21);
+            this.entregadaCheckBox.TabIndex = 112;
+            this.entregadaCheckBox.Text = "Entregada";
+            this.entregadaCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // NumFactura
+            // 
+            this.NumFactura.DataPropertyName = "NumFactura";
+            this.NumFactura.HeaderText = "Número";
+            this.NumFactura.Name = "NumFactura";
+            this.NumFactura.ReadOnly = true;
+            this.NumFactura.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "FechaFactura";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Fecha";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 70;
+            // 
+            // Obra
+            // 
+            this.Obra.DataPropertyName = "IdObra";
+            this.Obra.DataSource = this.obrasBindingSource1;
+            this.Obra.DisplayMember = "Obra";
+            this.Obra.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Obra.DisplayStyleForCurrentCellOnly = true;
+            this.Obra.HeaderText = "Obra";
+            this.Obra.Name = "Obra";
+            this.Obra.ReadOnly = true;
+            this.Obra.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Obra.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Obra.ValueMember = "IdObra";
+            this.Obra.Width = 200;
+            // 
+            // Importe
+            // 
+            this.Importe.DataPropertyName = "Importe";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Importe.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Importe.HeaderText = "Importe";
+            this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
+            this.Importe.Width = 65;
+            // 
+            // Factura
+            // 
+            this.Factura.DataPropertyName = "Factura";
+            this.Factura.HeaderText = "Fra";
+            this.Factura.Name = "Factura";
+            this.Factura.ReadOnly = true;
+            this.Factura.Width = 30;
+            // 
+            // Cobrada
+            // 
+            this.Cobrada.DataPropertyName = "Cobrada";
+            this.Cobrada.HeaderText = "Cob";
+            this.Cobrada.Name = "Cobrada";
+            this.Cobrada.ReadOnly = true;
+            this.Cobrada.Width = 30;
+            // 
+            // Entregada
+            // 
+            this.Entregada.DataPropertyName = "Entregada";
+            this.Entregada.HeaderText = "Ent";
+            this.Entregada.Name = "Entregada";
+            this.Entregada.ReadOnly = true;
+            this.Entregada.Width = 30;
+            // 
+            // IdFactCab
+            // 
+            this.IdFactCab.DataPropertyName = "IdFactCab";
+            this.IdFactCab.HeaderText = "IdFactCab";
+            this.IdFactCab.Name = "IdFactCab";
+            this.IdFactCab.ReadOnly = true;
+            this.IdFactCab.Visible = false;
+            // 
+            // FacturaPresup
+            // 
+            this.FacturaPresup.DataPropertyName = "FacturaPresup";
+            this.FacturaPresup.HeaderText = "FacturaPresup";
+            this.FacturaPresup.Name = "FacturaPresup";
+            this.FacturaPresup.ReadOnly = true;
+            this.FacturaPresup.Visible = false;
+            // 
+            // IdCuenta
+            // 
+            this.IdCuenta.DataPropertyName = "IdCuenta";
+            this.IdCuenta.HeaderText = "IdCuenta";
+            this.IdCuenta.Name = "IdCuenta";
+            this.IdCuenta.ReadOnly = true;
+            this.IdCuenta.Visible = false;
+            // 
             // FacturasHorasMateriales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1225, 602);
+            this.ClientSize = new System.Drawing.Size(1206, 602);
             this.Controls.Add(label3);
             this.Controls.Add(fechaExpLabel);
             this.Controls.Add(this.comboBox2);
@@ -2558,9 +2577,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.cuentasBancosBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.importeFacturaHorasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.obsFacturaTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.importeFacturaHorasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasActualBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vFacturaDetHorasBindingSource)).EndInit();
@@ -2758,16 +2777,6 @@
         private Promowork_dataDataSetTableAdapters.ImporteFacturaHorasTableAdapter importeFacturaHorasTableAdapter;
         private System.Windows.Forms.TextBox importeTextBox;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Obra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Cobrada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdFactCab;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn FacturaPresup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdCuenta;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton facturaRadioButton;
         private System.Windows.Forms.BindingSource formasPagoBindingSource;
         private Promowork_dataDataSetTableAdapters.FormasPagoTableAdapter formasPagoTableAdapter;
         private System.Windows.Forms.ComboBox desFormaPagoComboBox;
@@ -2778,5 +2787,17 @@
         private System.Windows.Forms.DateTimePicker fechaExpDateTimePicker;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.BindingSource cuentasBancosBindingSource1;
+        private System.Windows.Forms.CheckBox facturaCheckBox;
+        private System.Windows.Forms.CheckBox entregadaCheckBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Obra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Factura;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Cobrada;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Entregada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdFactCab;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn FacturaPresup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCuenta;
     }
 }

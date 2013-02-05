@@ -383,6 +383,20 @@ namespace Promowork
            copiaFacturaTextBox.Text = "";
        }
 
+       private void printToolStripButton1_Click(object sender, EventArgs e)
+       {
+           DataRowView FacturaAct = (DataRowView)facturasCabBindingSource.Current;
+
+           int Factura = Convert.ToInt32(FacturaAct["IdFactCab"]);
+
+
+           RptFacturasManualImp2 frm = new RptFacturasManualImp2();
+           frm.LoadFiltro(Factura);
+           frm.MdiParent = this.MdiParent;
+           frm.Show();
+       }
+       
+
      
     }
 }
