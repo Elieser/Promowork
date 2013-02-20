@@ -52,7 +52,7 @@
             System.Windows.Forms.Label digCompNumLabel;
             System.Windows.Forms.Label factEmpresaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empresas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.empresasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -391,7 +391,7 @@
             this.empresasBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.empresasBindingNavigator.BindingSource = this.empresasBindingSource;
             this.empresasBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.empresasBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.empresasBindingNavigator.DeleteItem = null;
             this.empresasBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -402,8 +402,8 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
+            this.bindingNavigatorAddNewItem,
             this.empresasBindingNavigatorSaveItem,
             this.toolStripButton1});
             this.empresasBindingNavigator.Location = new System.Drawing.Point(0, 0);
@@ -453,6 +453,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -615,14 +616,14 @@
             this.festivosEmpresasDiasDataGridView.AllowUserToAddRows = false;
             this.festivosEmpresasDiasDataGridView.AllowUserToDeleteRows = false;
             this.festivosEmpresasDiasDataGridView.AutoGenerateColumns = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.festivosEmpresasDiasDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.festivosEmpresasDiasDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.festivosEmpresasDiasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.festivosEmpresasDiasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.D1,
@@ -902,6 +903,7 @@
             this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CopiasHorasTableAdapter = null;
             this.tableAdapterManager.CrucesTrabajadoresTableAdapter = null;
@@ -922,6 +924,7 @@
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;

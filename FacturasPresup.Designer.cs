@@ -74,17 +74,17 @@
             System.Windows.Forms.Label label24;
             System.Windows.Forms.Label label25;
             System.Windows.Forms.Label obsFacturaLabel;
+            System.Windows.Forms.Label label26;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturasPresup));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.facturasCabBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.facturasCabBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.promowork_dataDataSet = new Promowork.Promowork_dataDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -93,12 +93,22 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.facturasCabBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.facturasCabDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.presupCabBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cobrada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IdFactCab = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FacturaPresup = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.idClienteComboBox = new System.Windows.Forms.ComboBox();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idPresupComboBox = new System.Windows.Forms.ComboBox();
@@ -166,6 +176,8 @@
             this.impFacturadoTextBox = new System.Windows.Forms.TextBox();
             this.pendienteTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.facturaCheckBox = new System.Windows.Forms.CheckBox();
+            this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.mostrarVctoCheckBox = new System.Windows.Forms.CheckBox();
@@ -192,14 +204,7 @@
             this.presupCapTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.PresupCapTableAdapter();
             this.presupDetTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.PresupDetTableAdapter();
             this.presupSubTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.PresupSubTableAdapter();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cobrada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.IdFactCab = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FacturaPresup = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             idClienteLabel = new System.Windows.Forms.Label();
             idPresupLabel = new System.Windows.Forms.Label();
             numFacturaLabel = new System.Windows.Forms.Label();
@@ -245,6 +250,7 @@
             label24 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
             obsFacturaLabel = new System.Windows.Forms.Label();
+            label26 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.facturasCabBindingNavigator)).BeginInit();
             this.facturasCabBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.facturasCabBindingSource)).BeginInit();
@@ -267,6 +273,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obsFacturaTextEdit.Properties)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empresasActualBindingSource)).BeginInit();
@@ -284,7 +291,7 @@
             // idPresupLabel
             // 
             idPresupLabel.AutoSize = true;
-            idPresupLabel.Location = new System.Drawing.Point(449, 84);
+            idPresupLabel.Location = new System.Drawing.Point(449, 106);
             idPresupLabel.Name = "idPresupLabel";
             idPresupLabel.Size = new System.Drawing.Size(69, 13);
             idPresupLabel.TabIndex = 6;
@@ -302,7 +309,7 @@
             // fechaFacturaLabel
             // 
             fechaFacturaLabel.AutoSize = true;
-            fechaFacturaLabel.Location = new System.Drawing.Point(478, 128);
+            fechaFacturaLabel.Location = new System.Drawing.Point(478, 150);
             fechaFacturaLabel.Name = "fechaFacturaLabel";
             fechaFacturaLabel.Size = new System.Drawing.Size(40, 13);
             fechaFacturaLabel.TabIndex = 10;
@@ -311,7 +318,7 @@
             // fechaVctoFactLabel
             // 
             fechaVctoFactLabel.AutoSize = true;
-            fechaVctoFactLabel.Location = new System.Drawing.Point(636, 128);
+            fechaVctoFactLabel.Location = new System.Drawing.Point(636, 150);
             fechaVctoFactLabel.Name = "fechaVctoFactLabel";
             fechaVctoFactLabel.Size = new System.Drawing.Size(65, 13);
             fechaVctoFactLabel.TabIndex = 12;
@@ -320,7 +327,7 @@
             // idCuentaLabel
             // 
             idCuentaLabel.AutoSize = true;
-            idCuentaLabel.Location = new System.Drawing.Point(474, 106);
+            idCuentaLabel.Location = new System.Drawing.Point(474, 128);
             idCuentaLabel.Name = "idCuentaLabel";
             idCuentaLabel.Size = new System.Drawing.Size(44, 13);
             idCuentaLabel.TabIndex = 14;
@@ -329,7 +336,7 @@
             // certificacionLabel
             // 
             certificacionLabel.AutoSize = true;
-            certificacionLabel.Location = new System.Drawing.Point(503, 150);
+            certificacionLabel.Location = new System.Drawing.Point(503, 172);
             certificacionLabel.Name = "certificacionLabel";
             certificacionLabel.Size = new System.Drawing.Size(68, 13);
             certificacionLabel.TabIndex = 16;
@@ -338,7 +345,7 @@
             // iVAFacturaLabel
             // 
             iVAFacturaLabel.AutoSize = true;
-            iVAFacturaLabel.Location = new System.Drawing.Point(709, 172);
+            iVAFacturaLabel.Location = new System.Drawing.Point(709, 194);
             iVAFacturaLabel.Name = "iVAFacturaLabel";
             iVAFacturaLabel.Size = new System.Drawing.Size(41, 13);
             iVAFacturaLabel.TabIndex = 18;
@@ -347,7 +354,7 @@
             // descFacuraLabel
             // 
             descFacuraLabel.AutoSize = true;
-            descFacuraLabel.Location = new System.Drawing.Point(470, 172);
+            descFacuraLabel.Location = new System.Drawing.Point(470, 194);
             descFacuraLabel.Name = "descFacuraLabel";
             descFacuraLabel.Size = new System.Drawing.Size(101, 13);
             descFacuraLabel.TabIndex = 20;
@@ -518,7 +525,7 @@
             // importeLabel2
             // 
             importeLabel2.AutoSize = true;
-            importeLabel2.Location = new System.Drawing.Point(472, 237);
+            importeLabel2.Location = new System.Drawing.Point(472, 251);
             importeLabel2.Name = "importeLabel2";
             importeLabel2.Size = new System.Drawing.Size(96, 13);
             importeLabel2.TabIndex = 76;
@@ -527,7 +534,7 @@
             // impFacturadoLabel
             // 
             impFacturadoLabel.AutoSize = true;
-            impFacturadoLabel.Location = new System.Drawing.Point(483, 261);
+            impFacturadoLabel.Location = new System.Drawing.Point(483, 275);
             impFacturadoLabel.Name = "impFacturadoLabel";
             impFacturadoLabel.Size = new System.Drawing.Size(85, 13);
             impFacturadoLabel.TabIndex = 77;
@@ -536,7 +543,7 @@
             // pendienteLabel
             // 
             pendienteLabel.AutoSize = true;
-            pendienteLabel.Location = new System.Drawing.Point(468, 284);
+            pendienteLabel.Location = new System.Drawing.Point(468, 298);
             pendienteLabel.Name = "pendienteLabel";
             pendienteLabel.Size = new System.Drawing.Size(100, 13);
             pendienteLabel.TabIndex = 78;
@@ -610,7 +617,7 @@
             // descProntoLabel
             // 
             descProntoLabel.AutoSize = true;
-            descProntoLabel.Location = new System.Drawing.Point(457, 194);
+            descProntoLabel.Location = new System.Drawing.Point(457, 216);
             descProntoLabel.Name = "descProntoLabel";
             descProntoLabel.Size = new System.Drawing.Size(114, 13);
             descProntoLabel.TabIndex = 90;
@@ -619,7 +626,7 @@
             // retencionLabel
             // 
             retencionLabel.AutoSize = true;
-            retencionLabel.Location = new System.Drawing.Point(677, 194);
+            retencionLabel.Location = new System.Drawing.Point(677, 216);
             retencionLabel.Name = "retencionLabel";
             retencionLabel.Size = new System.Drawing.Size(73, 13);
             retencionLabel.TabIndex = 91;
@@ -646,7 +653,7 @@
             // mostrarVctoLabel
             // 
             mostrarVctoLabel.AutoSize = true;
-            mostrarVctoLabel.Location = new System.Drawing.Point(711, 150);
+            mostrarVctoLabel.Location = new System.Drawing.Point(711, 172);
             mostrarVctoLabel.Name = "mostrarVctoLabel";
             mostrarVctoLabel.Size = new System.Drawing.Size(70, 13);
             mostrarVctoLabel.TabIndex = 96;
@@ -673,18 +680,27 @@
             // obsFacturaLabel
             // 
             obsFacturaLabel.AutoSize = true;
-            obsFacturaLabel.Location = new System.Drawing.Point(719, 239);
+            obsFacturaLabel.Location = new System.Drawing.Point(806, 238);
             obsFacturaLabel.Name = "obsFacturaLabel";
             obsFacturaLabel.Size = new System.Drawing.Size(81, 13);
             obsFacturaLabel.TabIndex = 101;
             obsFacturaLabel.Text = "Observaciones:";
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new System.Drawing.Point(458, 84);
+            label26.Name = "label26";
+            label26.Size = new System.Drawing.Size(60, 13);
+            label26.TabIndex = 104;
+            label26.Text = "Cliente Fra:";
             // 
             // facturasCabBindingNavigator
             // 
             this.facturasCabBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.facturasCabBindingNavigator.BindingSource = this.facturasCabBindingSource;
             this.facturasCabBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.facturasCabBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.facturasCabBindingNavigator.DeleteItem = null;
             this.facturasCabBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
             this.facturasCabBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -701,6 +717,7 @@
             this.facturasCabBindingNavigatorSaveItem,
             this.toolStripSeparator7,
             this.printToolStripButton,
+            this.toolStripButton1,
             this.toolStripSeparator});
             this.facturasCabBindingNavigator.Location = new System.Drawing.Point(2, 9);
             this.facturasCabBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -709,7 +726,7 @@
             this.facturasCabBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.facturasCabBindingNavigator.Name = "facturasCabBindingNavigator";
             this.facturasCabBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.facturasCabBindingNavigator.Size = new System.Drawing.Size(313, 25);
+            this.facturasCabBindingNavigator.Size = new System.Drawing.Size(336, 25);
             this.facturasCabBindingNavigator.TabIndex = 0;
             this.facturasCabBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -739,16 +756,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -810,6 +817,16 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
             // facturasCabBindingNavigatorSaveItem
             // 
             this.facturasCabBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -832,8 +849,19 @@
             this.printToolStripButton.Name = "printToolStripButton";
             this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.printToolStripButton.Text = "&Print";
-            this.printToolStripButton.ToolTipText = "Imprimir Factura";
+            this.printToolStripButton.ToolTipText = "Imprimir Factura Modelo 1";
             this.printToolStripButton.Click += new System.EventHandler(this.printToolStripButton_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "&Print";
+            this.toolStripButton1.ToolTipText = "Imprimir Factura Modelo 2";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
             // toolStripSeparator
             // 
@@ -865,10 +893,84 @@
             this.facturasCabDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.facturasCabDataGridView_CellEnter);
             this.facturasCabDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.facturasCabDataGridView_CellFormatting);
             // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "NumFactura";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Número";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 50;
+            // 
+            // IdCuenta
+            // 
+            this.IdCuenta.DataPropertyName = "IdCuenta";
+            this.IdCuenta.HeaderText = "IdCuenta";
+            this.IdCuenta.Name = "IdCuenta";
+            this.IdCuenta.ReadOnly = true;
+            this.IdCuenta.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "FechaFactura";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Fecha";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "IdPresup";
+            this.dataGridViewTextBoxColumn4.DataSource = this.presupCabBindingSource1;
+            this.dataGridViewTextBoxColumn4.DisplayMember = "NomPresup";
+            this.dataGridViewTextBoxColumn4.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn4.DisplayStyleForCurrentCellOnly = true;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Presupuesto";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn4.ValueMember = "IdPresupCab";
+            this.dataGridViewTextBoxColumn4.Width = 200;
+            // 
             // presupCabBindingSource1
             // 
             this.presupCabBindingSource1.DataMember = "PresupCab";
             this.presupCabBindingSource1.DataSource = this.promowork_dataDataSet;
+            // 
+            // Importe
+            // 
+            this.Importe.DataPropertyName = "Importe";
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Importe.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Importe.HeaderText = "Importe";
+            this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
+            this.Importe.Width = 65;
+            // 
+            // Cobrada
+            // 
+            this.Cobrada.DataPropertyName = "Cobrada";
+            this.Cobrada.HeaderText = "Cob";
+            this.Cobrada.Name = "Cobrada";
+            this.Cobrada.ReadOnly = true;
+            this.Cobrada.Width = 30;
+            // 
+            // IdFactCab
+            // 
+            this.IdFactCab.DataPropertyName = "IdFactCab";
+            this.IdFactCab.HeaderText = "IdFactCab";
+            this.IdFactCab.Name = "IdFactCab";
+            this.IdFactCab.ReadOnly = true;
+            this.IdFactCab.Visible = false;
+            // 
+            // FacturaPresup
+            // 
+            this.FacturaPresup.DataPropertyName = "FacturaPresup";
+            this.FacturaPresup.HeaderText = "FacturaPresup";
+            this.FacturaPresup.Name = "FacturaPresup";
+            this.FacturaPresup.ReadOnly = true;
+            this.FacturaPresup.Visible = false;
             // 
             // idClienteComboBox
             // 
@@ -898,7 +1000,7 @@
             this.idPresupComboBox.DataSource = this.presupCabBindingSource;
             this.idPresupComboBox.DisplayMember = "NomPresup";
             this.idPresupComboBox.FormattingEnabled = true;
-            this.idPresupComboBox.Location = new System.Drawing.Point(520, 80);
+            this.idPresupComboBox.Location = new System.Drawing.Point(520, 102);
             this.idPresupComboBox.Name = "idPresupComboBox";
             this.idPresupComboBox.Size = new System.Drawing.Size(282, 21);
             this.idPresupComboBox.TabIndex = 3;
@@ -923,7 +1025,7 @@
             // 
             this.fechaFacturaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.facturasCabBindingSource, "FechaFactura", true));
             this.fechaFacturaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaFacturaDateTimePicker.Location = new System.Drawing.Point(520, 124);
+            this.fechaFacturaDateTimePicker.Location = new System.Drawing.Point(520, 146);
             this.fechaFacturaDateTimePicker.Name = "fechaFacturaDateTimePicker";
             this.fechaFacturaDateTimePicker.Size = new System.Drawing.Size(103, 20);
             this.fechaFacturaDateTimePicker.TabIndex = 5;
@@ -932,7 +1034,7 @@
             // 
             this.fechaVctoFactDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.facturasCabBindingSource, "FechaVctoFact", true));
             this.fechaVctoFactDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaVctoFactDateTimePicker.Location = new System.Drawing.Point(707, 124);
+            this.fechaVctoFactDateTimePicker.Location = new System.Drawing.Point(707, 146);
             this.fechaVctoFactDateTimePicker.Name = "fechaVctoFactDateTimePicker";
             this.fechaVctoFactDateTimePicker.Size = new System.Drawing.Size(95, 20);
             this.fechaVctoFactDateTimePicker.TabIndex = 6;
@@ -945,7 +1047,7 @@
             this.idCuentaComboBox.DataSource = this.cuentasBancosBindingSource;
             this.idCuentaComboBox.DisplayMember = "CuentaBanco";
             this.idCuentaComboBox.FormattingEnabled = true;
-            this.idCuentaComboBox.Location = new System.Drawing.Point(520, 102);
+            this.idCuentaComboBox.Location = new System.Drawing.Point(520, 124);
             this.idCuentaComboBox.Name = "idCuentaComboBox";
             this.idCuentaComboBox.Size = new System.Drawing.Size(282, 21);
             this.idCuentaComboBox.TabIndex = 4;
@@ -959,7 +1061,7 @@
             // certificacionTextBox
             // 
             this.certificacionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "Certificacion", true));
-            this.certificacionTextBox.Location = new System.Drawing.Point(574, 146);
+            this.certificacionTextBox.Location = new System.Drawing.Point(574, 168);
             this.certificacionTextBox.Name = "certificacionTextBox";
             this.certificacionTextBox.Size = new System.Drawing.Size(49, 20);
             this.certificacionTextBox.TabIndex = 7;
@@ -967,7 +1069,7 @@
             // iVAFacturaTextBox
             // 
             this.iVAFacturaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "IVAFactura", true));
-            this.iVAFacturaTextBox.Location = new System.Drawing.Point(753, 168);
+            this.iVAFacturaTextBox.Location = new System.Drawing.Point(753, 190);
             this.iVAFacturaTextBox.Name = "iVAFacturaTextBox";
             this.iVAFacturaTextBox.Size = new System.Drawing.Size(49, 20);
             this.iVAFacturaTextBox.TabIndex = 10;
@@ -975,7 +1077,7 @@
             // descFacuraTextBox
             // 
             this.descFacuraTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "DescFactura", true));
-            this.descFacuraTextBox.Location = new System.Drawing.Point(574, 168);
+            this.descFacuraTextBox.Location = new System.Drawing.Point(574, 190);
             this.descFacuraTextBox.Name = "descFacuraTextBox";
             this.descFacuraTextBox.Size = new System.Drawing.Size(49, 20);
             this.descFacuraTextBox.TabIndex = 8;
@@ -1228,9 +1330,9 @@
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn8.HeaderText = "Cantidad";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
@@ -1239,9 +1341,9 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Precio";
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn9.HeaderText = "Precio";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -1250,9 +1352,9 @@
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "Importe";
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn12.HeaderText = "Importe";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
@@ -1493,7 +1595,7 @@
             // 
             this.importeTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.presupCabBindingSource, "Importe", true));
             this.importeTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.importeTextBox2.Location = new System.Drawing.Point(574, 234);
+            this.importeTextBox2.Location = new System.Drawing.Point(574, 248);
             this.importeTextBox2.Name = "importeTextBox2";
             this.importeTextBox2.ReadOnly = true;
             this.importeTextBox2.Size = new System.Drawing.Size(92, 20);
@@ -1504,7 +1606,7 @@
             // 
             this.impFacturadoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.presupCabBindingSource, "ImpFacturado", true));
             this.impFacturadoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.impFacturadoTextBox.Location = new System.Drawing.Point(574, 257);
+            this.impFacturadoTextBox.Location = new System.Drawing.Point(574, 271);
             this.impFacturadoTextBox.Name = "impFacturadoTextBox";
             this.impFacturadoTextBox.ReadOnly = true;
             this.impFacturadoTextBox.Size = new System.Drawing.Size(92, 20);
@@ -1515,7 +1617,7 @@
             // 
             this.pendienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.presupCabBindingSource, "Pendiente", true));
             this.pendienteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pendienteTextBox.Location = new System.Drawing.Point(574, 280);
+            this.pendienteTextBox.Location = new System.Drawing.Point(574, 294);
             this.pendienteTextBox.Name = "pendienteTextBox";
             this.pendienteTextBox.ReadOnly = true;
             this.pendienteTextBox.Size = new System.Drawing.Size(92, 20);
@@ -1524,6 +1626,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.comboBox5);
+            this.groupBox3.Controls.Add(this.facturaCheckBox);
+            this.groupBox3.Controls.Add(label26);
             this.groupBox3.Controls.Add(obsFacturaLabel);
             this.groupBox3.Controls.Add(label25);
             this.groupBox3.Controls.Add(this.textBox23);
@@ -1584,6 +1689,21 @@
             this.groupBox3.TabIndex = 81;
             this.groupBox3.TabStop = false;
             // 
+            // facturaCheckBox
+            // 
+            this.facturaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.facturasCabBindingSource, "Factura", true));
+            this.facturaCheckBox.Location = new System.Drawing.Point(607, 35);
+            this.facturaCheckBox.Name = "facturaCheckBox";
+            this.facturaCheckBox.Size = new System.Drawing.Size(66, 22);
+            this.facturaCheckBox.TabIndex = 112;
+            this.facturaCheckBox.Text = "Factura";
+            this.facturaCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // clientesBindingSource1
+            // 
+            this.clientesBindingSource1.DataMember = "Clientes";
+            this.clientesBindingSource1.DataSource = this.promowork_dataDataSet;
+            // 
             // textBox23
             // 
             this.textBox23.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "Importe", true));
@@ -1608,7 +1728,7 @@
             // 
             this.mostrarVctoCheckBox.AutoSize = true;
             this.mostrarVctoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.facturasCabBindingSource, "MostrarVcto", true));
-            this.mostrarVctoCheckBox.Location = new System.Drawing.Point(787, 149);
+            this.mostrarVctoCheckBox.Location = new System.Drawing.Point(787, 171);
             this.mostrarVctoCheckBox.Name = "mostrarVctoCheckBox";
             this.mostrarVctoCheckBox.Size = new System.Drawing.Size(15, 14);
             this.mostrarVctoCheckBox.TabIndex = 97;
@@ -1633,7 +1753,7 @@
             // retencionTextBox
             // 
             this.retencionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "Retencion", true));
-            this.retencionTextBox.Location = new System.Drawing.Point(753, 190);
+            this.retencionTextBox.Location = new System.Drawing.Point(753, 212);
             this.retencionTextBox.Name = "retencionTextBox";
             this.retencionTextBox.Size = new System.Drawing.Size(49, 20);
             this.retencionTextBox.TabIndex = 11;
@@ -1641,7 +1761,7 @@
             // descProntoTextBox
             // 
             this.descProntoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "DescPronto", true));
-            this.descProntoTextBox.Location = new System.Drawing.Point(574, 190);
+            this.descProntoTextBox.Location = new System.Drawing.Point(574, 212);
             this.descProntoTextBox.Name = "descProntoTextBox";
             this.descProntoTextBox.Size = new System.Drawing.Size(49, 20);
             this.descProntoTextBox.TabIndex = 9;
@@ -1704,9 +1824,9 @@
             // obsFacturaTextEdit
             // 
             this.obsFacturaTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.facturasCabBindingSource, "ObsFactura", true));
-            this.obsFacturaTextEdit.Location = new System.Drawing.Point(806, 236);
+            this.obsFacturaTextEdit.Location = new System.Drawing.Point(890, 236);
             this.obsFacturaTextEdit.Name = "obsFacturaTextEdit";
-            this.obsFacturaTextEdit.Size = new System.Drawing.Size(334, 64);
+            this.obsFacturaTextEdit.Size = new System.Drawing.Size(250, 64);
             this.obsFacturaTextEdit.TabIndex = 102;
             // 
             // groupBox4
@@ -1761,6 +1881,7 @@
             this.tableAdapterManager.CuentasTableAdapter = null;
             this.tableAdapterManager.CursosTableAdapter = null;
             this.tableAdapterManager.CursosTrabajadoresTableAdapter = null;
+            this.tableAdapterManager.DescuentosFacturasTableAdapter = null;
             this.tableAdapterManager.EmpresasActualTableAdapter = this.empresasActualTableAdapter;
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
@@ -1842,79 +1963,17 @@
             // 
             this.presupSubTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn6
+            // comboBox5
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "NumFactura";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Número";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 50;
-            // 
-            // IdCuenta
-            // 
-            this.IdCuenta.DataPropertyName = "IdCuenta";
-            this.IdCuenta.HeaderText = "IdCuenta";
-            this.IdCuenta.Name = "IdCuenta";
-            this.IdCuenta.ReadOnly = true;
-            this.IdCuenta.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "FechaFactura";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Fecha";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "IdPresup";
-            this.dataGridViewTextBoxColumn4.DataSource = this.presupCabBindingSource1;
-            this.dataGridViewTextBoxColumn4.DisplayMember = "NomPresup";
-            this.dataGridViewTextBoxColumn4.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGridViewTextBoxColumn4.DisplayStyleForCurrentCellOnly = true;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Presupuesto";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn4.ValueMember = "IdPresupCab";
-            this.dataGridViewTextBoxColumn4.Width = 200;
-            // 
-            // Importe
-            // 
-            this.Importe.DataPropertyName = "Importe";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Importe.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Importe.HeaderText = "Importe";
-            this.Importe.Name = "Importe";
-            this.Importe.ReadOnly = true;
-            this.Importe.Width = 65;
-            // 
-            // Cobrada
-            // 
-            this.Cobrada.DataPropertyName = "Cobrada";
-            this.Cobrada.HeaderText = "Cob";
-            this.Cobrada.Name = "Cobrada";
-            this.Cobrada.ReadOnly = true;
-            this.Cobrada.Width = 30;
-            // 
-            // IdFactCab
-            // 
-            this.IdFactCab.DataPropertyName = "IdFactCab";
-            this.IdFactCab.HeaderText = "IdFactCab";
-            this.IdFactCab.Name = "IdFactCab";
-            this.IdFactCab.ReadOnly = true;
-            this.IdFactCab.Visible = false;
-            // 
-            // FacturaPresup
-            // 
-            this.FacturaPresup.DataPropertyName = "FacturaPresup";
-            this.FacturaPresup.HeaderText = "FacturaPresup";
-            this.FacturaPresup.Name = "FacturaPresup";
-            this.FacturaPresup.ReadOnly = true;
-            this.FacturaPresup.Visible = false;
+            this.comboBox5.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.facturasCabBindingSource, "IdClienteFact", true));
+            this.comboBox5.DataSource = this.clientesBindingSource1;
+            this.comboBox5.DisplayMember = "DesCliente";
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(520, 80);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(282, 21);
+            this.comboBox5.TabIndex = 113;
+            this.comboBox5.ValueMember = "IdCliente";
             // 
             // FacturasPresup
             // 
@@ -1956,6 +2015,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.obsFacturaTextEdit.Properties)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -2087,5 +2147,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Cobrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdFactCab;
         private System.Windows.Forms.DataGridViewCheckBoxColumn FacturaPresup;
+        private System.Windows.Forms.BindingSource clientesBindingSource1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.CheckBox facturaCheckBox;
+        private System.Windows.Forms.ComboBox comboBox5;
     }
 }

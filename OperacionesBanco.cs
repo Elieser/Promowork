@@ -44,14 +44,27 @@ namespace Promowork
             DataRowView opebanco = (DataRowView)vOperacionesBancoAgrupadasBindingSource.Current;
             saldoAnteriorTextBox.Text = vOperacionesBancoAgrupadasBindingSource.Count != 0 ? (-(decimal)opebanco["SaldoAnterior"]).ToString() : "0,00";
             vOperacionesBancoAgrupadasBindingSource.MoveLast();
-            if (vOperacionesBancoAgrupadasBindingSource.Count > 0)
-            {
-                int idope = Convert.ToInt32((promowork_dataDataSet.vOperacionesBancoAgrupadas.Compute("max(IdOpeBanco)", "IdCuenta=" + bancoCuentaComboBox.SelectedValue.ToString())));
-                int pos = gridView1.LocateByDisplayText(0, IdOpebanco, idope.ToString());
-                vOperacionesBancoAgrupadasBindingSource.Position = pos;
-            }
             DataRowView opebanco1 = (DataRowView)vOperacionesBancoAgrupadasBindingSource.Current;
             txtsaldofinal.Text = vOperacionesBancoAgrupadasBindingSource.Count != 0 ? (-(decimal)opebanco1["SaldoAnterior"] + (decimal)opebanco1["Importe"]).ToString() : "0,00";
+
+            if (vOperacionesBancoAgrupadasBindingSource.Count > 0)
+            {
+                try
+                {
+                    int idope = Convert.ToInt32((promowork_dataDataSet.vOperacionesBancoAgrupadas.Compute("max(IdOpeBanco)", "IdCuenta=" + bancoCuentaComboBox.SelectedValue.ToString())));
+                    int pos = gridView1.LocateByDisplayText(0, IdOpebanco, idope.ToString());
+                    vOperacionesBancoAgrupadasBindingSource.Position = pos;
+                }
+                catch { }
+                try
+                {
+                    int idprev = (int)(promowork_dataDataSet.vPrevisiones.Compute("max(IdOpeBanco)", "IdCuenta=" + bancoCuentaComboBox.SelectedValue.ToString()));
+                    int posprev = gridView2.LocateByDisplayText(0, IdOpeBanco1, idprev.ToString());
+                    vPrevisionesBindingSource.Position = posprev;
+                }
+                catch { }
+
+            }
             decimal saldoPrevisto = 0;
             
             if (vOperacionesBancoAgrupadasBindingSource.Count > 0)
@@ -78,8 +91,8 @@ namespace Promowork
 
         private void OperacionesBanco_Resize(object sender, EventArgs e)
         {
-            operacionesBancoGridControl.Width = this.Width - 15;
-            vPrevisionesGridControl.Width = this.Width - 15;
+            operacionesBancoGridControl.Width = this.Width - 20;
+            vPrevisionesGridControl.Width = this.Width - 20;
             vPrevisionesGridControl.Height = this.Height - operacionesBancoGridControl.Height - 180;
             saldoAnteriorTextBox.Location = new Point(this.Width - 120,6);
             txtsaldofinal.Location = new Point(this.Width - 120, 301);
@@ -146,8 +159,7 @@ namespace Promowork
                                      }
                                     else
                                     {
-                                        DataRowView opebanco1 = (DataRowView)operacionesBancoBindingSource.Current;
-                                        opebanco1["EnCuenta"] = true;
+                                        queriesTableAdapter1.UpdateOperacionesBancoEnCuenta(true, (int)gridView2.GetRowCellValue(i, "IdOpeBanco"));
                                     }
 
                                      this.Validate();
@@ -224,8 +236,16 @@ namespace Promowork
         {
             if (MessageBox.Show("Confirma que desea Eliminar?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                DataRowView opebanco = (DataRowView)vOperacionesBancoAgrupadasBindingSource.Current;
-                queriesTableAdapter1.EliminaOpeBanco((DateTime)opebanco["FechaOpe"], (int)bancoCuentaComboBox.SelectedValue);
+                //MessageBox.Show(gridView1.GetFocusedRowCellValue("IdConbanco").ToString());
+                //if (Convert.IsDBNull(gridView1.GetFocusedRowCellValue("IdConbanco")))
+                //{
+                    DataRowView opebanco = (DataRowView)vOperacionesBancoAgrupadasBindingSource.Current;
+                    queriesTableAdapter1.EliminaOpeBanco((DateTime)opebanco["FechaOpe"], (int)bancoCuentaComboBox.SelectedValue);
+                //}
+                //else
+                //{
+                //    queriesTableAdapter1.UpdateOperacionesBancoEnCuenta(false, (int)gridView1.GetFocusedRowCellValue("IdOpebanco"));
+                //}
                 Actualiza();
             }
         }
@@ -273,12 +293,12 @@ namespace Promowork
             opebanco["IdEmpresa"] = VariablesGlobales.nIdEmpresaActual;
             opebanco["IdUsuario"] = VariablesGlobales.nIdUsuarioActual;
             opebanco["fecha"] = fechaDateTimePicker.Value;
-            opebanco["DesOperacion"] = cbxconcepto.Text;
+            opebanco["DesOperacion"] = cbxconcepto.Text.Substring(0,cbxconcepto.Text.LastIndexOf("("));
             opebanco["IdCuenta"] = bancoCuentaComboBox.SelectedValue;
             opebanco["TipoOpe"] = "Otras Operaciones";
             opebanco["IdConBanco"] = Convert.ToInt32(cbxconcepto.SelectedValue);
             opebanco["IdFormaPago"] = Convert.ToInt32(idFormaPagoComboBox.SelectedValue);
-            opebanco["Importe"] = chkdebito.Checked == true ? -decimal.Parse(importeTextBox.Text) : decimal.Parse(importeTextBox.Text);
+            opebanco["Importe"] = chkdebito.Checked == true ? decimal.Parse(importeTextBox.Text) : -decimal.Parse(importeTextBox.Text);
             opebanco["EnCuenta"] = false;
             opebanco["FechaOpe"] = DateTime.Now;
             opebanco["ObsBanco"] = textBox1.Text;
@@ -308,8 +328,11 @@ namespace Promowork
 
         private void button6_Click(object sender, EventArgs e)
         {
-            queriesTableAdapter1.DeleteOperacionesBanco((int)gridView2.GetFocusedRowCellValue("IdOpeBanco"));
-            Actualiza();
+            if (MessageBox.Show("Confirma que desea Eliminar?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                queriesTableAdapter1.DeleteOperacionesBanco((int)gridView2.GetFocusedRowCellValue("IdOpeBanco"));
+                Actualiza();
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)

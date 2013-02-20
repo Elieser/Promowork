@@ -186,3 +186,9 @@ C:\Promowork\Promowork\obj\x86\Debug\Promowork.ConceptosBanco.resources
 C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptOperacionesBancoActual.resources
 C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptParametrosOperacionesBanco.resources
 C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptFacturasManualImp2.resources
+C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptOperacionesBancoConceptos.resources
+C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptParametrosOperacionesBancoFecha.resources
+C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptParametrosPendienteFacturar.resources
+C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptPendienteFacturar.resources
+C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptFacturasPresupImp2.resources
+C:\Promowork\Promowork\obj\x86\Debug\Promowork.RptFacturasPresupParteImp2.resources

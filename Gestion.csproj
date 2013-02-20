@@ -396,6 +396,18 @@
     <Compile Include="RptFacturasPresupImp.Designer.cs">
       <DependentUpon>RptFacturasPresupImp.cs</DependentUpon>
     </Compile>
+    <Compile Include="RptFacturasPresupImp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptFacturasPresupImp2.Designer.cs">
+      <DependentUpon>RptFacturasPresupImp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptFacturasPresupParteImp2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptFacturasPresupParteImp2.Designer.cs">
+      <DependentUpon>RptFacturasPresupParteImp2.cs</DependentUpon>
+    </Compile>
     <Compile Include="RptFichaTrabajador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -425,6 +437,12 @@
     </Compile>
     <Compile Include="RptOperacionesBancoActual.Designer.cs">
       <DependentUpon>RptOperacionesBancoActual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptOperacionesBancoConceptos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptOperacionesBancoConceptos.Designer.cs">
+      <DependentUpon>RptOperacionesBancoConceptos.cs</DependentUpon>
     </Compile>
     <Compile Include="RptParametrosCobrosClientes.cs">
       <SubType>Form</SubType>
@@ -486,6 +504,18 @@
     <Compile Include="RptParametrosOperacionesBanco.Designer.cs">
       <DependentUpon>RptParametrosOperacionesBanco.cs</DependentUpon>
     </Compile>
+    <Compile Include="RptParametrosOperacionesBancoFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptParametrosOperacionesBancoFecha.Designer.cs">
+      <DependentUpon>RptParametrosOperacionesBancoFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptParametrosPendienteFacturar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptParametrosPendienteFacturar.Designer.cs">
+      <DependentUpon>RptParametrosPendienteFacturar.cs</DependentUpon>
+    </Compile>
     <Compile Include="RptParametrosResumenConsumoCombustible.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -509,6 +539,12 @@
     </Compile>
     <Compile Include="RptParametrosSalarioTrabajadores.Designer.cs">
       <DependentUpon>RptParametrosSalarioTrabajadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptPendienteFacturar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptPendienteFacturar.Designer.cs">
+      <DependentUpon>RptPendienteFacturar.cs</DependentUpon>
     </Compile>
     <Compile Include="RptPresupuestoActual.cs">
       <SubType>Form</SubType>
@@ -719,6 +755,9 @@
     <EmbeddedResource Include="ConsumosServiciosVehiculos.resx">
       <DependentUpon>ConsumosServiciosVehiculos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FacturaPresupImp2.rdlc" />
+    <EmbeddedResource Include="FacturaPresupImpParte2.rdlc" />
+    <EmbeddedResource Include="OperacionesBancoConceptos.rdlc" />
     <EmbeddedResource Include="FacturaHorasImp.rdlc" />
     <EmbeddedResource Include="FacturaHorasImpParte.rdlc" />
     <EmbeddedResource Include="DiferenciasLitros.rdlc" />
@@ -790,6 +829,7 @@
       <DependentUpon>OperacionesBanco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OperacionesBancoActual.rdlc" />
+    <EmbeddedResource Include="PendienteFacturar.rdlc" />
     <EmbeddedResource Include="Poblaciones.resx">
       <DependentUpon>Poblaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -849,6 +889,12 @@
     <EmbeddedResource Include="RptFacturasPresupImp.resx">
       <DependentUpon>RptFacturasPresupImp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RptFacturasPresupImp2.resx">
+      <DependentUpon>RptFacturasPresupImp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptFacturasPresupParteImp2.resx">
+      <DependentUpon>RptFacturasPresupParteImp2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RptFichaTrabajador.resx">
       <DependentUpon>RptFichaTrabajador.cs</DependentUpon>
     </EmbeddedResource>
@@ -863,6 +909,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RptOperacionesBancoActual.resx">
       <DependentUpon>RptOperacionesBancoActual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptOperacionesBancoConceptos.resx">
+      <DependentUpon>RptOperacionesBancoConceptos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RptParametrosCobrosClientes.resx">
       <DependentUpon>RptParametrosCobrosClientes.cs</DependentUpon>
@@ -894,6 +943,12 @@
     <EmbeddedResource Include="RptParametrosOperacionesBanco.resx">
       <DependentUpon>RptParametrosOperacionesBanco.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RptParametrosOperacionesBancoFecha.resx">
+      <DependentUpon>RptParametrosOperacionesBancoFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptParametrosPendienteFacturar.resx">
+      <DependentUpon>RptParametrosPendienteFacturar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RptParametrosResumenConsumoCombustible.resx">
       <DependentUpon>RptParametrosResumenConsumoCombustible.cs</DependentUpon>
     </EmbeddedResource>
@@ -905,6 +960,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RptParametrosSalarioTrabajadores.resx">
       <DependentUpon>RptParametrosSalarioTrabajadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptPendienteFacturar.resx">
+      <DependentUpon>RptPendienteFacturar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RptPresupuestoActual.resx">
       <DependentUpon>RptPresupuestoActual.cs</DependentUpon>

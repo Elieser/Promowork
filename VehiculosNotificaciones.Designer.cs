@@ -130,7 +130,7 @@
             this.vehiculosBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.vehiculosBindingNavigator.BindingSource = this.vehiculosBindingSource;
             this.vehiculosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.vehiculosBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.vehiculosBindingNavigator.DeleteItem = null;
             this.vehiculosBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
             this.vehiculosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -181,6 +181,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -401,7 +402,7 @@
             this.bindingNavigator1.AddNewItem = this.toolStripButton1;
             this.bindingNavigator1.BindingSource = this.serviciosVehiculosBindingSource;
             this.bindingNavigator1.CountItem = this.toolStripLabel1;
-            this.bindingNavigator1.DeleteItem = this.toolStripButton2;
+            this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton3,
@@ -423,7 +424,7 @@
             this.bindingNavigator1.MovePreviousItem = this.toolStripButton4;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.toolStripTextBox1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(278, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(309, 25);
             this.bindingNavigator1.TabIndex = 4;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -451,6 +452,7 @@
             this.toolStripButton2.RightToLeftAutoMirrorImage = true;
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton2.Text = "Delete";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 

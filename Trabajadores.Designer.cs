@@ -57,7 +57,7 @@
             System.Windows.Forms.Label idCuentaLabel;
             System.Windows.Forms.Label salMesLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Trabajadores));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.promowork_dataDataSet = new Promowork.Promowork_dataDataSet();
             this.trabajadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trabajadoresTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.TrabajadoresTableAdapter();
@@ -509,6 +509,7 @@
             this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = this.contratosTrabajadoresTableAdapter;
             this.tableAdapterManager.CopiasHorasTableAdapter = null;
             this.tableAdapterManager.CrucesTrabajadoresTableAdapter = null;
@@ -529,6 +530,7 @@
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;
@@ -571,7 +573,7 @@
             this.trabajadoresBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.trabajadoresBindingNavigator.BindingSource = this.trabajadoresBindingSource;
             this.trabajadoresBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.trabajadoresBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.trabajadoresBindingNavigator.DeleteItem = null;
             this.trabajadoresBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -624,6 +626,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -1093,7 +1096,7 @@
             // 
             // Column2
             // 
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Column2.HeaderText = "";
             this.Column2.Name = "Column2";

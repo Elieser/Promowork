@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntradasCombustible));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.promowork_dataDataSetCombustible = new Promowork.Promowork_dataDataSetCombustible();
             this.entradasCombustibleCabBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.entradasCombustibleCabTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.EntradasCombustibleCabTableAdapter();
@@ -70,25 +70,25 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.entradasCombustibleDetTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.EntradasCombustibleDetTableAdapter();
             this.entradasCombustibleDetDataGridView = new System.Windows.Forms.DataGridView();
-            this.tiposServiciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.promowork_dataDataSetCombustible1 = new Promowork.Promowork_dataDataSetCombustible();
-            this.uMedidasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.proveedoresTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.ProveedoresTableAdapter();
-            this.formasPagoTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.FormasPagoTableAdapter();
-            this.cuentasTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.CuentasTableAdapter();
-            this.tiposServiciosTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.TiposServiciosTableAdapter();
-            this.uMedidasTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.UMedidasTableAdapter();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tiposServiciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.promowork_dataDataSetCombustible1 = new Promowork.Promowork_dataDataSetCombustible();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.uMedidasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedoresTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.ProveedoresTableAdapter();
+            this.formasPagoTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.FormasPagoTableAdapter();
+            this.cuentasTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.CuentasTableAdapter();
+            this.tiposServiciosTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.TiposServiciosTableAdapter();
+            this.uMedidasTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.UMedidasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSetCombustible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entradasCombustibleCabBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.entradasCombustibleCabBindingNavigator)).BeginInit();
@@ -139,7 +139,7 @@
             this.entradasCombustibleCabBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.entradasCombustibleCabBindingNavigator.BindingSource = this.entradasCombustibleDetBindingSource;
             this.entradasCombustibleCabBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.entradasCombustibleCabBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.entradasCombustibleCabBindingNavigator.DeleteItem = null;
             this.entradasCombustibleCabBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
             this.entradasCombustibleCabBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -151,8 +151,8 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
+            this.bindingNavigatorAddNewItem,
             this.entradasCombustibleCabBindingNavigatorSaveItem});
             this.entradasCombustibleCabBindingNavigator.Location = new System.Drawing.Point(12, 302);
             this.entradasCombustibleCabBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -161,7 +161,7 @@
             this.entradasCombustibleCabBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.entradasCombustibleCabBindingNavigator.Name = "entradasCombustibleCabBindingNavigator";
             this.entradasCombustibleCabBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.entradasCombustibleCabBindingNavigator.Size = new System.Drawing.Size(278, 25);
+            this.entradasCombustibleCabBindingNavigator.Size = new System.Drawing.Size(309, 25);
             this.entradasCombustibleCabBindingNavigator.TabIndex = 0;
             this.entradasCombustibleCabBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -194,6 +194,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -429,41 +430,6 @@
             this.entradasCombustibleDetDataGridView.TabIndex = 3;
             this.entradasCombustibleDetDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.entradasCombustibleDetDataGridView_DataError);
             // 
-            // tiposServiciosBindingSource
-            // 
-            this.tiposServiciosBindingSource.DataMember = "TiposServicios";
-            this.tiposServiciosBindingSource.DataSource = this.promowork_dataDataSetCombustible1;
-            // 
-            // promowork_dataDataSetCombustible1
-            // 
-            this.promowork_dataDataSetCombustible1.DataSetName = "Promowork_dataDataSetCombustible";
-            this.promowork_dataDataSetCombustible1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // uMedidasBindingSource
-            // 
-            this.uMedidasBindingSource.DataMember = "UMedidas";
-            this.uMedidasBindingSource.DataSource = this.promowork_dataDataSetCombustible1;
-            // 
-            // proveedoresTableAdapter
-            // 
-            this.proveedoresTableAdapter.ClearBeforeFill = true;
-            // 
-            // formasPagoTableAdapter
-            // 
-            this.formasPagoTableAdapter.ClearBeforeFill = true;
-            // 
-            // cuentasTableAdapter
-            // 
-            this.cuentasTableAdapter.ClearBeforeFill = true;
-            // 
-            // tiposServiciosTableAdapter
-            // 
-            this.tiposServiciosTableAdapter.ClearBeforeFill = true;
-            // 
-            // uMedidasTableAdapter
-            // 
-            this.uMedidasTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn16
             // 
             this.dataGridViewTextBoxColumn16.DataPropertyName = "Albaran";
@@ -485,6 +451,16 @@
             this.dataGridViewTextBoxColumn19.ValueMember = "IdServicio";
             this.dataGridViewTextBoxColumn19.Width = 200;
             // 
+            // tiposServiciosBindingSource
+            // 
+            this.tiposServiciosBindingSource.DataMember = "TiposServicios";
+            this.tiposServiciosBindingSource.DataSource = this.promowork_dataDataSetCombustible1;
+            // 
+            // promowork_dataDataSetCombustible1
+            // 
+            this.promowork_dataDataSetCombustible1.DataSetName = "Promowork_dataDataSetCombustible";
+            this.promowork_dataDataSetCombustible1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // dataGridViewTextBoxColumn20
             // 
             this.dataGridViewTextBoxColumn20.DataPropertyName = "Tipo";
@@ -496,9 +472,9 @@
             // dataGridViewTextBoxColumn17
             // 
             this.dataGridViewTextBoxColumn17.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn17.HeaderText = "Cantidad";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             // 
@@ -516,22 +492,27 @@
             this.dataGridViewTextBoxColumn21.ValueMember = "IdUmedida";
             this.dataGridViewTextBoxColumn21.Width = 60;
             // 
+            // uMedidasBindingSource
+            // 
+            this.uMedidasBindingSource.DataMember = "UMedidas";
+            this.uMedidasBindingSource.DataSource = this.promowork_dataDataSetCombustible1;
+            // 
             // dataGridViewTextBoxColumn18
             // 
             this.dataGridViewTextBoxColumn18.DataPropertyName = "Precio";
-            dataGridViewCellStyle2.Format = "N4";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Format = "N4";
+            dataGridViewCellStyle8.NullValue = null;
+            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn18.HeaderText = "Precio";
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             // 
             // dataGridViewTextBoxColumn23
             // 
             this.dataGridViewTextBoxColumn23.DataPropertyName = "Importe";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataGridViewTextBoxColumn23.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.dataGridViewTextBoxColumn23.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn23.HeaderText = "Imp. Base";
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
             this.dataGridViewTextBoxColumn23.ReadOnly = true;
@@ -539,10 +520,10 @@
             // dataGridViewTextBoxColumn24
             // 
             this.dataGridViewTextBoxColumn24.DataPropertyName = "IVA";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridViewTextBoxColumn24.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle10.Format = "N2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.dataGridViewTextBoxColumn24.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn24.HeaderText = "IVA(%)";
             this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
             this.dataGridViewTextBoxColumn24.ReadOnly = true;
@@ -551,9 +532,9 @@
             // dataGridViewTextBoxColumn22
             // 
             this.dataGridViewTextBoxColumn22.DataPropertyName = "ImpIVA";
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.dataGridViewTextBoxColumn22.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.dataGridViewTextBoxColumn22.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTextBoxColumn22.HeaderText = "Imp. IVA";
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             this.dataGridViewTextBoxColumn22.Width = 80;
@@ -561,10 +542,10 @@
             // dataGridViewTextBoxColumn25
             // 
             this.dataGridViewTextBoxColumn25.DataPropertyName = "ImpTotal";
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.Format = "N2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.dataGridViewTextBoxColumn25.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.dataGridViewTextBoxColumn25.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTextBoxColumn25.HeaderText = "Imp. Total";
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
             this.dataGridViewTextBoxColumn25.ReadOnly = true;
@@ -575,6 +556,26 @@
             this.dataGridViewTextBoxColumn26.HeaderText = "IdCompra";
             this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
             this.dataGridViewTextBoxColumn26.Visible = false;
+            // 
+            // proveedoresTableAdapter
+            // 
+            this.proveedoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // formasPagoTableAdapter
+            // 
+            this.formasPagoTableAdapter.ClearBeforeFill = true;
+            // 
+            // cuentasTableAdapter
+            // 
+            this.cuentasTableAdapter.ClearBeforeFill = true;
+            // 
+            // tiposServiciosTableAdapter
+            // 
+            this.tiposServiciosTableAdapter.ClearBeforeFill = true;
+            // 
+            // uMedidasTableAdapter
+            // 
+            this.uMedidasTableAdapter.ClearBeforeFill = true;
             // 
             // EntradasCombustible
             // 

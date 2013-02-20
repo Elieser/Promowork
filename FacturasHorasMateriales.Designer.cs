@@ -58,6 +58,7 @@
             System.Windows.Forms.Label impIVALabel;
             System.Windows.Forms.Label fechaExpLabel;
             System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label obsFactura2Label;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturasHorasMateriales));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -95,6 +96,11 @@
             this.iVAFacturaTextBox = new System.Windows.Forms.TextBox();
             this.descFacuraTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbxfacturas = new System.Windows.Forms.ComboBox();
+            this.cbxanos = new System.Windows.Forms.ComboBox();
+            this.anosFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.noDetalleCheckEdit = new DevExpress.XtraEditors.CheckEdit();
+            this.entregadaCheckBox = new System.Windows.Forms.CheckBox();
             this.facturaCheckBox = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -172,6 +178,7 @@
             this.colCantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSalario = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFestivo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCopiaParte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -209,22 +216,12 @@
             this.colFestivo1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCantidad3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSalario1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCopiaParte1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.queriesTableAdapter1 = new Promowork.Promowork_dataDataSetTableAdapters.QueriesTableAdapter();
             this.productosUtilizadosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.ProductosUtilizadosTableAdapter();
             this.productosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.ProductosTableAdapter();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.productosUtilizadosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemLookUpEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.productosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.importeFacturaHorasTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.ImporteFacturaHorasTableAdapter();
             this.formasPagoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.formasPagoTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.FormasPagoTableAdapter();
@@ -236,15 +233,40 @@
             this.fechaExpDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.cuentasBancosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.entregadaCheckBox = new System.Windows.Forms.CheckBox();
+            this.descuentosFacturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.descuentosFacturasTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.DescuentosFacturasTableAdapter();
+            this.descuentosFacturasGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colIdDesFactura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdFactCab1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDesDescuento = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colImpDescuento = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.anosFacturasTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.AnosFacturasTableAdapter();
+            this.obsFactura2TextBox = new System.Windows.Forms.TextBox();
+            this.clientesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.NumFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Obra = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.IdCliente = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Factura = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Cobrada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Entregada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.IdFactCab = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Factura = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.FacturaPresup = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.IdCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             idClienteLabel = new System.Windows.Forms.Label();
@@ -276,6 +298,7 @@
             impIVALabel = new System.Windows.Forms.Label();
             fechaExpLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
+            obsFactura2Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturasCabBindingNavigator)).BeginInit();
             this.facturasCabBindingNavigator.SuspendLayout();
@@ -288,6 +311,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuentasBancosBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.anosFacturasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noDetalleCheckEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obsFacturaTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.importeFacturaHorasBindingSource)).BeginInit();
@@ -307,20 +332,23 @@
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vHorasTrabajadasGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosUtilizadosBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formasPagoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cobrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuentasBancosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descuentosFacturasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descuentosFacturasGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
+            this.bindingNavigator2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // idClienteLabel
             // 
             idClienteLabel.AutoSize = true;
-            idClienteLabel.Location = new System.Drawing.Point(546, 62);
+            idClienteLabel.Location = new System.Drawing.Point(618, 63);
             idClienteLabel.Name = "idClienteLabel";
             idClienteLabel.Size = new System.Drawing.Size(42, 13);
             idClienteLabel.TabIndex = 4;
@@ -329,7 +357,7 @@
             // idPresupLabel
             // 
             idPresupLabel.AutoSize = true;
-            idPresupLabel.Location = new System.Drawing.Point(555, 106);
+            idPresupLabel.Location = new System.Drawing.Point(627, 107);
             idPresupLabel.Name = "idPresupLabel";
             idPresupLabel.Size = new System.Drawing.Size(33, 13);
             idPresupLabel.TabIndex = 6;
@@ -338,7 +366,7 @@
             // numFacturaLabel
             // 
             numFacturaLabel.AutoSize = true;
-            numFacturaLabel.Location = new System.Drawing.Point(541, 41);
+            numFacturaLabel.Location = new System.Drawing.Point(613, 42);
             numFacturaLabel.Name = "numFacturaLabel";
             numFacturaLabel.Size = new System.Drawing.Size(47, 13);
             numFacturaLabel.TabIndex = 8;
@@ -347,7 +375,7 @@
             // fechaFacturaLabel
             // 
             fechaFacturaLabel.AutoSize = true;
-            fechaFacturaLabel.Location = new System.Drawing.Point(548, 150);
+            fechaFacturaLabel.Location = new System.Drawing.Point(620, 151);
             fechaFacturaLabel.Name = "fechaFacturaLabel";
             fechaFacturaLabel.Size = new System.Drawing.Size(40, 13);
             fechaFacturaLabel.TabIndex = 10;
@@ -356,7 +384,7 @@
             // fechaVctoFactLabel
             // 
             fechaVctoFactLabel.AutoSize = true;
-            fechaVctoFactLabel.Location = new System.Drawing.Point(706, 150);
+            fechaVctoFactLabel.Location = new System.Drawing.Point(778, 151);
             fechaVctoFactLabel.Name = "fechaVctoFactLabel";
             fechaVctoFactLabel.Size = new System.Drawing.Size(65, 13);
             fechaVctoFactLabel.TabIndex = 12;
@@ -365,7 +393,7 @@
             // idCuentaLabel
             // 
             idCuentaLabel.AutoSize = true;
-            idCuentaLabel.Location = new System.Drawing.Point(544, 128);
+            idCuentaLabel.Location = new System.Drawing.Point(616, 129);
             idCuentaLabel.Name = "idCuentaLabel";
             idCuentaLabel.Size = new System.Drawing.Size(44, 13);
             idCuentaLabel.TabIndex = 14;
@@ -374,7 +402,7 @@
             // certificacionLabel
             // 
             certificacionLabel.AutoSize = true;
-            certificacionLabel.Location = new System.Drawing.Point(573, 172);
+            certificacionLabel.Location = new System.Drawing.Point(645, 173);
             certificacionLabel.Name = "certificacionLabel";
             certificacionLabel.Size = new System.Drawing.Size(68, 13);
             certificacionLabel.TabIndex = 16;
@@ -383,7 +411,7 @@
             // iVAFacturaLabel
             // 
             iVAFacturaLabel.AutoSize = true;
-            iVAFacturaLabel.Location = new System.Drawing.Point(779, 194);
+            iVAFacturaLabel.Location = new System.Drawing.Point(851, 195);
             iVAFacturaLabel.Name = "iVAFacturaLabel";
             iVAFacturaLabel.Size = new System.Drawing.Size(41, 13);
             iVAFacturaLabel.TabIndex = 18;
@@ -392,7 +420,7 @@
             // descFacuraLabel
             // 
             descFacuraLabel.AutoSize = true;
-            descFacuraLabel.Location = new System.Drawing.Point(540, 194);
+            descFacuraLabel.Location = new System.Drawing.Point(612, 195);
             descFacuraLabel.Name = "descFacuraLabel";
             descFacuraLabel.Size = new System.Drawing.Size(101, 13);
             descFacuraLabel.TabIndex = 20;
@@ -401,7 +429,7 @@
             // importeLabel1
             // 
             importeLabel1.AutoSize = true;
-            importeLabel1.Location = new System.Drawing.Point(1024, 41);
+            importeLabel1.Location = new System.Drawing.Point(1034, 41);
             importeLabel1.Name = "importeLabel1";
             importeLabel1.Size = new System.Drawing.Size(57, 13);
             importeLabel1.TabIndex = 75;
@@ -410,7 +438,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new System.Drawing.Point(1031, 128);
+            label13.Location = new System.Drawing.Point(1041, 128);
             label13.Name = "label13";
             label13.Size = new System.Drawing.Size(50, 13);
             label13.TabIndex = 81;
@@ -419,7 +447,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new System.Drawing.Point(979, 62);
+            label14.Location = new System.Drawing.Point(989, 62);
             label14.Name = "label14";
             label14.Size = new System.Drawing.Size(102, 13);
             label14.TabIndex = 83;
@@ -428,7 +456,7 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new System.Drawing.Point(1004, 194);
+            label18.Location = new System.Drawing.Point(1014, 194);
             label18.Name = "label18";
             label18.Size = new System.Drawing.Size(77, 13);
             label18.TabIndex = 85;
@@ -437,7 +465,7 @@
             // descProntoLabel
             // 
             descProntoLabel.AutoSize = true;
-            descProntoLabel.Location = new System.Drawing.Point(527, 216);
+            descProntoLabel.Location = new System.Drawing.Point(599, 217);
             descProntoLabel.Name = "descProntoLabel";
             descProntoLabel.Size = new System.Drawing.Size(114, 13);
             descProntoLabel.TabIndex = 90;
@@ -446,7 +474,7 @@
             // retencionLabel
             // 
             retencionLabel.AutoSize = true;
-            retencionLabel.Location = new System.Drawing.Point(747, 216);
+            retencionLabel.Location = new System.Drawing.Point(819, 217);
             retencionLabel.Name = "retencionLabel";
             retencionLabel.Size = new System.Drawing.Size(73, 13);
             retencionLabel.TabIndex = 91;
@@ -455,7 +483,7 @@
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new System.Drawing.Point(966, 84);
+            label21.Location = new System.Drawing.Point(976, 84);
             label21.Name = "label21";
             label21.Size = new System.Drawing.Size(115, 13);
             label21.TabIndex = 93;
@@ -464,7 +492,7 @@
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new System.Drawing.Point(999, 172);
+            label23.Location = new System.Drawing.Point(1009, 172);
             label23.Name = "label23";
             label23.Size = new System.Drawing.Size(82, 13);
             label23.TabIndex = 95;
@@ -473,7 +501,7 @@
             // mostrarVctoLabel
             // 
             mostrarVctoLabel.AutoSize = true;
-            mostrarVctoLabel.Location = new System.Drawing.Point(781, 172);
+            mostrarVctoLabel.Location = new System.Drawing.Point(853, 173);
             mostrarVctoLabel.Name = "mostrarVctoLabel";
             mostrarVctoLabel.Size = new System.Drawing.Size(70, 13);
             mostrarVctoLabel.TabIndex = 96;
@@ -482,16 +510,16 @@
             // label24
             // 
             label24.AutoSize = true;
-            label24.Location = new System.Drawing.Point(943, 106);
+            label24.Location = new System.Drawing.Point(993, 106);
             label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(138, 13);
+            label24.Size = new System.Drawing.Size(97, 13);
             label24.TabIndex = 98;
-            label24.Text = "Imp. Base con Descuentos:";
+            label24.Text = "Base con Desctos:";
             // 
             // label25
             // 
             label25.AutoSize = true;
-            label25.Location = new System.Drawing.Point(1008, 150);
+            label25.Location = new System.Drawing.Point(1018, 150);
             label25.Name = "label25";
             label25.Size = new System.Drawing.Size(73, 13);
             label25.TabIndex = 100;
@@ -500,7 +528,7 @@
             // obsFacturaLabel
             // 
             obsFacturaLabel.AutoSize = true;
-            obsFacturaLabel.Location = new System.Drawing.Point(901, 219);
+            obsFacturaLabel.Location = new System.Drawing.Point(946, 236);
             obsFacturaLabel.Name = "obsFacturaLabel";
             obsFacturaLabel.Size = new System.Drawing.Size(44, 13);
             obsFacturaLabel.TabIndex = 101;
@@ -509,16 +537,16 @@
             // copiaFacturaLabel
             // 
             copiaFacturaLabel.AutoSize = true;
-            copiaFacturaLabel.Location = new System.Drawing.Point(510, 252);
+            copiaFacturaLabel.Location = new System.Drawing.Point(599, 251);
             copiaFacturaLabel.Name = "copiaFacturaLabel";
-            copiaFacturaLabel.Size = new System.Drawing.Size(76, 13);
+            copiaFacturaLabel.Size = new System.Drawing.Size(37, 13);
             copiaFacturaLabel.TabIndex = 107;
-            copiaFacturaLabel.Text = "Copia Factura:";
+            copiaFacturaLabel.Text = "Copia:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(507, 83);
+            label1.Location = new System.Drawing.Point(579, 84);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(81, 13);
             label1.TabIndex = 104;
@@ -577,6 +605,15 @@
             label3.Size = new System.Drawing.Size(44, 13);
             label3.TabIndex = 112;
             label3.Text = "Cuenta:";
+            // 
+            // obsFactura2Label
+            // 
+            obsFactura2Label.AutoSize = true;
+            obsFactura2Label.Location = new System.Drawing.Point(695, 550);
+            obsFactura2Label.Name = "obsFactura2Label";
+            obsFactura2Label.Size = new System.Drawing.Size(53, 13);
+            obsFactura2Label.TabIndex = 124;
+            obsFactura2Label.Text = "Observ 2:";
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -773,11 +810,12 @@
             this.NumFactura,
             this.dataGridViewTextBoxColumn7,
             this.Obra,
+            this.IdCliente,
             this.Importe,
-            this.Factura,
             this.Cobrada,
             this.Entregada,
             this.IdFactCab,
+            this.Factura,
             this.FacturaPresup,
             this.IdCuenta});
             this.facturasCabDataGridView.DataSource = this.facturasCabBindingSource;
@@ -786,9 +824,10 @@
             this.facturasCabDataGridView.ReadOnly = true;
             this.facturasCabDataGridView.RowHeadersVisible = false;
             this.facturasCabDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.facturasCabDataGridView.Size = new System.Drawing.Size(497, 234);
+            this.facturasCabDataGridView.Size = new System.Drawing.Size(567, 234);
             this.facturasCabDataGridView.TabIndex = 0;
             this.facturasCabDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.facturasCabDataGridView_CellEnter);
+            this.facturasCabDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.facturasCabDataGridView_CellFormatting);
             // 
             // obrasBindingSource1
             // 
@@ -818,7 +857,7 @@
             this.idClienteComboBox.DataSource = this.clientesBindingSource;
             this.idClienteComboBox.DisplayMember = "DesCliente";
             this.idClienteComboBox.FormattingEnabled = true;
-            this.idClienteComboBox.Location = new System.Drawing.Point(590, 58);
+            this.idClienteComboBox.Location = new System.Drawing.Point(662, 59);
             this.idClienteComboBox.Name = "idClienteComboBox";
             this.idClienteComboBox.Size = new System.Drawing.Size(282, 21);
             this.idClienteComboBox.TabIndex = 2;
@@ -833,7 +872,7 @@
             this.idPresupComboBox.DataSource = this.obrasBindingSource;
             this.idPresupComboBox.DisplayMember = "Obra";
             this.idPresupComboBox.FormattingEnabled = true;
-            this.idPresupComboBox.Location = new System.Drawing.Point(590, 102);
+            this.idPresupComboBox.Location = new System.Drawing.Point(662, 103);
             this.idPresupComboBox.Name = "idPresupComboBox";
             this.idPresupComboBox.Size = new System.Drawing.Size(282, 21);
             this.idPresupComboBox.TabIndex = 3;
@@ -842,7 +881,7 @@
             // numFacturaTextBox
             // 
             this.numFacturaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "NumFactura", true));
-            this.numFacturaTextBox.Location = new System.Drawing.Point(590, 37);
+            this.numFacturaTextBox.Location = new System.Drawing.Point(662, 38);
             this.numFacturaTextBox.Name = "numFacturaTextBox";
             this.numFacturaTextBox.Size = new System.Drawing.Size(81, 20);
             this.numFacturaTextBox.TabIndex = 1;
@@ -851,7 +890,7 @@
             // 
             this.fechaFacturaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.facturasCabBindingSource, "FechaFactura", true));
             this.fechaFacturaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaFacturaDateTimePicker.Location = new System.Drawing.Point(590, 146);
+            this.fechaFacturaDateTimePicker.Location = new System.Drawing.Point(662, 147);
             this.fechaFacturaDateTimePicker.Name = "fechaFacturaDateTimePicker";
             this.fechaFacturaDateTimePicker.Size = new System.Drawing.Size(103, 20);
             this.fechaFacturaDateTimePicker.TabIndex = 5;
@@ -860,7 +899,7 @@
             // 
             this.fechaVctoFactDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.facturasCabBindingSource, "FechaVctoFact", true));
             this.fechaVctoFactDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaVctoFactDateTimePicker.Location = new System.Drawing.Point(777, 146);
+            this.fechaVctoFactDateTimePicker.Location = new System.Drawing.Point(849, 147);
             this.fechaVctoFactDateTimePicker.Name = "fechaVctoFactDateTimePicker";
             this.fechaVctoFactDateTimePicker.Size = new System.Drawing.Size(95, 20);
             this.fechaVctoFactDateTimePicker.TabIndex = 6;
@@ -873,7 +912,7 @@
             this.idCuentaComboBox.DataSource = this.cuentasBancosBindingSource;
             this.idCuentaComboBox.DisplayMember = "CuentaBanco";
             this.idCuentaComboBox.FormattingEnabled = true;
-            this.idCuentaComboBox.Location = new System.Drawing.Point(590, 124);
+            this.idCuentaComboBox.Location = new System.Drawing.Point(662, 125);
             this.idCuentaComboBox.Name = "idCuentaComboBox";
             this.idCuentaComboBox.Size = new System.Drawing.Size(282, 21);
             this.idCuentaComboBox.TabIndex = 4;
@@ -887,7 +926,7 @@
             // certificacionTextBox
             // 
             this.certificacionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "Certificacion", true));
-            this.certificacionTextBox.Location = new System.Drawing.Point(644, 168);
+            this.certificacionTextBox.Location = new System.Drawing.Point(716, 169);
             this.certificacionTextBox.Name = "certificacionTextBox";
             this.certificacionTextBox.Size = new System.Drawing.Size(49, 20);
             this.certificacionTextBox.TabIndex = 7;
@@ -895,7 +934,7 @@
             // iVAFacturaTextBox
             // 
             this.iVAFacturaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "IVAFactura", true));
-            this.iVAFacturaTextBox.Location = new System.Drawing.Point(823, 190);
+            this.iVAFacturaTextBox.Location = new System.Drawing.Point(895, 191);
             this.iVAFacturaTextBox.Name = "iVAFacturaTextBox";
             this.iVAFacturaTextBox.Size = new System.Drawing.Size(49, 20);
             this.iVAFacturaTextBox.TabIndex = 10;
@@ -903,13 +942,16 @@
             // descFacuraTextBox
             // 
             this.descFacuraTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "DescFactura", true));
-            this.descFacuraTextBox.Location = new System.Drawing.Point(644, 190);
+            this.descFacuraTextBox.Location = new System.Drawing.Point(716, 191);
             this.descFacuraTextBox.Name = "descFacuraTextBox";
             this.descFacuraTextBox.Size = new System.Drawing.Size(49, 20);
             this.descFacuraTextBox.TabIndex = 8;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cbxfacturas);
+            this.groupBox3.Controls.Add(this.cbxanos);
+            this.groupBox3.Controls.Add(this.noDetalleCheckEdit);
             this.groupBox3.Controls.Add(this.entregadaCheckBox);
             this.groupBox3.Controls.Add(this.facturaCheckBox);
             this.groupBox3.Controls.Add(copiaFacturaLabel);
@@ -966,14 +1008,64 @@
             this.groupBox3.Controls.Add(this.importeTextBox);
             this.groupBox3.Location = new System.Drawing.Point(5, -1);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1189, 276);
+            this.groupBox3.Size = new System.Drawing.Size(1186, 275);
             this.groupBox3.TabIndex = 81;
             this.groupBox3.TabStop = false;
+            // 
+            // cbxfacturas
+            // 
+            this.cbxfacturas.FormattingEnabled = true;
+            this.cbxfacturas.Items.AddRange(new object[] {
+            "Facturas",
+            "Partes de Trabajo"});
+            this.cbxfacturas.Location = new System.Drawing.Point(325, 10);
+            this.cbxfacturas.Name = "cbxfacturas";
+            this.cbxfacturas.Size = new System.Drawing.Size(132, 21);
+            this.cbxfacturas.TabIndex = 115;
+            this.cbxfacturas.Text = "Facturas";
+            this.cbxfacturas.SelectedIndexChanged += new System.EventHandler(this.cbxfacturas_SelectedIndexChanged);
+            // 
+            // cbxanos
+            // 
+            this.cbxanos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.anosFacturasBindingSource, "Ano", true));
+            this.cbxanos.DataSource = this.anosFacturasBindingSource;
+            this.cbxanos.DisplayMember = "Ano";
+            this.cbxanos.FormattingEnabled = true;
+            this.cbxanos.Location = new System.Drawing.Point(463, 10);
+            this.cbxanos.Name = "cbxanos";
+            this.cbxanos.Size = new System.Drawing.Size(58, 21);
+            this.cbxanos.TabIndex = 114;
+            this.cbxanos.ValueMember = "Ano";
+            this.cbxanos.SelectedIndexChanged += new System.EventHandler(this.cbxanos_SelectedIndexChanged);
+            // 
+            // anosFacturasBindingSource
+            // 
+            this.anosFacturasBindingSource.DataMember = "AnosFacturas";
+            this.anosFacturasBindingSource.DataSource = this.promowork_dataDataSet;
+            // 
+            // noDetalleCheckEdit
+            // 
+            this.noDetalleCheckEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.facturasCabBindingSource, "NoDetalle", true));
+            this.noDetalleCheckEdit.Location = new System.Drawing.Point(911, 38);
+            this.noDetalleCheckEdit.Name = "noDetalleCheckEdit";
+            this.noDetalleCheckEdit.Properties.Caption = "Sin Detalle";
+            this.noDetalleCheckEdit.Size = new System.Drawing.Size(75, 19);
+            this.noDetalleCheckEdit.TabIndex = 113;
+            // 
+            // entregadaCheckBox
+            // 
+            this.entregadaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.facturasCabBindingSource, "Entregada", true));
+            this.entregadaCheckBox.Location = new System.Drawing.Point(821, 37);
+            this.entregadaCheckBox.Name = "entregadaCheckBox";
+            this.entregadaCheckBox.Size = new System.Drawing.Size(84, 21);
+            this.entregadaCheckBox.TabIndex = 112;
+            this.entregadaCheckBox.Text = "Entregada";
+            this.entregadaCheckBox.UseVisualStyleBackColor = true;
             // 
             // facturaCheckBox
             // 
             this.facturaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.facturasCabBindingSource, "Factura", true));
-            this.facturaCheckBox.Location = new System.Drawing.Point(677, 36);
+            this.facturaCheckBox.Location = new System.Drawing.Point(749, 37);
             this.facturaCheckBox.Name = "facturaCheckBox";
             this.facturaCheckBox.Size = new System.Drawing.Size(66, 22);
             this.facturaCheckBox.TabIndex = 111;
@@ -988,7 +1080,7 @@
             this.comboBox1.DataSource = this.clientesBindingSource1;
             this.comboBox1.DisplayMember = "DesCliente";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(590, 80);
+            this.comboBox1.Location = new System.Drawing.Point(662, 81);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(282, 21);
             this.comboBox1.TabIndex = 103;
@@ -1002,14 +1094,14 @@
             // copiaFacturaTextBox
             // 
             this.copiaFacturaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "CopiaFactura", true));
-            this.copiaFacturaTextBox.Location = new System.Drawing.Point(590, 248);
+            this.copiaFacturaTextBox.Location = new System.Drawing.Point(640, 248);
             this.copiaFacturaTextBox.Name = "copiaFacturaTextBox";
-            this.copiaFacturaTextBox.Size = new System.Drawing.Size(169, 20);
+            this.copiaFacturaTextBox.Size = new System.Drawing.Size(144, 20);
             this.copiaFacturaTextBox.TabIndex = 103;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(857, 246);
+            this.button4.Location = new System.Drawing.Point(881, 246);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(31, 23);
             this.button4.TabIndex = 105;
@@ -1020,7 +1112,7 @@
             // button3
             // 
             this.button3.Image = global::Promowork.Properties.Resources.bindingNavigatorDeleteItem_Image;
-            this.button3.Location = new System.Drawing.Point(895, 246);
+            this.button3.Location = new System.Drawing.Point(919, 246);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(22, 23);
             this.button3.TabIndex = 106;
@@ -1030,15 +1122,15 @@
             // textBox23
             // 
             this.textBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox23.Location = new System.Drawing.Point(1084, 146);
+            this.textBox23.Location = new System.Drawing.Point(1096, 146);
             this.textBox23.Name = "textBox23";
             this.textBox23.ReadOnly = true;
-            this.textBox23.Size = new System.Drawing.Size(96, 20);
+            this.textBox23.Size = new System.Drawing.Size(84, 20);
             this.textBox23.TabIndex = 101;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(766, 246);
+            this.button1.Location = new System.Drawing.Point(790, 246);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 23);
             this.button1.TabIndex = 104;
@@ -1049,17 +1141,17 @@
             // textBox22
             // 
             this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox22.Location = new System.Drawing.Point(1084, 102);
+            this.textBox22.Location = new System.Drawing.Point(1096, 102);
             this.textBox22.Name = "textBox22";
             this.textBox22.ReadOnly = true;
-            this.textBox22.Size = new System.Drawing.Size(96, 20);
+            this.textBox22.Size = new System.Drawing.Size(84, 20);
             this.textBox22.TabIndex = 99;
             // 
             // mostrarVctoCheckBox
             // 
             this.mostrarVctoCheckBox.AutoSize = true;
             this.mostrarVctoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.facturasCabBindingSource, "MostrarVcto", true));
-            this.mostrarVctoCheckBox.Location = new System.Drawing.Point(854, 171);
+            this.mostrarVctoCheckBox.Location = new System.Drawing.Point(926, 172);
             this.mostrarVctoCheckBox.Name = "mostrarVctoCheckBox";
             this.mostrarVctoCheckBox.Size = new System.Drawing.Size(15, 14);
             this.mostrarVctoCheckBox.TabIndex = 97;
@@ -1067,24 +1159,24 @@
             // 
             // textBox21
             // 
-            this.textBox21.Location = new System.Drawing.Point(1084, 168);
+            this.textBox21.Location = new System.Drawing.Point(1096, 168);
             this.textBox21.Name = "textBox21";
             this.textBox21.ReadOnly = true;
-            this.textBox21.Size = new System.Drawing.Size(96, 20);
+            this.textBox21.Size = new System.Drawing.Size(84, 20);
             this.textBox21.TabIndex = 96;
             // 
             // textBox20
             // 
-            this.textBox20.Location = new System.Drawing.Point(1084, 80);
+            this.textBox20.Location = new System.Drawing.Point(1096, 80);
             this.textBox20.Name = "textBox20";
             this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(96, 20);
+            this.textBox20.Size = new System.Drawing.Size(84, 20);
             this.textBox20.TabIndex = 94;
             // 
             // retencionTextBox
             // 
             this.retencionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "Retencion", true));
-            this.retencionTextBox.Location = new System.Drawing.Point(823, 212);
+            this.retencionTextBox.Location = new System.Drawing.Point(895, 213);
             this.retencionTextBox.Name = "retencionTextBox";
             this.retencionTextBox.Size = new System.Drawing.Size(49, 20);
             this.retencionTextBox.TabIndex = 11;
@@ -1092,7 +1184,7 @@
             // descProntoTextBox
             // 
             this.descProntoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "DescPronto", true));
-            this.descProntoTextBox.Location = new System.Drawing.Point(644, 212);
+            this.descProntoTextBox.Location = new System.Drawing.Point(716, 213);
             this.descProntoTextBox.Name = "descProntoTextBox";
             this.descProntoTextBox.Size = new System.Drawing.Size(49, 20);
             this.descProntoTextBox.TabIndex = 9;
@@ -1100,51 +1192,51 @@
             // textBox17
             // 
             this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(1084, 190);
+            this.textBox17.Location = new System.Drawing.Point(1096, 190);
             this.textBox17.Name = "textBox17";
             this.textBox17.ReadOnly = true;
-            this.textBox17.Size = new System.Drawing.Size(96, 20);
+            this.textBox17.Size = new System.Drawing.Size(84, 20);
             this.textBox17.TabIndex = 86;
             // 
             // textBox16
             // 
-            this.textBox16.Location = new System.Drawing.Point(1084, 58);
+            this.textBox16.Location = new System.Drawing.Point(1096, 58);
             this.textBox16.Name = "textBox16";
             this.textBox16.ReadOnly = true;
-            this.textBox16.Size = new System.Drawing.Size(96, 20);
+            this.textBox16.Size = new System.Drawing.Size(84, 20);
             this.textBox16.TabIndex = 84;
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(1084, 124);
+            this.textBox15.Location = new System.Drawing.Point(1096, 124);
             this.textBox15.Name = "textBox15";
             this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(96, 20);
+            this.textBox15.Size = new System.Drawing.Size(84, 20);
             this.textBox15.TabIndex = 82;
             // 
             // importeTextBox1
             // 
             this.importeTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "Importe", true));
             this.importeTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.importeTextBox1.Location = new System.Drawing.Point(1084, 37);
+            this.importeTextBox1.Location = new System.Drawing.Point(1096, 37);
             this.importeTextBox1.Name = "importeTextBox1";
             this.importeTextBox1.ReadOnly = true;
-            this.importeTextBox1.Size = new System.Drawing.Size(96, 20);
+            this.importeTextBox1.Size = new System.Drawing.Size(84, 20);
             this.importeTextBox1.TabIndex = 76;
             this.importeTextBox1.TextChanged += new System.EventHandler(this.importeTextBox1_TextChanged);
             // 
             // obsFacturaTextEdit
             // 
             this.obsFacturaTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.facturasCabBindingSource, "ObsFactura", true));
-            this.obsFacturaTextEdit.Location = new System.Drawing.Point(969, 216);
+            this.obsFacturaTextEdit.Location = new System.Drawing.Point(992, 216);
             this.obsFacturaTextEdit.Name = "obsFacturaTextEdit";
-            this.obsFacturaTextEdit.Size = new System.Drawing.Size(211, 52);
+            this.obsFacturaTextEdit.Size = new System.Drawing.Size(188, 52);
             this.obsFacturaTextEdit.TabIndex = 102;
             // 
             // importeTextBox
             // 
             this.importeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.importeFacturaHorasBindingSource, "Importe", true));
-            this.importeTextBox.Location = new System.Drawing.Point(1084, 38);
+            this.importeTextBox.Location = new System.Drawing.Point(1096, 38);
             this.importeTextBox.Name = "importeTextBox";
             this.importeTextBox.ReadOnly = true;
             this.importeTextBox.Size = new System.Drawing.Size(42, 20);
@@ -1186,6 +1278,7 @@
             this.tableAdapterManager.CuentasTableAdapter = null;
             this.tableAdapterManager.CursosTableAdapter = null;
             this.tableAdapterManager.CursosTrabajadoresTableAdapter = null;
+            this.tableAdapterManager.DescuentosFacturasTableAdapter = null;
             this.tableAdapterManager.EmpresasActualTableAdapter = null;
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
@@ -1474,13 +1567,15 @@
             this.colDesCategoria,
             this.colCantidad,
             this.colSalario,
-            this.colFestivo});
+            this.colFestivo,
+            this.colCopiaParte});
             this.gridView1.GridControl = this.vFacturaDetHorasGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged_1);
             this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             this.gridView1.GotFocus += new System.EventHandler(this.gridView1_GotFocus);
             // 
             // IdFactDetHoras
@@ -1651,6 +1746,12 @@
             this.colFestivo.FieldName = "Festivo";
             this.colFestivo.Name = "colFestivo";
             this.colFestivo.OptionsColumn.AllowEdit = false;
+            // 
+            // colCopiaParte
+            // 
+            this.colCopiaParte.FieldName = "CopiaParte";
+            this.colCopiaParte.Name = "colCopiaParte";
+            this.colCopiaParte.OptionsColumn.AllowEdit = false;
             // 
             // bindingNavigator1
             // 
@@ -1923,13 +2024,15 @@
             this.colIdTrabajador1,
             this.colFestivo1,
             this.colCantidad3,
-            this.colSalario1});
+            this.colSalario1,
+            this.colCopiaParte1});
             this.gridView4.GridControl = this.vHorasTrabajadasGridControl;
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsView.EnableAppearanceEvenRow = true;
             this.gridView4.OptionsView.EnableAppearanceOddRow = true;
             this.gridView4.OptionsView.ShowGroupPanel = false;
             this.gridView4.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView4_FocusedRowChanged);
+            this.gridView4.DoubleClick += new System.EventHandler(this.gridView4_DoubleClick);
             // 
             // colDiaTrab1
             // 
@@ -2117,6 +2220,12 @@
             this.colSalario1.VisibleIndex = 7;
             this.colSalario1.Width = 57;
             // 
+            // colCopiaParte1
+            // 
+            this.colCopiaParte1.FieldName = "CopiaParte";
+            this.colCopiaParte1.Name = "colCopiaParte1";
+            this.colCopiaParte1.OptionsColumn.AllowEdit = false;
+            // 
             // productosUtilizadosTableAdapter
             // 
             this.productosUtilizadosTableAdapter.ClearBeforeFill = true;
@@ -2125,236 +2234,15 @@
             // 
             this.productosTableAdapter.ClearBeforeFill = true;
             // 
-            // gridControl1
-            // 
-            this.gridControl1.DataSource = this.productosUtilizadosBindingSource1;
-            this.gridControl1.Location = new System.Drawing.Point(691, 453);
-            this.gridControl1.MainView = this.gridView5;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemLookUpEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(500, 129);
-            this.gridControl1.TabIndex = 116;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView5});
-            // 
             // productosUtilizadosBindingSource1
             // 
             this.productosUtilizadosBindingSource1.DataMember = "ProductosUtilizados";
             this.productosUtilizadosBindingSource1.DataSource = this.promowork_dataDataSet1;
             // 
-            // gridView5
-            // 
-            this.gridView5.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
-            this.gridView5.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
-            this.gridView5.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.Black;
-            this.gridView5.Appearance.ColumnFilterButton.Options.UseBackColor = true;
-            this.gridView5.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
-            this.gridView5.Appearance.ColumnFilterButton.Options.UseForeColor = true;
-            this.gridView5.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
-            this.gridView5.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
-            this.gridView5.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Black;
-            this.gridView5.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
-            this.gridView5.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
-            this.gridView5.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
-            this.gridView5.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(244)))), ((int)(((byte)(232)))));
-            this.gridView5.Appearance.Empty.BackColor2 = System.Drawing.Color.White;
-            this.gridView5.Appearance.Empty.Options.UseBackColor = true;
-            this.gridView5.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(248)))), ((int)(((byte)(236)))));
-            this.gridView5.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
-            this.gridView5.Appearance.EvenRow.Options.UseBackColor = true;
-            this.gridView5.Appearance.EvenRow.Options.UseForeColor = true;
-            this.gridView5.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
-            this.gridView5.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
-            this.gridView5.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.Black;
-            this.gridView5.Appearance.FilterCloseButton.Options.UseBackColor = true;
-            this.gridView5.Appearance.FilterCloseButton.Options.UseBorderColor = true;
-            this.gridView5.Appearance.FilterCloseButton.Options.UseForeColor = true;
-            this.gridView5.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(244)))), ((int)(((byte)(232)))));
-            this.gridView5.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.White;
-            this.gridView5.Appearance.FilterPanel.ForeColor = System.Drawing.Color.Black;
-            this.gridView5.Appearance.FilterPanel.Options.UseBackColor = true;
-            this.gridView5.Appearance.FilterPanel.Options.UseForeColor = true;
-            this.gridView5.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(153)))), ((int)(((byte)(73)))));
-            this.gridView5.Appearance.FixedLine.Options.UseBackColor = true;
-            this.gridView5.Appearance.FocusedCell.BackColor = System.Drawing.Color.White;
-            this.gridView5.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
-            this.gridView5.Appearance.FocusedCell.Options.UseBackColor = true;
-            this.gridView5.Appearance.FocusedCell.Options.UseForeColor = true;
-            this.gridView5.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(154)))), ((int)(((byte)(91)))));
-            this.gridView5.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
-            this.gridView5.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.gridView5.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gridView5.Appearance.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
-            this.gridView5.Appearance.FooterPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
-            this.gridView5.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
-            this.gridView5.Appearance.FooterPanel.Options.UseBackColor = true;
-            this.gridView5.Appearance.FooterPanel.Options.UseBorderColor = true;
-            this.gridView5.Appearance.FooterPanel.Options.UseForeColor = true;
-            this.gridView5.Appearance.GroupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
-            this.gridView5.Appearance.GroupButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
-            this.gridView5.Appearance.GroupButton.Options.UseBackColor = true;
-            this.gridView5.Appearance.GroupButton.Options.UseBorderColor = true;
-            this.gridView5.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
-            this.gridView5.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
-            this.gridView5.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
-            this.gridView5.Appearance.GroupFooter.Options.UseBackColor = true;
-            this.gridView5.Appearance.GroupFooter.Options.UseBorderColor = true;
-            this.gridView5.Appearance.GroupFooter.Options.UseForeColor = true;
-            this.gridView5.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(244)))), ((int)(((byte)(232)))));
-            this.gridView5.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
-            this.gridView5.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
-            this.gridView5.Appearance.GroupPanel.Options.UseBackColor = true;
-            this.gridView5.Appearance.GroupPanel.Options.UseForeColor = true;
-            this.gridView5.Appearance.GroupRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
-            this.gridView5.Appearance.GroupRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
-            this.gridView5.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
-            this.gridView5.Appearance.GroupRow.Options.UseBackColor = true;
-            this.gridView5.Appearance.GroupRow.Options.UseBorderColor = true;
-            this.gridView5.Appearance.GroupRow.Options.UseForeColor = true;
-            this.gridView5.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
-            this.gridView5.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(204)))), ((int)(((byte)(124)))));
-            this.gridView5.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
-            this.gridView5.Appearance.HeaderPanel.Options.UseBackColor = true;
-            this.gridView5.Appearance.HeaderPanel.Options.UseBorderColor = true;
-            this.gridView5.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.gridView5.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(183)))), ((int)(((byte)(125)))));
-            this.gridView5.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(244)))), ((int)(((byte)(232)))));
-            this.gridView5.Appearance.HideSelectionRow.Options.UseBackColor = true;
-            this.gridView5.Appearance.HideSelectionRow.Options.UseForeColor = true;
-            this.gridView5.Appearance.HorzLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
-            this.gridView5.Appearance.HorzLine.Options.UseBackColor = true;
-            this.gridView5.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(236)))), ((int)(((byte)(208)))));
-            this.gridView5.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
-            this.gridView5.Appearance.OddRow.Options.UseBackColor = true;
-            this.gridView5.Appearance.OddRow.Options.UseForeColor = true;
-            this.gridView5.Appearance.Preview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(254)))), ((int)(((byte)(249)))));
-            this.gridView5.Appearance.Preview.Font = new System.Drawing.Font("Verdana", 7.5F);
-            this.gridView5.Appearance.Preview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(146)))), ((int)(((byte)(78)))));
-            this.gridView5.Appearance.Preview.Options.UseBackColor = true;
-            this.gridView5.Appearance.Preview.Options.UseFont = true;
-            this.gridView5.Appearance.Preview.Options.UseForeColor = true;
-            this.gridView5.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(248)))), ((int)(((byte)(236)))));
-            this.gridView5.Appearance.Row.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(248)))), ((int)(((byte)(236)))));
-            this.gridView5.Appearance.Row.ForeColor = System.Drawing.Color.Black;
-            this.gridView5.Appearance.Row.Options.UseBackColor = true;
-            this.gridView5.Appearance.Row.Options.UseBorderColor = true;
-            this.gridView5.Appearance.Row.Options.UseForeColor = true;
-            this.gridView5.Appearance.RowSeparator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(244)))), ((int)(((byte)(232)))));
-            this.gridView5.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
-            this.gridView5.Appearance.RowSeparator.Options.UseBackColor = true;
-            this.gridView5.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(167)))), ((int)(((byte)(103)))));
-            this.gridView5.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridView5.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
-            this.gridView5.Appearance.TopNewRow.Options.UseBackColor = true;
-            this.gridView5.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(177)))), ((int)(((byte)(94)))));
-            this.gridView5.Appearance.VertLine.Options.UseBackColor = true;
-            this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8});
-            this.gridView5.GridControl = this.gridControl1;
-            this.gridView5.Name = "gridView5";
-            this.gridView5.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridView5.OptionsView.EnableAppearanceOddRow = true;
-            this.gridView5.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.FieldName = "IdProdUtiliza";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.OptionsColumn.ReadOnly = true;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.FieldName = "IdHoras";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.FieldName = "IdHorasAdmin";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.AllowEdit = false;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Producto";
-            this.gridColumn4.ColumnEdit = this.repositoryItemLookUpEdit3;
-            this.gridColumn4.FieldName = "IdProducto";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.AllowEdit = false;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 0;
-            this.gridColumn4.Width = 266;
-            // 
-            // repositoryItemLookUpEdit3
-            // 
-            this.repositoryItemLookUpEdit3.AutoHeight = false;
-            this.repositoryItemLookUpEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdit3.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Producto", "Producto", 53, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.repositoryItemLookUpEdit3.DataSource = this.productosBindingSource1;
-            this.repositoryItemLookUpEdit3.DisplayMember = "Producto";
-            this.repositoryItemLookUpEdit3.Name = "repositoryItemLookUpEdit3";
-            this.repositoryItemLookUpEdit3.ValueMember = "IdProducto";
-            // 
             // productosBindingSource1
             // 
             this.productosBindingSource1.DataMember = "Productos";
             this.productosBindingSource1.DataSource = this.promowork_dataDataSet;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.gridColumn5.Caption = "PVP";
-            this.gridColumn5.FieldName = "PVP";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 2;
-            this.gridColumn5.Width = 68;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.gridColumn6.Caption = "Descuento";
-            this.gridColumn6.FieldName = "Descuento";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 3;
-            this.gridColumn6.Width = 68;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.gridColumn7.Caption = "Porciento";
-            this.gridColumn7.FieldName = "Porciento";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 4;
-            this.gridColumn7.Width = 70;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.gridColumn8.Caption = "Cantidad";
-            this.gridColumn8.FieldName = "Cantidad";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.OptionsColumn.AllowEdit = false;
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 1;
-            this.gridColumn8.Width = 68;
             // 
             // importeFacturaHorasTableAdapter
             // 
@@ -2434,15 +2322,219 @@
             this.cuentasBancosBindingSource1.DataMember = "CuentasBancos";
             this.cuentasBancosBindingSource1.DataSource = this.promowork_dataDataSet;
             // 
-            // entregadaCheckBox
+            // descuentosFacturasBindingSource
             // 
-            this.entregadaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.facturasCabBindingSource, "Entregada", true));
-            this.entregadaCheckBox.Location = new System.Drawing.Point(802, 37);
-            this.entregadaCheckBox.Name = "entregadaCheckBox";
-            this.entregadaCheckBox.Size = new System.Drawing.Size(84, 21);
-            this.entregadaCheckBox.TabIndex = 112;
-            this.entregadaCheckBox.Text = "Entregada";
-            this.entregadaCheckBox.UseVisualStyleBackColor = true;
+            this.descuentosFacturasBindingSource.DataMember = "DescuentosFacturas";
+            this.descuentosFacturasBindingSource.DataSource = this.promowork_dataDataSet;
+            // 
+            // descuentosFacturasTableAdapter
+            // 
+            this.descuentosFacturasTableAdapter.ClearBeforeFill = true;
+            // 
+            // descuentosFacturasGridControl
+            // 
+            this.descuentosFacturasGridControl.DataSource = this.descuentosFacturasBindingSource;
+            this.descuentosFacturasGridControl.Location = new System.Drawing.Point(691, 467);
+            this.descuentosFacturasGridControl.MainView = this.gridView5;
+            this.descuentosFacturasGridControl.Name = "descuentosFacturasGridControl";
+            this.descuentosFacturasGridControl.Size = new System.Drawing.Size(500, 74);
+            this.descuentosFacturasGridControl.TabIndex = 124;
+            this.descuentosFacturasGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView5});
+            // 
+            // gridView5
+            // 
+            this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIdDesFactura,
+            this.colIdFactCab1,
+            this.colDesDescuento,
+            this.colImpDescuento});
+            this.gridView5.GridControl = this.descuentosFacturasGridControl;
+            this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsView.ShowGroupPanel = false;
+            // 
+            // colIdDesFactura
+            // 
+            this.colIdDesFactura.FieldName = "IdDesFactura";
+            this.colIdDesFactura.Name = "colIdDesFactura";
+            this.colIdDesFactura.OptionsColumn.ReadOnly = true;
+            // 
+            // colIdFactCab1
+            // 
+            this.colIdFactCab1.FieldName = "IdFactCab";
+            this.colIdFactCab1.Name = "colIdFactCab1";
+            // 
+            // colDesDescuento
+            // 
+            this.colDesDescuento.Caption = "Descuentos";
+            this.colDesDescuento.FieldName = "DesDescuento";
+            this.colDesDescuento.Name = "colDesDescuento";
+            this.colDesDescuento.Visible = true;
+            this.colDesDescuento.VisibleIndex = 0;
+            this.colDesDescuento.Width = 387;
+            // 
+            // colImpDescuento
+            // 
+            this.colImpDescuento.AppearanceHeader.Options.UseTextOptions = true;
+            this.colImpDescuento.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colImpDescuento.Caption = "Importe";
+            this.colImpDescuento.FieldName = "ImpDescuento";
+            this.colImpDescuento.Name = "colImpDescuento";
+            this.colImpDescuento.Visible = true;
+            this.colImpDescuento.VisibleIndex = 1;
+            this.colImpDescuento.Width = 95;
+            // 
+            // bindingNavigator2
+            // 
+            this.bindingNavigator2.AddNewItem = this.toolStripButton14;
+            this.bindingNavigator2.BindingSource = this.descuentosFacturasBindingSource;
+            this.bindingNavigator2.CountItem = this.toolStripLabel2;
+            this.bindingNavigator2.DeleteItem = null;
+            this.bindingNavigator2.Dock = System.Windows.Forms.DockStyle.None;
+            this.bindingNavigator2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton9,
+            this.toolStripButton10,
+            this.toolStripSeparator5,
+            this.toolStripTextBox2,
+            this.toolStripLabel2,
+            this.toolStripSeparator6,
+            this.toolStripButton11,
+            this.toolStripButton12,
+            this.toolStripSeparator8,
+            this.toolStripButton13,
+            this.toolStripButton14,
+            this.toolStripButton15,
+            this.toolStripSeparator9});
+            this.bindingNavigator2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.bindingNavigator2.Location = new System.Drawing.Point(691, 439);
+            this.bindingNavigator2.MoveFirstItem = this.toolStripButton9;
+            this.bindingNavigator2.MoveLastItem = this.toolStripButton12;
+            this.bindingNavigator2.MoveNextItem = this.toolStripButton11;
+            this.bindingNavigator2.MovePreviousItem = this.toolStripButton10;
+            this.bindingNavigator2.Name = "bindingNavigator2";
+            this.bindingNavigator2.PositionItem = this.toolStripTextBox2;
+            this.bindingNavigator2.Size = new System.Drawing.Size(284, 25);
+            this.bindingNavigator2.TabIndex = 113;
+            this.bindingNavigator2.Text = "bindingNavigator1";
+            // 
+            // toolStripButton14
+            // 
+            this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton14.Image")));
+            this.toolStripButton14.Name = "toolStripButton14";
+            this.toolStripButton14.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton14.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton14.Text = "Add new";
+            this.toolStripButton14.Click += new System.EventHandler(this.toolStripButton14_Click);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(35, 22);
+            this.toolStripLabel2.Text = "of {0}";
+            this.toolStripLabel2.ToolTipText = "Total number of items";
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton9.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton9.Text = "Move first";
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton10.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton10.Text = "Move previous";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripTextBox2
+            // 
+            this.toolStripTextBox2.AccessibleName = "Position";
+            this.toolStripTextBox2.AutoSize = false;
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.Size = new System.Drawing.Size(50, 23);
+            this.toolStripTextBox2.Text = "0";
+            this.toolStripTextBox2.ToolTipText = "Current position";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton11
+            // 
+            this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
+            this.toolStripButton11.Name = "toolStripButton11";
+            this.toolStripButton11.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton11.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton11.Text = "Move next";
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton12.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton12.Text = "Move last";
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton13
+            // 
+            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
+            this.toolStripButton13.Name = "toolStripButton13";
+            this.toolStripButton13.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton13.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton13.Text = "Delete";
+            this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
+            // 
+            // toolStripButton15
+            // 
+            this.toolStripButton15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton15.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton15.Image")));
+            this.toolStripButton15.Name = "toolStripButton15";
+            this.toolStripButton15.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton15.Text = "Save Data";
+            this.toolStripButton15.Click += new System.EventHandler(this.toolStripButton15_Click);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 25);
+            // 
+            // anosFacturasTableAdapter
+            // 
+            this.anosFacturasTableAdapter.ClearBeforeFill = true;
+            // 
+            // obsFactura2TextBox
+            // 
+            this.obsFactura2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.facturasCabBindingSource, "ObsFactura2", true));
+            this.obsFactura2TextBox.Location = new System.Drawing.Point(754, 547);
+            this.obsFactura2TextBox.Multiline = true;
+            this.obsFactura2TextBox.Name = "obsFactura2TextBox";
+            this.obsFactura2TextBox.Size = new System.Drawing.Size(437, 35);
+            this.obsFactura2TextBox.TabIndex = 125;
+            // 
+            // clientesBindingSource2
+            // 
+            this.clientesBindingSource2.DataMember = "Clientes";
+            this.clientesBindingSource2.DataSource = this.promowork_dataDataSet;
             // 
             // NumFactura
             // 
@@ -2473,7 +2565,22 @@
             this.Obra.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Obra.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Obra.ValueMember = "IdObra";
-            this.Obra.Width = 200;
+            this.Obra.Width = 150;
+            // 
+            // IdCliente
+            // 
+            this.IdCliente.DataPropertyName = "IdCliente";
+            this.IdCliente.DataSource = this.clientesBindingSource2;
+            this.IdCliente.DisplayMember = "DesCliente";
+            this.IdCliente.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.IdCliente.DisplayStyleForCurrentCellOnly = true;
+            this.IdCliente.HeaderText = "Cliente";
+            this.IdCliente.Name = "IdCliente";
+            this.IdCliente.ReadOnly = true;
+            this.IdCliente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.IdCliente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.IdCliente.ValueMember = "IdCliente";
+            this.IdCliente.Width = 150;
             // 
             // Importe
             // 
@@ -2485,14 +2592,6 @@
             this.Importe.Name = "Importe";
             this.Importe.ReadOnly = true;
             this.Importe.Width = 65;
-            // 
-            // Factura
-            // 
-            this.Factura.DataPropertyName = "Factura";
-            this.Factura.HeaderText = "Fra";
-            this.Factura.Name = "Factura";
-            this.Factura.ReadOnly = true;
-            this.Factura.Width = 30;
             // 
             // Cobrada
             // 
@@ -2518,6 +2617,15 @@
             this.IdFactCab.ReadOnly = true;
             this.IdFactCab.Visible = false;
             // 
+            // Factura
+            // 
+            this.Factura.DataPropertyName = "Factura";
+            this.Factura.HeaderText = "Fra";
+            this.Factura.Name = "Factura";
+            this.Factura.ReadOnly = true;
+            this.Factura.Visible = false;
+            this.Factura.Width = 30;
+            // 
             // FacturaPresup
             // 
             this.FacturaPresup.DataPropertyName = "FacturaPresup";
@@ -2525,6 +2633,7 @@
             this.FacturaPresup.Name = "FacturaPresup";
             this.FacturaPresup.ReadOnly = true;
             this.FacturaPresup.Visible = false;
+            this.FacturaPresup.Width = 20;
             // 
             // IdCuenta
             // 
@@ -2539,7 +2648,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1206, 602);
+            this.ClientSize = new System.Drawing.Size(1214, 602);
+            this.Controls.Add(obsFactura2Label);
+            this.Controls.Add(this.obsFactura2TextBox);
+            this.Controls.Add(this.bindingNavigator2);
+            this.Controls.Add(this.descuentosFacturasGridControl);
             this.Controls.Add(label3);
             this.Controls.Add(fechaExpLabel);
             this.Controls.Add(this.comboBox2);
@@ -2550,7 +2663,6 @@
             this.Controls.Add(this.impBaseTextBox);
             this.Controls.Add(desFormaPagoLabel);
             this.Controls.Add(this.desFormaPagoComboBox);
-            this.Controls.Add(this.gridControl1);
             this.Controls.Add(label2);
             this.Controls.Add(this.vHorasTrabajadasGridControl);
             this.Controls.Add(this.vProductosUtilizadosGridControl);
@@ -2562,6 +2674,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facturación Parte de Trabajadores";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FacturasHorasMateriales_FormClosing);
             this.Load += new System.EventHandler(this.FacturasPresup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturasCabBindingNavigator)).EndInit();
@@ -2577,6 +2690,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cuentasBancosBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.anosFacturasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.noDetalleCheckEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.obsFacturaTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.importeFacturaHorasBindingSource)).EndInit();
@@ -2597,14 +2712,18 @@
             this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vHorasTrabajadasGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosUtilizadosBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formasPagoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cobrosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuentasBancosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descuentosFacturasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descuentosFacturasGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
+            this.bindingNavigator2.ResumeLayout(false);
+            this.bindingNavigator2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2758,17 +2877,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCantidad2;
         private Promowork_dataDataSetTableAdapters.ProductosUtilizadosTableAdapter productosUtilizadosTableAdapter;
         private Promowork_dataDataSetTableAdapters.ProductosTableAdapter productosTableAdapter;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private System.Windows.Forms.BindingSource productosBindingSource1;
         private Promowork_dataDataSet promowork_dataDataSet1;
         private System.Windows.Forms.BindingSource productosUtilizadosBindingSource1;
@@ -2789,14 +2897,46 @@
         private System.Windows.Forms.BindingSource cuentasBancosBindingSource1;
         private System.Windows.Forms.CheckBox facturaCheckBox;
         private System.Windows.Forms.CheckBox entregadaCheckBox;
+        private System.Windows.Forms.BindingSource descuentosFacturasBindingSource;
+        private Promowork_dataDataSetTableAdapters.DescuentosFacturasTableAdapter descuentosFacturasTableAdapter;
+        private DevExpress.XtraGrid.GridControl descuentosFacturasGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdDesFactura;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdFactCab1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDesDescuento;
+        private DevExpress.XtraGrid.Columns.GridColumn colImpDescuento;
+        private System.Windows.Forms.BindingNavigator bindingNavigator2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripButton toolStripButton9;
+        private System.Windows.Forms.ToolStripButton toolStripButton10;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripButton toolStripButton11;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.ToolStripButton toolStripButton14;
+        private System.Windows.Forms.ToolStripButton toolStripButton15;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private DevExpress.XtraEditors.CheckEdit noDetalleCheckEdit;
+        private System.Windows.Forms.BindingSource anosFacturasBindingSource;
+        private Promowork_dataDataSetTableAdapters.AnosFacturasTableAdapter anosFacturasTableAdapter;
+        private System.Windows.Forms.ComboBox cbxfacturas;
+        private System.Windows.Forms.ComboBox cbxanos;
+        private DevExpress.XtraGrid.Columns.GridColumn colCopiaParte;
+        private DevExpress.XtraGrid.Columns.GridColumn colCopiaParte1;
+        private System.Windows.Forms.TextBox obsFactura2TextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewComboBoxColumn Obra;
+        private System.Windows.Forms.DataGridViewComboBoxColumn IdCliente;
+        private System.Windows.Forms.BindingSource clientesBindingSource2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Factura;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Cobrada;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Entregada;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdFactCab;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Factura;
         private System.Windows.Forms.DataGridViewCheckBoxColumn FacturaPresup;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCuenta;
     }

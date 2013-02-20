@@ -270,5 +270,13 @@ namespace Promowork
         {
             proveedoresBindingSource.Filter = "IdProveedor="+Convert.ToString(nIdProveedor);
         }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma que desea Eliminar?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.proveedoresBindingSource.RemoveCurrent();
+            }
+        }
     }
 }

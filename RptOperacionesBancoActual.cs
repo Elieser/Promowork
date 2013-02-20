@@ -19,6 +19,7 @@ namespace Promowork
 
         internal void LoadFiltro(int Cuenta, DateTime FechaIni, DateTime FechaFin, Boolean MostrarFechaFin)
         {
+            this.WindowState = FormWindowState.Maximized;
             // TODO: This line of code loads data into the 'Promowork_dataDataSet.vOperacionesBancoImp' table. You can move, or remove it, as needed.
             this.vOperacionesBancoImpTableAdapter.FillByCuentaFecha(this.Promowork_dataDataSet.vOperacionesBancoImp,Cuenta, FechaIni,FechaFin);
             this.empresasActualTableAdapter.FillByEmpresa(Promowork_dataDataSet.EmpresasActual, VariablesGlobales.nIdEmpresaActual);

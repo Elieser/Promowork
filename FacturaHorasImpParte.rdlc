@@ -332,6 +332,10 @@
           <DataField>NumSerie</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="NoDetalle">
+          <DataField>NoDetalle</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>Promowork_dataDataSet</DataSourceName>
@@ -353,7 +357,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.30717in</Width>
+              <Width>1.30327in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -409,11 +413,12 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Sum(Fields!ImpHoras.Value)+Sum(Fields!ImpMateriales.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
-                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>#,0.00'€';(#,0.00'€');''</Format>
+                                <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -423,6 +428,9 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox239</rd:DefaultName>
+                      <Visibility>
+                        <Hidden>=First(Fields!NoDetalle.Value, "DataSet3")&lt;&gt;True</Hidden>
+                      </Visibility>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -430,7 +438,6 @@
                         <TopBorder>
                           <Width>2pt</Width>
                         </TopBorder>
-                        <VerticalAlign>Bottom</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -541,7 +548,7 @@
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>9pt</FontSize>
-                                <Format>#,0.00'€';(#,0.00'€');''</Format>
+                                <Format>#,0.00'€';(#,0.00'€')</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -608,7 +615,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.13205in</Height>
+              <Height>0.12164in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -647,6 +654,90 @@
                 </TablixCell>
               </TablixCells>
             </TablixRow>
+            <TablixRow>
+              <Height>0.23622in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox37">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                <FontSize>9pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox37</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>#bfbfbf</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.23622in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="ImpHoras1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!ImpHoras.Value)</Value>
+                              <Style>
+                                <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>0.00'€';-0.00'€';''</Format>
+                                <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>ImpHoras1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
@@ -658,7 +749,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>0.84263in</Size>
+                <Size>0.83873in</Size>
                 <CellContents>
                   <Textbox Name="Textbox241">
                     <CanGrow>true</CanGrow>
@@ -696,7 +787,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>4.33383in</Size>
+                    <Size>4.32993in</Size>
                     <CellContents>
                       <Textbox Name="Textbox9">
                         <CanGrow>true</CanGrow>
@@ -722,7 +813,7 @@
                           <Border>
                             <Style>None</Style>
                           </Border>
-                          <BackgroundColor>#808080</BackgroundColor>
+                          <BackgroundColor>Gray</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -734,7 +825,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>0.88925in</Size>
+                        <Size>0.88535in</Size>
                         <CellContents>
                           <Textbox Name="Textbox31">
                             <CanGrow>true</CanGrow>
@@ -778,90 +869,33 @@
               </TablixMembers>
             </TablixMember>
             <TablixMember>
-              <TablixHeader>
-                <Size>0.84263in</Size>
-                <CellContents>
-                  <Textbox Name="Textbox6">
-                    <CanGrow>true</CanGrow>
-                    <KeepTogether>true</KeepTogether>
-                    <Paragraphs>
-                      <Paragraph>
-                        <TextRuns>
-                          <TextRun>
-                            <Value />
-                            <Style>
-                              <FontFamily>Franklin Gothic Medium Cond</FontFamily>
-                              <FontSize>8pt</FontSize>
-                              <FontWeight>Bold</FontWeight>
-                            </Style>
-                          </TextRun>
-                        </TextRuns>
-                        <Style>
-                          <TextAlign>Center</TextAlign>
-                        </Style>
-                      </Paragraph>
-                    </Paragraphs>
-                    <rd:DefaultName>Textbox6</rd:DefaultName>
-                    <Style>
-                      <Border>
-                        <Style>None</Style>
-                        <Width>2pt</Width>
-                      </Border>
-                      <LeftBorder>
-                        <Width>1pt</Width>
-                      </LeftBorder>
-                      <PaddingLeft>2pt</PaddingLeft>
-                      <PaddingRight>2pt</PaddingRight>
-                      <PaddingTop>2pt</PaddingTop>
-                      <PaddingBottom>2pt</PaddingBottom>
-                    </Style>
-                  </Textbox>
-                </CellContents>
-              </TablixHeader>
               <TablixMembers>
                 <TablixMember>
-                  <TablixHeader>
-                    <Size>4.33383in</Size>
-                    <CellContents>
-                      <Textbox Name="Textbox234">
-                        <CanGrow>true</CanGrow>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value>=First(Fields!ObsFactura.Value, "DataSet3")</Value>
-                                <Style>
-                                  <FontFamily>Franklin Gothic Medium Cond</FontFamily>
-                                </Style>
-                              </TextRun>
-                            </TextRuns>
-                            <Style />
-                          </Paragraph>
-                        </Paragraphs>
-                        <rd:DefaultName>Textbox234</rd:DefaultName>
-                        <Style>
-                          <Border>
-                            <Style>None</Style>
-                            <Width>2pt</Width>
-                          </Border>
-                          <LeftBorder>
-                            <Width>1pt</Width>
-                          </LeftBorder>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                    </CellContents>
-                  </TablixHeader>
+                  <Group Name="Observ">
+                    <GroupExpressions>
+                      <GroupExpression>=iif(Fields!IdTrabajador.Value=-1,0,1)</GroupExpression>
+                    </GroupExpressions>
+                    <Filters>
+                      <Filter>
+                        <FilterExpression>=Fields!IdTrabajador.Value</FilterExpression>
+                        <Operator>NotEqual</Operator>
+                        <FilterValues>
+                          <FilterValue DataType="Integer">-1</FilterValue>
+                        </FilterValues>
+                      </Filter>
+                    </Filters>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!IdFactCab.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>0.88925in</Size>
+                        <Size>0.83873in</Size>
                         <CellContents>
-                          <Textbox Name="Textbox33">
+                          <Textbox Name="Textbox54">
                             <CanGrow>true</CanGrow>
                             <KeepTogether>true</KeepTogether>
                             <Paragraphs>
@@ -871,19 +905,23 @@
                                     <Value />
                                     <Style>
                                       <FontFamily>Franklin Gothic Medium Cond</FontFamily>
-                                      <FontSize>8pt</FontSize>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
-                                <Style />
+                                <Style>
+                                  <TextAlign>Center</TextAlign>
+                                </Style>
                               </Paragraph>
                             </Paragraphs>
-                            <rd:DefaultName>Textbox33</rd:DefaultName>
+                            <rd:DefaultName>Textbox54</rd:DefaultName>
                             <Style>
                               <Border>
                                 <Style>None</Style>
                                 <Width>2pt</Width>
                               </Border>
+                              <TopBorder>
+                                <Width>1pt</Width>
+                              </TopBorder>
                               <LeftBorder>
                                 <Width>1pt</Width>
                               </LeftBorder>
@@ -895,6 +933,96 @@
                           </Textbox>
                         </CellContents>
                       </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember>
+                          <TablixHeader>
+                            <Size>4.32993in</Size>
+                            <CellContents>
+                              <Textbox Name="Textbox234">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value>=First(Fields!ObsFactura.Value, "DataSet3")</Value>
+                                        <Style>
+                                          <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                          <FontWeight>Bold</FontWeight>
+                                        </Style>
+                                      </TextRun>
+                                      <TextRun>
+                                        <Value xml:space="preserve">                        </Value>
+                                        <Style>
+                                          <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style />
+                                  </Paragraph>
+                                </Paragraphs>
+                                <rd:DefaultName>Textbox234</rd:DefaultName>
+                                <Style>
+                                  <Border>
+                                    <Style>None</Style>
+                                    <Width>2pt</Width>
+                                  </Border>
+                                  <LeftBorder>
+                                    <Width>1pt</Width>
+                                  </LeftBorder>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
+                          <TablixMembers>
+                            <TablixMember>
+                              <TablixHeader>
+                                <Size>0.88535in</Size>
+                                <CellContents>
+                                  <Textbox Name="ImpHoras3">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value />
+                                            <Style>
+                                              <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style />
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>ImpHoras3</rd:DefaultName>
+                                    <Style>
+                                      <Border>
+                                        <Style>None</Style>
+                                        <Width>2pt</Width>
+                                      </Border>
+                                      <TopBorder>
+                                        <Width>1pt</Width>
+                                      </TopBorder>
+                                      <LeftBorder>
+                                        <Width>1pt</Width>
+                                      </LeftBorder>
+                                      <PaddingLeft>2pt</PaddingLeft>
+                                      <PaddingRight>2pt</PaddingRight>
+                                      <PaddingTop>2pt</PaddingTop>
+                                      <PaddingBottom>2pt</PaddingBottom>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixHeader>
+                            </TablixMember>
+                          </TablixMembers>
+                        </TablixMember>
+                      </TablixMembers>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
@@ -914,7 +1042,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>0.84263in</Size>
+                    <Size>0.83873in</Size>
                     <CellContents>
                       <Textbox Name="Textbox243">
                         <CanGrow>true</CanGrow>
@@ -958,7 +1086,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>4.33383in</Size>
+                        <Size>4.32993in</Size>
                         <CellContents>
                           <Textbox Name="DirTrabajo">
                             <CanGrow>true</CanGrow>
@@ -1000,7 +1128,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>0.88925in</Size>
+                            <Size>0.88535in</Size>
                             <CellContents>
                               <Textbox Name="Textbox35">
                                 <CanGrow>true</CanGrow>
@@ -1048,11 +1176,20 @@
                   </Visibility>
                 </TablixMember>
                 <TablixMember>
-                  <Group Name="DesTRabajo">
+                  <Group Name="DesTrabajo">
                     <GroupExpressions>
                       <GroupExpression>=Fields!Fecha.Value</GroupExpression>
                       <GroupExpression>=Fields!DesTrabajo.Value</GroupExpression>
                     </GroupExpressions>
+                    <Filters>
+                      <Filter>
+                        <FilterExpression>=Fields!IdTrabajador.Value</FilterExpression>
+                        <Operator>NotEqual</Operator>
+                        <FilterValues>
+                          <FilterValue DataType="Integer">-1</FilterValue>
+                        </FilterValues>
+                      </Filter>
+                    </Filters>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
@@ -1062,7 +1199,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>0.84263in</Size>
+                        <Size>0.83873in</Size>
                         <CellContents>
                           <Textbox Name="Fecha">
                             <CanGrow>true</CanGrow>
@@ -1108,7 +1245,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>4.33383in</Size>
+                            <Size>4.32993in</Size>
                             <CellContents>
                               <Textbox Name="DesTrabajo">
                                 <CanGrow>true</CanGrow>
@@ -1151,7 +1288,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>0.88925in</Size>
+                                <Size>0.88535in</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox45">
                                     <CanGrow>true</CanGrow>
@@ -1221,7 +1358,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>0.84263in</Size>
+                            <Size>0.83873in</Size>
                             <CellContents>
                               <Textbox Name="CantHoras1">
                                 <CanGrow>true</CanGrow>
@@ -1260,7 +1397,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>4.33383in</Size>
+                                <Size>4.32993in</Size>
                                 <CellContents>
                                   <Textbox Name="DesTipo">
                                     <CanGrow>true</CanGrow>
@@ -1316,7 +1453,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>0.88925in</Size>
+                                    <Size>0.88535in</Size>
                                     <CellContents>
                                       <Textbox Name="ImpHoras2">
                                         <CanGrow>true</CanGrow>
@@ -1329,6 +1466,7 @@
                                                 <Style>
                                                   <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                                   <FontSize>9pt</FontSize>
+                                                  <Format>#,0.00'€';(#,0.00'€')</Format>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -1381,7 +1519,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>0.84263in</Size>
+                            <Size>0.83873in</Size>
                             <CellContents>
                               <Textbox Name="CantMateriales">
                                 <CanGrow>true</CanGrow>
@@ -1420,7 +1558,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>4.33383in</Size>
+                                <Size>4.32993in</Size>
                                 <CellContents>
                                   <Textbox Name="CodProducto">
                                     <CanGrow>true</CanGrow>
@@ -1462,7 +1600,7 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>0.88925in</Size>
+                                    <Size>0.88535in</Size>
                                     <CellContents>
                                       <Textbox Name="ImpMateriales2">
                                         <CanGrow>true</CanGrow>
@@ -1475,6 +1613,7 @@
                                                 <Style>
                                                   <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                                   <FontSize>9pt</FontSize>
+                                                  <Format>#,0.00'€';(#,0.00'€');''</Format>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
@@ -1506,7 +1645,7 @@
                     </TablixMember>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>0.84263in</Size>
+                        <Size>0.83873in</Size>
                         <CellContents>
                           <Textbox Name="Textbox1">
                             <CanGrow>true</CanGrow>
@@ -1545,7 +1684,7 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>4.33383in</Size>
+                            <Size>4.32993in</Size>
                             <CellContents>
                               <Textbox Name="Textbox2">
                                 <CanGrow>true</CanGrow>
@@ -1587,7 +1726,7 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>0.88925in</Size>
+                                <Size>0.88535in</Size>
                                 <CellContents>
                                   <Textbox Name="Textbox3">
                                     <CanGrow>true</CanGrow>
@@ -1631,13 +1770,283 @@
                   </TablixMembers>
                 </TablixMember>
               </TablixMembers>
+              <Visibility>
+                <Hidden>=First(Fields!NoDetalle.Value, "DataSet3")=True</Hidden>
+              </Visibility>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>0.83873in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox48">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
+                            <Style>
+                              <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                              <FontWeight>Normal</FontWeight>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Left</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox48</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <BackgroundColor>#bfbfbf</BackgroundColor>
+                      <VerticalAlign>Bottom</VerticalAlign>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <TablixMembers>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>4.32993in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox18">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Descuentos</Value>
+                                <Style>
+                                  <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                  <FontWeight>Normal</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Left</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox18</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <BackgroundColor>#bfbfbf</BackgroundColor>
+                          <VerticalAlign>Bottom</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>0.88535in</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox62">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value />
+                                    <Style>
+                                      <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                      <FontSize>9pt</FontSize>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Right</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Textbox62</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Style>None</Style>
+                              </Border>
+                              <BackgroundColor>#bfbfbf</BackgroundColor>
+                              <VerticalAlign>Bottom</VerticalAlign>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
+              <Visibility>
+                <Hidden>=Min(Fields!IdTrabajador.Value)&lt;&gt;-1</Hidden>
+              </Visibility>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Descuentos">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!DesTrabajo.Value</GroupExpression>
+                </GroupExpressions>
+                <Filters>
+                  <Filter>
+                    <FilterExpression>=Fields!IdTrabajador.Value</FilterExpression>
+                    <Operator>Equal</Operator>
+                    <FilterValues>
+                      <FilterValue DataType="Integer">-1</FilterValue>
+                    </FilterValues>
+                  </Filter>
+                </Filters>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!DesTrabajo.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixMembers>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.83873in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox50">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value />
+                                <Style>
+                                  <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                  <FontSize>9pt</FontSize>
+                                  <FontWeight>Normal</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Left</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox50</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <VerticalAlign>Bottom</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>4.32993in</Size>
+                        <CellContents>
+                          <Textbox Name="DesTrabajo1">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!DesTrabajo.Value</Value>
+                                    <Style>
+                                      <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                      <FontSize>9pt</FontSize>
+                                      <FontWeight>Normal</FontWeight>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Left</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>DesTrabajo1</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Style>None</Style>
+                              </Border>
+                              <VerticalAlign>Bottom</VerticalAlign>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember>
+                          <TablixHeader>
+                            <Size>0.88535in</Size>
+                            <CellContents>
+                              <Textbox Name="IdTrabajador">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value />
+                                        <Style>
+                                          <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                          <FontSize>9pt</FontSize>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style>
+                                      <TextAlign>Right</TextAlign>
+                                    </Style>
+                                  </Paragraph>
+                                </Paragraphs>
+                                <rd:DefaultName>IdTrabajador</rd:DefaultName>
+                                <Style>
+                                  <Border>
+                                    <Style>None</Style>
+                                  </Border>
+                                  <VerticalAlign>Bottom</VerticalAlign>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
+                        </TablixMember>
+                      </TablixMembers>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Left>0.00001cm</Left>
-        <Height>3.8354cm</Height>
-        <Width>18.72711cm</Width>
+        <Left>0.03967cm</Left>
+        <Height>5.00896cm</Height>
+        <Width>18.68749cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1645,10 +2054,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.59857in</Height>
+    <Height>1.97203in</Height>
     <Style />
   </Body>
-  <Width>7.37288in</Width>
+  <Width>7.3729in</Width>
   <Page>
     <PageHeader>
       <Height>5.50543cm</Height>
@@ -1764,22 +2173,6 @@
         <Textbox Name="NumCliente3">
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Obra: </Value>
-                  <Style />
-                </TextRun>
-                <TextRun>
-                  <Value>=First(Fields!DesObra.Value, "DataSet3")</Value>
-                  <Style>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <SpaceAfter>3pt</SpaceAfter>
-              <Style />
-            </Paragraph>
             <Paragraph>
               <TextRuns>
                 <TextRun>

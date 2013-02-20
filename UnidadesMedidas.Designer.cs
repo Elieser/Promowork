@@ -50,6 +50,7 @@
             this.CodUmedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DesUmedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActivaUM = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.idUmedidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSetCombustible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.combustiblesTiposDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uMedidasBindingSource)).BeginInit();
@@ -69,7 +70,8 @@
             this.combustiblesTiposDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodUmedida,
             this.DesUmedida,
-            this.ActivaUM});
+            this.ActivaUM,
+            this.idUmedidaDataGridViewTextBoxColumn});
             this.combustiblesTiposDataGridView.DataSource = this.uMedidasBindingSource;
             this.combustiblesTiposDataGridView.Location = new System.Drawing.Point(12, 28);
             this.combustiblesTiposDataGridView.Name = "combustiblesTiposDataGridView";
@@ -162,6 +164,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -187,7 +190,7 @@
             this.combustiblesTiposBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.combustiblesTiposBindingNavigator.BindingSource = this.uMedidasBindingSource;
             this.combustiblesTiposBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.combustiblesTiposBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.combustiblesTiposBindingNavigator.DeleteItem = null;
             this.combustiblesTiposBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -235,6 +238,14 @@
             this.ActivaUM.Name = "ActivaUM";
             this.ActivaUM.Width = 59;
             // 
+            // idUmedidaDataGridViewTextBoxColumn
+            // 
+            this.idUmedidaDataGridViewTextBoxColumn.DataPropertyName = "IdUmedida";
+            this.idUmedidaDataGridViewTextBoxColumn.HeaderText = "IdUmedida";
+            this.idUmedidaDataGridViewTextBoxColumn.Name = "idUmedidaDataGridViewTextBoxColumn";
+            this.idUmedidaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idUmedidaDataGridViewTextBoxColumn.Visible = false;
+            // 
             // UnidadesMedidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,5 +292,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CodUmedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn DesUmedida;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ActivaUM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUmedidaDataGridViewTextBoxColumn;
     }
 }

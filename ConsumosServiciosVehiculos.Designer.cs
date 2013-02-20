@@ -51,21 +51,21 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.consumosVehiculosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.consumosVehiculosDataGridView = new System.Windows.Forms.DataGridView();
-            this.vehiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tiposServiciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.trabajadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vehiculosTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.VehiculosTableAdapter();
-            this.tiposServiciosTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.TiposServiciosTableAdapter();
-            this.trabajadoresTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.TrabajadoresTableAdapter();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.vehiculosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tiposServiciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.trabajadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.IdEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Combustible = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.vehiculosTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.VehiculosTableAdapter();
+            this.tiposServiciosTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.TiposServiciosTableAdapter();
+            this.trabajadoresTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.TrabajadoresTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSetCombustible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.consumosVehiculosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.consumosVehiculosBindingNavigator)).BeginInit();
@@ -111,7 +111,7 @@
             this.consumosVehiculosBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.consumosVehiculosBindingNavigator.BindingSource = this.consumosVehiculosBindingSource;
             this.consumosVehiculosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.consumosVehiculosBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.consumosVehiculosBindingNavigator.DeleteItem = null;
             this.consumosVehiculosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -161,6 +161,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -253,33 +254,6 @@
             this.consumosVehiculosDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.consumosVehiculosDataGridView_DataError);
             this.consumosVehiculosDataGridView.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.consumosVehiculosDataGridView_UserAddedRow);
             // 
-            // vehiculosBindingSource
-            // 
-            this.vehiculosBindingSource.DataMember = "Vehiculos";
-            this.vehiculosBindingSource.DataSource = this.promowork_dataDataSetCombustible;
-            // 
-            // tiposServiciosBindingSource
-            // 
-            this.tiposServiciosBindingSource.DataMember = "TiposServicios";
-            this.tiposServiciosBindingSource.DataSource = this.promowork_dataDataSetCombustible;
-            // 
-            // trabajadoresBindingSource
-            // 
-            this.trabajadoresBindingSource.DataMember = "Trabajadores";
-            this.trabajadoresBindingSource.DataSource = this.promowork_dataDataSetCombustible;
-            // 
-            // vehiculosTableAdapter
-            // 
-            this.vehiculosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tiposServiciosTableAdapter
-            // 
-            this.tiposServiciosTableAdapter.ClearBeforeFill = true;
-            // 
-            // trabajadoresTableAdapter
-            // 
-            this.trabajadoresTableAdapter.ClearBeforeFill = true;
-            // 
             // Fecha
             // 
             this.Fecha.DataPropertyName = "FechaServicio";
@@ -303,6 +277,11 @@
             this.dataGridViewTextBoxColumn3.ValueMember = "IdVehiculo";
             this.dataGridViewTextBoxColumn3.Width = 250;
             // 
+            // vehiculosBindingSource
+            // 
+            this.vehiculosBindingSource.DataMember = "Vehiculos";
+            this.vehiculosBindingSource.DataSource = this.promowork_dataDataSetCombustible;
+            // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "KMVehiculo";
@@ -325,6 +304,11 @@
             this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn7.ValueMember = "IdServicio";
             this.dataGridViewTextBoxColumn7.Width = 250;
+            // 
+            // tiposServiciosBindingSource
+            // 
+            this.tiposServiciosBindingSource.DataMember = "TiposServicios";
+            this.tiposServiciosBindingSource.DataSource = this.promowork_dataDataSetCombustible;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -355,6 +339,11 @@
             this.dataGridViewTextBoxColumn6.ValueMember = "IdTrabajador";
             this.dataGridViewTextBoxColumn6.Width = 200;
             // 
+            // trabajadoresBindingSource
+            // 
+            this.trabajadoresBindingSource.DataMember = "Trabajadores";
+            this.trabajadoresBindingSource.DataSource = this.promowork_dataDataSetCombustible;
+            // 
             // IdEmpresa
             // 
             this.IdEmpresa.DataPropertyName = "IdEmpresa";
@@ -368,6 +357,18 @@
             this.Combustible.HeaderText = "Combustible";
             this.Combustible.Name = "Combustible";
             this.Combustible.Visible = false;
+            // 
+            // vehiculosTableAdapter
+            // 
+            this.vehiculosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tiposServiciosTableAdapter
+            // 
+            this.tiposServiciosTableAdapter.ClearBeforeFill = true;
+            // 
+            // trabajadoresTableAdapter
+            // 
+            this.trabajadoresTableAdapter.ClearBeforeFill = true;
             // 
             // ConsumosServiciosVehiculos
             // 

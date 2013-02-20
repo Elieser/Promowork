@@ -35,17 +35,17 @@
             this.participantesTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.ParticipantesTableAdapter();
             this.tableAdapterManager = new Promowork.Promowork_dataDataSetTableAdapters.TableAdapterManager();
             this.participantesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.participantesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.participantesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,27 +73,67 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccesosEmpresasTableAdapter = null;
+            this.tableAdapterManager.AdjuntosObrasTableAdapter = null;
+            this.tableAdapterManager.AnticiposTableAdapter = null;
+            this.tableAdapterManager.AnticiposTrabajadoresTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BajasMedicaTableAdapter = null;
+            this.tableAdapterManager.BancosTableAdapter = null;
             this.tableAdapterManager.CategoriasTableAdapter = null;
             this.tableAdapterManager.ClientesTableAdapter = null;
+            this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
+            this.tableAdapterManager.CopiasHorasTableAdapter = null;
             this.tableAdapterManager.CrucesTrabajadoresTableAdapter = null;
+            this.tableAdapterManager.CuentasTableAdapter = null;
             this.tableAdapterManager.CursosTableAdapter = null;
             this.tableAdapterManager.CursosTrabajadoresTableAdapter = null;
             this.tableAdapterManager.EmpresasActualTableAdapter = null;
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
+            this.tableAdapterManager.FacturasCabTableAdapter = null;
+            this.tableAdapterManager.FacturasDetHorasTableAdapter = null;
+            this.tableAdapterManager.FacturasDetTableAdapter = null;
             this.tableAdapterManager.FestivosEmpresasTableAdapter = null;
             this.tableAdapterManager.FestivosObrasTableAdapter = null;
             this.tableAdapterManager.FormasPagoTableAdapter = null;
             this.tableAdapterManager.HijosTrabajadoresTableAdapter = null;
+            this.tableAdapterManager.HorasAdminTableAdapter = null;
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
+            this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
+            this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = this.participantesTableAdapter;
             this.tableAdapterManager.PartObrasTableAdapter = null;
             this.tableAdapterManager.PartPresupTableAdapter = null;
+            this.tableAdapterManager.Poblaciones1TableAdapter = null;
+            this.tableAdapterManager.PoblacionesProvincias1TableAdapter = null;
+            this.tableAdapterManager.PoblacionesProvinciasTableAdapter = null;
+            this.tableAdapterManager.PoblacionesTableAdapter = null;
+            this.tableAdapterManager.PresupCabTableAdapter = null;
+            this.tableAdapterManager.PresupCapTableAdapter = null;
+            this.tableAdapterManager.PresupDetTableAdapter = null;
+            this.tableAdapterManager.PresupSubTableAdapter = null;
+            this.tableAdapterManager.ProductosTableAdapter = null;
+            this.tableAdapterManager.ProductosUtilizadosTableAdapter = null;
+            this.tableAdapterManager.ProveedoresTableAdapter = null;
+            this.tableAdapterManager.Provincias1TableAdapter = null;
+            this.tableAdapterManager.ProvinciasTableAdapter = null;
+            this.tableAdapterManager.PuestosTrabajoTableAdapter = null;
+            this.tableAdapterManager.SalariosTiposTableAdapter = null;
+            this.tableAdapterManager.SalariosVentaAdminTableAdapter = null;
+            this.tableAdapterManager.SalariosVentaTableAdapter = null;
+            this.tableAdapterManager.SeguridadSocialTableAdapter = null;
+            this.tableAdapterManager.TiposTableAdapter = null;
+            this.tableAdapterManager.TrabajadoresListaTableAdapter = null;
+            this.tableAdapterManager.TrabajadoresTableAdapter = null;
+            this.tableAdapterManager.UMedidasTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Promowork.Promowork_dataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = null;
             // 
             // participantesBindingNavigator
@@ -101,7 +141,7 @@
             this.participantesBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.participantesBindingNavigator.BindingSource = this.participantesBindingSource;
             this.participantesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.participantesBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.participantesBindingNavigator.DeleteItem = null;
             this.participantesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -112,8 +152,8 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
+            this.bindingNavigatorAddNewItem,
             this.participantesBindingNavigatorSaveItem});
             this.participantesBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.participantesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -125,6 +165,32 @@
             this.participantesBindingNavigator.Size = new System.Drawing.Size(317, 25);
             this.participantesBindingNavigator.TabIndex = 0;
             this.participantesBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -158,17 +224,10 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -176,7 +235,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -185,38 +244,20 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // participantesBindingNavigatorSaveItem
             // 
             this.participantesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.participantesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("participantesBindingNavigatorSaveItem.Image")));
             this.participantesBindingNavigatorSaveItem.Name = "participantesBindingNavigatorSaveItem";
-            this.participantesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.participantesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.participantesBindingNavigatorSaveItem.Text = "Save Data";
             this.participantesBindingNavigatorSaveItem.Click += new System.EventHandler(this.participantesBindingNavigatorSaveItem_Click);
             // 

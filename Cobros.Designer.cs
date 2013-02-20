@@ -47,7 +47,7 @@
             System.Windows.Forms.Label totalLabel;
             System.Windows.Forms.Label copiaFacturaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cobros));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.promowork_dataDataSet = new Promowork.Promowork_dataDataSet();
             this.cobrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cobrosTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.CobrosTableAdapter();
@@ -383,7 +383,7 @@
             this.cobrosBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.cobrosBindingNavigator.BindingSource = this.cobrosBindingSource;
             this.cobrosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.cobrosBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.cobrosBindingNavigator.DeleteItem = null;
             this.cobrosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -433,6 +433,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -621,10 +622,10 @@
             // Total
             // 
             this.Total.DataPropertyName = "Total";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Total.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Total.DefaultCellStyle = dataGridViewCellStyle1;
             this.Total.HeaderText = "Importe Total";
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;

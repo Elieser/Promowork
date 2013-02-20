@@ -88,7 +88,6 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.productosUtilizadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -97,6 +96,7 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
@@ -137,6 +137,14 @@
             this.colImporte = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImporteAdmin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.chkcobrado = new DevExpress.XtraEditors.CheckEdit();
+            this.cbxano = new System.Windows.Forms.ComboBox();
+            this.marcaAnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbxmes = new System.Windows.Forms.ComboBox();
+            this.marcaMesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.marcaAnoTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.MarcaAnoTableAdapter();
+            this.marcaMesTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.MarcaMesTableAdapter();
             copiaFacturaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasBindingSource)).BeginInit();
@@ -165,6 +173,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasTotalTrabajadorGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkcobrado.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcaAnoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcaMesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // copiaFacturaLabel
@@ -526,6 +536,7 @@
             this.tableAdapterManager.CuentasTableAdapter = null;
             this.tableAdapterManager.CursosTableAdapter = null;
             this.tableAdapterManager.CursosTrabajadoresTableAdapter = null;
+            this.tableAdapterManager.DescuentosFacturasTableAdapter = null;
             this.tableAdapterManager.EmpresasActualTableAdapter = null;
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
@@ -723,7 +734,7 @@
             this.bindingNavigator1.AddNewItem = this.toolStripButton1;
             this.bindingNavigator1.BindingSource = this.productosUtilizadosBindingSource;
             this.bindingNavigator1.CountItem = this.toolStripLabel1;
-            this.bindingNavigator1.DeleteItem = this.toolStripButton2;
+            this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton3,
@@ -772,15 +783,6 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(35, 22);
             this.toolStripLabel1.Text = "of {0}";
             this.toolStripLabel1.ToolTipText = "Total number of items";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "Delete";
             // 
             // toolStripButton3
             // 
@@ -841,6 +843,16 @@
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "Delete";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton7
             // 
@@ -1226,12 +1238,76 @@
             this.chkcobrado.Size = new System.Drawing.Size(75, 19);
             this.chkcobrado.TabIndex = 38;
             // 
+            // cbxano
+            // 
+            this.cbxano.DataSource = this.marcaAnoBindingSource;
+            this.cbxano.DisplayMember = "AnoTrab";
+            this.cbxano.FormattingEnabled = true;
+            this.cbxano.Location = new System.Drawing.Point(506, 4);
+            this.cbxano.Name = "cbxano";
+            this.cbxano.Size = new System.Drawing.Size(65, 21);
+            this.cbxano.TabIndex = 39;
+            this.cbxano.ValueMember = "AnoTrab";
+            this.cbxano.SelectedIndexChanged += new System.EventHandler(this.cbxano_SelectedIndexChanged);
+            // 
+            // marcaAnoBindingSource
+            // 
+            this.marcaAnoBindingSource.DataMember = "MarcaAno";
+            this.marcaAnoBindingSource.DataSource = this.promowork_dataDataSet;
+            // 
+            // cbxmes
+            // 
+            this.cbxmes.DataSource = this.marcaMesBindingSource;
+            this.cbxmes.DisplayMember = "NomMes";
+            this.cbxmes.FormattingEnabled = true;
+            this.cbxmes.Location = new System.Drawing.Point(635, 4);
+            this.cbxmes.Name = "cbxmes";
+            this.cbxmes.Size = new System.Drawing.Size(121, 21);
+            this.cbxmes.TabIndex = 40;
+            this.cbxmes.ValueMember = "MesTrab";
+            this.cbxmes.SelectedIndexChanged += new System.EventHandler(this.cbxmes_SelectedIndexChanged);
+            // 
+            // marcaMesBindingSource
+            // 
+            this.marcaMesBindingSource.DataMember = "MarcaAno_MarcaMes";
+            this.marcaMesBindingSource.DataSource = this.marcaAnoBindingSource;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(471, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Año:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(599, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "Mes:";
+            // 
+            // marcaAnoTableAdapter
+            // 
+            this.marcaAnoTableAdapter.ClearBeforeFill = true;
+            // 
+            // marcaMesTableAdapter
+            // 
+            this.marcaMesTableAdapter.ClearBeforeFill = true;
+            // 
             // HorasMateriales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1271, 489);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbxmes);
+            this.Controls.Add(this.cbxano);
             this.Controls.Add(this.chkcobrado);
             this.Controls.Add(this.horasTrabajadasTotalTrabajadorGridControl);
             this.Controls.Add(this.groupBox1);
@@ -1244,6 +1320,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Partes de Trabajadores";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HorasMateriales_FormClosing);
             this.Load += new System.EventHandler(this.HorasMateriales_Load);
             this.Resize += new System.EventHandler(this.HorasMateriales_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasGridControl)).EndInit();
@@ -1276,6 +1353,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.horasTrabajadasTotalTrabajadorGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkcobrado.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcaAnoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcaMesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1388,6 +1467,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn colImporte;
         private DevExpress.XtraGrid.Columns.GridColumn colImporteAdmin;
         private DevExpress.XtraEditors.CheckEdit chkcobrado;
+        private System.Windows.Forms.ComboBox cbxano;
+        private System.Windows.Forms.BindingSource marcaAnoBindingSource;
+        private System.Windows.Forms.ComboBox cbxmes;
+        private System.Windows.Forms.BindingSource marcaMesBindingSource;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private Promowork_dataDataSetTableAdapters.MarcaAnoTableAdapter marcaAnoTableAdapter;
+        private Promowork_dataDataSetTableAdapters.MarcaMesTableAdapter marcaMesTableAdapter;
 
     }
 }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeguridadSocial));
             this.seguridadSocialDataGridView = new System.Windows.Forms.DataGridView();
             this.idTrabajadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -111,20 +111,20 @@
             // ImpSegSocila
             // 
             this.ImpSegSocila.DataPropertyName = "ImpSegSocila";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ImpSegSocila.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.ImpSegSocila.DefaultCellStyle = dataGridViewCellStyle3;
             this.ImpSegSocila.HeaderText = "Seg. Social";
             this.ImpSegSocila.Name = "ImpSegSocila";
             // 
             // ImpIRPF
             // 
             this.ImpIRPF.DataPropertyName = "ImpIRPF";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.ImpIRPF.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.ImpIRPF.DefaultCellStyle = dataGridViewCellStyle4;
             this.ImpIRPF.HeaderText = "IRPF";
             this.ImpIRPF.Name = "ImpIRPF";
             // 
@@ -275,6 +275,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccesosEmpresasTableAdapter = null;
             this.tableAdapterManager.AdjuntosObrasTableAdapter = null;
             this.tableAdapterManager.AnticiposTableAdapter = null;
             this.tableAdapterManager.AnticiposTrabajadoresTableAdapter = null;
@@ -286,6 +287,7 @@
             this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CopiasHorasTableAdapter = null;
             this.tableAdapterManager.CrucesTrabajadoresTableAdapter = null;
@@ -296,6 +298,7 @@
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
             this.tableAdapterManager.FacturasCabTableAdapter = null;
+            this.tableAdapterManager.FacturasDetHorasTableAdapter = null;
             this.tableAdapterManager.FacturasDetTableAdapter = null;
             this.tableAdapterManager.FestivosEmpresasTableAdapter = null;
             this.tableAdapterManager.FestivosObrasTableAdapter = null;
@@ -305,6 +308,7 @@
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;

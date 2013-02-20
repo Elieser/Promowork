@@ -48,11 +48,14 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.provinciasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.provinciasDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.poblacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poblacionesTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.PoblacionesTableAdapter();
             this.poblacionesDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -66,9 +69,6 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingNavigator)).BeginInit();
@@ -96,15 +96,21 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AccesosEmpresasTableAdapter = null;
+            this.tableAdapterManager.AdjuntosObrasTableAdapter = null;
             this.tableAdapterManager.AnticiposTableAdapter = null;
             this.tableAdapterManager.AnticiposTrabajadoresTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BajasMedicaTableAdapter = null;
             this.tableAdapterManager.BancosTableAdapter = null;
             this.tableAdapterManager.CategoriasTableAdapter = null;
             this.tableAdapterManager.ClientesTableAdapter = null;
+            this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
+            this.tableAdapterManager.CopiasHorasTableAdapter = null;
             this.tableAdapterManager.CrucesTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CuentasTableAdapter = null;
             this.tableAdapterManager.CursosTableAdapter = null;
@@ -112,13 +118,18 @@
             this.tableAdapterManager.EmpresasActualTableAdapter = null;
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
+            this.tableAdapterManager.FacturasCabTableAdapter = null;
+            this.tableAdapterManager.FacturasDetHorasTableAdapter = null;
+            this.tableAdapterManager.FacturasDetTableAdapter = null;
             this.tableAdapterManager.FestivosEmpresasTableAdapter = null;
             this.tableAdapterManager.FestivosObrasTableAdapter = null;
             this.tableAdapterManager.FormasPagoTableAdapter = null;
             this.tableAdapterManager.HijosTrabajadoresTableAdapter = null;
+            this.tableAdapterManager.HorasAdminTableAdapter = null;
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;
@@ -127,13 +138,24 @@
             this.tableAdapterManager.PoblacionesProvincias1TableAdapter = null;
             this.tableAdapterManager.PoblacionesProvinciasTableAdapter = null;
             this.tableAdapterManager.PoblacionesTableAdapter = null;
+            this.tableAdapterManager.PresupCabTableAdapter = null;
+            this.tableAdapterManager.PresupCapTableAdapter = null;
+            this.tableAdapterManager.PresupDetTableAdapter = null;
+            this.tableAdapterManager.PresupSubTableAdapter = null;
+            this.tableAdapterManager.ProductosTableAdapter = null;
+            this.tableAdapterManager.ProductosUtilizadosTableAdapter = null;
             this.tableAdapterManager.ProveedoresTableAdapter = null;
             this.tableAdapterManager.Provincias1TableAdapter = null;
             this.tableAdapterManager.ProvinciasTableAdapter = this.provinciasTableAdapter;
             this.tableAdapterManager.PuestosTrabajoTableAdapter = null;
             this.tableAdapterManager.SalariosTiposTableAdapter = null;
+            this.tableAdapterManager.SalariosVentaAdminTableAdapter = null;
+            this.tableAdapterManager.SalariosVentaTableAdapter = null;
+            this.tableAdapterManager.SeguridadSocialTableAdapter = null;
             this.tableAdapterManager.TiposTableAdapter = null;
+            this.tableAdapterManager.TrabajadoresListaTableAdapter = null;
             this.tableAdapterManager.TrabajadoresTableAdapter = null;
+            this.tableAdapterManager.UMedidasTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Promowork.Promowork_dataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = null;
             // 
@@ -142,7 +164,7 @@
             this.provinciasBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.provinciasBindingNavigator.BindingSource = this.provinciasBindingSource;
             this.provinciasBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.provinciasBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.provinciasBindingNavigator.DeleteItem = null;
             this.provinciasBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
             this.provinciasBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -154,8 +176,8 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
+            this.bindingNavigatorAddNewItem,
             this.provinciasBindingNavigatorSaveItem});
             this.provinciasBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.provinciasBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -193,6 +215,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -277,6 +300,22 @@
             this.provinciasDataGridView.TabIndex = 1;
             this.provinciasDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.provinciasDataGridView_CellEndEdit);
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "provincia3";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Código";
+            this.dataGridViewTextBoxColumn4.MaxInputLength = 3;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "provincia";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Provincia";
+            this.dataGridViewTextBoxColumn2.MaxInputLength = 50;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
             // poblacionesBindingSource
             // 
             this.poblacionesBindingSource.DataMember = "FK_Poblaciones_Provincias";
@@ -300,28 +339,35 @@
             this.poblacionesDataGridView.Size = new System.Drawing.Size(326, 450);
             this.poblacionesDataGridView.TabIndex = 2;
             // 
-            // dataGridViewTextBoxColumn4
+            // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "provincia3";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Código";
-            this.dataGridViewTextBoxColumn4.MaxInputLength = 3;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 50;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "poblacion";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Poblacion";
+            this.dataGridViewTextBoxColumn7.MaxInputLength = 50;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 200;
             // 
-            // dataGridViewTextBoxColumn2
+            // dataGridViewTextBoxColumn9
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "provincia";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Provincia";
-            this.dataGridViewTextBoxColumn2.MaxInputLength = 50;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 150;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "postal";
+            this.dataGridViewTextBoxColumn9.HeaderText = "C.P.";
+            this.dataGridViewTextBoxColumn9.MaxInputLength = 5;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "IdProvincia";
+            this.dataGridViewTextBoxColumn6.HeaderText = "IdProvincia";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Visible = false;
             // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.toolStripButton1;
             this.bindingNavigator1.BindingSource = this.poblacionesBindingSource;
             this.bindingNavigator1.CountItem = this.toolStripLabel1;
-            this.bindingNavigator1.DeleteItem = this.toolStripButton2;
+            this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton3,
@@ -333,8 +379,8 @@
             this.toolStripButton5,
             this.toolStripButton6,
             this.toolStripSeparator3,
-            this.toolStripButton1,
             this.toolStripButton2,
+            this.toolStripButton1,
             this.toolStripButton7});
             this.bindingNavigator1.Location = new System.Drawing.Point(303, 0);
             this.bindingNavigator1.MoveFirstItem = this.toolStripButton3;
@@ -343,7 +389,7 @@
             this.bindingNavigator1.MovePreviousItem = this.toolStripButton4;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.toolStripTextBox1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(278, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(309, 25);
             this.bindingNavigator1.TabIndex = 3;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -372,6 +418,7 @@
             this.toolStripButton2.RightToLeftAutoMirrorImage = true;
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton2.Text = "Delete";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -441,29 +488,6 @@
             this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton7.Text = "Save Data";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "poblacion";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Poblacion";
-            this.dataGridViewTextBoxColumn7.MaxInputLength = 50;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "postal";
-            this.dataGridViewTextBoxColumn9.HeaderText = "C.P.";
-            this.dataGridViewTextBoxColumn9.MaxInputLength = 5;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "IdProvincia";
-            this.dataGridViewTextBoxColumn6.HeaderText = "IdProvincia";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Visible = false;
             // 
             // Poblaciones
             // 

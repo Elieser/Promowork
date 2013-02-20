@@ -92,6 +92,14 @@
           <DataField>IdOpeBanco</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="Debe">
+          <DataField>Debe</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Haber">
+          <DataField>Haber</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>Promowork_dataDataSet</DataSourceName>
@@ -228,10 +236,10 @@
               <Width>0.92708in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.68217in</Width>
+              <Width>1.00062in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.68191in</Width>
+              <Width>5.36347in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.03634in</Width>
@@ -262,7 +270,7 @@
                               <Value>Fecha</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -282,6 +290,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -296,7 +305,7 @@
                               <Value>Tipo </Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -316,6 +325,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -330,7 +340,7 @@
                               <Value>Des Detallada</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -350,6 +360,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -364,7 +375,7 @@
                               <Value> Forma Pago</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -386,6 +397,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -400,7 +412,7 @@
                               <Value>Debe</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -422,6 +434,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -436,7 +449,7 @@
                               <Value>Haber</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -458,6 +471,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -472,7 +486,7 @@
                               <Value>Saldo</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>9pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -494,6 +508,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -651,7 +666,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(iif(Fields!Importe.Value&gt;0,Fields!Importe.Value,0))</Value>
+                              <Value>=Sum(Fields!Debe.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -682,14 +697,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox16">
+                    <Textbox Name="Haber">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(iif(Fields!Importe.Value&lt;0,-Fields!Importe.Value,0))</Value>
+                              <Value>=Sum(Fields!Haber.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -702,7 +717,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox16</rd:DefaultName>
+                      <rd:DefaultName>Haber</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -942,7 +957,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(iif(Fields!Importe.Value&gt;0,Fields!Importe.Value,0))</Value>
+                              <Value>=Sum(Fields!Debe.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -978,7 +993,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(iif(Fields!Importe.Value&lt;0,-Fields!Importe.Value,0))</Value>
+                              <Value>=Sum(Fields!Haber.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -1039,7 +1054,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -1060,6 +1074,7 @@
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1096,10 +1111,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(iif(Fields!Importe.Value&gt;0,Fields!Importe.Value,0))</Value>
+                              <Value>=Sum(Fields!Debe.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <Format>0.00'€';(0.00'€');''</Format>
                               </Style>
                             </TextRun>
@@ -1133,10 +1149,11 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(iif(Fields!Importe.Value&lt;0,-Fields!Importe.Value,0))</Value>
+                              <Value>=Sum(Fields!Haber.Value)</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <Format>0.00'€';(0.00'€');''</Format>
                               </Style>
                             </TextRun>
@@ -1173,6 +1190,7 @@
                               <Value />
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                <FontWeight>Bold</FontWeight>
                                 <Color>=iif(-Fields!SaldoAnterior.Value+Fields!Importe.Value&lt;0,"Red","Black")</Color>
                               </Style>
                             </TextRun>
@@ -1214,12 +1232,14 @@
                               <Value> Saldo Final: </Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                             <TextRun>
                               <Value xml:space="preserve"> </Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                <FontWeight>Bold</FontWeight>
                                 <Color>=iif(-Fields!SaldoAnterior.Value+Fields!Importe.Value&lt;0,"Red","Black")</Color>
                               </Style>
                             </TextRun>
@@ -1227,6 +1247,7 @@
                               <Value>=-(Last(Fields!SaldoAnterior.Value)+Last(Fields!Importe.Value))</Value>
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                <FontWeight>Bold</FontWeight>
                                 <Format>0.00'€';(0.00'€')</Format>
                                 <Color>=iif(-last(Fields!SaldoAnterior.Value)+last(Fields!Importe.Value)&lt;0,"Red","Black")</Color>
                                 <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
@@ -1324,8 +1345,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Height>3cm</Height>
-        <Width>27.33541cm</Width>
+        <Height>2.99999cm</Height>
+        <Width>27.33543cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1353,7 +1374,7 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
-  <Width>10.76197in</Width>
+  <Width>10.76198in</Width>
   <Page>
     <PageHeader>
       <Height>1.42931cm</Height>
@@ -1370,6 +1391,7 @@
                   <Value>Saldo Inicial:  </Value>
                   <Style>
                     <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                    <FontWeight>Bold</FontWeight>
                     <Format>0.00'€';(0.00'€');''</Format>
                   </Style>
                 </TextRun>
@@ -1377,6 +1399,7 @@
                   <Value>=-First(Fields!SaldoAnterior.Value, "DataSet1")</Value>
                   <Style>
                     <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                    <FontWeight>Bold</FontWeight>
                     <Format>0.00'€';(0.00'€')</Format>
                     <Color>=iif(-first(Fields!SaldoAnterior.Value, "DataSet1")&lt;0,"Red","Black")</Color>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
@@ -1640,7 +1663,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.36146cm</Top>
+          <Top>0.36145cm</Top>
           <Left>22.31601cm</Left>
           <Height>0.6cm</Height>
           <Width>4.20213cm</Width>
@@ -1673,7 +1696,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox123</rd:DefaultName>
-          <Top>0.36146cm</Top>
+          <Top>0.36145cm</Top>
           <Left>17.54942cm</Left>
           <Height>0.6cm</Height>
           <Width>4.59021cm</Width>

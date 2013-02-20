@@ -999,6 +999,34 @@ namespace Promowork
             }
         }
 
+        private void porConceptosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["RptParametrosOperacionesBancoFecha"] != null)
+            {
+                Application.OpenForms["RptParametrosOperacionesBancoFecha"].Activate();
+            }
+            else
+            {
+                RptParametrosOperacionesBancoFecha frm = new RptParametrosOperacionesBancoFecha();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
+        private void pendienteDeFcaturarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["RptParametrosPendienteFacturar"] != null)
+            {
+                Application.OpenForms["RptParametrosPendienteFacturar"].Activate();
+            }
+            else
+            {
+                RptParametrosPendienteFacturar frm = new RptParametrosPendienteFacturar();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
        
     }
 }

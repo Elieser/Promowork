@@ -48,12 +48,12 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.TiposServiciosBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.TiposServiciosDataGridView = new System.Windows.Forms.DataGridView();
-            this.uMedidasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uMedidasTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.UMedidasTableAdapter();
             this.DesServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.uMedidasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ActivoServicio = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Combustible = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.uMedidasTableAdapter = new Promowork.Promowork_dataDataSetCombustibleTableAdapters.UMedidasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSetCombustible)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TiposServiciosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TiposServiciosBindingNavigator)).BeginInit();
@@ -97,7 +97,7 @@
             this.TiposServiciosBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.TiposServiciosBindingNavigator.BindingSource = this.TiposServiciosBindingSource;
             this.TiposServiciosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.TiposServiciosBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.TiposServiciosBindingNavigator.DeleteItem = null;
             this.TiposServiciosBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -147,6 +147,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -234,15 +235,6 @@
             this.TiposServiciosDataGridView.TabIndex = 1;
             this.TiposServiciosDataGridView.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.TiposServiciosDataGridView_UserAddedRow);
             // 
-            // uMedidasBindingSource
-            // 
-            this.uMedidasBindingSource.DataMember = "UMedidas";
-            this.uMedidasBindingSource.DataSource = this.promowork_dataDataSetCombustible;
-            // 
-            // uMedidasTableAdapter
-            // 
-            this.uMedidasTableAdapter.ClearBeforeFill = true;
-            // 
             // DesServicio
             // 
             this.DesServicio.DataPropertyName = "DesServicio";
@@ -264,6 +256,11 @@
             this.dataGridViewTextBoxColumn4.ValueMember = "IdUmedida";
             this.dataGridViewTextBoxColumn4.Width = 80;
             // 
+            // uMedidasBindingSource
+            // 
+            this.uMedidasBindingSource.DataMember = "UMedidas";
+            this.uMedidasBindingSource.DataSource = this.promowork_dataDataSetCombustible;
+            // 
             // ActivoServicio
             // 
             this.ActivoServicio.DataPropertyName = "ActivoServicio";
@@ -277,6 +274,10 @@
             this.Combustible.HeaderText = "Combustible";
             this.Combustible.Name = "Combustible";
             this.Combustible.Visible = false;
+            // 
+            // uMedidasTableAdapter
+            // 
+            this.uMedidasTableAdapter.ClearBeforeFill = true;
             // 
             // TiposCombustibles
             // 

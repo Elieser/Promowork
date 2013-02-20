@@ -48,5 +48,13 @@ namespace Promowork
             this.nacionesTableAdapter.Fill(this.promowork_dataDataSet.Naciones);
 
         }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma que desea Eliminar?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.nacionesBindingSource.RemoveCurrent();
+            }
+        }
     }
 }

@@ -16,19 +16,36 @@ namespace Promowork
         {
             InitializeComponent();
         }
+        int nAno = VariablesGlobales.nAnoActual;
+        byte nMes = VariablesGlobales.nMesActual;
 
         private void horasTrabajadasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.horasTrabajadasBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.promowork_dataDataSet);
+            this.horasTrabajadasTableAdapter.Update(this.promowork_dataDataSet.HorasTrabajadas);
+
+          //  MessageBox.Show(gridView1.RowCount.ToString());
+            if (gridView1.RowCount==1)
+            {
+                marcaAnoTableAdapter.Fill(promowork_dataDataSet.MarcaAno, VariablesGlobales.nIdEmpresaActual);
+                marcaMesTableAdapter.Fill(promowork_dataDataSet.MarcaMes, VariablesGlobales.nIdEmpresaActual);
+
+                cbxano.SelectedValue = VariablesGlobales.nAnoActual;
+                cbxmes.SelectedValue = VariablesGlobales.nMesActual;
+            }
+           
 
         }
 
         private void HorasMateriales_Load(object sender, EventArgs e)
         {
+
             HorasMateriales_Resize(null, null);
             this.WindowState = FormWindowState.Maximized;
+            marcaAnoTableAdapter.Fill(promowork_dataDataSet.MarcaAno, VariablesGlobales.nIdEmpresaActual);
+            marcaMesTableAdapter.Fill(promowork_dataDataSet.MarcaMes, VariablesGlobales.nIdEmpresaActual);
+
             // TODO: This line of code loads data into the 'promowork_dataDataSet.Tipos' table. You can move, or remove it, as needed.
             this.tiposTableAdapter.Fill(this.promowork_dataDataSet.Tipos);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.Obras' table. You can move, or remove it, as needed.
@@ -36,8 +53,8 @@ namespace Promowork
             this.trabajadoresTableAdapter.Fill(promowork_dataDataSet.Trabajadores, VariablesGlobales.nIdEmpresaActual);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.ProductosUtilizados' table. You can move, or remove it, as needed.
           
-            this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual,VariablesGlobales.nAnoActual,VariablesGlobales.nMesActual);
-            this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual);
+          //  this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual,nAno,nMesActual);
+          //  this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, nAno, nMesActual);
             this.productosTableAdapter.Fill(promowork_dataDataSet.Productos, VariablesGlobales.nIdEmpresaActual);
                        
             gridView1.OptionsBehavior.ReadOnly = true;
@@ -46,6 +63,8 @@ namespace Promowork
             gridView2.Appearance.Row.BackColor = Color.Silver;
 
             this.horasTrabajadasBindingSource.MoveLast();
+            cbxano.SelectedValue = VariablesGlobales.nAnoActual;
+            cbxmes.SelectedValue = VariablesGlobales.nMesActual;
         }
 
         private void horasTrabajadasBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
@@ -68,19 +87,19 @@ namespace Promowork
                 {
 
                     MessageBox.Show("No se Pudo Salvar la Información. El Registro fue modificado por otro Usuario.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual,VariablesGlobales.nAnoActual,VariablesGlobales.nMesActual);
-                    this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual);
+                    this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual,nAno,nMes);
+                    this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
                 }
                 catch (SqlException ex)
                 {
                     if (ErroresSQLServer.ManipulaErrorSQL(ex, this.Text))
                     {
-                        this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual,VariablesGlobales.nAnoActual,VariablesGlobales.nMesActual);
-                        this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual);
+                        this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual,nAno,nMes);
+                        this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
                     }
 
                 }
-           this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual);
+           this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
 
         }
 
@@ -102,8 +121,8 @@ namespace Promowork
             gridView1.SetFocusedRowCellValue("IdTipo", tipo);
             gridView1.SetFocusedRowCellValue("IdEmpresa", VariablesGlobales.nIdEmpresaActual);
             gridView1.SetFocusedRowCellValue("IdUsuario", VariablesGlobales.nIdUsuarioActual);
-            gridView1.SetFocusedRowCellValue("AnoTrab", VariablesGlobales.nAnoActual);
-            gridView1.SetFocusedRowCellValue("MesTrab", VariablesGlobales.nMesActual);
+            gridView1.SetFocusedRowCellValue("AnoTrab", nAno);
+            gridView1.SetFocusedRowCellValue("MesTrab", nMes);
             gridView1.SetFocusedRowCellValue("Festivo", 0);
             gridView1.SetFocusedRowCellValue("HorasAdmin", 0);
 
@@ -250,6 +269,34 @@ namespace Promowork
             {
                 this.horasTrabajadasBindingSource.RemoveCurrent();
             }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma que desea Eliminar?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.productosUtilizadosBindingSource.RemoveCurrent();
+            }
+        }
+
+        private void cbxano_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nAno = (int)cbxano.SelectedValue;
+            this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
+            this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
+        }
+        void cbxmes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            nMes = (byte)cbxmes.SelectedValue;
+            this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
+            this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, nAno, nMes); 
+        }
+
+        private void HorasMateriales_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Visible = false;
+           // promowork_dataDataSet.Clear();
+            this.Close();
         }
 
     }

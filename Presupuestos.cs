@@ -505,6 +505,38 @@ namespace Promowork
             catch { }
         }
 
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma que desea Eliminar?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.presupCabBindingSource.RemoveCurrent();
+            }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma que desea Eliminar?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.presupCapBindingSource.RemoveCurrent();
+            }
+        }
+
+        private void toolStripButton9_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma que desea Eliminar?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.presupDetBindingSource.RemoveCurrent();
+            }
+        }
+
+        private void toolStripButton24_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma que desea Eliminar?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.presupSubBindingSource.RemoveCurrent();
+            }
+        }
+
               
     }
 }

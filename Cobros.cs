@@ -51,14 +51,18 @@ namespace Promowork
 
 
                   DataRowView FacturaActual = (DataRowView)facturasCabListaBindingSource.Current;
-                  if ((decimal)FacturaActual["ImpBase"] <= (decimal)CobroActual["ImpBase"])
+                  try
                   {
-                      queriesTableAdapter1.UpdateFacturasCabCobrada(true, (int)FacturaActual["IdFactCab"]);
+                      if ((decimal)FacturaActual["ImpBase"] <= (decimal)CobroActual["ImpBase"])
+                      {
+                          queriesTableAdapter1.UpdateFacturasCabCobrada(true, (int)FacturaActual["IdFactCab"]);
+                      }
+                      else
+                      {
+                          queriesTableAdapter1.UpdateFacturasCabCobrada(false, (int)FacturaActual["IdFactCab"]);
+                      }
                   }
-                  else
-                  {
-                      queriesTableAdapter1.UpdateFacturasCabCobrada(false, (int)FacturaActual["IdFactCab"]);
-                  }
+                  catch { }
               }
            }
             catch (DBConcurrencyException)
@@ -300,6 +304,14 @@ namespace Promowork
                frm.MdiParent = this.MdiParent;
                frm.Show();
            }
+            }
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma que desea Eliminar?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.cobrosBindingSource.RemoveCurrent();
             }
         }
     }

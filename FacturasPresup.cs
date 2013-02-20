@@ -19,22 +19,27 @@ namespace Promowork
 
         private void facturasCabBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            if (idCuentaComboBox.Text == "")
-            {
-                facturasCabDataGridView.CurrentRow.Cells["IdCuenta"].Value = DBNull.Value;
-            }
+            
             try
             {
-                if (Convert.ToBoolean(facturasCabDataGridView.CurrentRow.Cells["FacturaPresup"].Value) == true)
-                {
-                    DataRow PresupActual = promowork_dataDataSet.PresupCab.FindByIdPresupCab(Convert.ToInt32(idPresupComboBox.SelectedValue));
-                    DataRowView FacturaActual = (DataRowView)facturasCabBindingSource.Current;
-                    FacturaActual["IdObra"] = PresupActual["IdObra"];
-                }
 
             this.Validate();
             this.facturasCabBindingSource.EndEdit();
             facturasCabTableAdapter.Update(promowork_dataDataSet.FacturasCab);
+            if (idCuentaComboBox.Text == "" && facturasCabDataGridView.RowCount != 0)
+            {
+                facturasCabDataGridView.CurrentRow.Cells["IdCuenta"].Value = DBNull.Value;
+            }
+            if (facturasCabDataGridView.RowCount != 0 && Convert.ToBoolean(facturasCabDataGridView.CurrentRow.Cells["FacturaPresup"].Value) == true)
+            {
+                DataRow PresupActual = promowork_dataDataSet.PresupCab.FindByIdPresupCab(Convert.ToInt32(idPresupComboBox.SelectedValue));
+                DataRowView FacturaActual = (DataRowView)facturasCabBindingSource.Current;
+                FacturaActual["IdObra"] = PresupActual["IdObra"];
+            }
+            this.Validate();
+            this.facturasCabBindingSource.EndEdit();
+            facturasCabTableAdapter.Update(promowork_dataDataSet.FacturasCab);
+            
           //  this.tableAdapterManager.UpdateAll(this.promowork_dataDataSet);
          //   int posFactcab = facturasCabBindingSource.Position;
             int poscab = presupCabBindingSource.Position;
@@ -105,10 +110,11 @@ namespace Promowork
             // TODO: This line of code loads data into the 'promowork_dataDataSet.CuentasBancos' table. You can move, or remove it, as needed.
             this.cuentasBancosTableAdapter.Fill(this.promowork_dataDataSet.CuentasBancos, VariablesGlobales.nIdEmpresaActual);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.PresupCab' table. You can move, or remove it, as needed.
-            this.presupCabTableAdapter.Fill(this.promowork_dataDataSet.PresupCab);
+            this.presupCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.PresupCab,VariablesGlobales.nIdEmpresaActual);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.Clientes' table. You can move, or remove it, as needed.
-            this.clientesTableAdapter.Fill(this.promowork_dataDataSet.Clientes);
+            this.clientesTableAdapter.FillByEmpresa(this.promowork_dataDataSet.Clientes,VariablesGlobales.nIdEmpresaActual);
             clientesBindingSource.Sort = "DesCliente";
+            clientesBindingSource1.Sort = "DesCliente";
             // TODO: This line of code loads data into the 'promowork_dataDataSet.FacturasDet' table. You can move, or remove it, as needed.
            // this.facturasDetTableAdapter.Fill(this.promowork_dataDataSet.FacturasDet);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.FacturasCab' table. You can move, or remove it, as needed.
@@ -134,6 +140,7 @@ namespace Promowork
             factura["IdUsuario"] = VariablesGlobales.nIdUsuarioActual;
             factura["Cobrada"] = false;
             factura["FacturaPresup"] = true;
+            factura["Factura"] = true;
 
             button1.Enabled = false;
            // toolStripButton1.Enabled = false;
@@ -149,14 +156,22 @@ namespace Promowork
                 presupCabBindingSource.Filter = "IdCliente=" + Convert.ToString(idClienteComboBox.SelectedValue);
                 DataRowView cliente = (DataRowView)clientesBindingSource.Current;
                 fechaVctoFactDateTimePicker.Value = fechaFacturaDateTimePicker.Value.AddDays(Convert.ToInt32(cliente["CredCliente"]));
+           
+              // comboBox4.SelectedValue = comboBox4.SelectedValue == null ? idClienteComboBox.SelectedValue : comboBox4.SelectedValue;
+          
             }
             catch { }
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            button1.Enabled = true;
-            facturasCabDataGridView.Enabled = true;
+            if (MessageBox.Show("Confirma que desea Eliminar?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.facturasCabBindingSource.RemoveCurrent();
+
+                button1.Enabled = true;
+                facturasCabDataGridView.Enabled = true;
+            }
         }
 
       
@@ -874,6 +889,32 @@ namespace Promowork
            e.CellStyle.BackColor = Convert.ToBoolean(facturasCabDataGridView.Rows[e.RowIndex].Cells["FacturaPresup"].Value) == false ? Color.LightGray : Color.White;
         }
 
-      
+       private void toolStripButton1_Click_1(object sender, EventArgs e)
+       {
+           if (facturaCheckBox.Checked == true)
+           {
+               DataRowView FacturaAct = (DataRowView)facturasCabBindingSource.Current;
+
+               int Factura = Convert.ToInt32(FacturaAct["IdFactCab"]);
+
+
+               RptFacturasPresupImp2 frm = new RptFacturasPresupImp2();
+               frm.LoadFiltro(Factura);
+               frm.MdiParent = this.MdiParent;
+               frm.Show();
+           }
+           else
+           {
+               DataRowView FacturaAct = (DataRowView)facturasCabBindingSource.Current;
+
+               int Factura = Convert.ToInt32(FacturaAct["IdFactCab"]);
+
+
+               RptFacturasPresupParteImp2 frm = new RptFacturasPresupParteImp2();
+               frm.LoadFiltro(Factura);
+               frm.MdiParent = this.MdiParent;
+               frm.Show();
+           }
+       }
     }
 }

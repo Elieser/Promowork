@@ -43,12 +43,12 @@
             this.tableAdapterManager = new Promowork.Promowork_dataDataSetTableAdapters.TableAdapterManager();
             this.marcaTipoOpeBancoGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.MarcaTipoOpe = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Marca1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.marcaConceptosBancoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.marcaConceptosBancoTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.MarcaConceptosBancoTableAdapter();
             this.marcaConceptosBancoGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.MarcaConceptoBanco = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Marca2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescipcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMarca = new DevExpress.XtraGrid.Columns.GridColumn();
             this.button1 = new System.Windows.Forms.Button();
@@ -56,6 +56,18 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.marcaCuentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.marcaCuentasTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.MarcaCuentasTableAdapter();
+            this.marcaCuentasGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Marca3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdCuenta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDesBanco = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNumCuenta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDesCuenta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaTipoOpeBancoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaTipoOpeBancoGridControl)).BeginInit();
@@ -63,6 +75,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.marcaConceptosBancoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaConceptosBancoGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcaCuentasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcaCuentasGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // TipoOpe
@@ -70,6 +85,7 @@
             this.TipoOpe.Caption = "Tipo Operación";
             this.TipoOpe.FieldName = "TipoOpe";
             this.TipoOpe.Name = "TipoOpe";
+            this.TipoOpe.OptionsColumn.AllowEdit = false;
             this.TipoOpe.Visible = true;
             this.TipoOpe.VisibleIndex = 1;
             this.TipoOpe.Width = 238;
@@ -79,6 +95,7 @@
             this.colTipoOpe1.Caption = "Tipo";
             this.colTipoOpe1.FieldName = "TipoOpe";
             this.colTipoOpe1.Name = "colTipoOpe1";
+            this.colTipoOpe1.OptionsColumn.AllowEdit = false;
             this.colTipoOpe1.Width = 175;
             // 
             // promowork_dataDataSet
@@ -164,10 +181,10 @@
             // marcaTipoOpeBancoGridControl
             // 
             this.marcaTipoOpeBancoGridControl.DataSource = this.marcaTipoOpeBancoBindingSource;
-            this.marcaTipoOpeBancoGridControl.Location = new System.Drawing.Point(12, 52);
+            this.marcaTipoOpeBancoGridControl.Location = new System.Drawing.Point(8, 230);
             this.marcaTipoOpeBancoGridControl.MainView = this.gridView1;
             this.marcaTipoOpeBancoGridControl.Name = "marcaTipoOpeBancoGridControl";
-            this.marcaTipoOpeBancoGridControl.Size = new System.Drawing.Size(308, 328);
+            this.marcaTipoOpeBancoGridControl.Size = new System.Drawing.Size(375, 152);
             this.marcaTipoOpeBancoGridControl.TabIndex = 2;
             this.marcaTipoOpeBancoGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -175,7 +192,7 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.MarcaTipoOpe,
+            this.Marca1,
             this.TipoOpe});
             styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Azure;
             styleFormatCondition1.Appearance.Options.UseBackColor = true;
@@ -201,17 +218,20 @@
             styleFormatCondition3});
             this.gridView1.GridControl = this.marcaTipoOpeBancoGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedRow = false;
+            this.gridView1.OptionsSelection.EnableAppearanceHideSelection = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
             // 
-            // MarcaTipoOpe
+            // Marca1
             // 
-            this.MarcaTipoOpe.Caption = " ";
-            this.MarcaTipoOpe.FieldName = "Marca";
-            this.MarcaTipoOpe.Name = "MarcaTipoOpe";
-            this.MarcaTipoOpe.Visible = true;
-            this.MarcaTipoOpe.VisibleIndex = 0;
-            this.MarcaTipoOpe.Width = 26;
+            this.Marca1.Caption = " ";
+            this.Marca1.FieldName = "Marca";
+            this.Marca1.Name = "Marca1";
+            this.Marca1.Visible = true;
+            this.Marca1.VisibleIndex = 0;
+            this.Marca1.Width = 26;
             // 
             // marcaConceptosBancoBindingSource
             // 
@@ -225,10 +245,10 @@
             // marcaConceptosBancoGridControl
             // 
             this.marcaConceptosBancoGridControl.DataSource = this.marcaConceptosBancoBindingSource;
-            this.marcaConceptosBancoGridControl.Location = new System.Drawing.Point(338, 52);
+            this.marcaConceptosBancoGridControl.Location = new System.Drawing.Point(389, 40);
             this.marcaConceptosBancoGridControl.MainView = this.gridView2;
             this.marcaConceptosBancoGridControl.Name = "marcaConceptosBancoGridControl";
-            this.marcaConceptosBancoGridControl.Size = new System.Drawing.Size(461, 328);
+            this.marcaConceptosBancoGridControl.Size = new System.Drawing.Size(461, 342);
             this.marcaConceptosBancoGridControl.TabIndex = 4;
             this.marcaConceptosBancoGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -236,7 +256,7 @@
             // gridView2
             // 
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.MarcaConceptoBanco,
+            this.Marca2,
             this.colTipoOpe1,
             this.colDescipcion});
             styleFormatCondition4.Appearance.BackColor = System.Drawing.Color.Azure;
@@ -263,22 +283,26 @@
             styleFormatCondition6});
             this.gridView2.GridControl = this.marcaConceptosBancoGridControl;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedRow = false;
+            this.gridView2.OptionsSelection.EnableAppearanceHideSelection = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // MarcaConceptoBanco
+            // Marca2
             // 
-            this.MarcaConceptoBanco.Caption = " ";
-            this.MarcaConceptoBanco.FieldName = "Marca";
-            this.MarcaConceptoBanco.Name = "MarcaConceptoBanco";
-            this.MarcaConceptoBanco.Visible = true;
-            this.MarcaConceptoBanco.VisibleIndex = 0;
-            this.MarcaConceptoBanco.Width = 33;
+            this.Marca2.Caption = " ";
+            this.Marca2.FieldName = "Marca";
+            this.Marca2.Name = "Marca2";
+            this.Marca2.Visible = true;
+            this.Marca2.VisibleIndex = 0;
+            this.Marca2.Width = 33;
             // 
             // colDescipcion
             // 
             this.colDescipcion.Caption = "Descripción";
             this.colDescipcion.FieldName = "Descipcion";
             this.colDescipcion.Name = "colDescipcion";
+            this.colDescipcion.OptionsColumn.AllowEdit = false;
             this.colDescipcion.OptionsColumn.ReadOnly = true;
             this.colDescipcion.Visible = true;
             this.colDescipcion.VisibleIndex = 1;
@@ -301,6 +325,7 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "Ver Informe";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dateTimePicker2
             // 
@@ -337,11 +362,125 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Desde:";
             // 
+            // marcaCuentasBindingSource
+            // 
+            this.marcaCuentasBindingSource.DataMember = "MarcaCuentas";
+            this.marcaCuentasBindingSource.DataSource = this.promowork_dataDataSet;
+            // 
+            // marcaCuentasTableAdapter
+            // 
+            this.marcaCuentasTableAdapter.ClearBeforeFill = true;
+            // 
+            // marcaCuentasGridControl
+            // 
+            this.marcaCuentasGridControl.DataSource = this.marcaCuentasBindingSource;
+            this.marcaCuentasGridControl.Location = new System.Drawing.Point(8, 40);
+            this.marcaCuentasGridControl.MainView = this.gridView3;
+            this.marcaCuentasGridControl.Name = "marcaCuentasGridControl";
+            this.marcaCuentasGridControl.Size = new System.Drawing.Size(375, 184);
+            this.marcaCuentasGridControl.TabIndex = 16;
+            this.marcaCuentasGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Marca3,
+            this.colIdCuenta,
+            this.colDesBanco,
+            this.colNumCuenta,
+            this.colDesCuenta});
+            this.gridView3.GridControl = this.marcaCuentasGridControl;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // Marca3
+            // 
+            this.Marca3.Caption = " ";
+            this.Marca3.FieldName = "Marca";
+            this.Marca3.Name = "Marca3";
+            this.Marca3.Visible = true;
+            this.Marca3.VisibleIndex = 0;
+            this.Marca3.Width = 34;
+            // 
+            // colIdCuenta
+            // 
+            this.colIdCuenta.FieldName = "IdCuenta";
+            this.colIdCuenta.Name = "colIdCuenta";
+            this.colIdCuenta.OptionsColumn.AllowEdit = false;
+            this.colIdCuenta.OptionsColumn.ReadOnly = true;
+            // 
+            // colDesBanco
+            // 
+            this.colDesBanco.Caption = "Banco";
+            this.colDesBanco.FieldName = "DesBanco";
+            this.colDesBanco.Name = "colDesBanco";
+            this.colDesBanco.OptionsColumn.AllowEdit = false;
+            this.colDesBanco.Visible = true;
+            this.colDesBanco.VisibleIndex = 1;
+            this.colDesBanco.Width = 131;
+            // 
+            // colNumCuenta
+            // 
+            this.colNumCuenta.Caption = "Cuenta";
+            this.colNumCuenta.FieldName = "NumCuenta";
+            this.colNumCuenta.Name = "colNumCuenta";
+            this.colNumCuenta.OptionsColumn.AllowEdit = false;
+            this.colNumCuenta.Visible = true;
+            this.colNumCuenta.VisibleIndex = 2;
+            this.colNumCuenta.Width = 192;
+            // 
+            // colDesCuenta
+            // 
+            this.colDesCuenta.FieldName = "DesCuenta";
+            this.colDesCuenta.Name = "colDesCuenta";
+            this.colDesCuenta.OptionsColumn.AllowEdit = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(35, 44);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 17;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Location = new System.Drawing.Point(415, 44);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2.TabIndex = 18;
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Checked = true;
+            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox3.Location = new System.Drawing.Point(36, 234);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(15, 14);
+            this.checkBox3.TabIndex = 19;
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
             // RptParametrosOperacionesBanco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 392);
+            this.ClientSize = new System.Drawing.Size(870, 400);
+            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.marcaCuentasGridControl);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
@@ -350,8 +489,11 @@
             this.Controls.Add(this.marcaConceptosBancoGridControl);
             this.Controls.Add(this.marcaTipoOpeBancoGridControl);
             this.Name = "RptParametrosOperacionesBanco";
-            this.Text = "RptParametrosOperacionesBanco";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.Text = "Parametros Operaciones Banco";
             this.Load += new System.EventHandler(this.RptParametrosOperacionesBanco_Load);
+            this.Resize += new System.EventHandler(this.RptParametrosOperacionesBanco_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaTipoOpeBancoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaTipoOpeBancoGridControl)).EndInit();
@@ -359,6 +501,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.marcaConceptosBancoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaConceptosBancoGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcaCuentasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcaCuentasGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,15 +522,27 @@
         private Promowork_dataDataSetTableAdapters.MarcaConceptosBancoTableAdapter marcaConceptosBancoTableAdapter;
         private DevExpress.XtraGrid.GridControl marcaConceptosBancoGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn MarcaConceptoBanco;
+        private DevExpress.XtraGrid.Columns.GridColumn Marca2;
         private DevExpress.XtraGrid.Columns.GridColumn colTipoOpe1;
         private DevExpress.XtraGrid.Columns.GridColumn colDescipcion;
-        private DevExpress.XtraGrid.Columns.GridColumn MarcaTipoOpe;
+        private DevExpress.XtraGrid.Columns.GridColumn Marca1;
         private DevExpress.XtraGrid.Columns.GridColumn colMarca;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.BindingSource marcaCuentasBindingSource;
+        private Promowork_dataDataSetTableAdapters.MarcaCuentasTableAdapter marcaCuentasTableAdapter;
+        private DevExpress.XtraGrid.GridControl marcaCuentasGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Columns.GridColumn Marca3;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdCuenta;
+        private DevExpress.XtraGrid.Columns.GridColumn colDesBanco;
+        private DevExpress.XtraGrid.Columns.GridColumn colNumCuenta;
+        private DevExpress.XtraGrid.Columns.GridColumn colDesCuenta;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
     }
 }

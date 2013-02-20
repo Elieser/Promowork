@@ -136,10 +136,12 @@ namespace Promowork
         {
             try
             {
-               marcaObrasBindingSource.Filter = "NumObra in (" + textBox1.Text + ")";
+               marcaObrasBindingSource.Filter = "NumObraInt in (" + textBox1.Text + ")";
             
             }
-            catch { }
+            catch {
+                marcaObrasBindingSource.Filter = null;
+            }
         }
 
 

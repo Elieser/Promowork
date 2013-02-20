@@ -95,5 +95,13 @@ namespace Promowork
         {
             consumosVehiculosDataGridView.Height = this.Height - 70;
         }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma que desea Eliminar?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.consumosVehiculosBindingSource.RemoveCurrent();
+            }
+        }
     }
 }

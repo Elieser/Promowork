@@ -70,7 +70,6 @@
             this.presupCabBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -79,6 +78,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.presupCabBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
@@ -111,10 +111,20 @@
             this.ColorCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.presupDetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.presupDetDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantReal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColorDet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -123,11 +133,11 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -136,6 +146,7 @@
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigator3 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
@@ -172,7 +183,6 @@
             this.toolStripButton23 = new System.Windows.Forms.ToolStripButton();
             this.presupSubBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton24 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton25 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton26 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
@@ -181,6 +191,7 @@
             this.toolStripButton27 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton28 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton24 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton29 = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
@@ -196,6 +207,17 @@
             this.toolStripSeparator22 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton39 = new System.Windows.Forms.ToolStripButton();
             this.presupSubDataGridView = new System.Windows.Forms.DataGridView();
+            this.numPresupSubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomPresupSubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desPresupSubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantExtraSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantRealSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPresupDetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColorSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton34 = new System.Windows.Forms.ToolStripButton();
@@ -210,28 +232,6 @@
             this.toolStripButton32 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton33 = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdUM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantReal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColorDet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numPresupSubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomPresupSubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desPresupSubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantExtraSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantRealSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPresupDetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColorSub = new System.Windows.Forms.DataGridViewTextBoxColumn();
             idObraLabel = new System.Windows.Forms.Label();
             idClienteLabel = new System.Windows.Forms.Label();
             numPresupLabel = new System.Windows.Forms.Label();
@@ -371,6 +371,7 @@
             this.tableAdapterManager.CuentasTableAdapter = null;
             this.tableAdapterManager.CursosTableAdapter = null;
             this.tableAdapterManager.CursosTrabajadoresTableAdapter = null;
+            this.tableAdapterManager.DescuentosFacturasTableAdapter = null;
             this.tableAdapterManager.EmpresasActualTableAdapter = null;
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
@@ -436,7 +437,7 @@
             this.presupCabBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.presupCabBindingNavigator.BindingSource = this.presupCabBindingSource;
             this.presupCabBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.presupCabBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.presupCabBindingNavigator.DeleteItem = null;
             this.presupCabBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -483,15 +484,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -552,6 +544,16 @@
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // presupCabBindingNavigatorSaveItem
             // 
@@ -867,12 +869,128 @@
             this.presupDetDataGridView.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.presupDetDataGridView_CellLeave);
             this.presupDetDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.presupDetDataGridView_DataError);
             // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "NumPresupDet";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.dataGridViewTextBoxColumn22.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn22.HeaderText = "Nº";
+            this.dataGridViewTextBoxColumn22.MaxInputLength = 2;
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.Width = 25;
+            // 
+            // IdUM
+            // 
+            this.IdUM.DataPropertyName = "UM";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.IdUM.DefaultCellStyle = dataGridViewCellStyle6;
+            this.IdUM.HeaderText = "UM";
+            this.IdUM.MaxInputLength = 3;
+            this.IdUM.Name = "IdUM";
+            this.IdUM.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.IdUM.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.IdUM.Width = 30;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "NomPresupDet";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn24.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewTextBoxColumn24.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn24.MaxInputLength = 100;
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.Width = 160;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "DesPresupDet";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn25.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn25.HeaderText = "Descripción";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.Width = 230;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "Cantidad";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MaxInputLength = 10;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 60;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "Precio";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle10.Format = "N2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MaxInputLength = 10;
+            this.Precio.Name = "Precio";
+            this.Precio.Width = 50;
+            // 
+            // Importe
+            // 
+            this.Importe.DataPropertyName = "Importe";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.Importe.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Importe.HeaderText = "Importe";
+            this.Importe.MaxInputLength = 10;
+            this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
+            this.Importe.Width = 65;
+            // 
+            // CantExtra
+            // 
+            this.CantExtra.DataPropertyName = "CantExtra";
+            dataGridViewCellStyle12.Format = "N6";
+            dataGridViewCellStyle12.NullValue = null;
+            this.CantExtra.DefaultCellStyle = dataGridViewCellStyle12;
+            this.CantExtra.HeaderText = "Diferencia";
+            this.CantExtra.Name = "CantExtra";
+            this.CantExtra.Visible = false;
+            this.CantExtra.Width = 60;
+            // 
+            // CantReal
+            // 
+            this.CantReal.DataPropertyName = "CantReal";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle13.Format = "N6";
+            dataGridViewCellStyle13.NullValue = null;
+            this.CantReal.DefaultCellStyle = dataGridViewCellStyle13;
+            this.CantReal.HeaderText = "Real";
+            this.CantReal.Name = "CantReal";
+            this.CantReal.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "IdPresupCap";
+            this.dataGridViewTextBoxColumn21.HeaderText = "IdPresupCap";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.Visible = false;
+            // 
+            // ColorDet
+            // 
+            this.ColorDet.DataPropertyName = "Color";
+            this.ColorDet.HeaderText = "Color";
+            this.ColorDet.Name = "ColorDet";
+            this.ColorDet.Visible = false;
+            // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.toolStripButton1;
             this.bindingNavigator1.BindingSource = this.presupCapBindingSource;
             this.bindingNavigator1.CountItem = this.toolStripLabel1;
-            this.bindingNavigator1.DeleteItem = this.toolStripButton2;
+            this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton3,
@@ -914,15 +1032,6 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(35, 22);
             this.toolStripLabel1.Text = "of {0}";
             this.toolStripLabel1.ToolTipText = "Total number of items";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "Delete";
             // 
             // toolStripButton3
             // 
@@ -984,6 +1093,16 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "Delete";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
             // toolStripButton7
             // 
             this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -998,7 +1117,7 @@
             this.bindingNavigator2.AddNewItem = this.toolStripButton8;
             this.bindingNavigator2.BindingSource = this.presupDetBindingSource;
             this.bindingNavigator2.CountItem = this.toolStripLabel2;
-            this.bindingNavigator2.DeleteItem = this.toolStripButton9;
+            this.bindingNavigator2.DeleteItem = null;
             this.bindingNavigator2.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton10,
@@ -1040,15 +1159,6 @@
             this.toolStripLabel2.Size = new System.Drawing.Size(35, 22);
             this.toolStripLabel2.Text = "of {0}";
             this.toolStripLabel2.ToolTipText = "Total number of items";
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton9.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton9.Text = "Delete";
             // 
             // toolStripButton10
             // 
@@ -1109,6 +1219,16 @@
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton9.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton9.Text = "Delete";
+            this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
             // 
             // toolStripButton14
             // 
@@ -1396,7 +1516,7 @@
             this.bindingNavigator4.AddNewItem = this.toolStripButton23;
             this.bindingNavigator4.BindingSource = this.presupSubBindingSource;
             this.bindingNavigator4.CountItem = this.toolStripLabel4;
-            this.bindingNavigator4.DeleteItem = this.toolStripButton24;
+            this.bindingNavigator4.DeleteItem = null;
             this.bindingNavigator4.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigator4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton25,
@@ -1443,15 +1563,6 @@
             this.toolStripLabel4.Size = new System.Drawing.Size(35, 22);
             this.toolStripLabel4.Text = "of {0}";
             this.toolStripLabel4.ToolTipText = "Total number of items";
-            // 
-            // toolStripButton24
-            // 
-            this.toolStripButton24.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton24.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton24.Image")));
-            this.toolStripButton24.Name = "toolStripButton24";
-            this.toolStripButton24.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton24.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton24.Text = "Delete";
             // 
             // toolStripButton25
             // 
@@ -1512,6 +1623,16 @@
             // 
             this.toolStripSeparator15.Name = "toolStripSeparator15";
             this.toolStripSeparator15.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton24
+            // 
+            this.toolStripButton24.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton24.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton24.Image")));
+            this.toolStripButton24.Name = "toolStripButton24";
+            this.toolStripButton24.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton24.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton24.Text = "Delete";
+            this.toolStripButton24.Click += new System.EventHandler(this.toolStripButton24_Click);
             // 
             // toolStripButton29
             // 
@@ -1691,6 +1812,119 @@
             this.presupSubDataGridView.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.presupSubDataGridView_CellLeave);
             this.presupSubDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.presupSubDataGridView_DataError);
             // 
+            // numPresupSubDataGridViewTextBoxColumn
+            // 
+            this.numPresupSubDataGridViewTextBoxColumn.DataPropertyName = "NumPresupSub";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.numPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            this.numPresupSubDataGridViewTextBoxColumn.HeaderText = "Nº";
+            this.numPresupSubDataGridViewTextBoxColumn.MaxInputLength = 2;
+            this.numPresupSubDataGridViewTextBoxColumn.Name = "numPresupSubDataGridViewTextBoxColumn";
+            this.numPresupSubDataGridViewTextBoxColumn.Width = 25;
+            // 
+            // uMDataGridViewTextBoxColumn
+            // 
+            this.uMDataGridViewTextBoxColumn.DataPropertyName = "UM";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.uMDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            this.uMDataGridViewTextBoxColumn.HeaderText = "UM";
+            this.uMDataGridViewTextBoxColumn.MaxInputLength = 3;
+            this.uMDataGridViewTextBoxColumn.Name = "uMDataGridViewTextBoxColumn";
+            this.uMDataGridViewTextBoxColumn.Width = 30;
+            // 
+            // nomPresupSubDataGridViewTextBoxColumn
+            // 
+            this.nomPresupSubDataGridViewTextBoxColumn.DataPropertyName = "NomPresupSub";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.nomPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            this.nomPresupSubDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nomPresupSubDataGridViewTextBoxColumn.MaxInputLength = 100;
+            this.nomPresupSubDataGridViewTextBoxColumn.Name = "nomPresupSubDataGridViewTextBoxColumn";
+            this.nomPresupSubDataGridViewTextBoxColumn.Width = 160;
+            // 
+            // desPresupSubDataGridViewTextBoxColumn
+            // 
+            this.desPresupSubDataGridViewTextBoxColumn.DataPropertyName = "DesPresupSub";
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.desPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
+            this.desPresupSubDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.desPresupSubDataGridViewTextBoxColumn.Name = "desPresupSubDataGridViewTextBoxColumn";
+            this.desPresupSubDataGridViewTextBoxColumn.Width = 230;
+            // 
+            // CantidadSub
+            // 
+            this.CantidadSub.DataPropertyName = "Cantidad";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle18.Format = "N2";
+            dataGridViewCellStyle18.NullValue = null;
+            this.CantidadSub.DefaultCellStyle = dataGridViewCellStyle18;
+            this.CantidadSub.HeaderText = "Cantidad";
+            this.CantidadSub.MaxInputLength = 10;
+            this.CantidadSub.Name = "CantidadSub";
+            this.CantidadSub.Width = 60;
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle19.Format = "N2";
+            dataGridViewCellStyle19.NullValue = null;
+            this.precioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.MaxInputLength = 10;
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // importeDataGridViewTextBoxColumn
+            // 
+            this.importeDataGridViewTextBoxColumn.DataPropertyName = "Importe";
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle20.Format = "N2";
+            dataGridViewCellStyle20.NullValue = null;
+            this.importeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
+            this.importeDataGridViewTextBoxColumn.HeaderText = "Importe";
+            this.importeDataGridViewTextBoxColumn.MaxInputLength = 10;
+            this.importeDataGridViewTextBoxColumn.Name = "importeDataGridViewTextBoxColumn";
+            this.importeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.importeDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // CantExtraSub
+            // 
+            this.CantExtraSub.DataPropertyName = "CantExtra";
+            dataGridViewCellStyle21.Format = "N2";
+            this.CantExtraSub.DefaultCellStyle = dataGridViewCellStyle21;
+            this.CantExtraSub.HeaderText = "Diferencia";
+            this.CantExtraSub.Name = "CantExtraSub";
+            this.CantExtraSub.Visible = false;
+            this.CantExtraSub.Width = 60;
+            // 
+            // CantRealSub
+            // 
+            this.CantRealSub.DataPropertyName = "CantReal";
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle22.Format = "N2";
+            dataGridViewCellStyle22.NullValue = null;
+            this.CantRealSub.DefaultCellStyle = dataGridViewCellStyle22;
+            this.CantRealSub.HeaderText = "Real";
+            this.CantRealSub.Name = "CantRealSub";
+            this.CantRealSub.Width = 90;
+            // 
+            // idPresupDetDataGridViewTextBoxColumn
+            // 
+            this.idPresupDetDataGridViewTextBoxColumn.DataPropertyName = "IdPresupDet";
+            this.idPresupDetDataGridViewTextBoxColumn.HeaderText = "IdPresupDet";
+            this.idPresupDetDataGridViewTextBoxColumn.Name = "idPresupDetDataGridViewTextBoxColumn";
+            this.idPresupDetDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ColorSub
+            // 
+            this.ColorSub.DataPropertyName = "Color";
+            this.ColorSub.HeaderText = "Color";
+            this.ColorSub.Name = "ColorSub";
+            this.ColorSub.Visible = false;
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
@@ -1831,235 +2065,6 @@
             this.toolStripButton33.Size = new System.Drawing.Size(16, 16);
             this.toolStripButton33.Text = "Color 3";
             this.toolStripButton33.Click += new System.EventHandler(this.toolStripButton33_Click);
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "NumPresupDet";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.dataGridViewTextBoxColumn22.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn22.HeaderText = "Nº";
-            this.dataGridViewTextBoxColumn22.MaxInputLength = 2;
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.Width = 25;
-            // 
-            // IdUM
-            // 
-            this.IdUM.DataPropertyName = "UM";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.IdUM.DefaultCellStyle = dataGridViewCellStyle6;
-            this.IdUM.HeaderText = "UM";
-            this.IdUM.MaxInputLength = 3;
-            this.IdUM.Name = "IdUM";
-            this.IdUM.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IdUM.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.IdUM.Width = 30;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "NomPresupDet";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn24.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewTextBoxColumn24.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn24.MaxInputLength = 100;
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.Width = 160;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "DesPresupDet";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn25.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewTextBoxColumn25.HeaderText = "Descripción";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.Width = 230;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle9.Format = "N2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MaxInputLength = 10;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Width = 60;
-            // 
-            // Precio
-            // 
-            this.Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.Precio.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MaxInputLength = 10;
-            this.Precio.Name = "Precio";
-            this.Precio.Width = 50;
-            // 
-            // Importe
-            // 
-            this.Importe.DataPropertyName = "Importe";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle11.Format = "N2";
-            dataGridViewCellStyle11.NullValue = null;
-            this.Importe.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Importe.HeaderText = "Importe";
-            this.Importe.MaxInputLength = 10;
-            this.Importe.Name = "Importe";
-            this.Importe.ReadOnly = true;
-            this.Importe.Width = 65;
-            // 
-            // CantExtra
-            // 
-            this.CantExtra.DataPropertyName = "CantExtra";
-            dataGridViewCellStyle12.Format = "N6";
-            dataGridViewCellStyle12.NullValue = null;
-            this.CantExtra.DefaultCellStyle = dataGridViewCellStyle12;
-            this.CantExtra.HeaderText = "Diferencia";
-            this.CantExtra.Name = "CantExtra";
-            this.CantExtra.Visible = false;
-            this.CantExtra.Width = 60;
-            // 
-            // CantReal
-            // 
-            this.CantReal.DataPropertyName = "CantReal";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle13.Format = "N6";
-            dataGridViewCellStyle13.NullValue = null;
-            this.CantReal.DefaultCellStyle = dataGridViewCellStyle13;
-            this.CantReal.HeaderText = "Real";
-            this.CantReal.Name = "CantReal";
-            this.CantReal.Width = 90;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "IdPresupCap";
-            this.dataGridViewTextBoxColumn21.HeaderText = "IdPresupCap";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.Visible = false;
-            // 
-            // ColorDet
-            // 
-            this.ColorDet.DataPropertyName = "Color";
-            this.ColorDet.HeaderText = "Color";
-            this.ColorDet.Name = "ColorDet";
-            this.ColorDet.Visible = false;
-            // 
-            // numPresupSubDataGridViewTextBoxColumn
-            // 
-            this.numPresupSubDataGridViewTextBoxColumn.DataPropertyName = "NumPresupSub";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.numPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
-            this.numPresupSubDataGridViewTextBoxColumn.HeaderText = "Nº";
-            this.numPresupSubDataGridViewTextBoxColumn.MaxInputLength = 2;
-            this.numPresupSubDataGridViewTextBoxColumn.Name = "numPresupSubDataGridViewTextBoxColumn";
-            this.numPresupSubDataGridViewTextBoxColumn.Width = 25;
-            // 
-            // uMDataGridViewTextBoxColumn
-            // 
-            this.uMDataGridViewTextBoxColumn.DataPropertyName = "UM";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.uMDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
-            this.uMDataGridViewTextBoxColumn.HeaderText = "UM";
-            this.uMDataGridViewTextBoxColumn.MaxInputLength = 3;
-            this.uMDataGridViewTextBoxColumn.Name = "uMDataGridViewTextBoxColumn";
-            this.uMDataGridViewTextBoxColumn.Width = 30;
-            // 
-            // nomPresupSubDataGridViewTextBoxColumn
-            // 
-            this.nomPresupSubDataGridViewTextBoxColumn.DataPropertyName = "NomPresupSub";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.nomPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
-            this.nomPresupSubDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nomPresupSubDataGridViewTextBoxColumn.MaxInputLength = 100;
-            this.nomPresupSubDataGridViewTextBoxColumn.Name = "nomPresupSubDataGridViewTextBoxColumn";
-            this.nomPresupSubDataGridViewTextBoxColumn.Width = 160;
-            // 
-            // desPresupSubDataGridViewTextBoxColumn
-            // 
-            this.desPresupSubDataGridViewTextBoxColumn.DataPropertyName = "DesPresupSub";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.desPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
-            this.desPresupSubDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.desPresupSubDataGridViewTextBoxColumn.Name = "desPresupSubDataGridViewTextBoxColumn";
-            this.desPresupSubDataGridViewTextBoxColumn.Width = 230;
-            // 
-            // CantidadSub
-            // 
-            this.CantidadSub.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle18.Format = "N2";
-            dataGridViewCellStyle18.NullValue = null;
-            this.CantidadSub.DefaultCellStyle = dataGridViewCellStyle18;
-            this.CantidadSub.HeaderText = "Cantidad";
-            this.CantidadSub.MaxInputLength = 10;
-            this.CantidadSub.Name = "CantidadSub";
-            this.CantidadSub.Width = 60;
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle19.Format = "N2";
-            dataGridViewCellStyle19.NullValue = null;
-            this.precioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
-            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            this.precioDataGridViewTextBoxColumn.MaxInputLength = 10;
-            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            this.precioDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // importeDataGridViewTextBoxColumn
-            // 
-            this.importeDataGridViewTextBoxColumn.DataPropertyName = "Importe";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle20.Format = "N2";
-            dataGridViewCellStyle20.NullValue = null;
-            this.importeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
-            this.importeDataGridViewTextBoxColumn.HeaderText = "Importe";
-            this.importeDataGridViewTextBoxColumn.MaxInputLength = 10;
-            this.importeDataGridViewTextBoxColumn.Name = "importeDataGridViewTextBoxColumn";
-            this.importeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.importeDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // CantExtraSub
-            // 
-            this.CantExtraSub.DataPropertyName = "CantExtra";
-            dataGridViewCellStyle21.Format = "N2";
-            this.CantExtraSub.DefaultCellStyle = dataGridViewCellStyle21;
-            this.CantExtraSub.HeaderText = "Diferencia";
-            this.CantExtraSub.Name = "CantExtraSub";
-            this.CantExtraSub.Visible = false;
-            this.CantExtraSub.Width = 60;
-            // 
-            // CantRealSub
-            // 
-            this.CantRealSub.DataPropertyName = "CantReal";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle22.Format = "N2";
-            dataGridViewCellStyle22.NullValue = null;
-            this.CantRealSub.DefaultCellStyle = dataGridViewCellStyle22;
-            this.CantRealSub.HeaderText = "Real";
-            this.CantRealSub.Name = "CantRealSub";
-            this.CantRealSub.Width = 90;
-            // 
-            // idPresupDetDataGridViewTextBoxColumn
-            // 
-            this.idPresupDetDataGridViewTextBoxColumn.DataPropertyName = "IdPresupDet";
-            this.idPresupDetDataGridViewTextBoxColumn.HeaderText = "IdPresupDet";
-            this.idPresupDetDataGridViewTextBoxColumn.Name = "idPresupDetDataGridViewTextBoxColumn";
-            this.idPresupDetDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // ColorSub
-            // 
-            this.ColorSub.DataPropertyName = "Color";
-            this.ColorSub.HeaderText = "Color";
-            this.ColorSub.Name = "ColorSub";
-            this.ColorSub.Visible = false;
             // 
             // Presupuestos
             // 

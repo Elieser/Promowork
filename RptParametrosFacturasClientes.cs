@@ -22,14 +22,11 @@ namespace Promowork
            
             empresasActualTableAdapter.FillByEmpresa(promowork_dataDataSet.EmpresasActual, VariablesGlobales.nIdEmpresaActual);
             marcaClientesTableAdapter.FillByMarca(promowork_dataDataSet.MarcaClientes, VariablesGlobales.nIdEmpresaActual);
-            
-            DataRowView Empresa = (DataRowView)empresasActualBindingSource.Current;
-           
-            int nMes= Convert.ToInt32(Empresa["MesEmpresa"]);
-            int nAno= Convert.ToInt32(Empresa["AnoEmpresa"]);
-            int nDiasFin = DateTime.DaysInMonth(nAno, nMes);
-            DateTime FechaIni = new DateTime(nAno, nMes, 1);
-            DateTime FechaFin = new DateTime(nAno, nMes, nDiasFin);
+
+
+            int nDiasFin = DateTime.DaysInMonth(VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual);
+            DateTime FechaIni = new DateTime(VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual, 1);
+            DateTime FechaFin = new DateTime(VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual, nDiasFin);
 
             dateTimePicker1.Value = FechaIni;
             dateTimePicker2.Value = FechaFin;

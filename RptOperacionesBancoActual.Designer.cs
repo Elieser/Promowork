@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.vOperacionesBancoImpBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Promowork_dataDataSet = new Promowork.Promowork_dataDataSet();
+            this.empresasActualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.vOperacionesBancoImpTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.vOperacionesBancoImpTableAdapter();
-            this.empresasActualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empresasActualTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.EmpresasActualTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.vOperacionesBancoImpBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Promowork_dataDataSet)).BeginInit();
@@ -52,15 +52,20 @@
             this.Promowork_dataDataSet.DataSetName = "Promowork_dataDataSet";
             this.Promowork_dataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // empresasActualBindingSource
+            // 
+            this.empresasActualBindingSource.DataMember = "EmpresasActual";
+            this.empresasActualBindingSource.DataSource = this.Promowork_dataDataSet;
+            // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.vOperacionesBancoImpBindingSource;
-            reportDataSource2.Name = "DataSet2";
-            reportDataSource2.Value = this.empresasActualBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource3.Name = "DataSet1";
+            reportDataSource3.Value = this.vOperacionesBancoImpBindingSource;
+            reportDataSource4.Name = "DataSet2";
+            reportDataSource4.Value = this.empresasActualBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Promowork.OperacionesBancoActual.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -70,11 +75,6 @@
             // vOperacionesBancoImpTableAdapter
             // 
             this.vOperacionesBancoImpTableAdapter.ClearBeforeFill = true;
-            // 
-            // empresasActualBindingSource
-            // 
-            this.empresasActualBindingSource.DataMember = "EmpresasActual";
-            this.empresasActualBindingSource.DataSource = this.Promowork_dataDataSet;
             // 
             // empresasActualTableAdapter
             // 
@@ -87,7 +87,9 @@
             this.ClientSize = new System.Drawing.Size(870, 464);
             this.Controls.Add(this.reportViewer1);
             this.Name = "RptOperacionesBancoActual";
-            this.Text = "RptOperacionesBancoActual";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.Text = "Operaciones Banco";
             ((System.ComponentModel.ISupportInitialize)(this.vOperacionesBancoImpBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Promowork_dataDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasActualBindingSource)).EndInit();
