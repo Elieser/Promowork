@@ -176,8 +176,10 @@
             this.impFacturadoTextBox = new System.Windows.Forms.TextBox();
             this.pendienteTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.facturaCheckBox = new System.Windows.Forms.CheckBox();
+            this.entregadaCheckBox = new System.Windows.Forms.CheckBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.facturaCheckBox = new System.Windows.Forms.CheckBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.mostrarVctoCheckBox = new System.Windows.Forms.CheckBox();
@@ -204,7 +206,6 @@
             this.presupCapTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.PresupCapTableAdapter();
             this.presupDetTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.PresupDetTableAdapter();
             this.presupSubTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.PresupSubTableAdapter();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             idClienteLabel = new System.Windows.Forms.Label();
             idPresupLabel = new System.Windows.Forms.Label();
             numFacturaLabel = new System.Windows.Forms.Label();
@@ -1626,6 +1627,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.entregadaCheckBox);
             this.groupBox3.Controls.Add(this.comboBox5);
             this.groupBox3.Controls.Add(this.facturaCheckBox);
             this.groupBox3.Controls.Add(label26);
@@ -1689,6 +1691,33 @@
             this.groupBox3.TabIndex = 81;
             this.groupBox3.TabStop = false;
             // 
+            // entregadaCheckBox
+            // 
+            this.entregadaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.facturasCabBindingSource, "Entregada", true));
+            this.entregadaCheckBox.Location = new System.Drawing.Point(697, 35);
+            this.entregadaCheckBox.Name = "entregadaCheckBox";
+            this.entregadaCheckBox.Size = new System.Drawing.Size(84, 21);
+            this.entregadaCheckBox.TabIndex = 114;
+            this.entregadaCheckBox.Text = "Entregada";
+            this.entregadaCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.facturasCabBindingSource, "IdClienteFact", true));
+            this.comboBox5.DataSource = this.clientesBindingSource1;
+            this.comboBox5.DisplayMember = "DesCliente";
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(520, 80);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(282, 21);
+            this.comboBox5.TabIndex = 113;
+            this.comboBox5.ValueMember = "IdCliente";
+            // 
+            // clientesBindingSource1
+            // 
+            this.clientesBindingSource1.DataMember = "Clientes";
+            this.clientesBindingSource1.DataSource = this.promowork_dataDataSet;
+            // 
             // facturaCheckBox
             // 
             this.facturaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.facturasCabBindingSource, "Factura", true));
@@ -1698,11 +1727,6 @@
             this.facturaCheckBox.TabIndex = 112;
             this.facturaCheckBox.Text = "Factura";
             this.facturaCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // clientesBindingSource1
-            // 
-            this.clientesBindingSource1.DataMember = "Clientes";
-            this.clientesBindingSource1.DataSource = this.promowork_dataDataSet;
             // 
             // textBox23
             // 
@@ -1963,18 +1987,6 @@
             // 
             this.presupSubTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBox5
-            // 
-            this.comboBox5.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.facturasCabBindingSource, "IdClienteFact", true));
-            this.comboBox5.DataSource = this.clientesBindingSource1;
-            this.comboBox5.DisplayMember = "DesCliente";
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(520, 80);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(282, 21);
-            this.comboBox5.TabIndex = 113;
-            this.comboBox5.ValueMember = "IdCliente";
-            // 
             // FacturasPresup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2151,5 +2163,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.CheckBox facturaCheckBox;
         private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.CheckBox entregadaCheckBox;
     }
 }

@@ -65,47 +65,63 @@ namespace Promowork
             this.horasTrabajadasBindingSource.MoveLast();
             cbxano.SelectedValue = VariablesGlobales.nAnoActual;
             cbxmes.SelectedValue = VariablesGlobales.nMesActual;
+          
+            this.cbxmes.SelectedValueChanged+=new EventHandler(cbxmes_SelectedValueChanged);
+            this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
+            this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
+
         }
 
         private void horasTrabajadasBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
-           try
-           {
-            this.Validate();
-            this.horasTrabajadasBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.promowork_dataDataSet);
-          /*  if (Convert.ToBoolean(gridView1.GetFocusedRowCellValue("HorasAdmin")) == true)
+           // MessageBox.Show(gridView1.GetFocusedRowCellValue("DiaTrab").ToString());
+            gridView1.CloseEditor();
+            if (DateTime.DaysInMonth(nAno, nMes) < Convert.ToInt32(gridView1.GetFocusedRowCellValue("DiaTrab")))
             {
-                queriesTableAdapter1.ActualizaHorasAdmin(Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdObra")), Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdTrabajador")), VariablesGlobales.nIdUsuarioActual, Convert.ToInt32(gridView1.GetFocusedRowCellValue("DiaTrab")), Convert.ToInt32(gridView1.GetFocusedRowCellValue("MesTrab")), Convert.ToInt32(gridView1.GetFocusedRowCellValue("AnoTrab")), Convert.ToDecimal(gridView1.GetFocusedRowCellValue("Cantidad")), Convert.ToString(gridView1.GetFocusedRowCellValue("DesTrabajo")), null);
+                MessageBox.Show("Día Incorrecto.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             else
             {
-                queriesTableAdapter1.ActualizaHorasAdmin(Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdObra")), Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdTrabajador")), VariablesGlobales.nIdUsuarioActual, Convert.ToInt32(gridView1.GetFocusedRowCellValue("DiaTrab")), Convert.ToInt32(gridView1.GetFocusedRowCellValue("MesTrab")), Convert.ToInt32(gridView1.GetFocusedRowCellValue("AnoTrab")), 0, null, null);
-            }*/
-            }
+
+                try
+                {
+                    this.Validate();
+                    this.horasTrabajadasBindingSource.EndEdit();
+                    this.tableAdapterManager.UpdateAll(this.promowork_dataDataSet);
+                    /*  if (Convert.ToBoolean(gridView1.GetFocusedRowCellValue("HorasAdmin")) == true)
+                      {
+                          queriesTableAdapter1.ActualizaHorasAdmin(Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdObra")), Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdTrabajador")), VariablesGlobales.nIdUsuarioActual, Convert.ToInt32(gridView1.GetFocusedRowCellValue("DiaTrab")), Convert.ToInt32(gridView1.GetFocusedRowCellValue("MesTrab")), Convert.ToInt32(gridView1.GetFocusedRowCellValue("AnoTrab")), Convert.ToDecimal(gridView1.GetFocusedRowCellValue("Cantidad")), Convert.ToString(gridView1.GetFocusedRowCellValue("DesTrabajo")), null);
+                      }
+                      else
+                      {
+                          queriesTableAdapter1.ActualizaHorasAdmin(Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdObra")), Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdTrabajador")), VariablesGlobales.nIdUsuarioActual, Convert.ToInt32(gridView1.GetFocusedRowCellValue("DiaTrab")), Convert.ToInt32(gridView1.GetFocusedRowCellValue("MesTrab")), Convert.ToInt32(gridView1.GetFocusedRowCellValue("AnoTrab")), 0, null, null);
+                      }*/
+                }
                 catch (DBConcurrencyException)
                 {
 
                     MessageBox.Show("No se Pudo Salvar la Información. El Registro fue modificado por otro Usuario.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual,nAno,nMes);
+                    this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
                     this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
                 }
                 catch (SqlException ex)
                 {
                     if (ErroresSQLServer.ManipulaErrorSQL(ex, this.Text))
                     {
-                        this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual,nAno,nMes);
+                        this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
                         this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
                     }
 
                 }
-           this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
+                this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
+            }
 
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             this.productosUtilizadosTableAdapter.FillbyHoras(this.promowork_dataDataSet.ProductosUtilizados, Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdHoras")));
+            
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -125,7 +141,7 @@ namespace Promowork
             gridView1.SetFocusedRowCellValue("MesTrab", nMes);
             gridView1.SetFocusedRowCellValue("Festivo", 0);
             gridView1.SetFocusedRowCellValue("HorasAdmin", 0);
-
+            
             gridView1.FocusedColumn = gridView1.VisibleColumns[0];
             gridView1.ShowEditor();
         }
@@ -279,24 +295,31 @@ namespace Promowork
             }
         }
 
-        private void cbxano_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            nAno = (int)cbxano.SelectedValue;
-            this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
-            this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
-        }
-        void cbxmes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            nMes = (byte)cbxmes.SelectedValue;
-            this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
-            this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, nAno, nMes); 
-        }
-
-        private void HorasMateriales_FormClosing(object sender, FormClosingEventArgs e)
+      private void HorasMateriales_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Visible = false;
            // promowork_dataDataSet.Clear();
             this.Close();
+        }
+
+        private void cbxmes_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                nAno = (int)cbxano.SelectedValue;
+                nMes = (byte)cbxmes.SelectedValue;
+            }
+            catch { }
+          //  MessageBox.Show(nAno.ToString() + "     " + nMes.ToString());
+            this.horasTrabajadasTableAdapter.FillByEmpresaMesAno(this.promowork_dataDataSet.HorasTrabajadas, VariablesGlobales.nIdEmpresaActual, nAno, nMes);
+            this.horasTrabajadasTotalTrabajadorTableAdapter.Fill(this.promowork_dataDataSet.HorasTrabajadasTotalTrabajador, VariablesGlobales.nIdEmpresaActual, nAno, nMes); 
+        }
+
+     
+
+        private void gridView1_ColumnFilterChanged(object sender, EventArgs e)
+        {
+            gridView1_FocusedRowChanged(null, null);
         }
 
     }

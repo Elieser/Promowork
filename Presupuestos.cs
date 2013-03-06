@@ -50,21 +50,22 @@ namespace Promowork
                 {
 
                     MessageBox.Show("No se Pudo Salvar la Información. El Registro fue modificado por otro Usuario.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    this.presupCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.PresupCab, VariablesGlobales.nIdEmpresaActual);
+                    this.presupCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.PresupCab, VariablesGlobales.nIdEmpresaActual, (int)cmbano.SelectedValue);
                 }
                 catch (SqlException ex)
                 {
 
                     if (ErroresSQLServer.ManipulaErrorSQL(ex, this.Text))
                     {
-                        this.presupCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.PresupCab, VariablesGlobales.nIdEmpresaActual);
+                        this.presupCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.PresupCab, VariablesGlobales.nIdEmpresaActual, (int)cmbano.SelectedValue);
                     }
-
+                    
                 }
         }
 
         private void Presupuestos_Load(object sender, EventArgs e)
         {
+
             // TODO: This line of code loads data into the 'promowork_dataDataSet.PresupSub' table. You can move, or remove it, as needed.
             this.presupSubTableAdapter.Fill(this.promowork_dataDataSet.PresupSub);
           
@@ -81,13 +82,12 @@ namespace Promowork
             // TODO: This line of code loads data into the 'promowork_dataDataSet.PartPresup' table. You can move, or remove it, as needed.
             this.partPresupTableAdapter.Fill(this.promowork_dataDataSet.PartPresup);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.PresupCab' table. You can move, or remove it, as needed.
-            this.presupCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.PresupCab,VariablesGlobales.nIdEmpresaActual);
-           
             this.proveedoresTableAdapter.Fill(promowork_dataDataSet.Proveedores, VariablesGlobales.nIdEmpresaActual);
             this.empresasActualTableAdapter.FillByEmpresa(promowork_dataDataSet.EmpresasActual, VariablesGlobales.nIdEmpresaActual);
-
-           
-
+            this.presupCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.PresupCab, VariablesGlobales.nIdEmpresaActual, VariablesGlobales.nAnoActual);
+            this.anosPrespupTableAdapter.Fill(promowork_dataDataSet.AnosPrespup, VariablesGlobales.nIdEmpresaActual);
+            cmbano.SelectedValue = VariablesGlobales.nAnoActual;
+  
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -172,7 +172,7 @@ namespace Promowork
                 int pos = presupCabBindingSource.Position;
                 int pos1 = presupCapBindingSource.Position;
                 int pos2 = presupDetBindingSource.Position;
-                presupCabTableAdapter.FillByEmpresa(promowork_dataDataSet.PresupCab, VariablesGlobales.nIdEmpresaActual);
+                this.presupCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.PresupCab, VariablesGlobales.nIdEmpresaActual, (int)cmbano.SelectedValue);
                 presupCabBindingSource.Position = pos;
                 presupCapTableAdapter.Fill(promowork_dataDataSet.PresupCap);
                 presupCapBindingSource.Position = pos1;
@@ -246,21 +246,7 @@ namespace Promowork
             }
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-           if (radioButton2.Checked==true)
-           {
-            presupCabBindingSource.Filter = "Facturado=false";
-           }
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton2.Checked == true)
-            {
-                presupCabBindingSource.Filter = null;
-            }
-        }
+    
 
         private void toolStripButton22_Click(object sender, EventArgs e)
         {
@@ -302,7 +288,7 @@ namespace Promowork
                     this.presupDetBindingSource.EndEdit();
                     presupDetTableAdapter.Update(promowork_dataDataSet.PresupDet);
                 }
-                presupCabTableAdapter.FillByEmpresa(promowork_dataDataSet.PresupCab, VariablesGlobales.nIdEmpresaActual);
+                this.presupCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.PresupCab, VariablesGlobales.nIdEmpresaActual, (int)cmbano.SelectedValue);
                 presupCabBindingSource.Position = pos;
                 presupCapTableAdapter.Fill(promowork_dataDataSet.PresupCap);
                 presupCapBindingSource.Position = pos1;
@@ -537,6 +523,46 @@ namespace Promowork
             }
         }
 
-              
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            DataRowView PresupActual = (DataRowView)presupCabBindingSource.Current;
+            PresupActual["CopiaPresup"] = openFileDialog1.FileName;
+            copiaFacturaTextBox.Text = openFileDialog1.FileName;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DataRowView PresupActual = (DataRowView)presupCabBindingSource.Current;
+            try
+            {
+                System.Diagnostics.Process.Start(Convert.ToString(PresupActual["CopiaPresup"]));
+            }
+            catch
+            {
+                MessageBox.Show("No se puedo abrir el fichero. Compruebe que exista en el camino indicado.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DataRowView PresupActual = (DataRowView)presupCabBindingSource.Current;
+            PresupActual["CopiaPresup"] = null;
+            copiaFacturaTextBox.Text = "";
+        }
+
+        private void cmbano_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.presupCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.PresupCab, VariablesGlobales.nIdEmpresaActual, (int)cmbano.SelectedValue);
+        }
+
+        private void Presupuestos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Visible = false;
+            //promowork_dataDataSet.Clear();
+            this.Close();
+        }
+
+                      
     }
 }

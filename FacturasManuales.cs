@@ -19,12 +19,16 @@ namespace Promowork
 
         private void facturasCabBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            if (idCuentaComboBox.Text == "")
+             try
             {
-                facturasCabDataGridView.CurrentRow.Cells["IdCuenta"].Value = DBNull.Value;
-            }
-            try
-            {
+                this.Validate();
+                this.facturasCabBindingSource.EndEdit();
+                facturasCabTableAdapter.Update(promowork_dataDataSet.FacturasCab);
+                if (idCuentaComboBox.Text == "" && facturasCabDataGridView.RowCount != 0)
+                {
+                    facturasCabDataGridView.CurrentRow.Cells["IdCuenta"].Value = DBNull.Value;
+                }
+           
             this.Validate();
             this.facturasCabBindingSource.EndEdit();
             facturasCabTableAdapter.Update(promowork_dataDataSet.FacturasCab);
@@ -55,12 +59,13 @@ namespace Promowork
         private void FacturasPresup_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'promowork_dataDataSet.Obras' table. You can move, or remove it, as needed.
-            this.obrasTableAdapter.Fill(this.promowork_dataDataSet.Obras);
+            this.obrasTableAdapter.FillByEmpresa(this.promowork_dataDataSet.Obras,VariablesGlobales.nIdEmpresaActual);
           
             this.cuentasBancosTableAdapter.FillByCtaEmpresa(this.promowork_dataDataSet.CuentasBancos,VariablesGlobales.nIdEmpresaActual);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.PresupCab' table. You can move, or remove it, as needed.
-            this.clientesTableAdapter.Fill(this.promowork_dataDataSet.Clientes);
+            this.clientesTableAdapter.FillByEmpresa(this.promowork_dataDataSet.Clientes,VariablesGlobales.nIdEmpresaActual);
             clientesBindingSource.Sort = "DesCliente";
+            clientesBindingSource1.Sort = "DesCliente";
             // TODO: This line of code loads data into the 'promowork_dataDataSet.FacturasDet' table. You can move, or remove it, as needed.
            // this.facturasDetTableAdapter.Fill(this.promowork_dataDataSet.FacturasDet);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.FacturasCab' table. You can move, or remove it, as needed.
@@ -87,6 +92,8 @@ namespace Promowork
             factura["Cobrada"] = false;
             factura["FacturaPresup"] = false;
             factura["Factura"] = true;
+            factura["Entregada"] = false;
+            factura["MostrarVcto"] = true;
 
           
             toolStripButton1.Enabled = false;
@@ -390,15 +397,31 @@ namespace Promowork
 
        private void printToolStripButton1_Click(object sender, EventArgs e)
        {
-           DataRowView FacturaAct = (DataRowView)facturasCabBindingSource.Current;
+           if (facturaCheckBox.Checked == true)
+           {
+               DataRowView FacturaAct = (DataRowView)facturasCabBindingSource.Current;
 
-           int Factura = Convert.ToInt32(FacturaAct["IdFactCab"]);
+               int Factura = Convert.ToInt32(FacturaAct["IdFactCab"]);
 
 
-           RptFacturasManualImp2 frm = new RptFacturasManualImp2();
-           frm.LoadFiltro(Factura);
-           frm.MdiParent = this.MdiParent;
-           frm.Show();
+               RptFacturasManualImp2 frm = new RptFacturasManualImp2();
+               frm.LoadFiltro(Factura);
+               frm.MdiParent = this.MdiParent;
+               frm.Show();
+           }
+           else
+           {
+               DataRowView FacturaAct = (DataRowView)facturasCabBindingSource.Current;
+
+               int Factura = Convert.ToInt32(FacturaAct["IdFactCab"]);
+
+
+               RptFacturasManualImpParte2 frm = new RptFacturasManualImpParte2();
+               frm.LoadFiltro(Factura);
+               frm.MdiParent = this.MdiParent;
+               frm.Show();
+           }
+
        }
        
 

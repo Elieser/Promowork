@@ -2255,7 +2255,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.05331cm</Height>
+      <Height>2.17639cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -2284,10 +2284,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox495</rd:DefaultName>
-          <Top>0.45331cm</Top>
-          <Left>0.00001cm</Left>
+          <Top>1.57639cm</Top>
+          <Left>0.0693cm</Left>
           <Height>0.6cm</Height>
-          <Width>13.14821cm</Width>
+          <Width>11.19029cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2298,15 +2298,16 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox437">
+        <Textbox Name="Textbox455">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>TOTAL:</Value>
+                  <Value>Importe Total:</Value>
                   <Style>
+                    <FontSize>8pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -2316,27 +2317,29 @@
               </Style>
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox433</rd:DefaultName>
-          <Top>0.45331cm</Top>
-          <Left>13.14821cm</Left>
-          <Height>0.6cm</Height>
-          <Width>2.2587cm</Width>
+          <rd:DefaultName>Textbox451</rd:DefaultName>
+          <Top>0.17639cm</Top>
+          <Left>11.29487cm</Left>
+          <Height>0.5cm</Height>
+          <Width>4.12199cm</Width>
           <ZIndex>1</ZIndex>
+          <Visibility>
+            <Hidden>=First(Fields!DescPronto.Value, "DataSet3")+Sum(Fields!DescFactura.Value, "DataSet3")=0</Hidden>
+          </Visibility>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
-            <BottomBorder>
-              <Color>Black</Color>
-              <Width>1pt</Width>
-            </BottomBorder>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
+            <TopBorder>
+              <Width>1.5pt</Width>
+            </TopBorder>
+            <PaddingLeft>0cm</PaddingLeft>
+            <PaddingRight>0cm</PaddingRight>
+            <PaddingTop>0cm</PaddingTop>
+            <PaddingBottom>0cm</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Cantidad18">
+        <Textbox Name="Cantidad15">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -2344,6 +2347,262 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1")</Value>
+                  <Style>
+                    <FontSize>11pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Cantidad</rd:DefaultName>
+          <Top>0.17639cm</Top>
+          <Left>15.40691cm</Left>
+          <Height>0.5cm</Height>
+          <Width>3.32021cm</Width>
+          <ZIndex>2</ZIndex>
+          <Visibility>
+            <Hidden>=First(Fields!DescPronto.Value, "DataSet3")+Sum(Fields!DescFactura.Value, "DataSet3")=0</Hidden>
+          </Visibility>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <TopBorder>
+              <Width>1.5pt</Width>
+            </TopBorder>
+            <PaddingLeft>0cm</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>0cm</PaddingTop>
+            <PaddingBottom>0cm</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox425">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Desc. Com. (</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=First(Fields!DescFactura.Value, "DataSet3")/100</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <Format>0.00%</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>):</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox417</rd:DefaultName>
+          <Top>0.67639cm</Top>
+          <Left>11.29487cm</Left>
+          <Height>0.5cm</Height>
+          <Width>4.12199cm</Width>
+          <ZIndex>3</ZIndex>
+          <Visibility>
+            <Hidden>=First(Fields!DescFactura.Value, "DataSet3")=0</Hidden>
+          </Visibility>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>0cm</PaddingLeft>
+            <PaddingRight>0cm</PaddingRight>
+            <PaddingTop>0cm</PaddingTop>
+            <PaddingBottom>0cm</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox449">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=(Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))*First(Fields!DescFactura.Value, "DataSet3")/100</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox427</rd:DefaultName>
+          <Top>0.67639cm</Top>
+          <Left>15.40691cm</Left>
+          <Height>0.5cm</Height>
+          <Width>3.32021cm</Width>
+          <ZIndex>4</ZIndex>
+          <Visibility>
+            <Hidden>=Sum(Fields!DescFactura.Value, "DataSet3")=0</Hidden>
+          </Visibility>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>0cm</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>0cm</PaddingTop>
+            <PaddingBottom>0cm</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox426">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Desc. Pronto Pago (</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=First(Fields!DescPronto.Value, "DataSet3")/100</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <Format>0.00%</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>):</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox417</rd:DefaultName>
+          <Top>1.17639cm</Top>
+          <Left>11.29487cm</Left>
+          <Height>0.5cm</Height>
+          <Width>4.12199cm</Width>
+          <ZIndex>5</ZIndex>
+          <Visibility>
+            <Hidden>=First(Fields!DescPronto.Value, "DataSet3")=0</Hidden>
+          </Visibility>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>0cm</PaddingLeft>
+            <PaddingRight>0cm</PaddingRight>
+            <PaddingTop>0cm</PaddingTop>
+            <PaddingBottom>0cm</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox450">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=((Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))-(Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))*First(Fields!DescFactura.Value, "DataSet3")/100)*First(Fields!DescPronto.Value, "DataSet3")/100</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox427</rd:DefaultName>
+          <Top>1.17639cm</Top>
+          <Left>15.40691cm</Left>
+          <Height>0.5cm</Height>
+          <Width>3.32021cm</Width>
+          <ZIndex>6</ZIndex>
+          <Visibility>
+            <Hidden>=First(Fields!DescPronto.Value, "DataSet3")=0</Hidden>
+          </Visibility>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>0cm</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>0cm</PaddingTop>
+            <PaddingBottom>0cm</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox104">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Total a Pagar:</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox99</rd:DefaultName>
+          <Top>1.67639cm</Top>
+          <Left>11.29487cm</Left>
+          <Height>0.5cm</Height>
+          <Width>4.12199cm</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>0cm</PaddingLeft>
+            <PaddingRight>0cm</PaddingRight>
+            <PaddingTop>0cm</PaddingTop>
+            <PaddingBottom>0cm</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Cantidad19">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Round((Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1")),2)  - Round(((Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))*First(Fields!DescFactura.Value, "DataSet3")/100),2) -  Round((((Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))-(Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))*First(Fields!DescFactura.Value, "DataSet3")/100)*First(Fields!DescPronto.Value, "DataSet3")/100),2)</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -2358,22 +2617,19 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Cantidad</rd:DefaultName>
-          <Top>0.45331cm</Top>
+          <Top>1.67639cm</Top>
           <Left>15.40691cm</Left>
-          <Height>0.6cm</Height>
+          <Height>0.5cm</Height>
           <Width>3.32021cm</Width>
-          <ZIndex>2</ZIndex>
+          <ZIndex>8</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
-            <TopBorder>
-              <Width>1pt</Width>
-            </TopBorder>
-            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingLeft>0cm</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
+            <PaddingTop>0cm</PaddingTop>
+            <PaddingBottom>0cm</PaddingBottom>
           </Style>
         </Textbox>
       </ReportItems>

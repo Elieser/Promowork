@@ -17,11 +17,11 @@ namespace Promowork
             InitializeComponent();
         }
 
-        internal void LoadParametros(DataTable Obras, bool IncCobros, int colorRojo, int colorAzul, int colorNegro)
+        internal void LoadParametros(DataTable Obras, bool IncCobros, int colorRojo, int colorAzul, int colorNegro, bool MostrarFactPresup)
         {
             this.WindowState = FormWindowState.Maximized;
             // TODO: This line of code loads data into the 'Promowork_dataDataSet.ResumenObraCompleta' table. You can move, or remove it, as needed.
-            this.ResumenObraCompletaTableAdapter.Fill(this.Promowork_dataDataSet.ResumenObraCompleta, Obras, colorRojo, colorAzul, colorNegro);
+            this.ResumenObraCompletaTableAdapter.Fill(this.Promowork_dataDataSet.ResumenObraCompleta, Obras, colorRojo, colorAzul, colorNegro, MostrarFactPresup);
             this.resumenObraCompletaTotalTableAdapter.Fill(this.Promowork_dataDataSet.ResumenObraCompletaTotal, Obras);
             // TODO: This line of code loads data into the 'Promowork_dataDataSet.EmpresasActual' table. You can move, or remove it, as needed.
             this.EmpresasActualTableAdapter.FillByEmpresa(this.Promowork_dataDataSet.EmpresasActual,VariablesGlobales.nIdEmpresaActual);

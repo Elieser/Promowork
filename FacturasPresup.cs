@@ -110,7 +110,7 @@ namespace Promowork
             // TODO: This line of code loads data into the 'promowork_dataDataSet.CuentasBancos' table. You can move, or remove it, as needed.
             this.cuentasBancosTableAdapter.Fill(this.promowork_dataDataSet.CuentasBancos, VariablesGlobales.nIdEmpresaActual);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.PresupCab' table. You can move, or remove it, as needed.
-            this.presupCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.PresupCab,VariablesGlobales.nIdEmpresaActual);
+            this.presupCabTableAdapter.FillByEmpresaTodo(this.promowork_dataDataSet.PresupCab,VariablesGlobales.nIdEmpresaActual);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.Clientes' table. You can move, or remove it, as needed.
             this.clientesTableAdapter.FillByEmpresa(this.promowork_dataDataSet.Clientes,VariablesGlobales.nIdEmpresaActual);
             clientesBindingSource.Sort = "DesCliente";
@@ -141,6 +141,8 @@ namespace Promowork
             factura["Cobrada"] = false;
             factura["FacturaPresup"] = true;
             factura["Factura"] = true;
+            factura["Entregada"] = false;
+            factura["MostrarVcto"] = true;
 
             button1.Enabled = false;
            // toolStripButton1.Enabled = false;
@@ -625,20 +627,20 @@ namespace Promowork
 
        private void idPresupComboBox_Enter(object sender, EventArgs e)
        {
-           try
-           {
-               presupCabBindingSource.Filter = "Pendiente>0 and IdCliente=" + Convert.ToString(idClienteComboBox.SelectedValue);
-           }
-           catch { }
+           //try
+           //{
+           //    presupCabBindingSource.Filter = "Pendiente>0 and IdCliente=" + Convert.ToString(idClienteComboBox.SelectedValue);
+           //}
+           //catch { }
        }
 
        private void idPresupComboBox_Leave(object sender, EventArgs e)
        {
-           try
-           {
-           presupCabBindingSource.Filter ="IdCliente=" + Convert.ToString(idClienteComboBox.SelectedValue);
-           }
-           catch { }
+           //try
+           //{
+           //presupCabBindingSource.Filter ="IdCliente=" + Convert.ToString(idClienteComboBox.SelectedValue);
+           //}
+           //catch { }
        }
       
 

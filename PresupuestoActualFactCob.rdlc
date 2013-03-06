@@ -208,6 +208,10 @@
           <DataField>Retencion</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="ObsCapPresup">
+          <DataField>ObsCapPresup</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <Query>
         <DataSourceName>Promowork_dataDataSet</DataSourceName>
@@ -401,9 +405,11 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <BackgroundColor>Tan</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -486,8 +492,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>DarkSeaGreen</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -528,12 +533,11 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>2.25pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
                           <Color>Black</Color>
-                          <Width>2.25pt</Width>
+                          <Width>1pt</Width>
                         </RightBorder>
                         <BackgroundColor>Tan</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -574,9 +578,12 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <BackgroundColor>#859ac9</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -622,8 +629,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>Tan</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -695,6 +701,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <BackgroundColor>Tan</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -807,8 +817,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>DarkSeaGreen</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -882,8 +891,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>2.25pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>Tan</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -922,7 +930,7 @@
                         </Border>
                         <RightBorder>
                           <Color>Black</Color>
-                          <Width>2.25pt</Width>
+                          <Width>1pt</Width>
                         </RightBorder>
                         <BackgroundColor>Tan</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -961,8 +969,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>#859ac9</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1034,6 +1041,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <BackgroundColor>#859ac9</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1050,7 +1061,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox18">
+                    <Textbox Name="Textbox63">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1070,7 +1081,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox18</rd:DefaultName>
+                      <rd:DefaultName>Textbox63</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1078,8 +1089,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>PaleTurquoise</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1092,7 +1102,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox19">
+                    <Textbox Name="Textbox64">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1104,7 +1114,6 @@
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Format>#,0.00'€';(#,0.00'€');''</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1113,7 +1122,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox19</rd:DefaultName>
+                      <rd:DefaultName>Textbox64</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1158,6 +1167,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <BackgroundColor>PaleTurquoise</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1169,7 +1182,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox68">
+                    <Textbox Name="Textbox69">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1181,7 +1194,6 @@
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Format>#,0.00;(#,0.00);''</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1190,7 +1202,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox68</rd:DefaultName>
+                      <rd:DefaultName>Textbox69</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1251,7 +1263,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox40">
+                    <Textbox Name="Textbox77">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1271,7 +1283,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox40</rd:DefaultName>
+                      <rd:DefaultName>Textbox77</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1279,8 +1291,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>#94e7c0</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1332,7 +1343,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox559">
+                    <Textbox Name="Textbox79">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1352,7 +1363,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox558</rd:DefaultName>
+                      <rd:DefaultName>Textbox79</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1360,8 +1371,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>2.25pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>#e9c69c</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1404,7 +1414,7 @@
                         </Border>
                         <RightBorder>
                           <Color>Black</Color>
-                          <Width>2.25pt</Width>
+                          <Width>1pt</Width>
                         </RightBorder>
                         <BackgroundColor>#e9c69c</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1417,7 +1427,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox556">
+                    <Textbox Name="Textbox81">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1437,7 +1447,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox556</rd:DefaultName>
+                      <rd:DefaultName>Textbox81</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1445,8 +1455,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>#a3b0ca</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1459,7 +1468,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox171">
+                    <Textbox Name="Textbox82">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1471,7 +1480,6 @@
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Format>#,0.00'€';(#,0.00'€');''</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1480,7 +1488,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox171</rd:DefaultName>
+                      <rd:DefaultName>Textbox82</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1525,6 +1533,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <BackgroundColor>#a3b0ca</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1534,6 +1546,225 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.23622in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox18">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox18</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </LeftBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>3</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox68">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>#,0.00;(#,0.00);''</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>2</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox40">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox40</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </LeftBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>2</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox559">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox558</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </LeftBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>2</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox556">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox556</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </LeftBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>3</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
               </TablixCells>
             </TablixRow>
             <TablixRow>
@@ -1570,8 +1801,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>#ebffff</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1651,6 +1881,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <BackgroundColor>#ebffff</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1774,8 +2008,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>#e4fce4</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1855,8 +2088,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>2.25pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>#f7eada</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1899,7 +2131,7 @@
                         </Border>
                         <RightBorder>
                           <Color>Black</Color>
-                          <Width>2.25pt</Width>
+                          <Width>1pt</Width>
                         </RightBorder>
                         <BackgroundColor>#f7eada</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -1941,8 +2173,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>#d7dbe7</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -2022,6 +2253,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <BackgroundColor>#d7dbe7</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -2067,9 +2302,11 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2190,8 +2427,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -2268,9 +2504,12 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2312,9 +2551,12 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2363,9 +2605,11 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2488,8 +2732,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -2567,9 +2810,12 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2612,8 +2858,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -2693,6 +2938,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2737,8 +2986,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>#ebffff</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -2818,6 +3066,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <BackgroundColor>#ebffff</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -2941,8 +3193,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>#e4fce4</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -3022,8 +3273,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>2.25pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>#f7eada</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -3066,7 +3316,7 @@
                         </Border>
                         <RightBorder>
                           <Color>Black</Color>
-                          <Width>2.25pt</Width>
+                          <Width>1pt</Width>
                         </RightBorder>
                         <BackgroundColor>#f7eada</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -3108,8 +3358,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>#d7dbe7</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -3189,6 +3438,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <BackgroundColor>#d7dbe7</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -3234,9 +3487,11 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -3356,8 +3611,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -3434,9 +3688,12 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -3478,9 +3735,12 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -3529,9 +3789,11 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -3653,8 +3915,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -3732,9 +3993,12 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -3777,8 +4041,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -3858,6 +4121,10 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -3902,9 +4169,11 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <BackgroundColor>Moccasin</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -4025,8 +4294,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>Moccasin</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -4105,12 +4373,11 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>2.25pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
                           <Color>Black</Color>
-                          <Width>2.25pt</Width>
+                          <Width>1pt</Width>
                         </RightBorder>
                         <BackgroundColor>Moccasin</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -4154,9 +4421,12 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <BackgroundColor>Moccasin</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -4205,12 +4475,10 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>2.25pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
-                          <Width>2.25pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -4268,8 +4536,11 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Width>2.25pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <BackgroundColor>Tan</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -4390,8 +4661,7 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>2.25pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <BackgroundColor>Tan</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -4470,12 +4740,11 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>2.25pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
                           <Color>Black</Color>
-                          <Width>2.25pt</Width>
+                          <Width>1pt</Width>
                         </RightBorder>
                         <BackgroundColor>Tan</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -4519,9 +4788,12 @@
                         </Border>
                         <LeftBorder>
                           <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Width>1.5pt</Width>
+                        </RightBorder>
                         <BackgroundColor>Tan</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -4567,6 +4839,9 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <LeftBorder>
+                          <Width>1pt</Width>
+                        </LeftBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -4619,6 +4894,9 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <LeftBorder>
+                          <Width>1pt</Width>
+                        </LeftBorder>
                         <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -5058,6 +5336,9 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <LeftBorder>
+                          <Width>1pt</Width>
+                        </LeftBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -5759,6 +6040,82 @@
                           <TablixHeader>
                             <Size>0.40092in</Size>
                             <CellContents>
+                              <Textbox Name="Textbox60">
+                                <CanGrow>true</CanGrow>
+                                <KeepTogether>true</KeepTogether>
+                                <Paragraphs>
+                                  <Paragraph>
+                                    <TextRuns>
+                                      <TextRun>
+                                        <Value />
+                                        <Style>
+                                          <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                          <FontSize>8pt</FontSize>
+                                          <FontWeight>Bold</FontWeight>
+                                        </Style>
+                                      </TextRun>
+                                    </TextRuns>
+                                    <Style />
+                                  </Paragraph>
+                                </Paragraphs>
+                                <rd:DefaultName>Textbox60</rd:DefaultName>
+                                <Style>
+                                  <Border>
+                                    <Color>LightGrey</Color>
+                                    <Style>Solid</Style>
+                                  </Border>
+                                  <BackgroundColor>PaleTurquoise</BackgroundColor>
+                                  <PaddingLeft>2pt</PaddingLeft>
+                                  <PaddingRight>2pt</PaddingRight>
+                                  <PaddingTop>2pt</PaddingTop>
+                                  <PaddingBottom>2pt</PaddingBottom>
+                                </Style>
+                              </Textbox>
+                            </CellContents>
+                          </TablixHeader>
+                        </TablixMember>
+                      </TablixMembers>
+                    </TablixMember>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>2.95275in</Size>
+                        <CellContents>
+                          <Textbox Name="ObsCapPresup">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!ObsCapPresup.Value</Value>
+                                    <Style>
+                                      <FontFamily>Franklin Gothic Medium Cond</FontFamily>
+                                      <FontSize>8pt</FontSize>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>ObsCapPresup</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <TablixMembers>
+                        <TablixMember>
+                          <TablixHeader>
+                            <Size>0.40092in</Size>
+                            <CellContents>
                               <Textbox Name="Textbox575">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
@@ -5783,7 +6140,6 @@
                                     <Color>LightGrey</Color>
                                     <Style>Solid</Style>
                                   </Border>
-                                  <BackgroundColor>PaleTurquoise</BackgroundColor>
                                   <PaddingLeft>2pt</PaddingLeft>
                                   <PaddingRight>2pt</PaddingRight>
                                   <PaddingTop>2pt</PaddingTop>
@@ -5794,6 +6150,9 @@
                           </TablixHeader>
                         </TablixMember>
                       </TablixMembers>
+                      <Visibility>
+                        <Hidden>=IsNothing(Fields!ObsCapPresup.Value)</Hidden>
+                      </Visibility>
                     </TablixMember>
                     <TablixMember>
                       <Group Name="IdPresupDet">
@@ -6791,8 +7150,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Height>8.99998cm</Height>
-        <Width>36.80389cm</Width>
+        <Height>9.59998cm</Height>
+        <Width>36.80391cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -6803,7 +7162,7 @@
     <Height>3.77952in</Height>
     <Style />
   </Body>
-  <Width>14.77097in</Width>
+  <Width>14.48973in</Width>
   <Page>
     <PageHeader>
       <Height>3.10501cm</Height>
@@ -7111,6 +7470,7 @@
       </ReportItems>
       <Style>
         <Border>
+          <Color>LightGrey</Color>
           <Style>None</Style>
         </Border>
       </Style>

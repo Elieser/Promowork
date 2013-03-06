@@ -64,7 +64,6 @@
             this.clientesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -73,6 +72,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.clientesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
@@ -82,6 +82,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCliente1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obrasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dNINIFClienteTextBox = new System.Windows.Forms.TextBox();
             this.desClienteTextBox = new System.Windows.Forms.TextBox();
@@ -136,6 +137,22 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.salariosVentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.salariosVentaTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.SalariosVentaTableAdapter();
+            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tiposBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.obrasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriasTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.CategoriasTableAdapter();
+            this.tiposTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.TiposTableAdapter();
+            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.repositoryItemLookUpEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colIdCategoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdTipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSalVenta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdObra = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.salariosVentaGridControl = new DevExpress.XtraGrid.GridControl();
             dNINIFClienteLabel = new System.Windows.Forms.Label();
             desClienteLabel = new System.Windows.Forms.Label();
             dirClienteLabel = new System.Windows.Forms.Label();
@@ -178,6 +195,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.provincias1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poblaciones1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasActualBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salariosVentaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salariosVentaGridControl)).BeginInit();
             this.SuspendLayout();
             // 
             // dNINIFClienteLabel
@@ -449,6 +475,7 @@
             this.tableAdapterManager.CuentasTableAdapter = null;
             this.tableAdapterManager.CursosTableAdapter = null;
             this.tableAdapterManager.CursosTrabajadoresTableAdapter = null;
+            this.tableAdapterManager.DescuentosFacturasTableAdapter = null;
             this.tableAdapterManager.EmpresasActualTableAdapter = null;
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
@@ -526,7 +553,7 @@
             this.clientesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.clientesBindingNavigator.Name = "clientesBindingNavigator";
             this.clientesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.clientesBindingNavigator.Size = new System.Drawing.Size(940, 25);
+            this.clientesBindingNavigator.Size = new System.Drawing.Size(945, 25);
             this.clientesBindingNavigator.TabIndex = 0;
             this.clientesBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -546,16 +573,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -617,6 +634,16 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
             // clientesBindingNavigatorSaveItem
             // 
             this.clientesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -659,12 +686,13 @@
             this.NumCliente,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn3,
-            this.IdEmpresa});
+            this.IdEmpresa,
+            this.IdCliente1});
             this.clientesDataGridView.DataSource = this.clientesBindingSource;
             this.clientesDataGridView.Location = new System.Drawing.Point(12, 28);
             this.clientesDataGridView.Name = "clientesDataGridView";
             this.clientesDataGridView.ReadOnly = true;
-            this.clientesDataGridView.Size = new System.Drawing.Size(393, 352);
+            this.clientesDataGridView.Size = new System.Drawing.Size(393, 491);
             this.clientesDataGridView.TabIndex = 0;
             this.clientesDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientesDataGridView_CellEnter);
             // 
@@ -699,10 +727,18 @@
             this.IdEmpresa.ReadOnly = true;
             this.IdEmpresa.Visible = false;
             // 
+            // IdCliente1
+            // 
+            this.IdCliente1.DataPropertyName = "IdCliente";
+            this.IdCliente1.HeaderText = "IdCliente";
+            this.IdCliente1.Name = "IdCliente1";
+            this.IdCliente1.ReadOnly = true;
+            this.IdCliente1.Visible = false;
+            // 
             // obrasBindingSource
             // 
-            this.obrasBindingSource.DataMember = "FK_Obras_Clientes";
-            this.obrasBindingSource.DataSource = this.clientesBindingSource;
+            this.obrasBindingSource.DataMember = "Obras";
+            this.obrasBindingSource.DataSource = this.promowork_dataDataSet;
             // 
             // dNINIFClienteTextBox
             // 
@@ -1115,11 +1151,149 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // salariosVentaBindingSource
+            // 
+            this.salariosVentaBindingSource.DataMember = "SalariosVenta";
+            this.salariosVentaBindingSource.DataSource = this.promowork_dataDataSet;
+            // 
+            // salariosVentaTableAdapter
+            // 
+            this.salariosVentaTableAdapter.ClearBeforeFill = true;
+            // 
+            // categoriasBindingSource
+            // 
+            this.categoriasBindingSource.DataMember = "Categorias";
+            this.categoriasBindingSource.DataSource = this.promowork_dataDataSet;
+            // 
+            // tiposBindingSource
+            // 
+            this.tiposBindingSource.DataMember = "Tipos";
+            this.tiposBindingSource.DataSource = this.promowork_dataDataSet;
+            // 
+            // obrasBindingSource1
+            // 
+            this.obrasBindingSource1.DataMember = "Obras";
+            this.obrasBindingSource1.DataSource = this.promowork_dataDataSet;
+            // 
+            // categoriasTableAdapter
+            // 
+            this.categoriasTableAdapter.ClearBeforeFill = true;
+            // 
+            // tiposTableAdapter
+            // 
+            this.tiposTableAdapter.ClearBeforeFill = true;
+            // 
+            // repositoryItemLookUpEdit1
+            // 
+            this.repositoryItemLookUpEdit1.AutoHeight = false;
+            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit1.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DesCategoria", "Categoría", 78, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEdit1.DataSource = this.categoriasBindingSource;
+            this.repositoryItemLookUpEdit1.DisplayMember = "DesCategoria";
+            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
+            this.repositoryItemLookUpEdit1.ValueMember = "IdCategoria";
+            // 
+            // repositoryItemLookUpEdit2
+            // 
+            this.repositoryItemLookUpEdit2.AutoHeight = false;
+            this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit2.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DesTipo", "Tipo", 51, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEdit2.DataSource = this.tiposBindingSource;
+            this.repositoryItemLookUpEdit2.DisplayMember = "DesTipo";
+            this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
+            this.repositoryItemLookUpEdit2.ValueMember = "IdTipo";
+            // 
+            // repositoryItemLookUpEdit3
+            // 
+            this.repositoryItemLookUpEdit3.AutoHeight = false;
+            this.repositoryItemLookUpEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit3.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Obra", "Obra", 34, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEdit3.DataSource = this.obrasBindingSource;
+            this.repositoryItemLookUpEdit3.DisplayMember = "Obra";
+            this.repositoryItemLookUpEdit3.Name = "repositoryItemLookUpEdit3";
+            this.repositoryItemLookUpEdit3.ValueMember = "IdObra";
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIdCategoria,
+            this.colIdTipo,
+            this.colSalVenta,
+            this.colIdObra});
+            this.gridView1.GridControl = this.salariosVentaGridControl;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colIdObra, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // colIdCategoria
+            // 
+            this.colIdCategoria.Caption = "Categoría";
+            this.colIdCategoria.ColumnEdit = this.repositoryItemLookUpEdit1;
+            this.colIdCategoria.FieldName = "IdCategoria";
+            this.colIdCategoria.Name = "colIdCategoria";
+            this.colIdCategoria.Visible = true;
+            this.colIdCategoria.VisibleIndex = 1;
+            this.colIdCategoria.Width = 117;
+            // 
+            // colIdTipo
+            // 
+            this.colIdTipo.Caption = "Tipo";
+            this.colIdTipo.ColumnEdit = this.repositoryItemLookUpEdit2;
+            this.colIdTipo.FieldName = "IdTipo";
+            this.colIdTipo.Name = "colIdTipo";
+            this.colIdTipo.Visible = true;
+            this.colIdTipo.VisibleIndex = 2;
+            this.colIdTipo.Width = 77;
+            // 
+            // colSalVenta
+            // 
+            this.colSalVenta.Caption = "Salario Venta";
+            this.colSalVenta.FieldName = "SalVenta";
+            this.colSalVenta.Name = "colSalVenta";
+            this.colSalVenta.Visible = true;
+            this.colSalVenta.VisibleIndex = 3;
+            this.colSalVenta.Width = 88;
+            // 
+            // colIdObra
+            // 
+            this.colIdObra.Caption = "Obra";
+            this.colIdObra.ColumnEdit = this.repositoryItemLookUpEdit3;
+            this.colIdObra.FieldName = "IdObra";
+            this.colIdObra.Name = "colIdObra";
+            this.colIdObra.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
+            this.colIdObra.Visible = true;
+            this.colIdObra.VisibleIndex = 0;
+            this.colIdObra.Width = 214;
+            // 
+            // salariosVentaGridControl
+            // 
+            this.salariosVentaGridControl.DataSource = this.salariosVentaBindingSource;
+            this.salariosVentaGridControl.Location = new System.Drawing.Point(411, 386);
+            this.salariosVentaGridControl.MainView = this.gridView1;
+            this.salariosVentaGridControl.Name = "salariosVentaGridControl";
+            this.salariosVentaGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemLookUpEdit1,
+            this.repositoryItemLookUpEdit2,
+            this.repositoryItemLookUpEdit3});
+            this.salariosVentaGridControl.Size = new System.Drawing.Size(514, 133);
+            this.salariosVentaGridControl.TabIndex = 112;
+            this.salariosVentaGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 398);
+            this.ClientSize = new System.Drawing.Size(945, 531);
+            this.Controls.Add(this.salariosVentaGridControl);
             this.Controls.Add(copiaFacturaLabel);
             this.Controls.Add(this.copiaFacturaTextBox);
             this.Controls.Add(this.button5);
@@ -1204,6 +1378,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.provincias1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poblaciones1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasActualBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salariosVentaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salariosVentaGridControl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1277,10 +1460,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private Promowork_dataDataSetTableAdapters.EmpresasActualTableAdapter empresasActualTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpresa;
         private System.Windows.Forms.BindingSource empresasActualBindingSource;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
@@ -1291,5 +1470,26 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.BindingSource salariosVentaBindingSource;
+        private Promowork_dataDataSetTableAdapters.SalariosVentaTableAdapter salariosVentaTableAdapter;
+        private System.Windows.Forms.BindingSource categoriasBindingSource;
+        private Promowork_dataDataSetTableAdapters.CategoriasTableAdapter categoriasTableAdapter;
+        private System.Windows.Forms.BindingSource tiposBindingSource;
+        private Promowork_dataDataSetTableAdapters.TiposTableAdapter tiposTableAdapter;
+        private System.Windows.Forms.BindingSource obrasBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdCategoria;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdTipo;
+        private DevExpress.XtraGrid.Columns.GridColumn colSalVenta;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdObra;
+        private DevExpress.XtraGrid.GridControl salariosVentaGridControl;
     }
 }

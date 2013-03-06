@@ -278,6 +278,7 @@
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDiaTrab, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView1_ShowingEditor);
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            this.gridView1.ColumnFilterChanged += new System.EventHandler(this.gridView1_ColumnFilterChanged);
             // 
             // colIdHoras
             // 
@@ -1248,7 +1249,6 @@
             this.cbxano.Size = new System.Drawing.Size(65, 21);
             this.cbxano.TabIndex = 39;
             this.cbxano.ValueMember = "AnoTrab";
-            this.cbxano.SelectedIndexChanged += new System.EventHandler(this.cbxano_SelectedIndexChanged);
             // 
             // marcaAnoBindingSource
             // 
@@ -1265,7 +1265,6 @@
             this.cbxmes.Size = new System.Drawing.Size(121, 21);
             this.cbxmes.TabIndex = 40;
             this.cbxmes.ValueMember = "MesTrab";
-            this.cbxmes.SelectedIndexChanged += new System.EventHandler(this.cbxmes_SelectedIndexChanged);
             // 
             // marcaMesBindingSource
             // 

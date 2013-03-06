@@ -390,6 +390,12 @@
     <Compile Include="RptFacturasManualImp2.Designer.cs">
       <DependentUpon>RptFacturasManualImp2.cs</DependentUpon>
     </Compile>
+    <Compile Include="RptFacturasManualImpParte2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptFacturasManualImpParte2.Designer.cs">
+      <DependentUpon>RptFacturasManualImpParte2.cs</DependentUpon>
+    </Compile>
     <Compile Include="RptFacturasPresupImp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -755,6 +761,7 @@
     <EmbeddedResource Include="ConsumosServiciosVehiculos.resx">
       <DependentUpon>ConsumosServiciosVehiculos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FacturaManualImpParte2.rdlc" />
     <EmbeddedResource Include="FacturaPresupImp2.rdlc" />
     <EmbeddedResource Include="FacturaPresupImpParte2.rdlc" />
     <EmbeddedResource Include="OperacionesBancoConceptos.rdlc" />
@@ -885,6 +892,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RptFacturasManualImp2.resx">
       <DependentUpon>RptFacturasManualImp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptFacturasManualImpParte2.resx">
+      <DependentUpon>RptFacturasManualImpParte2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RptFacturasPresupImp.resx">
       <DependentUpon>RptFacturasPresupImp.cs</DependentUpon>

@@ -50,6 +50,7 @@
             this.chkRojo = new System.Windows.Forms.CheckBox();
             this.chkAzul = new System.Windows.Forms.CheckBox();
             this.chkNegro = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaObrasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaObrasDataGridView)).BeginInit();
@@ -73,7 +74,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(143, 44);
+            this.checkBox1.Location = new System.Drawing.Point(12, 34);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(85, 17);
             this.checkBox1.TabIndex = 10;
@@ -107,6 +108,7 @@
             this.tableAdapterManager.CobrosTableAdapter = null;
             this.tableAdapterManager.ComprasCabTableAdapter = null;
             this.tableAdapterManager.ComprasDetTableAdapter = null;
+            this.tableAdapterManager.ConceptosBancosTableAdapter = null;
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.ContratosTrabajadoresTableAdapter = null;
             this.tableAdapterManager.CopiasHorasTableAdapter = null;
@@ -114,6 +116,7 @@
             this.tableAdapterManager.CuentasTableAdapter = null;
             this.tableAdapterManager.CursosTableAdapter = null;
             this.tableAdapterManager.CursosTrabajadoresTableAdapter = null;
+            this.tableAdapterManager.DescuentosFacturasTableAdapter = null;
             this.tableAdapterManager.EmpresasActualTableAdapter = null;
             this.tableAdapterManager.EmpresasTableAdapter = null;
             this.tableAdapterManager.EstadoCivilTableAdapter = null;
@@ -128,6 +131,7 @@
             this.tableAdapterManager.HorasTrabajadasTableAdapter = null;
             this.tableAdapterManager.NacionesTableAdapter = null;
             this.tableAdapterManager.ObrasTableAdapter = null;
+            this.tableAdapterManager.OperacionesBancoTableAdapter = null;
             this.tableAdapterManager.PagosTableAdapter = null;
             this.tableAdapterManager.ParticipantesTableAdapter = null;
             this.tableAdapterManager.PartObrasTableAdapter = null;
@@ -280,7 +284,7 @@
             this.chkRojo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkRojo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRojo.ForeColor = System.Drawing.Color.Red;
-            this.chkRojo.Location = new System.Drawing.Point(274, 8);
+            this.chkRojo.Location = new System.Drawing.Point(355, 8);
             this.chkRojo.Name = "chkRojo";
             this.chkRojo.Size = new System.Drawing.Size(52, 17);
             this.chkRojo.TabIndex = 20;
@@ -294,7 +298,7 @@
             this.chkAzul.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAzul.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkAzul.ForeColor = System.Drawing.Color.Blue;
-            this.chkAzul.Location = new System.Drawing.Point(274, 26);
+            this.chkAzul.Location = new System.Drawing.Point(355, 26);
             this.chkAzul.Name = "chkAzul";
             this.chkAzul.Size = new System.Drawing.Size(50, 17);
             this.chkAzul.TabIndex = 21;
@@ -307,18 +311,29 @@
             this.chkNegro.Checked = true;
             this.chkNegro.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkNegro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkNegro.Location = new System.Drawing.Point(274, 44);
+            this.chkNegro.Location = new System.Drawing.Point(355, 44);
             this.chkNegro.Name = "chkNegro";
             this.chkNegro.Size = new System.Drawing.Size(60, 17);
             this.chkNegro.TabIndex = 22;
             this.chkNegro.Text = "Negro";
             this.chkNegro.UseVisualStyleBackColor = true;
             // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(143, 34);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(180, 17);
+            this.checkBox4.TabIndex = 23;
+            this.checkBox4.Text = "Incluir Facturas de Presupuestos";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
             // RptParametrosObraCompleta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 419);
+            this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.chkNegro);
             this.Controls.Add(this.chkAzul);
             this.Controls.Add(this.chkRojo);
@@ -366,5 +381,6 @@
         private System.Windows.Forms.CheckBox chkRojo;
         private System.Windows.Forms.CheckBox chkAzul;
         private System.Windows.Forms.CheckBox chkNegro;
+        private System.Windows.Forms.CheckBox checkBox4;
     }
 }

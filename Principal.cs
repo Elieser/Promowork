@@ -72,7 +72,15 @@ namespace Promowork
             }
             else
             {
-                MessageBox.Show("Tiene que cerrar todas las ventanas antes de Ejecutar esta Opción",this.Text,MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                if (MessageBox.Show("Existen Ventanas Abiertas. ¿Desea Cerrarlas?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    foreach (Form f in this.MdiChildren)
+                    {
+                      //  MessageBox.Show(f.Name);
+                        f.Close();
+                    }
+                    cambiarDeUsuarioToolStripMenuItem_Click(null, null);
+                }
             }
         }
 
@@ -888,10 +896,20 @@ namespace Promowork
 
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(MessageBox.Show("Realmente desea Cerrar el Programa?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.No)
-               {
-                   e.Cancel = true;      
-               }
+            if (this.MdiChildren.Length != 0)
+            {
+                if (MessageBox.Show("Existen Ventanas Abiertas. Pueden perderse los cambios que no haya guardado. ¿Desea salir de todos modos?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == System.Windows.Forms.DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                if (MessageBox.Show("Realmente desea Cerrar el Programa?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
            
         }
 

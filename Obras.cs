@@ -427,7 +427,7 @@ namespace Promowork
             DataTable tmpObras = promowork_dataDataSet.MarcaObras.Select("IdObra= " + IdObraActual).CopyToDataTable();
 
             RptResumenObraCompleta frm = new RptResumenObraCompleta();
-            frm.LoadParametros(tmpObras, true, -65536, -16776961, -16777216);
+            frm.LoadParametros(tmpObras, true, -65536, -16776961, -16777216, true);
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

@@ -36,6 +36,8 @@
             System.Windows.Forms.Label desPresupLabel;
             System.Windows.Forms.Label fechaPresupLabel;
             System.Windows.Forms.Label licObraPresupLabel;
+            System.Windows.Forms.Label copiaFacturaLabel;
+            System.Windows.Forms.Label label4;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Presupuestos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -59,6 +61,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.promowork_dataDataSet = new Promowork.Promowork_dataDataSet();
             this.presupCabBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.presupCabTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.PresupCabTableAdapter();
@@ -107,6 +111,7 @@
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Extra = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ObsCapPresup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColorCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.presupDetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -176,8 +181,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.empresasActualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empresasActualTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.EmpresasActualTableAdapter();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.bindingNavigator4 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton23 = new System.Windows.Forms.ToolStripButton();
@@ -232,6 +235,14 @@
             this.toolStripButton32 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton33 = new System.Windows.Forms.ToolStripButton();
+            this.button3 = new System.Windows.Forms.Button();
+            this.copiaFacturaTextBox = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.cmbano = new System.Windows.Forms.ComboBox();
+            this.anosPrespupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.anosPrespupTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.AnosPrespupTableAdapter();
             idObraLabel = new System.Windows.Forms.Label();
             idClienteLabel = new System.Windows.Forms.Label();
             numPresupLabel = new System.Windows.Forms.Label();
@@ -239,6 +250,8 @@
             desPresupLabel = new System.Windows.Forms.Label();
             fechaPresupLabel = new System.Windows.Forms.Label();
             licObraPresupLabel = new System.Windows.Forms.Label();
+            copiaFacturaLabel = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupCabBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupCabBindingNavigator)).BeginInit();
@@ -271,6 +284,7 @@
             this.groupBox2.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.anosPrespupBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // idObraLabel
@@ -335,6 +349,24 @@
             licObraPresupLabel.Size = new System.Drawing.Size(53, 13);
             licObraPresupLabel.TabIndex = 22;
             licObraPresupLabel.Text = "Lic. Obra:";
+            // 
+            // copiaFacturaLabel
+            // 
+            copiaFacturaLabel.AutoSize = true;
+            copiaFacturaLabel.Location = new System.Drawing.Point(821, 145);
+            copiaFacturaLabel.Name = "copiaFacturaLabel";
+            copiaFacturaLabel.Size = new System.Drawing.Size(99, 13);
+            copiaFacturaLabel.TabIndex = 35;
+            copiaFacturaLabel.Text = "Copia Presupuesto:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(285, 6);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(29, 13);
+            label4.TabIndex = 94;
+            label4.Text = "Año:";
             // 
             // promowork_dataDataSet
             // 
@@ -438,6 +470,7 @@
             this.presupCabBindingNavigator.BindingSource = this.presupCabBindingSource;
             this.presupCabBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.presupCabBindingNavigator.DeleteItem = null;
+            this.presupCabBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
             this.presupCabBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -464,7 +497,7 @@
             this.presupCabBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.presupCabBindingNavigator.Name = "presupCabBindingNavigator";
             this.presupCabBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.presupCabBindingNavigator.Size = new System.Drawing.Size(1187, 25);
+            this.presupCabBindingNavigator.Size = new System.Drawing.Size(610, 25);
             this.presupCabBindingNavigator.TabIndex = 0;
             this.presupCabBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -571,7 +604,7 @@
             // 
             // toolStripSeparator11
             // 
-            this.toolStripSeparator11.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.toolStripSeparator11.Margin = new System.Windows.Forms.Padding(100, 0, 0, 0);
             this.toolStripSeparator11.Name = "toolStripSeparator11";
             this.toolStripSeparator11.Size = new System.Drawing.Size(6, 25);
             // 
@@ -621,12 +654,12 @@
             this.dataGridViewTextBoxColumn2,
             this.ColorCab});
             this.presupCabDataGridView.DataSource = this.presupCabBindingSource;
-            this.presupCabDataGridView.Location = new System.Drawing.Point(9, 53);
+            this.presupCabDataGridView.Location = new System.Drawing.Point(9, 30);
             this.presupCabDataGridView.MultiSelect = false;
             this.presupCabDataGridView.Name = "presupCabDataGridView";
             this.presupCabDataGridView.ReadOnly = true;
             this.presupCabDataGridView.RowHeadersVisible = false;
-            this.presupCabDataGridView.Size = new System.Drawing.Size(415, 236);
+            this.presupCabDataGridView.Size = new System.Drawing.Size(415, 259);
             this.presupCabDataGridView.TabIndex = 0;
             this.presupCabDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.presupCabDataGridView_CellFormatting);
             // 
@@ -706,7 +739,7 @@
             this.partPresupDataGridView.Name = "partPresupDataGridView";
             this.partPresupDataGridView.RowHeadersVisible = false;
             this.partPresupDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.partPresupDataGridView.Size = new System.Drawing.Size(349, 126);
+            this.partPresupDataGridView.Size = new System.Drawing.Size(349, 84);
             this.partPresupDataGridView.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn14
@@ -770,6 +803,7 @@
             this.dataGridViewTextBoxColumn19,
             this.dataGridViewTextBoxColumn4,
             this.Extra,
+            this.ObsCapPresup,
             this.dataGridViewTextBoxColumn17,
             this.ColorCap});
             this.presupCapDataGridView.DataSource = this.presupCapBindingSource;
@@ -796,7 +830,7 @@
             this.dataGridViewTextBoxColumn19.DataPropertyName = "DesCapPresup";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
             this.dataGridViewTextBoxColumn19.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn19.HeaderText = "Descripción";
+            this.dataGridViewTextBoxColumn19.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn19.MaxInputLength = 50;
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             this.dataGridViewTextBoxColumn19.Width = 255;
@@ -816,9 +850,21 @@
             // Extra
             // 
             this.Extra.DataPropertyName = "Extra";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.NullValue = false;
+            this.Extra.DefaultCellStyle = dataGridViewCellStyle5;
             this.Extra.HeaderText = "Extra";
             this.Extra.Name = "Extra";
             this.Extra.Width = 40;
+            // 
+            // ObsCapPresup
+            // 
+            this.ObsCapPresup.DataPropertyName = "ObsCapPresup";
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ObsCapPresup.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ObsCapPresup.HeaderText = "Descripción";
+            this.ObsCapPresup.Name = "ObsCapPresup";
+            this.ObsCapPresup.Width = 250;
             // 
             // dataGridViewTextBoxColumn17
             // 
@@ -872,8 +918,8 @@
             // dataGridViewTextBoxColumn22
             // 
             this.dataGridViewTextBoxColumn22.DataPropertyName = "NumPresupDet";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.dataGridViewTextBoxColumn22.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.dataGridViewTextBoxColumn22.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn22.HeaderText = "Nº";
             this.dataGridViewTextBoxColumn22.MaxInputLength = 2;
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
@@ -882,8 +928,8 @@
             // IdUM
             // 
             this.IdUM.DataPropertyName = "UM";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.IdUM.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.IdUM.DefaultCellStyle = dataGridViewCellStyle8;
             this.IdUM.HeaderText = "UM";
             this.IdUM.MaxInputLength = 3;
             this.IdUM.Name = "IdUM";
@@ -894,9 +940,9 @@
             // dataGridViewTextBoxColumn24
             // 
             this.dataGridViewTextBoxColumn24.DataPropertyName = "NomPresupDet";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn24.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn24.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn24.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn24.MaxInputLength = 100;
             this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
@@ -905,9 +951,9 @@
             // dataGridViewTextBoxColumn25
             // 
             this.dataGridViewTextBoxColumn25.DataPropertyName = "DesPresupDet";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn25.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn25.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn25.HeaderText = "Descripción";
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
             this.dataGridViewTextBoxColumn25.Width = 230;
@@ -915,10 +961,10 @@
             // Cantidad
             // 
             this.Cantidad.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle9.Format = "N2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle11.Format = "N2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle11;
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.MaxInputLength = 10;
             this.Cantidad.Name = "Cantidad";
@@ -927,10 +973,10 @@
             // Precio
             // 
             this.Precio.DataPropertyName = "Precio";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.Precio.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle12;
             this.Precio.HeaderText = "Precio";
             this.Precio.MaxInputLength = 10;
             this.Precio.Name = "Precio";
@@ -939,10 +985,10 @@
             // Importe
             // 
             this.Importe.DataPropertyName = "Importe";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle11.Format = "N2";
-            dataGridViewCellStyle11.NullValue = null;
-            this.Importe.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle13.Format = "N2";
+            dataGridViewCellStyle13.NullValue = null;
+            this.Importe.DefaultCellStyle = dataGridViewCellStyle13;
             this.Importe.HeaderText = "Importe";
             this.Importe.MaxInputLength = 10;
             this.Importe.Name = "Importe";
@@ -952,9 +998,9 @@
             // CantExtra
             // 
             this.CantExtra.DataPropertyName = "CantExtra";
-            dataGridViewCellStyle12.Format = "N6";
-            dataGridViewCellStyle12.NullValue = null;
-            this.CantExtra.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle14.Format = "N6";
+            dataGridViewCellStyle14.NullValue = null;
+            this.CantExtra.DefaultCellStyle = dataGridViewCellStyle14;
             this.CantExtra.HeaderText = "Diferencia";
             this.CantExtra.Name = "CantExtra";
             this.CantExtra.Visible = false;
@@ -963,10 +1009,10 @@
             // CantReal
             // 
             this.CantReal.DataPropertyName = "CantReal";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle13.Format = "N6";
-            dataGridViewCellStyle13.NullValue = null;
-            this.CantReal.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle15.Format = "N6";
+            dataGridViewCellStyle15.NullValue = null;
+            this.CantReal.DefaultCellStyle = dataGridViewCellStyle15;
             this.CantReal.HeaderText = "Real";
             this.CantReal.Name = "CantReal";
             this.CantReal.Width = 90;
@@ -1370,7 +1416,7 @@
             this.idObraComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.idObraComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.presupCabBindingSource, "IdObra", true));
             this.idObraComboBox.DataSource = this.obrasBindingSource;
-            this.idObraComboBox.DisplayMember = "DesObra";
+            this.idObraComboBox.DisplayMember = "Obra";
             this.idObraComboBox.FormattingEnabled = true;
             this.idObraComboBox.Location = new System.Drawing.Point(498, 132);
             this.idObraComboBox.Name = "idObraComboBox";
@@ -1477,30 +1523,6 @@
             // empresasActualTableAdapter
             // 
             this.empresasActualTableAdapter.ClearBeforeFill = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(13, 29);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(138, 17);
-            this.radioButton1.TabIndex = 25;
-            this.radioButton1.Text = "Todos los Presupuestos";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(160, 30);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(135, 17);
-            this.radioButton2.TabIndex = 26;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Pendientes de Facturar";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // label3
             // 
@@ -1815,8 +1837,8 @@
             // numPresupSubDataGridViewTextBoxColumn
             // 
             this.numPresupSubDataGridViewTextBoxColumn.DataPropertyName = "NumPresupSub";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.numPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.numPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
             this.numPresupSubDataGridViewTextBoxColumn.HeaderText = "Nº";
             this.numPresupSubDataGridViewTextBoxColumn.MaxInputLength = 2;
             this.numPresupSubDataGridViewTextBoxColumn.Name = "numPresupSubDataGridViewTextBoxColumn";
@@ -1825,8 +1847,8 @@
             // uMDataGridViewTextBoxColumn
             // 
             this.uMDataGridViewTextBoxColumn.DataPropertyName = "UM";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.uMDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.uMDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
             this.uMDataGridViewTextBoxColumn.HeaderText = "UM";
             this.uMDataGridViewTextBoxColumn.MaxInputLength = 3;
             this.uMDataGridViewTextBoxColumn.Name = "uMDataGridViewTextBoxColumn";
@@ -1835,9 +1857,9 @@
             // nomPresupSubDataGridViewTextBoxColumn
             // 
             this.nomPresupSubDataGridViewTextBoxColumn.DataPropertyName = "NomPresupSub";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.nomPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.nomPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
             this.nomPresupSubDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nomPresupSubDataGridViewTextBoxColumn.MaxInputLength = 100;
             this.nomPresupSubDataGridViewTextBoxColumn.Name = "nomPresupSubDataGridViewTextBoxColumn";
@@ -1846,9 +1868,9 @@
             // desPresupSubDataGridViewTextBoxColumn
             // 
             this.desPresupSubDataGridViewTextBoxColumn.DataPropertyName = "DesPresupSub";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.desPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.desPresupSubDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
             this.desPresupSubDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.desPresupSubDataGridViewTextBoxColumn.Name = "desPresupSubDataGridViewTextBoxColumn";
             this.desPresupSubDataGridViewTextBoxColumn.Width = 230;
@@ -1856,10 +1878,10 @@
             // CantidadSub
             // 
             this.CantidadSub.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle18.Format = "N2";
-            dataGridViewCellStyle18.NullValue = null;
-            this.CantidadSub.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle20.Format = "N2";
+            dataGridViewCellStyle20.NullValue = null;
+            this.CantidadSub.DefaultCellStyle = dataGridViewCellStyle20;
             this.CantidadSub.HeaderText = "Cantidad";
             this.CantidadSub.MaxInputLength = 10;
             this.CantidadSub.Name = "CantidadSub";
@@ -1868,10 +1890,10 @@
             // precioDataGridViewTextBoxColumn
             // 
             this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle19.Format = "N2";
-            dataGridViewCellStyle19.NullValue = null;
-            this.precioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle21.Format = "N2";
+            dataGridViewCellStyle21.NullValue = null;
+            this.precioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle21;
             this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
             this.precioDataGridViewTextBoxColumn.MaxInputLength = 10;
             this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
@@ -1880,10 +1902,10 @@
             // importeDataGridViewTextBoxColumn
             // 
             this.importeDataGridViewTextBoxColumn.DataPropertyName = "Importe";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle20.Format = "N2";
-            dataGridViewCellStyle20.NullValue = null;
-            this.importeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle22.Format = "N2";
+            dataGridViewCellStyle22.NullValue = null;
+            this.importeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle22;
             this.importeDataGridViewTextBoxColumn.HeaderText = "Importe";
             this.importeDataGridViewTextBoxColumn.MaxInputLength = 10;
             this.importeDataGridViewTextBoxColumn.Name = "importeDataGridViewTextBoxColumn";
@@ -1893,8 +1915,8 @@
             // CantExtraSub
             // 
             this.CantExtraSub.DataPropertyName = "CantExtra";
-            dataGridViewCellStyle21.Format = "N2";
-            this.CantExtraSub.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle23.Format = "N2";
+            this.CantExtraSub.DefaultCellStyle = dataGridViewCellStyle23;
             this.CantExtraSub.HeaderText = "Diferencia";
             this.CantExtraSub.Name = "CantExtraSub";
             this.CantExtraSub.Visible = false;
@@ -1903,10 +1925,10 @@
             // CantRealSub
             // 
             this.CantRealSub.DataPropertyName = "CantReal";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle22.Format = "N2";
-            dataGridViewCellStyle22.NullValue = null;
-            this.CantRealSub.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle24.Format = "N2";
+            dataGridViewCellStyle24.NullValue = null;
+            this.CantRealSub.DefaultCellStyle = dataGridViewCellStyle24;
             this.CantRealSub.HeaderText = "Real";
             this.CantRealSub.Name = "CantRealSub";
             this.CantRealSub.Width = 90;
@@ -2015,7 +2037,7 @@
             this.toolStripSeparator18,
             this.toolStripButton33});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.toolStrip1.Location = new System.Drawing.Point(343, 27);
+            this.toolStrip1.Location = new System.Drawing.Point(623, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(63, 25);
             this.toolStrip1.TabIndex = 92;
@@ -2066,16 +2088,84 @@
             this.toolStripButton33.Text = "Color 3";
             this.toolStripButton33.Click += new System.EventHandler(this.toolStripButton33_Click);
             // 
+            // button3
+            // 
+            this.button3.Image = global::Promowork.Properties.Resources.bindingNavigatorDeleteItem_Image;
+            this.button3.Location = new System.Drawing.Point(1057, 164);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(22, 23);
+            this.button3.TabIndex = 15;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // copiaFacturaTextBox
+            // 
+            this.copiaFacturaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.presupCabBindingSource, "CopiaPresup", true));
+            this.copiaFacturaTextBox.Location = new System.Drawing.Point(926, 142);
+            this.copiaFacturaTextBox.Name = "copiaFacturaTextBox";
+            this.copiaFacturaTextBox.Size = new System.Drawing.Size(247, 20);
+            this.copiaFacturaTextBox.TabIndex = 34;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1017, 164);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(34, 23);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Ver";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(926, 164);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Copia Parte";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // cmbano
+            // 
+            this.cmbano.DataSource = this.anosPrespupBindingSource;
+            this.cmbano.DisplayMember = "ano";
+            this.cmbano.FormattingEnabled = true;
+            this.cmbano.Location = new System.Drawing.Point(320, 3);
+            this.cmbano.Name = "cmbano";
+            this.cmbano.Size = new System.Drawing.Size(61, 21);
+            this.cmbano.TabIndex = 93;
+            this.cmbano.ValueMember = "ano";
+            this.cmbano.SelectedIndexChanged += new System.EventHandler(this.cmbano_SelectedIndexChanged);
+            // 
+            // anosPrespupBindingSource
+            // 
+            this.anosPrespupBindingSource.DataMember = "AnosPrespup";
+            this.anosPrespupBindingSource.DataSource = this.promowork_dataDataSet;
+            // 
+            // anosPrespupTableAdapter
+            // 
+            this.anosPrespupTableAdapter.ClearBeforeFill = true;
+            // 
             // Presupuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 581);
+            this.Controls.Add(label4);
+            this.Controls.Add(this.cmbano);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(copiaFacturaLabel);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.copiaFacturaTextBox);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(licObraPresupLabel);
             this.Controls.Add(this.licObraPresupTextBox);
             this.Controls.Add(fechaPresupLabel);
@@ -2099,6 +2189,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Presupuestos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Presupuestos_FormClosing);
             this.Load += new System.EventHandler(this.Presupuestos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupCabBindingSource)).EndInit();
@@ -2143,6 +2234,7 @@
             this.toolStrip2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.anosPrespupBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2235,8 +2327,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource empresasActualBindingSource;
         private Promowork_dataDataSetTableAdapters.EmpresasActualTableAdapter empresasActualTableAdapter;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStripButton toolStripButton22;
@@ -2295,12 +2385,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Facturado;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColorCab;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Extra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColorCap;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdUM;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
@@ -2323,5 +2407,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CantRealSub;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPresupDetDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColorSub;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Extra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ObsCapPresup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColorCap;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox copiaFacturaTextBox;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ComboBox cmbano;
+        private System.Windows.Forms.BindingSource anosPrespupBindingSource;
+        private Promowork_dataDataSetTableAdapters.AnosPrespupTableAdapter anosPrespupTableAdapter;
     }
 }

@@ -742,7 +742,7 @@
             <TablixMember>
               <Group Name="Group1">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!DesCapPresup.Value</GroupExpression>
+                  <GroupExpression>=Fields!Descripcion.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <TablixMembers>

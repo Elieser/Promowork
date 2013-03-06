@@ -25,7 +25,7 @@ namespace Promowork
 
             try
             {
-                    this.ResumenObraCompletaTableAdapter.Fill(this.Promowork_dataDataSet.ResumenObraCompleta, Obras, -65536, -16776961, -16777216);
+                    this.ResumenObraCompletaTableAdapter.Fill(this.Promowork_dataDataSet.ResumenObraCompleta, Obras, -65536, -16776961, -16777216,true);
                     // TODO: This line of code loads data into the 'Promowork_dataDataSet.EmpresasActual' table. You can move, or remove it, as needed.
                     this.EmpresasActualTableAdapter.FillByEmpresa(this.Promowork_dataDataSet.EmpresasActual, VariablesGlobales.nIdEmpresaActual);
                     this.Promowork_dataDataSet.ResumenObraCompleta.Columns.Add("TotalSalario", typeof(decimal), "Cantidad*Salario");

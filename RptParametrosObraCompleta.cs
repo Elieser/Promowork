@@ -37,7 +37,7 @@ namespace Promowork
                 DataTable tmpObras = promowork_dataDataSet.MarcaObras.Select("Marca= true" + numObra).CopyToDataTable();
 
                 RptResumenObraCompleta frm = new RptResumenObraCompleta();
-                frm.LoadParametros(tmpObras, checkBox2.Checked, colorRojo, colorAzul, colorNegro);
+                frm.LoadParametros(tmpObras, checkBox2.Checked, colorRojo, colorAzul, colorNegro, checkBox4.Checked);
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
             }

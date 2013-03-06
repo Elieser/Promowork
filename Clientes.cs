@@ -56,6 +56,12 @@ namespace Promowork
 
         private void Clientes_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'promowork_dataDataSet.Tipos' table. You can move, or remove it, as needed.
+            this.tiposTableAdapter.Fill(this.promowork_dataDataSet.Tipos);
+            // TODO: This line of code loads data into the 'promowork_dataDataSet.Categorias' table. You can move, or remove it, as needed.
+            this.categoriasTableAdapter.Fill(this.promowork_dataDataSet.Categorias);
+            // TODO: This line of code loads data into the 'promowork_dataDataSet.SalariosVenta' table. You can move, or remove it, as needed.
+            
             // TODO: This line of code loads data into the 'promowork_dataDataSet.Poblaciones1' table. You can move, or remove it, as needed.
            
             this.poblacionesTableAdapter.Fill(promowork_dataDataSet.Poblaciones);
@@ -69,10 +75,12 @@ namespace Promowork
             // TODO: This line of code loads data into the 'promowork_dataDataSet.FormasPago' table. You can move, or remove it, as needed.
             this.formasPagoTableAdapter.Fill(this.promowork_dataDataSet.FormasPago);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.Presupuestos' table. You can move, or remove it, as needed.
-            this.obrasTableAdapter.FillByFechaObra(this.promowork_dataDataSet.Obras, VariablesGlobales.nIdEmpresaActual, VariablesGlobales.nAnoActual, VariablesGlobales.nMesActual);
+            this.obrasTableAdapter.FillByEmpresa(this.promowork_dataDataSet.Obras, VariablesGlobales.nIdEmpresaActual);
             // TODO: This line of code loads data into the 'promowork_dataDataSet.Clientes' table. You can move, or remove it, as needed.
             this.clientesTableAdapter.FillByEmpresa(this.promowork_dataDataSet.Clientes, VariablesGlobales.nIdEmpresaActual);
             this.empresasActualTableAdapter.FillByEmpresa(promowork_dataDataSet.EmpresasActual, VariablesGlobales.nIdEmpresaActual);
+
+            
            // clientesBindingSource.Sort = "NumCliente";
 
         }
@@ -161,11 +169,12 @@ namespace Promowork
                     }
                     comboBox3.SelectedValue = Convert.ToInt32(nIdPobFiscal);
                 }
-                else
+                else 
                 {
                     textBox2.Text = "";
                     comboBox4.SelectedValue = -1;
                 }
+                this.salariosVentaTableAdapter.FillByCliente(this.promowork_dataDataSet.SalariosVenta, (int)clientesDataGridView.CurrentRow.Cells["IdCliente1"].Value);
             
         }
 
