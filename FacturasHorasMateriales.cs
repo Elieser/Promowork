@@ -65,7 +65,7 @@ namespace Promowork
                 facturasCabTableAdapter.Update(promowork_dataDataSet.FacturasCab);
                 //  toolStripButton1.Enabled = true;
                 // toolStripButton12.Enabled = true;
-                facturasCabDataGridView.Enabled = true;
+                facturasCabGridControl.Enabled = true;
 
                 //DataRowView empresa = (DataRowView)empresasActualBindingSource.Current;
                 //empresa["FactEmpresa"] = Convert.ToInt32(numFacturaTextBox.Text) + 1;
@@ -84,7 +84,7 @@ namespace Promowork
                     {
                         cobrosTableAdapter.Insert(VariablesGlobales.nIdUsuarioActual, VariablesGlobales.nIdEmpresaActual, (int)idClienteComboBox.SelectedValue,
                                                     (int)idPresupComboBox.SelectedValue, fechaExpDateTimePicker.Value, fechaExpDateTimePicker.Value, fechaExpDateTimePicker.Value,
-                                                    fechaExpDateTimePicker.Value, (int)facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value, null, (int)desFormaPagoComboBox.SelectedValue,
+                                                    fechaExpDateTimePicker.Value, (int)gridView6.GetFocusedRowCellValue("IdFactCab"), null, (int)desFormaPagoComboBox.SelectedValue,
                                                     (int)comboBox2.SelectedValue, impBase, impIVA, null, null, null, null,false,false);
 
                     }
@@ -139,8 +139,8 @@ namespace Promowork
 
             }
         //    this.facturasCabTableAdapter.FillByFactHoras(this.promowork_dataDataSet.FacturasCab, VariablesGlobales.nIdEmpresaActual);
-            facturasCabDataGridView_CellEnter(null, null);
-            this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
+            gridView6_FocusedRowChanged(null, null);
+            this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
           
         }
 
@@ -191,7 +191,7 @@ namespace Promowork
             fechaVctoFactDateTimePicker.Value = DateTime.Today;
             mostrarVctoCheckBox.Checked = true;
             facturasCabBindingSource.MoveLast();
-            int nuevaFactura = (int)facturasCabDataGridView.CurrentRow.Cells["NumFactura"].Value + 1;
+            int nuevaFactura = (int)(gridView6.GetFocusedRowCellValue("NumFactura")) + 1;
             
             
             //DataRowView empresa = (DataRowView)empresasActualBindingSource.Current;
@@ -215,9 +215,9 @@ namespace Promowork
           
           //  toolStripButton1.Enabled = false;
           //  toolStripButton12.Enabled = false;
-            facturasCabDataGridView.Enabled = false;
+             facturasCabGridControl.Enabled = false;
             numFacturaTextBox.Focus();
-            facturasCabDataGridView_CellEnter(null, null);
+            gridView6_FocusedRowChanged(null, null);
         }
 
         private void idClienteComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -236,98 +236,104 @@ namespace Promowork
             if (MessageBox.Show("Confirma que desea Eliminar?.", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.facturasCabBindingSource.RemoveCurrent();
-                facturasCabDataGridView.Enabled = true;
+                facturasCabGridControl.Enabled = true;
             }
             
         }
 
-      
-      private void facturasCabDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
+
+        private void gridView6_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
        {
-         //  MessageBox.Show("cellenter");
-           this.cobrosTableAdapter.FillByFactura(this.promowork_dataDataSet.Cobros, (int)facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value);
-           this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
-           this.vHorasTrabajadasTableAdapter.Fill(promowork_dataDataSet.vHorasTrabajadas, Convert.ToInt32(idPresupComboBox.SelectedValue));
-           if (gridView4.RowCount == 0)
+          // MessageBox.Show(e.FocusedRowHandle.ToString());
+           try
            {
-               this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, 0);
+               if (e.FocusedRowHandle > 0)
+               {
+                   this.cobrosTableAdapter.FillByFactura(this.promowork_dataDataSet.Cobros, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
+                   this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
+                   this.vHorasTrabajadasTableAdapter.Fill(promowork_dataDataSet.vHorasTrabajadas, Convert.ToInt32(idPresupComboBox.SelectedValue));
+                   if (gridView4.RowCount == 0)
+                   {
+                       this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, 0);
+                   }
+                   else
+                   {
+                       this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
+                   }
+                   this.descuentosFacturasTableAdapter.FillByFactura(promowork_dataDataSet.DescuentosFacturas, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
+                   toolStripButton8.Enabled = gridView4.RowCount == 0 ? false : true;
+                   toolStripButton2.Enabled = gridView1.RowCount == 0 ? false : true;
+                   fechaExpDateTimePicker.Value = cobrosBindingSource.Count == 0 ? fechaFacturaDateTimePicker.Value : fechaExpDateTimePicker.Value;
+                   try
+                   {
+                       comboBox2.SelectedValue = cobrosBindingSource.Count == 0 ? idCuentaComboBox.SelectedValue : comboBox2.SelectedValue;
+                   }
+                   catch { }
+                   try
+                   {
+                       textBox16.Text = Convert.ToString(Math.Round(Convert.ToDecimal(importeTextBox1.Text) * Convert.ToDecimal(descFacuraTextBox.Text) / 100, 2));
+                   }
+                   catch
+                   {
+                       textBox16.Text = "0,00";
+                   }
+
+                   try
+                   {
+                       textBox20.Text = Convert.ToString(Math.Round((Convert.ToDecimal(importeTextBox1.Text) - Convert.ToDecimal(textBox16.Text)) * Convert.ToDecimal(descProntoTextBox.Text) / 100, 2));
+                   }
+                   catch
+                   {
+                       textBox20.Text = "0,00";
+                   }
+
+                   try
+                   {
+                       textBox22.Text = Convert.ToString(Convert.ToDecimal(importeTextBox1.Text) - Convert.ToDecimal(textBox20.Text) - Convert.ToDecimal(textBox16.Text));
+                   }
+                   catch
+                   {
+                       textBox22.Text = "0,00";
+                   }
+
+                   try
+                   {
+                       textBox15.Text = Convert.ToString(Math.Round(Convert.ToDecimal(textBox22.Text) * Convert.ToDecimal(iVAFacturaTextBox.Text) / 100, 2));
+                   }
+                   catch
+                   {
+                       textBox15.Text = "0,00";
+                   }
+
+                   try
+                   {
+                       textBox23.Text = Convert.ToString(Convert.ToDecimal(textBox22.Text) + Convert.ToDecimal(textBox15.Text));
+                   }
+                   catch
+                   {
+                       textBox23.Text = "0,00";
+                   }
+
+                   try
+                   {
+                       textBox21.Text = Convert.ToString(Math.Round(Convert.ToDecimal(textBox23.Text) * Convert.ToDecimal(retencionTextBox.Text) / 100, 2));
+                   }
+                   catch
+                   {
+                       textBox21.Text = "0,00";
+                   }
+
+                   try
+                   {
+                       textBox17.Text = Convert.ToString(Math.Round(Convert.ToDecimal(textBox23.Text) - Convert.ToDecimal(textBox21.Text), 2));
+                   }
+                   catch
+                   {
+                       textBox17.Text = "0,00";
+                   }
+               }
            }
-           else
-           {
-               this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
-           }
-               this.descuentosFacturasTableAdapter.FillByFactura(promowork_dataDataSet.DescuentosFacturas, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
-            toolStripButton8.Enabled = gridView4.RowCount == 0 ? false : true;
-            toolStripButton2.Enabled = gridView1.RowCount == 0 ? false : true;
-            fechaExpDateTimePicker.Value = cobrosBindingSource.Count == 0 ? fechaFacturaDateTimePicker.Value : fechaExpDateTimePicker.Value;
-            try
-            {
-                comboBox2.SelectedValue = cobrosBindingSource.Count == 0 ? idCuentaComboBox.SelectedValue : comboBox2.SelectedValue;
-            }
-            catch { }
-            try
-            {
-                textBox16.Text = Convert.ToString(Math.Round(Convert.ToDecimal(importeTextBox1.Text) * Convert.ToDecimal(descFacuraTextBox.Text) / 100, 2));
-            }
-            catch
-            {
-                textBox16.Text = "0,00";
-            }
-
-            try
-            {
-                textBox20.Text = Convert.ToString(Math.Round((Convert.ToDecimal(importeTextBox1.Text) - Convert.ToDecimal(textBox16.Text)) * Convert.ToDecimal(descProntoTextBox.Text) / 100, 2));
-            }
-            catch
-            {
-                textBox20.Text = "0,00";
-            }
-
-            try
-            {
-                textBox22.Text = Convert.ToString(Convert.ToDecimal(importeTextBox1.Text) - Convert.ToDecimal(textBox20.Text) - Convert.ToDecimal(textBox16.Text));
-            }
-            catch
-            {
-                textBox22.Text = "0,00";
-            }
-
-            try
-            {
-                textBox15.Text = Convert.ToString(Math.Round(Convert.ToDecimal(textBox22.Text) * Convert.ToDecimal(iVAFacturaTextBox.Text) / 100, 2));
-            }
-            catch
-            {
-                textBox15.Text = "0,00";
-            }
-
-            try
-            {
-                textBox23.Text = Convert.ToString(Convert.ToDecimal(textBox22.Text) + Convert.ToDecimal(textBox15.Text));
-            }
-            catch
-            {
-                textBox23.Text = "0,00";
-            }
-
-            try
-            {
-                textBox21.Text = Convert.ToString(Math.Round(Convert.ToDecimal(textBox23.Text) * Convert.ToDecimal(retencionTextBox.Text) / 100, 2));
-            }
-            catch
-            {
-                textBox21.Text = "0,00";
-            }
-
-            try
-            {
-                textBox17.Text = Convert.ToString(Math.Round(Convert.ToDecimal(textBox23.Text) - Convert.ToDecimal(textBox21.Text), 2));
-            }
-            catch
-            {
-                textBox17.Text = "0,00";
-            }
-          
+           catch { }
        }
 
    
@@ -360,22 +366,22 @@ namespace Promowork
                    this.facturasCabTableAdapter.FillByFactHorasParte(this.promowork_dataDataSet.FacturasCab, VariablesGlobales.nIdEmpresaActual, (int)cbxanos.SelectedValue);
                }
                this.facturasCabBindingSource.MoveLast();
-               facturasCabDataGridView.Enabled = true;
-               facturasCabDataGridView_CellEnter(null, null);
+               facturasCabGridControl.Enabled = true;
+               gridView6_FocusedRowChanged(null, null);
            }
            catch (DBConcurrencyException)
            {
 
                MessageBox.Show("No se Pudo Salvar la Información. El Registro fue modificado por otro Usuario.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
-               this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
+               this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
 
            }
            catch (SqlException ex)
            {
                if (ErroresSQLServer.ManipulaErrorSQL(ex, this.Text))
                {
-                   this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
+                   this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
                }
 
            }
@@ -426,22 +432,22 @@ namespace Promowork
                   this.facturasCabTableAdapter.FillByFactHorasParte(this.promowork_dataDataSet.FacturasCab, VariablesGlobales.nIdEmpresaActual, (int)cbxanos.SelectedValue);
               }
                this.facturasCabBindingSource.MoveLast();
-               facturasCabDataGridView.Enabled = true;
-               facturasCabDataGridView_CellEnter(null, null);
+               facturasCabGridControl.Enabled = true;
+               gridView6_FocusedRowChanged(null, null);
            }
            catch (DBConcurrencyException)
            {
 
                MessageBox.Show("No se Pudo Salvar la Información. El Registro fue modificado por otro Usuario.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
-               this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
+               this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
 
            }
            catch (SqlException ex)
            {
                if (ErroresSQLServer.ManipulaErrorSQL(ex, this.Text))
                {
-                   this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
+                   this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
                }
 
            }
@@ -449,7 +455,7 @@ namespace Promowork
 
        private void toolStripButton1_Click(object sender, EventArgs e)
        {
-           gridView1.SetFocusedRowCellValue("IdFactCab", facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value);
+           gridView1.SetFocusedRowCellValue("IdFactCab", (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
            this.horasTrabajadasTableAdapter.FillByFacturado(this.promowork_dataDataSet.HorasTrabajadas, Convert.ToInt32(idPresupComboBox.SelectedValue));
        }
 
@@ -473,13 +479,13 @@ namespace Promowork
            
            //MessageBox.Show(Convert.ToString(gridView1.GetFocusedRowCellValue("IdFactDetHoras")));
            queriesTableAdapter1.BorraDetalleFactura(Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdFactDetHoras")));
-           this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
+           this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
            this.vHorasTrabajadasTableAdapter.Fill(promowork_dataDataSet.vHorasTrabajadas, Convert.ToInt32(idPresupComboBox.SelectedValue));
            this.productosUtilizadosTableAdapter.FillbyHoras(promowork_dataDataSet.ProductosUtilizados, Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdHoras")));
            toolStripButton8.Enabled = gridView4.RowCount == 0 ? false : true;
            toolStripButton2.Enabled = gridView1.RowCount == 0 ? false : true;
-           this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
-           facturasCabDataGridView_CellEnter(null, null);
+           this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
+           gridView6_FocusedRowChanged(null, null);
            decimal importe = 0;
            try
            {
@@ -493,7 +499,7 @@ namespace Promowork
                impBase = decimal.Parse(impBaseTextBox.Text);
            }
            catch { }
-           facturasCabDataGridView.CurrentRow.Cells["Cobrada"].Value = importe <= impBase && impBase != 0 ? true : false;
+           gridView6.SetFocusedRowCellValue("Cobrada", importe <= impBase && impBase != 0 ? true : false);
 
            this.Validate();
            this.facturasCabBindingSource.EndEdit();
@@ -523,15 +529,15 @@ namespace Promowork
            this.Validate();
            productosUtilizadosBindingSource1.EndEdit();
            productosUtilizadosTableAdapter.Update(promowork_dataDataSet1.ProductosUtilizados);
-           queriesTableAdapter1.InsertaDetalleFactura(Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value), Convert.ToInt32(gridView4.GetFocusedRowCellValue("IdHoras")));
+           queriesTableAdapter1.InsertaDetalleFactura((int)gridView6.GetFocusedRowCellValue("IdFactCab"), Convert.ToInt32(gridView4.GetFocusedRowCellValue("IdHoras")));
 
-           this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
+           this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
            this.vHorasTrabajadasTableAdapter.Fill(promowork_dataDataSet.vHorasTrabajadas, Convert.ToInt32(idPresupComboBox.SelectedValue));
            this.productosUtilizadosTableAdapter.FillbyHoras(promowork_dataDataSet.ProductosUtilizados, Convert.ToInt32(gridView1.GetFocusedRowCellValue("IdHoras")));
            toolStripButton8.Enabled = gridView4.RowCount == 0 ? false : true;
            toolStripButton2.Enabled = gridView1.RowCount == 0 ? false : true;
-           this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
-           facturasCabDataGridView_CellEnter(null, null);
+           this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
+           gridView6_FocusedRowChanged(null, null);
           
            decimal importe = 0;
            try
@@ -546,8 +552,8 @@ namespace Promowork
                impBase = decimal.Parse(impBaseTextBox.Text);
            }
            catch { }
-          
-           facturasCabDataGridView.CurrentRow.Cells["Cobrada"].Value = importe <= impBase && impBase != 0 ? true : false;
+
+           gridView6.SetFocusedRowCellValue("Cobrada", importe <= impBase && impBase != 0 ? true : false);
            this.Validate();
            this.facturasCabBindingSource.EndEdit();
            facturasCabTableAdapter.Update(promowork_dataDataSet.FacturasCab);
@@ -593,8 +599,8 @@ namespace Promowork
           productosUtilizadosTableAdapter.Update(promowork_dataDataSet.ProductosUtilizados);
            gridView1.ClearSelection();
 
-           this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
-           facturasCabDataGridView_CellEnter(null, null);
+           this.importeFacturaHorasTableAdapter.FillFactura(promowork_dataDataSet.ImporteFacturaHoras, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
+           gridView6_FocusedRowChanged(null, null);
            toolStripButton7.Enabled = false;
            decimal importe = 0;
            try
@@ -609,7 +615,7 @@ namespace Promowork
                impBase = decimal.Parse(impBaseTextBox.Text);
            }
            catch { }
-           facturasCabDataGridView.CurrentRow.Cells["Cobrada"].Value = importe <= impBase && impBase != 0 ? true : false;
+           gridView6.SetFocusedRowCellValue("Cobrada",importe <= impBase && impBase != 0 ? true : false);
            this.Validate();
            this.facturasCabBindingSource.EndEdit();
            facturasCabTableAdapter.Update(promowork_dataDataSet.FacturasCab);
@@ -629,7 +635,7 @@ namespace Promowork
            importeTextBox1.Text = importeTextBox.Text;
            try
            {
-               facturasCabDataGridView.CurrentRow.Cells["Importe"].Value = Convert.ToDecimal(importeTextBox.Text);
+               gridView6.SetFocusedRowCellValue("Importe", Convert.ToDecimal(importeTextBox.Text));
            }
            catch { }
        }
@@ -688,7 +694,7 @@ namespace Promowork
 
        private void toolStripButton14_Click(object sender, EventArgs e)
        {
-           gridView5.SetFocusedRowCellValue(colIdFactCab1, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
+           gridView5.SetFocusedRowCellValue(colIdFactCab1, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
        }
 
        private void toolStripButton15_Click(object sender, EventArgs e)
@@ -705,14 +711,14 @@ namespace Promowork
 
                MessageBox.Show("No se Pudo Salvar la Información. El Registro fue modificado por otro Usuario.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
 
-               this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
+               this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
 
            }
            catch (SqlException ex)
            {
                if (ErroresSQLServer.ManipulaErrorSQL(ex, this.Text))
                {
-                   this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, Convert.ToInt32(facturasCabDataGridView.CurrentRow.Cells["IdFactCab"].Value));
+                   this.vFacturaDetHorasTableAdapter.Fill(promowork_dataDataSet.vFacturaDetHoras, (int)gridView6.GetFocusedRowCellValue("IdFactCab"));
                }
 
            }
@@ -781,14 +787,14 @@ namespace Promowork
            }
        }
 
-       private void facturasCabDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-       {
+       //////////////private void facturasCabDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+       //////////////{
         
-         //  e.CellStyle.BackColor = (bool)facturasCabDataGridView.Rows[e.RowIndex].Cells["Entregada"].Value == false ? Color.White : Color.Yellow;
-           e.CellStyle.BackColor = (bool)facturasCabDataGridView.Rows[e.RowIndex].Cells["Cobrada"].Value == true ? Color.LightGray : (bool)facturasCabDataGridView.Rows[e.RowIndex].Cells["Entregada"].Value == true ? Color.Yellow : Color.White;
-           e.CellStyle.Font = facturasCabDataGridView.Rows[e.RowIndex].Cells["FacturaPresup"].Value == DBNull.Value ? new Font("Arial", 8, FontStyle.Regular) : new Font("Arial", 8, FontStyle.Italic);
-         //  e.CellStyle.SelectionBackColor = (bool)facturasCabDataGridView.Rows[e.RowIndex].Cells["Entregada"].Value == false ? Color.Blue : Color.MediumAquamarine;
-       }
+       //////////////  //  e.CellStyle.BackColor = (bool)facturasCabDataGridView.Rows[e.RowIndex].Cells["Entregada"].Value == false ? Color.White : Color.Yellow;
+       //////////////    e.CellStyle.BackColor = (bool)facturasCabDataGridView.Rows[e.RowIndex].Cells["Cobrada"].Value == true ? Color.LightGray : (bool)facturasCabDataGridView.Rows[e.RowIndex].Cells["Entregada"].Value == true ? Color.Yellow : Color.White;
+       //////////////    e.CellStyle.Font = facturasCabDataGridView.Rows[e.RowIndex].Cells["FacturaPresup"].Value == DBNull.Value ? new Font("Arial", 8, FontStyle.Regular) : new Font("Arial", 8, FontStyle.Italic);
+       //////////////  //  e.CellStyle.SelectionBackColor = (bool)facturasCabDataGridView.Rows[e.RowIndex].Cells["Entregada"].Value == false ? Color.Blue : Color.MediumAquamarine;
+       //////////////}
 
        private void button2_Click(object sender, EventArgs e)
        {
@@ -808,7 +814,7 @@ namespace Promowork
            idClienteComboBox.SelectedValue = valor;
        }
 
-      
+       
       
     }
 }

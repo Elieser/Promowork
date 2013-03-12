@@ -421,7 +421,7 @@
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontWeight>Bold</FontWeight>
-                                <Format>#,0.00'€';(#,0.00'€');''</Format>
+                                <Format>#,0.00'€';-#,0.00'€'</Format>
                                 <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
@@ -552,7 +552,7 @@
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>9pt</FontSize>
-                                <Format>#,0.00'€';(#,0.00'€')</Format>
+                                <Format>#,0.00'€';-#,0.00'€'</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -593,7 +593,7 @@
                               <Style>
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>9pt</FontSize>
-                                <Format>#,0.00'€';(#,0.00'€');''</Format>
+                                <Format>#,0.00'€';-#,0.00'€'</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -716,7 +716,7 @@
                                 <FontFamily>Franklin Gothic Medium Cond</FontFamily>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Format>0.00'€';-0.00'€';''</Format>
+                                <Format>0.00'€';-0.00'€'</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -737,6 +737,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -2574,7 +2575,7 @@ End Function</Code>
                   <Style>
                     <FontSize>11pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
@@ -2664,7 +2665,7 @@ End Function</Code>
                   <Value>=(Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))*First(Fields!DescFactura.Value, "DataSet3")/100</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
@@ -2753,7 +2754,7 @@ End Function</Code>
                   <Value>=((Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))-(Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))*First(Fields!DescFactura.Value, "DataSet3")/100)*First(Fields!DescPronto.Value, "DataSet3")/100</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
@@ -2831,7 +2832,7 @@ End Function</Code>
                   <Style>
                     <FontSize>11pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
@@ -2917,7 +2918,7 @@ End Function</Code>
                   <Value>=(Round((Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1")),2)  - Round(((Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))*First(Fields!DescFactura.Value, "DataSet3")/100),2) -  Round((((Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))-(Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))*First(Fields!DescFactura.Value, "DataSet3")/100)*First(Fields!DescPronto.Value, "DataSet3")/100),2))  *  (First(Fields!IVAFactura.Value, "DataSet3")/100)</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
@@ -2989,7 +2990,7 @@ End Function</Code>
                   <Style>
                     <FontSize>11pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
@@ -3078,7 +3079,7 @@ End Function</Code>
                   <Value>=((Round((Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1")),2)  - Round(((Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))*First(Fields!DescFactura.Value, "DataSet3")/100),2) -  Round((((Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))-(Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))*First(Fields!DescFactura.Value, "DataSet3")/100)*First(Fields!DescPronto.Value, "DataSet3")/100),2))  *  (First(Fields!IVAFactura.Value, "DataSet3")/100)   +   (Round((Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1")),2)  - Round(((Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))*First(Fields!DescFactura.Value, "DataSet3")/100),2) -  Round((((Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))-(Sum(Fields!ImpHoras.Value, "DataSet1")+Sum(Fields!ImpMateriales.Value, "DataSet1"))*First(Fields!DescFactura.Value, "DataSet3")/100)*First(Fields!DescPronto.Value, "DataSet3")/100),2)))  *  (First(Fields!Retencion.Value, "DataSet3")/100)</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
@@ -3156,7 +3157,7 @@ End Function</Code>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>

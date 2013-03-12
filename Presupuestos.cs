@@ -553,7 +553,11 @@ namespace Promowork
 
         private void cmbano_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.presupCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.PresupCab, VariablesGlobales.nIdEmpresaActual, (int)cmbano.SelectedValue);
+            try
+            {
+                this.presupCabTableAdapter.FillByEmpresa(this.promowork_dataDataSet.PresupCab, VariablesGlobales.nIdEmpresaActual, (int)cmbano.SelectedValue);
+            }
+            catch { }
         }
 
         private void Presupuestos_FormClosing(object sender, FormClosingEventArgs e)

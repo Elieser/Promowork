@@ -60,7 +60,12 @@
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label obsFactura2Label;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturasHorasMateriales));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition3 = new DevExpress.XtraGrid.StyleFormatCondition();
+            this.colEntregada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCobrada = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFacturaPresup = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.facturasCabBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.facturasCabBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -80,21 +85,9 @@
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.facturasCabDataGridView = new System.Windows.Forms.DataGridView();
-            this.NumFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Obra = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.obrasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.promowork_dataDataSet1 = new Promowork.Promowork_dataDataSet();
-            this.IdCliente = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.clientesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cobrada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Entregada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.IdFactCab = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Factura = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.FacturaPresup = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.IdCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obrasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idClienteComboBox = new System.Windows.Forms.ComboBox();
@@ -108,6 +101,20 @@
             this.iVAFacturaTextBox = new System.Windows.Forms.TextBox();
             this.descFacuraTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.facturasCabGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colIdFactCab2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdCliente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.colIdPresup = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNumFactura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFechaFactura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colImporte = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIdObra2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.colIdClienteFact = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFactura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNoDetalle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.cbxfacturas = new System.Windows.Forms.ComboBox();
@@ -271,21 +278,6 @@
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.anosFacturasTableAdapter = new Promowork.Promowork_dataDataSetTableAdapters.AnosFacturasTableAdapter();
             this.obsFactura2TextBox = new System.Windows.Forms.TextBox();
-            this.facturasCabGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colIdFactCab2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIdCliente = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIdPresup = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNumFactura = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFechaFactura = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCobrada = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colImporte = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFacturaPresup = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIdObra2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colIdClienteFact = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFactura = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colEntregada = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNoDetalle = new DevExpress.XtraGrid.Columns.GridColumn();
             idClienteLabel = new System.Windows.Forms.Label();
             idPresupLabel = new System.Windows.Forms.Label();
             numFacturaLabel = new System.Windows.Forms.Label();
@@ -321,7 +313,6 @@
             this.facturasCabBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.facturasCabBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facturasCabDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).BeginInit();
@@ -329,6 +320,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuentasBancosBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.facturasCabGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anosFacturasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noDetalleCheckEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
@@ -360,8 +355,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
             this.bindingNavigator2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.facturasCabGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             this.SuspendLayout();
             // 
             // idClienteLabel
@@ -634,6 +627,36 @@
             obsFactura2Label.TabIndex = 124;
             obsFactura2Label.Text = "Observ 2:";
             // 
+            // colEntregada
+            // 
+            this.colEntregada.AppearanceHeader.Options.UseTextOptions = true;
+            this.colEntregada.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colEntregada.Caption = "Ent";
+            this.colEntregada.FieldName = "Entregada";
+            this.colEntregada.Name = "colEntregada";
+            this.colEntregada.OptionsColumn.AllowEdit = false;
+            this.colEntregada.Visible = true;
+            this.colEntregada.VisibleIndex = 6;
+            this.colEntregada.Width = 39;
+            // 
+            // colCobrada
+            // 
+            this.colCobrada.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCobrada.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCobrada.Caption = "Cob";
+            this.colCobrada.FieldName = "Cobrada";
+            this.colCobrada.Name = "colCobrada";
+            this.colCobrada.OptionsColumn.AllowEdit = false;
+            this.colCobrada.Visible = true;
+            this.colCobrada.VisibleIndex = 5;
+            this.colCobrada.Width = 28;
+            // 
+            // colFacturaPresup
+            // 
+            this.colFacturaPresup.FieldName = "FacturaPresup";
+            this.colFacturaPresup.Name = "colFacturaPresup";
+            this.colFacturaPresup.OptionsColumn.AllowEdit = false;
+            // 
             // repositoryItemLookUpEdit1
             // 
             this.repositoryItemLookUpEdit1.AutoHeight = false;
@@ -820,65 +843,6 @@
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
             // 
-            // facturasCabDataGridView
-            // 
-            this.facturasCabDataGridView.AllowUserToAddRows = false;
-            this.facturasCabDataGridView.AutoGenerateColumns = false;
-            this.facturasCabDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.facturasCabDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NumFactura,
-            this.dataGridViewTextBoxColumn7,
-            this.Obra,
-            this.IdCliente,
-            this.Importe,
-            this.Cobrada,
-            this.Entregada,
-            this.IdFactCab,
-            this.Factura,
-            this.FacturaPresup,
-            this.IdCuenta});
-            this.facturasCabDataGridView.DataSource = this.facturasCabBindingSource;
-            this.facturasCabDataGridView.Location = new System.Drawing.Point(4, 37);
-            this.facturasCabDataGridView.Name = "facturasCabDataGridView";
-            this.facturasCabDataGridView.ReadOnly = true;
-            this.facturasCabDataGridView.RowHeadersVisible = false;
-            this.facturasCabDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.facturasCabDataGridView.Size = new System.Drawing.Size(567, 234);
-            this.facturasCabDataGridView.TabIndex = 0;
-            this.facturasCabDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.facturasCabDataGridView_CellEnter);
-            this.facturasCabDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.facturasCabDataGridView_CellFormatting);
-            // 
-            // NumFactura
-            // 
-            this.NumFactura.DataPropertyName = "NumFactura";
-            this.NumFactura.HeaderText = "Número";
-            this.NumFactura.Name = "NumFactura";
-            this.NumFactura.ReadOnly = true;
-            this.NumFactura.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "FechaFactura";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Fecha";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 70;
-            // 
-            // Obra
-            // 
-            this.Obra.DataPropertyName = "IdObra";
-            this.Obra.DataSource = this.obrasBindingSource1;
-            this.Obra.DisplayMember = "Obra";
-            this.Obra.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Obra.DisplayStyleForCurrentCellOnly = true;
-            this.Obra.HeaderText = "Obra";
-            this.Obra.Name = "Obra";
-            this.Obra.ReadOnly = true;
-            this.Obra.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Obra.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Obra.ValueMember = "IdObra";
-            this.Obra.Width = 150;
-            // 
             // obrasBindingSource1
             // 
             this.obrasBindingSource1.DataMember = "Obras";
@@ -889,86 +853,10 @@
             this.promowork_dataDataSet1.DataSetName = "Promowork_dataDataSet";
             this.promowork_dataDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // IdCliente
-            // 
-            this.IdCliente.DataPropertyName = "IdCliente";
-            this.IdCliente.DataSource = this.clientesBindingSource2;
-            this.IdCliente.DisplayMember = "DesCliente";
-            this.IdCliente.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.IdCliente.DisplayStyleForCurrentCellOnly = true;
-            this.IdCliente.HeaderText = "Cliente";
-            this.IdCliente.Name = "IdCliente";
-            this.IdCliente.ReadOnly = true;
-            this.IdCliente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.IdCliente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.IdCliente.ValueMember = "IdCliente";
-            this.IdCliente.Width = 150;
-            // 
             // clientesBindingSource2
             // 
             this.clientesBindingSource2.DataMember = "Clientes";
             this.clientesBindingSource2.DataSource = this.promowork_dataDataSet;
-            // 
-            // Importe
-            // 
-            this.Importe.DataPropertyName = "Importe";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Importe.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Importe.HeaderText = "Importe";
-            this.Importe.Name = "Importe";
-            this.Importe.ReadOnly = true;
-            this.Importe.Width = 65;
-            // 
-            // Cobrada
-            // 
-            this.Cobrada.DataPropertyName = "Cobrada";
-            this.Cobrada.HeaderText = "Cob";
-            this.Cobrada.Name = "Cobrada";
-            this.Cobrada.ReadOnly = true;
-            this.Cobrada.Width = 30;
-            // 
-            // Entregada
-            // 
-            this.Entregada.DataPropertyName = "Entregada";
-            this.Entregada.HeaderText = "Ent";
-            this.Entregada.Name = "Entregada";
-            this.Entregada.ReadOnly = true;
-            this.Entregada.Width = 30;
-            // 
-            // IdFactCab
-            // 
-            this.IdFactCab.DataPropertyName = "IdFactCab";
-            this.IdFactCab.HeaderText = "IdFactCab";
-            this.IdFactCab.Name = "IdFactCab";
-            this.IdFactCab.ReadOnly = true;
-            this.IdFactCab.Visible = false;
-            // 
-            // Factura
-            // 
-            this.Factura.DataPropertyName = "Factura";
-            this.Factura.HeaderText = "Fra";
-            this.Factura.Name = "Factura";
-            this.Factura.ReadOnly = true;
-            this.Factura.Visible = false;
-            this.Factura.Width = 30;
-            // 
-            // FacturaPresup
-            // 
-            this.FacturaPresup.DataPropertyName = "FacturaPresup";
-            this.FacturaPresup.HeaderText = "FacturaPresup";
-            this.FacturaPresup.Name = "FacturaPresup";
-            this.FacturaPresup.ReadOnly = true;
-            this.FacturaPresup.Visible = false;
-            this.FacturaPresup.Width = 20;
-            // 
-            // IdCuenta
-            // 
-            this.IdCuenta.DataPropertyName = "IdCuenta";
-            this.IdCuenta.HeaderText = "IdCuenta";
-            this.IdCuenta.Name = "IdCuenta";
-            this.IdCuenta.ReadOnly = true;
-            this.IdCuenta.Visible = false;
             // 
             // obrasBindingSource
             // 
@@ -1137,7 +1025,6 @@
             this.groupBox3.Controls.Add(this.idPresupComboBox);
             this.groupBox3.Controls.Add(idClienteLabel);
             this.groupBox3.Controls.Add(this.idClienteComboBox);
-            this.groupBox3.Controls.Add(this.facturasCabDataGridView);
             this.groupBox3.Controls.Add(this.obsFacturaTextEdit);
             this.groupBox3.Controls.Add(this.importeTextBox);
             this.groupBox3.Location = new System.Drawing.Point(5, -1);
@@ -1145,6 +1032,186 @@
             this.groupBox3.Size = new System.Drawing.Size(1186, 275);
             this.groupBox3.TabIndex = 81;
             this.groupBox3.TabStop = false;
+            // 
+            // facturasCabGridControl
+            // 
+            this.facturasCabGridControl.DataSource = this.facturasCabBindingSource;
+            this.facturasCabGridControl.Location = new System.Drawing.Point(4, 36);
+            this.facturasCabGridControl.MainView = this.gridView6;
+            this.facturasCabGridControl.Name = "facturasCabGridControl";
+            this.facturasCabGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemLookUpEdit3,
+            this.repositoryItemLookUpEdit4});
+            this.facturasCabGridControl.Size = new System.Drawing.Size(570, 234);
+            this.facturasCabGridControl.TabIndex = 127;
+            this.facturasCabGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView6});
+            // 
+            // gridView6
+            // 
+            this.gridView6.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gridView6.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gridView6.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gridView6.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gridView6.Appearance.GroupRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gridView6.Appearance.GroupRow.Options.UseBackColor = true;
+            this.gridView6.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gridView6.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.gridView6.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gridView6.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.gridView6.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIdFactCab2,
+            this.colIdCliente,
+            this.colIdPresup,
+            this.colNumFactura,
+            this.colFechaFactura,
+            this.colCobrada,
+            this.colImporte,
+            this.colFacturaPresup,
+            this.colIdObra2,
+            this.colIdClienteFact,
+            this.colFactura,
+            this.colEntregada,
+            this.colNoDetalle});
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.Yellow;
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
+            styleFormatCondition1.ApplyToRow = true;
+            styleFormatCondition1.Column = this.colEntregada;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
+            styleFormatCondition1.Value1 = true;
+            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.LightGray;
+            styleFormatCondition2.Appearance.Options.UseBackColor = true;
+            styleFormatCondition2.ApplyToRow = true;
+            styleFormatCondition2.Column = this.colCobrada;
+            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
+            styleFormatCondition2.Value1 = true;
+            styleFormatCondition3.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Italic);
+            styleFormatCondition3.Appearance.Options.UseFont = true;
+            styleFormatCondition3.ApplyToRow = true;
+            styleFormatCondition3.Column = this.colFacturaPresup;
+            styleFormatCondition3.Condition = DevExpress.XtraGrid.FormatConditionEnum.NotEqual;
+            this.gridView6.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            styleFormatCondition1,
+            styleFormatCondition2,
+            styleFormatCondition3});
+            this.gridView6.GridControl = this.facturasCabGridControl;
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsView.ShowAutoFilterRow = true;
+            this.gridView6.OptionsView.ShowGroupPanel = false;
+            this.gridView6.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colNumFactura, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridView6.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView6_FocusedRowChanged);
+            // 
+            // colIdFactCab2
+            // 
+            this.colIdFactCab2.FieldName = "IdFactCab";
+            this.colIdFactCab2.Name = "colIdFactCab2";
+            this.colIdFactCab2.OptionsColumn.AllowEdit = false;
+            // 
+            // colIdCliente
+            // 
+            this.colIdCliente.Caption = "Cliente";
+            this.colIdCliente.ColumnEdit = this.repositoryItemLookUpEdit4;
+            this.colIdCliente.FieldName = "IdCliente";
+            this.colIdCliente.Name = "colIdCliente";
+            this.colIdCliente.OptionsColumn.AllowEdit = false;
+            this.colIdCliente.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
+            this.colIdCliente.Visible = true;
+            this.colIdCliente.VisibleIndex = 3;
+            this.colIdCliente.Width = 161;
+            // 
+            // repositoryItemLookUpEdit4
+            // 
+            this.repositoryItemLookUpEdit4.AutoHeight = false;
+            this.repositoryItemLookUpEdit4.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit4.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DesCliente", "Cliente", 64, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEdit4.DataSource = this.clientesBindingSource2;
+            this.repositoryItemLookUpEdit4.DisplayMember = "DesCliente";
+            this.repositoryItemLookUpEdit4.Name = "repositoryItemLookUpEdit4";
+            this.repositoryItemLookUpEdit4.NullText = "";
+            this.repositoryItemLookUpEdit4.ValueMember = "IdCliente";
+            // 
+            // colIdPresup
+            // 
+            this.colIdPresup.FieldName = "IdPresup";
+            this.colIdPresup.Name = "colIdPresup";
+            this.colIdPresup.OptionsColumn.AllowEdit = false;
+            // 
+            // colNumFactura
+            // 
+            this.colNumFactura.Caption = "Nº";
+            this.colNumFactura.FieldName = "NumFactura";
+            this.colNumFactura.Name = "colNumFactura";
+            this.colNumFactura.OptionsColumn.AllowEdit = false;
+            this.colNumFactura.Visible = true;
+            this.colNumFactura.VisibleIndex = 0;
+            this.colNumFactura.Width = 43;
+            // 
+            // colFechaFactura
+            // 
+            this.colFechaFactura.Caption = "Fecha";
+            this.colFechaFactura.FieldName = "FechaFactura";
+            this.colFechaFactura.Name = "colFechaFactura";
+            this.colFechaFactura.OptionsColumn.AllowEdit = false;
+            this.colFechaFactura.Visible = true;
+            this.colFechaFactura.VisibleIndex = 1;
+            this.colFechaFactura.Width = 69;
+            // 
+            // colImporte
+            // 
+            this.colImporte.AppearanceHeader.Options.UseTextOptions = true;
+            this.colImporte.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colImporte.FieldName = "Importe";
+            this.colImporte.Name = "colImporte";
+            this.colImporte.OptionsColumn.AllowEdit = false;
+            this.colImporte.Visible = true;
+            this.colImporte.VisibleIndex = 4;
+            this.colImporte.Width = 69;
+            // 
+            // colIdObra2
+            // 
+            this.colIdObra2.Caption = "Obra";
+            this.colIdObra2.ColumnEdit = this.repositoryItemLookUpEdit3;
+            this.colIdObra2.FieldName = "IdObra";
+            this.colIdObra2.Name = "colIdObra2";
+            this.colIdObra2.OptionsColumn.AllowEdit = false;
+            this.colIdObra2.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
+            this.colIdObra2.Visible = true;
+            this.colIdObra2.VisibleIndex = 2;
+            this.colIdObra2.Width = 143;
+            // 
+            // repositoryItemLookUpEdit3
+            // 
+            this.repositoryItemLookUpEdit3.AutoHeight = false;
+            this.repositoryItemLookUpEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit3.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Obra", "Obra", 34, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEdit3.DataSource = this.obrasBindingSource1;
+            this.repositoryItemLookUpEdit3.DisplayMember = "Obra";
+            this.repositoryItemLookUpEdit3.Name = "repositoryItemLookUpEdit3";
+            this.repositoryItemLookUpEdit3.NullText = "";
+            this.repositoryItemLookUpEdit3.ValueMember = "IdObra";
+            // 
+            // colIdClienteFact
+            // 
+            this.colIdClienteFact.FieldName = "IdClienteFact";
+            this.colIdClienteFact.Name = "colIdClienteFact";
+            this.colIdClienteFact.OptionsColumn.AllowEdit = false;
+            // 
+            // colFactura
+            // 
+            this.colFactura.FieldName = "Factura";
+            this.colFactura.Name = "colFactura";
+            this.colFactura.OptionsColumn.AllowEdit = false;
+            // 
+            // colNoDetalle
+            // 
+            this.colNoDetalle.FieldName = "NoDetalle";
+            this.colNoDetalle.Name = "colNoDetalle";
+            this.colNoDetalle.OptionsColumn.AllowEdit = false;
             // 
             // button5
             // 
@@ -2684,138 +2751,6 @@
             this.obsFactura2TextBox.Size = new System.Drawing.Size(437, 35);
             this.obsFactura2TextBox.TabIndex = 125;
             // 
-            // facturasCabGridControl
-            // 
-            this.facturasCabGridControl.DataSource = this.facturasCabBindingSource;
-            this.facturasCabGridControl.Location = new System.Drawing.Point(577, 37);
-            this.facturasCabGridControl.MainView = this.gridView6;
-            this.facturasCabGridControl.Name = "facturasCabGridControl";
-            this.facturasCabGridControl.Size = new System.Drawing.Size(586, 234);
-            this.facturasCabGridControl.TabIndex = 126;
-            this.facturasCabGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView6});
-            // 
-            // gridView6
-            // 
-            this.gridView6.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colIdFactCab2,
-            this.colIdCliente,
-            this.colIdPresup,
-            this.colNumFactura,
-            this.colFechaFactura,
-            this.colCobrada,
-            this.colImporte,
-            this.colFacturaPresup,
-            this.colIdObra2,
-            this.colIdClienteFact,
-            this.colFactura,
-            this.colEntregada,
-            this.colNoDetalle});
-            this.gridView6.GridControl = this.facturasCabGridControl;
-            this.gridView6.Name = "gridView6";
-            this.gridView6.OptionsView.ShowAutoFilterRow = true;
-            this.gridView6.OptionsView.ShowGroupPanel = false;
-            this.gridView6.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colIdCliente, DevExpress.Data.ColumnSortOrder.Ascending)});
-            // 
-            // colIdFactCab2
-            // 
-            this.colIdFactCab2.FieldName = "IdFactCab";
-            this.colIdFactCab2.Name = "colIdFactCab2";
-            // 
-            // colIdCliente
-            // 
-            this.colIdCliente.Caption = "Cliente";
-            this.colIdCliente.FieldName = "IdCliente";
-            this.colIdCliente.Name = "colIdCliente";
-            this.colIdCliente.Visible = true;
-            this.colIdCliente.VisibleIndex = 3;
-            this.colIdCliente.Width = 178;
-            // 
-            // colIdPresup
-            // 
-            this.colIdPresup.FieldName = "IdPresup";
-            this.colIdPresup.Name = "colIdPresup";
-            // 
-            // colNumFactura
-            // 
-            this.colNumFactura.Caption = "Nº";
-            this.colNumFactura.FieldName = "NumFactura";
-            this.colNumFactura.Name = "colNumFactura";
-            this.colNumFactura.Visible = true;
-            this.colNumFactura.VisibleIndex = 0;
-            this.colNumFactura.Width = 33;
-            // 
-            // colFechaFactura
-            // 
-            this.colFechaFactura.Caption = "Fecha";
-            this.colFechaFactura.FieldName = "FechaFactura";
-            this.colFechaFactura.Name = "colFechaFactura";
-            this.colFechaFactura.Visible = true;
-            this.colFechaFactura.VisibleIndex = 1;
-            this.colFechaFactura.Width = 65;
-            // 
-            // colCobrada
-            // 
-            this.colCobrada.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCobrada.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colCobrada.Caption = "Cob";
-            this.colCobrada.FieldName = "Cobrada";
-            this.colCobrada.Name = "colCobrada";
-            this.colCobrada.Visible = true;
-            this.colCobrada.VisibleIndex = 5;
-            this.colCobrada.Width = 34;
-            // 
-            // colImporte
-            // 
-            this.colImporte.AppearanceHeader.Options.UseTextOptions = true;
-            this.colImporte.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colImporte.FieldName = "Importe";
-            this.colImporte.Name = "colImporte";
-            this.colImporte.Visible = true;
-            this.colImporte.VisibleIndex = 4;
-            this.colImporte.Width = 71;
-            // 
-            // colFacturaPresup
-            // 
-            this.colFacturaPresup.FieldName = "FacturaPresup";
-            this.colFacturaPresup.Name = "colFacturaPresup";
-            // 
-            // colIdObra2
-            // 
-            this.colIdObra2.Caption = "Obra";
-            this.colIdObra2.FieldName = "IdObra";
-            this.colIdObra2.Name = "colIdObra2";
-            this.colIdObra2.Visible = true;
-            this.colIdObra2.VisibleIndex = 2;
-            this.colIdObra2.Width = 150;
-            // 
-            // colIdClienteFact
-            // 
-            this.colIdClienteFact.FieldName = "IdClienteFact";
-            this.colIdClienteFact.Name = "colIdClienteFact";
-            // 
-            // colFactura
-            // 
-            this.colFactura.FieldName = "Factura";
-            this.colFactura.Name = "colFactura";
-            // 
-            // colEntregada
-            // 
-            this.colEntregada.AppearanceHeader.Options.UseTextOptions = true;
-            this.colEntregada.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colEntregada.Caption = "Ent";
-            this.colEntregada.FieldName = "Entregada";
-            this.colEntregada.Name = "colEntregada";
-            this.colEntregada.Visible = true;
-            this.colEntregada.VisibleIndex = 6;
-            this.colEntregada.Width = 37;
-            // 
-            // colNoDetalle
-            // 
-            this.colNoDetalle.FieldName = "NoDetalle";
-            this.colNoDetalle.Name = "colNoDetalle";
-            // 
             // FacturasHorasMateriales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2855,7 +2790,6 @@
             this.facturasCabBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.facturasCabBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facturasCabDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.promowork_dataDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource2)).EndInit();
@@ -2864,6 +2798,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.cuentasBancosBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.facturasCabGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anosFacturasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.noDetalleCheckEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
@@ -2897,8 +2835,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.facturasCabGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2923,7 +2859,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton facturasCabBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView facturasCabDataGridView;
         private Promowork_dataDataSetTableAdapters.ClientesTableAdapter clientesTableAdapter;
         private System.Windows.Forms.BindingSource clientesBindingSource;
         private System.Windows.Forms.ComboBox idClienteComboBox;
@@ -3102,18 +3037,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCopiaParte;
         private DevExpress.XtraGrid.Columns.GridColumn colCopiaParte1;
         private System.Windows.Forms.TextBox obsFactura2TextBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Obra;
-        private System.Windows.Forms.DataGridViewComboBoxColumn IdCliente;
         private System.Windows.Forms.BindingSource clientesBindingSource2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Cobrada;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Entregada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdFactCab;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Factura;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn FacturaPresup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdCuenta;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button5;
         private DevExpress.XtraGrid.GridControl facturasCabGridControl;
@@ -3131,5 +3055,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colFactura;
         private DevExpress.XtraGrid.Columns.GridColumn colEntregada;
         private DevExpress.XtraGrid.Columns.GridColumn colNoDetalle;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit4;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit3;
     }
 }

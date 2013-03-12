@@ -1407,7 +1407,7 @@ End Function</Code>
                   <Style>
                     <FontSize>11pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
@@ -1497,7 +1497,7 @@ End Function</Code>
                   <Value>=Sum(Fields!Cantidad.Value*Fields!Precio.Value, "DataSet1")*First(Fields!DescFactura.Value, "DataSet3")/100</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
@@ -1586,7 +1586,7 @@ End Function</Code>
                   <Value>=(Sum(Fields!Cantidad.Value*Fields!Precio.Value, "DataSet1")-Sum(Fields!Cantidad.Value*Fields!Precio.Value, "DataSet1")*First(Fields!DescFactura.Value, "DataSet3")/100)*First(Fields!DescPronto.Value, "DataSet3")/100</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
@@ -1664,7 +1664,7 @@ End Function</Code>
                   <Style>
                     <FontSize>11pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
@@ -1750,7 +1750,7 @@ End Function</Code>
                   <Value>=(Round(Sum(Fields!Cantidad.Value*Fields!Precio.Value, "DataSet1"),2)  - Round((Sum(Fields!Cantidad.Value*Fields!Precio.Value, "DataSet1")*First(Fields!DescFactura.Value, "DataSet3")/100),2) -  Round(((Sum(Fields!Cantidad.Value*Fields!Precio.Value, "DataSet1")-Sum(Fields!Cantidad.Value*Fields!Precio.Value, "DataSet1")*First(Fields!DescFactura.Value, "DataSet3")/100)*First(Fields!DescPronto.Value, "DataSet3")/100),2))  *  (First(Fields!IVAFactura.Value, "DataSet3")/100)</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
@@ -1822,7 +1822,7 @@ End Function</Code>
                   <Style>
                     <FontSize>11pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
@@ -1911,7 +1911,7 @@ End Function</Code>
                   <Value>=((Round(Sum(Fields!Cantidad.Value*Fields!Precio.Value, "DataSet1"),2)  - Round((Sum(Fields!Cantidad.Value*Fields!Precio.Value, "DataSet1")*First(Fields!DescFactura.Value, "DataSet3")/100),2) -  Round(((Sum(Fields!Cantidad.Value*Fields!Precio.Value, "DataSet1")-Sum(Fields!Cantidad.Value*Fields!Precio.Value, "DataSet1")*First(Fields!DescFactura.Value, "DataSet3")/100)*First(Fields!DescPronto.Value, "DataSet3")/100),2))  *  (First(Fields!IVAFactura.Value, "DataSet3")/100)   +   (Round(Sum(Fields!Cantidad.Value*Fields!Precio.Value, "DataSet1"),2)  - Round((Sum(Fields!Cantidad.Value*Fields!Precio.Value, "DataSet1")*First(Fields!DescFactura.Value, "DataSet3")/100),2) -  Round(((Sum(Fields!Cantidad.Value*Fields!Precio.Value, "DataSet1")-Sum(Fields!Cantidad.Value*Fields!Precio.Value, "DataSet1")*First(Fields!DescFactura.Value, "DataSet3")/100)*First(Fields!DescPronto.Value, "DataSet3")/100),2)))  *  (First(Fields!Retencion.Value, "DataSet3")/100)</Value>
                   <Style>
                     <FontSize>8pt</FontSize>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
@@ -1989,7 +1989,7 @@ End Function</Code>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>

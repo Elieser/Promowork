@@ -882,7 +882,7 @@
         <DataSetName>DataSet1</DataSetName>
         <Left>0.02862cm</Left>
         <Height>1.7cm</Height>
-        <Width>18.72712cm</Width>
+        <Width>18.72711cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1202,7 +1202,7 @@ End Function</Code>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
-                    <Format>#,0.00'€';(#,0.00'€');''</Format>
+                    <Format>#,0.00'€';-#,0.00'€';''</Format>
                     <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
                   </Style>
                 </TextRun>
