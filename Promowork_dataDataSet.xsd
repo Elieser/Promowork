@@ -5862,20 +5862,20 @@ SELECT IdPresupDet, IdPresupCap, NumPresupDet, NomPresupDet, DesPresupDet, Canti
               <DbSource ConnectionRef="Promowork_dataConnection (Settings)" DbObjectName="Promowork_data.dbo.PresupDet" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNumDes" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillByNumDes" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByNumDes">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        CantExtra, CantExtra + Cantidad AS Cantidad, Color, DesPresupDet, ISNULL
+                    <CommandText>SELECT        CantExtra, isnull(CantExtra,0) + Cantidad AS Cantidad, Color, DesPresupDet, ISNULL
                              ((SELECT        SUM(Cantidad * Precio) AS Expr1
                                  FROM            FacturasDet
                                  WHERE        (IdPresupDet = PresupDet.IdPresupDet)), 0) AS Facturado, IdPresupCap, IdPresupDet, CASE WHEN
                              (SELECT        COUNT(*)
                                FROM            PresupSub
-                               WHERE        PresupSub.IdPresupDet = presupDet.IdPresupDet) = 0 THEN (CantExtra + Cantidad) * Precio ELSE
-                             (SELECT        SUM(Precio * (CantExtra + Cantidad))
+                               WHERE        PresupSub.IdPresupDet = presupDet.IdPresupDet) = 0 THEN (isnull(CantExtra,0) + Cantidad) * Precio ELSE
+                             (SELECT        SUM(Precio * (isnull(CantExtra,0) + Cantidad))
                                FROM            PresupSub
                                WHERE        PresupSub.IdPresupDet = presupDet.IdPresupDet) END AS Importe, NumPresupDet, CASE WHEN
                              (SELECT        COUNT(*)
                                FROM            PresupSub
-                               WHERE        PresupSub.IdPresupDet = presupDet.IdPresupDet) = 0 THEN (CantExtra + Cantidad) * Precio ELSE
-                             (SELECT        SUM(Precio * (CantExtra + Cantidad))
+                               WHERE        PresupSub.IdPresupDet = presupDet.IdPresupDet) = 0 THEN (isnull(CantExtra,0) + Cantidad) * Precio ELSE
+                             (SELECT        SUM(Precio * (isnull(CantExtra,0) + Cantidad))
                                FROM            PresupSub
                                WHERE        PresupSub.IdPresupDet = presupDet.IdPresupDet) END - ISNULL
                              ((SELECT        SUM(Cantidad * Precio) AS Expr1
@@ -7347,11 +7347,11 @@ SELECT IdPresupSub, IdPresupDet, NumPresupSub, UM, NomPresupSub, DesPresupSub, C
               <DbSource ConnectionRef="Promowork_dataConnection (Settings)" DbObjectName="Promowork_data.dbo.PresupSub" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByNumDes" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillByNumDes" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByNumDes">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        CantExtra, CantExtra + Cantidad AS Cantidad, Color, DesPresupSub, ISNULL
+                    <CommandText>SELECT        CantExtra, isnull(CantExtra,0) + Cantidad AS Cantidad, Color, DesPresupSub, ISNULL
                              ((SELECT        SUM(Cantidad * Precio) AS Expr1
                                  FROM            FacturasDet
-                                 WHERE        (IdPresupSub = PresupSub.IdPresupSub)), 0) AS Facturado, IdPresupDet, IdPresupSub, (CantExtra + Cantidad) * Precio AS Importe, NumPresupSub, 
-                         (CantExtra + Cantidad) * Precio - ISNULL
+                                 WHERE        (IdPresupSub = PresupSub.IdPresupSub)), 0) AS Facturado, IdPresupDet, IdPresupSub, (isnull(CantExtra,0) + Cantidad) * Precio AS Importe, NumPresupSub, 
+                         (isnull(CantExtra,0) + Cantidad) * Precio - ISNULL
                              ((SELECT        SUM(Cantidad * Precio) AS Expr1
                                  FROM            FacturasDet AS FacturasDet_1
                                  WHERE        (IdPresupSub = PresupSub.IdPresupSub)), 0) AS Pendiente, Precio, UM, NumPresupSub + ' ' + NomPresupSub AS NomPresupSub

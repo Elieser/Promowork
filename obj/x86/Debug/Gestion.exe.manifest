@@ -174,14 +174,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Gestion.exe" size="12739584">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Gestion.exe" size="12740096">
       <assemblyIdentity name="Gestion" version="1.0.0.5" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>R69nm+565Bc7HlbVlLToFe5F4Yk=</dsig:DigestValue>
+        <dsig:DigestValue>x4S9UBz77DdiTh+cjYLZsD7Hakc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
